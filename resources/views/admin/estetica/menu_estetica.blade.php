@@ -133,16 +133,6 @@
                             </a>
                         </li>
                         <li class="nav-item mb-3 me-3 me-lg-6">
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_2">
-                                <div class="nav-icon">
-                                    <img alt="Logo" src="assets/media/svg/brand-logos/amazon.svg" class="theme-light-show" />
-                                    <img alt="Logo" src="assets/media/svg/brand-logos/amazon-dark.svg" class="theme-dark-show" />
-                                </div>
-                                <span class="nav-text text-gray-700 fw-bold fs-6 lh-1">Tallas</span>
-                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-3 me-3 me-lg-6">
                             <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_3">
                                 <div class="nav-icon">
                                     <img alt="" src="assets/media/svg/brand-logos/bp-2.svg" class="" />
@@ -182,111 +172,6 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="kt_stats_widget_1_tab_2">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-7">
-                                        {{-- <div class="card" >
-                                            <div class="card-body"> --}}
-                                                <div class="table-responsive">
-                                                    <!--begin::Table-->
-                                                    <table class="table align-middle gs-0 gy-4 my-0">
-                                                        <!--begin::Table head-->
-                                                        <thead>
-                                                            <tr class="fs-7 fw-bold text-gray-500">
-                                                                <th class="p-0 min-w-20px d-block pt-3">ID</th>
-                                                                <th class="min-w-20px pt-3">NOMBRE TALLA</th>
-                                                                <th class="pe-0  min-w-50px pt-3">ACCIÓN</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <!--end::Table head-->
-                                                        <!--begin::Table body-->
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">001</a>
-                                                                </td>
-                                                                <td class="">
-                                                                    <span class="badge badge-light-success fs-7 fw-bold">MINI</span>
-                                                                </td>
-                                                                <td class="">
-                                                                    <button class="btn btn-danger btn-sm">
-                                                                        Editar
-                                                                    </button>
-                                                                    <button class="btn btn-danger btn-sm">
-                                                                        Eliminar
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                        <!--end::Table body-->
-                                                    </table>
-                                                    <!--end::Table-->
-                                                </div>
-                                            {{-- </div>
-                                        </div> --}}
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                            <div class="card-body">
-                                                <form class="form" method="POST" action="{{url('admin/guardar-guarderia')}}"  id="registro-guarderia" onsubmit='return validar()'>
-                                                    @csrf
-                                                
-                                                    <input type="hidden" name="id_PaqueteGuarderia" value="Insertar" id="id_PaqueteGuarderia">
-                                                    <!--begin::Modal header-->
-                                                    {{-- <div class="modal-header" id="modal_servicio_header">
-                                                        <!--begin::Modal title-->
-                                                        <h2 class="fw-bold" id="id_titulo_paquete">Agregar nuevo paquete</h2>
-                                                        <!--end::Modal title-->
-                                                        <!--begin::Close-->
-                                                        
-                                                        <!--end::Close-->
-                                                    </div> --}}
-                                                    <!--end::Modal header-->
-                                                    <!--begin::Modal body-->
-                                                    <div class="modal-body ">
-                                                        <!--begin::Scroll-->
-                                                        <div class="scroll-y me-n7 pe-7" id="modal_servicio_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_servicio_header" data-kt-scroll-wrappers="#modal_servicio_scroll" data-kt-scroll-offset="300px">
-                                                            <!--begin::Input group-->
-                                                            <div class="fv-row mb-7">
-                                                                <!--begin::Label-->
-                                                                <label class="required fs-6 fw-semibold mb-2">Nombre</label>
-                                                                <!--end::Label-->
-                                                                <!--begin::Input-->
-                                                                <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
-                                                                <!--end::Input-->
-                                                            </div>
-                                                          
-                                                            
-                                                        </div>
-                                                        <!--end::Scroll-->
-                                                    </div>
-                                                    <!--end::Modal body-->
-                                                    <!--begin::Modal footer-->
-                                                    <div class="modal-footer flex-center">
-                                                        <!--begin::Button-->
-                                                        {{-- <button type="reset" onclick="cerrar_modal_add_user()" class="btn btn-light me-3">Cancelar</button> --}}
-                                                        <!--end::Button-->
-                                                        <!--begin::Button-->
-                                                        <button type="submit" id="btn_paquete"  class="btn btn-primary">
-                                                            <span class="indicator-label">Registrar Servicio</span>
-                                                            <span class="indicator-progress">Please wait...
-                                                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                        </span>
-                                                        </button>
-                                                        <!--end::Button-->
-                                                    </div>
-                                                    <!--end::Modal footer-->
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--begin::Table container-->
-                            <!--end::Table container-->
-                        </div>
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_3">
                             <div class="row">
                                 <div class="col-md-4">
@@ -320,71 +205,28 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_4">
-                            <!--begin::Table container-->
                             <div class="table-responsive">
-                                <!--begin::Table-->
-                                <table class="table align-middle gs-0 gy-4 my-0">
-                                    <!--begin::Table head-->
-                                    <thead>
-                                        <tr class="fs-7 fw-bold text-gray-500">
-                                            <th class="p-0 min-w-150px d-block pt-3">EMAIL TITLE</th>
-                                            <th class="text-end min-w-140px pt-3">STATUS</th>
-                                            <th class="pe-0 text-end min-w-120px pt-3">CONVERSION</th>
-                                        </tr>
-                                    </thead>
-                                    <!--end::Table head-->
-                                    <!--begin::Table body-->
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Best Headsets Giveaway</a>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="badge badge-light-warning fs-7 fw-bold">In Queue</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="text-gray-800 fw-bold d-block fs-6">0%(0)</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Best Headsets Giveaway</a>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="badge badge-light-success fs-7 fw-bold">Sent</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="text-gray-800 fw-bold d-block fs-6">37%(247)</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Best Rated Headsets of 2022</a>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="badge badge-light-success fs-7 fw-bold">Sent</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="text-gray-800 fw-bold d-block fs-6">18%(6.4k)</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">New Model BS 2000 X</a>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="badge badge-light-primary fs-7 fw-bold">In Draft</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="text-gray-800 fw-bold d-block fs-6">0.01%(1)</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <!--end::Table body-->
-                                </table>
-                                <!--end::Table-->
+                                <div class="card">
+                                    <table class="table align-middle gs-0 gy-4 my-0">
+                                        <thead>
+                                            <tr class="fs-7 fw-bold text-gray-500">
+                                                <th class=" d-block pt-3">Turno</th>
+                                                <th class=" pt-3">Lunes</th>
+                                                <th class=" pt-3">Martes</th>
+                                                <th class=" pt-3">Miercoles</th>
+                                                <th class=" pt-3">Jueves</th>
+                                                <th class=" pt-3">Viernes</th>
+                                                <th class=" pt-3">Sábado</th>
+                                                <th class=" pt-3">Domingo</th>
+                                                <th class="pe-0 text-center pt-3">Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="capacidad_tbl">
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <!--end::Table container-->
                         </div>
                     </div>
                 </div>
@@ -497,6 +339,9 @@
         @csrf
     </form>
 
+    <form action="{{route('lista_capacidad')}}" method="get"  id="lista-capacidad">
+        @csrf
+    </form>
     
 
     
@@ -532,6 +377,7 @@
     <script>
         // Función para consultar los paquetes
         listar_servicios();
+        lista_capacidad();
         function listar_servicios(){
             $datosForm=$('#listar-servicios');
             $.ajax({
@@ -585,6 +431,30 @@
             }).fail(function () {
             });
         }
+
+        function lista_capacidad(){
+            $datosForm=$('#lista-capacidad');
+
+            // var formData = new FormData();
+            // formData.append('id_Capacidad', id_Capacidad);
+            
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                // data: formData,
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                console.log(data)
+                $('#capacidad_tbl').empty();
+                $('#capacidad_tbl').append(data);
+                
+
+            }).fail(function () {
+            });
+        }
+
+
 
         // Función que registra y actualiza paquetes
         $('#guardar-servicio').submit(function(e){
@@ -663,17 +533,17 @@
         // Función para abrir el modal y mostrar los datos en el formulario
         function editar_servicio(id_PaqueteEstetica,Servicio,id_Talla,id_Peso,id_Pelaje,id_Capacidad,Precio){
             abrir_modal_servicio()
-
+            btn_actualizar()
 
             console.log(id_PaqueteEstetica,Servicio,id_Talla,id_Peso,id_Pelaje,id_Capacidad,Precio)
             document.getElementById("id_PaqueteEstetica").value = id_PaqueteEstetica;
             document.getElementById("Servicio").value = Servicio;
-            document.getElementById("id_Talla").value = id_Talla;
-            document.getElementById("id_Peso").value = id_Peso;
-            document.getElementById("id_Pelaje").value = id_Pelaje;
-            document.getElementById("id_Capacidad").selected = id_Capacidad;
+            // document.getElementById("id_Talla").value = id_Talla;
+            // document.getElementById("id_Peso").value = id_Peso;
+            // document.getElementById("id_Pelaje").value = id_Pelaje;
+            // document.getElementById("id_Capacidad").selected = id_Capacidad;
             document.getElementById("Precio").value = Precio;
-            btn_actualizar()
+            
 
 
             var formData = new FormData();
@@ -708,10 +578,6 @@
             }).fail(function () {
             });
 
-
-
-
-
         }
 
         // Función cambiar el texto del boton 
@@ -725,7 +591,8 @@
 
         // Función cambiar el texto del boton 
         function btn_actualizar() {
-            var button = document.getElementById('btn_paquete');
+            
+            var button = document.getElementById('btn_servicio');
             button.innerText = 'Actualizar servicio';
             document.getElementById("id_titulo_servicio").innerHTML = "Actualizar datos del servicio";
         }
@@ -733,7 +600,8 @@
         // Función cerrar el modal
         function cerrar_modal_servicio(){
             btn_guardar()
-            document.getElementById('registro-guarderia').reset();
+            document.getElementById('guardar-servicio').reset();
+
             $('#modal_servicio').modal('hide');
         }
 
