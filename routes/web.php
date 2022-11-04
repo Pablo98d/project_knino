@@ -5,7 +5,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\HotelController;
 use App\Http\Controllers\admin\GuarderiaController;
 use App\Http\Controllers\admin\EsteticaController;
-
+use App\Http\Controllers\admin\RegistroKninoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,9 +55,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function(){
 
     Route::post('listar-capacidad',[EsteticaController::class, 'listar_capacidad'])->name('listar_capacidad');
     
-
-
-
     // Rutas para tallas
 
         Route::get('listar-talla',[EsteticaController::class, 'listar_talla'])->name('listar_talla');
@@ -73,6 +70,8 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function(){
     Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');
     Route::get('peso',[AdminController::class, 'peso'])->name('peso');
 
+    // Rutas para kninos
+    Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
     
 });
 

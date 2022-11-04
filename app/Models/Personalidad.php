@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Personalidad extends Model
+{
+    use HasFactory;
+
+    protected $table = "personalidad";
+    protected $primaryKey = "id_Personalidad";
+    public $timestamps = false;
+
+
+    protected $fillable = [
+        'Personalidad',
+    ];
+
+
+}
