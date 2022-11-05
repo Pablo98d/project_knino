@@ -27,16 +27,14 @@ Route::get('/', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function(){
+Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
+    
     Route::get('/dashboard',[AdminController::class, 'index'])->name('index');
-
     
     Route::get('hotel',[HotelController::class, 'hotel'])->name('hotel');
     Route::get('listar-paquete',[HotelController::class, 'listar_paquete'])->name('listar_paquete');
     Route::post('guardar-paquete',[HotelController::class, 'guardar_paquete'])->name('guardar_paquete');
     Route::post('eliminar-paquete',[HotelController::class, 'eliminar_paquete'])->name('eliminar_paquete');
-
-    
 
     Route::get('guarderia',[GuarderiaController::class, 'guarderia'])->name('guarderia');
     Route::get('listar-guarderia',[GuarderiaController::class, 'listar_guarderia'])->name('listar_guarderia');
@@ -52,22 +50,17 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function(){
     Route::post('eliminar-servicio',[EsteticaController::class, 'eliminar_servicio'])->name('eliminar_servicio');
     Route::post('listar-capacidad',[EsteticaController::class, 'listar_capacidad'])->name('listar_capacidad');
     
-    
     // CRUD CAPACIDAD
     Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
     
-
-
-
     // Rutas para tallas
-
-        Route::get('listar-talla',[EsteticaController::class, 'listar_talla'])->name('listar_talla');
-        Route::post('guardar-talla',[EsteticaController::class, 'guardar_talla'])->name('guardar_talla');
-        Route::post('eliminar-talla',[EsteticaController::class, 'eliminar_talla'])->name('eliminar_talla');
+    Route::get('listar-talla',[EsteticaController::class, 'listar_talla'])->name('listar_talla');
+    Route::post('guardar-talla',[EsteticaController::class, 'guardar_talla'])->name('guardar_talla');
+    Route::post('eliminar-talla',[EsteticaController::class, 'eliminar_talla'])->name('eliminar_talla');
+    
     // Rutas para Peso
 
     // Rutas para Pelaje
-  
     Route::get('festejo',[AdminController::class, 'festejo'])->name('festejo');
     Route::get('hoteles',[AdminController::class, 'hoteles'])->name('hoteles');
     Route::get('talla',[AdminController::class, 'talla'])->name('talla');
@@ -79,13 +72,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function(){
     
 });
 
-
-
-
-
 // Route::get('/dashboard',[AdminController::class, 'index'])->name('index');
-
-
-
 
 require __DIR__.'/auth.php';
