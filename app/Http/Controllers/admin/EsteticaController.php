@@ -422,5 +422,151 @@ class EsteticaController extends Controller
             return 'Error';
         }
     }
+    //peso
+    public function guardar_peso(Request $request){
+
+
+        if ($request->id_Peso=='Insertar') {
+            $guardado=Peso::create($request->all());
+            if ($guardado) {
+                return 'Guardado';
+            } else {
+                return 'ErrorGuardado';
+            }
+            
+            
+        } else {
+
+            $peso = Peso::find($request->id_Peso);
+            $peso->RangoPeso = $request->RangoPeso;
+            
+            $updated = $peso->save();
+
+            if ($updated) {
+                return 'Actualizado';
+            } else {
+                return 'ErrorActualizar';
+            }
+            
+        }
+        return 'Warning';
+
+    }
+
+    public function listar_peso(){
+
+        $listar_peso=Peso::all();
+
+        $output = '';
+        if (count($listar_peso)==0) {
+            $output = '';
+        } else {
+            foreach ($listar_peso as $listar_pe) {
+                $output .= '
+                <tr>
+                    <td>
+                    '.$listar_pe->id_Peso.'
+                    </td>
+                    <td>
+                        <a href="#" class="text-gray-600 text-hover-primary mb-1">
+                        '.$listar_pe->RangoPeso.'
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <button onclick="editar_peso('.$listar_pe->id_Peso.',`'.$listar_pe->RangoPeso.'`)" class="btn btn-outline-warning btn-sm">
+                            Editar
+                        </button>
+                        <button onclick="eliminar_peso('.$listar_pe->id_Peso.',`'.$listar_pe->RangoPeso.'`)" class="btn btn-outline-danger btn-sm">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>';
+            }
+        }
+        return $output;
+    }
+
+    public function eliminar_peso(Request $request){
+        $eliminar=Peso::destroy($request->id_Peso);
+
+        if ($eliminar) {
+            return 'Eliminado';
+        } else {
+            return 'Error';
+        }
+    }
+
+    //pelaje
+    public function guardar_pelaje(Request $request){
+
+
+        if ($request->id_Pelaje=='Insertar') {
+            $guardado=Pelaje::create($request->all());
+            if ($guardado) {
+                return 'Guardado';
+            } else {
+                return 'ErrorGuardado';
+            }
+            
+            
+        } else {
+
+            $pelaje = Pelaje::find($request->id_Pelaje);
+            $pelaje->TipoPelaje = $request->TipoPelaje;
+            $updated = $pelaje->save();
+
+            if ($updated) {
+                return 'Actualizado';
+            } else {
+                return 'ErrorActualizar';
+            }
+            
+        }
+        return 'Warning';
+
+    }
+    public function listar_pelaje(){
+
+        $listar_pelaje=Pelaje::all();
+        
+
+        $output = '';
+        if (count($listar_pelaje)==0) {
+            $output = '';
+        } else {
+            foreach ($listar_pelaje as $listar_pela) {
+                $output .= '
+                <tr>
+                    <td>
+                    '.$listar_pela->id_Pelaje.'
+                    </td>
+                    <td>
+                        <a href="#" class="text-gray-600 text-hover-primary mb-1">
+                        '.$listar_pela->TipoPelaje.'
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <button onclick="editar_pelaje('.$listar_pela->id_Pelaje.',`'.$listar_pela->TipoPelaje.'`)" class="btn btn-outline-warning btn-sm">
+                            Editar
+                        </button>
+                        <button onclick="eliminar_pelaje('.$listar_pela->id_Pelaje.',`'.$listar_pela->TipoPelaje.'`)" class="btn btn-outline-danger btn-sm">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>';
+            }
+        }
+        return $output;
+    }
+
+    public function eliminar_pelaje(Request $request){
+        $eliminar=Pelaje::destroy($request->id_Pelaje);
+
+        if ($eliminar) {
+            return 'Eliminado';
+        } else {
+            return 'Error';
+        }
+    }
 
 }

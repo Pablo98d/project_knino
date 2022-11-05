@@ -6,6 +6,8 @@ use App\Http\Controllers\admin\HotelController;
 use App\Http\Controllers\admin\GuarderiaController;
 use App\Http\Controllers\admin\EsteticaController;
 use App\Http\Controllers\admin\RegistroKninoController;
+use App\Http\Controllers\admin\RegistroHumanoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,13 +56,30 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
     
     // Rutas para tallas
+
     Route::get('listar-talla',[EsteticaController::class, 'listar_talla'])->name('listar_talla');
     Route::post('guardar-talla',[EsteticaController::class, 'guardar_talla'])->name('guardar_talla');
     Route::post('eliminar-talla',[EsteticaController::class, 'eliminar_talla'])->name('eliminar_talla');
-    
-    // Rutas para Peso
 
+    // Rutas para Peso
+    Route::get('listar-peso',[EsteticaController::class, 'listar_peso'])->name('listar_peso');
+    Route::post('guardar-peso',[EsteticaController::class, 'guardar_peso'])->name('guardar_peso');
+    Route::post('eliminar-peso',[EsteticaController::class, 'eliminar_peso'])->name('eliminar_peso');
+    
     // Rutas para Pelaje
+    Route::get('listar-pelaje',[EsteticaController::class, 'listar_pelaje'])->name('listar_pelaje');
+    Route::post('guardar-pelaje',[EsteticaController::class, 'guardar_pelaje'])->name('guardar_pelaje');
+    Route::post('eliminar-pelaje',[EsteticaController::class, 'eliminar_pelaje'])->name('eliminar_pelaje');
+
+    //Rutas de registro Humanos
+    Route::get('registro-humanos',[RegistroHumanoController::class, 'registrohumanos'])->name('registrohumanos');
+
+    Route::get('listar-humano',[RegistroHumanoController::class, 'listar_humano'])->name('listar_humano');
+    Route::post('guardar-humano',[RegistroHumanoController::class, 'guardar_humano'])->name('guardar_humano');
+    Route::post('eliminar-humano',[RegistroHumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
+
+    
+  
     Route::get('festejo',[AdminController::class, 'festejo'])->name('festejo');
     Route::get('hoteles',[AdminController::class, 'hoteles'])->name('hoteles');
     Route::get('talla',[AdminController::class, 'talla'])->name('talla');
