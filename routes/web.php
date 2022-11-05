@@ -45,16 +45,20 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function(){
 
     Route::get('estetica',[AdminController::class, 'estetica'])->name('estetica');
     Route::get('estetica-menu',[EsteticaController::class, 'estetica_menu'])->name('estetica_menu');
+    
     Route::get('listar-servicios',[EsteticaController::class, 'listar_servicios'])->name('listar_servicios');
     Route::post('editar-servicio',[EsteticaController::class, 'editar_servicio'])->name('editar_servicio');
-    
-    
     Route::post('guardar-servicio',[EsteticaController::class, 'guardar_servicio'])->name('guardar_servicio');
     Route::post('eliminar-servicio',[EsteticaController::class, 'eliminar_servicio'])->name('eliminar_servicio');
-    
-
     Route::post('listar-capacidad',[EsteticaController::class, 'listar_capacidad'])->name('listar_capacidad');
     
+    
+    // CRUD CAPACIDAD
+    Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
+    
+
+
+
     // Rutas para tallas
 
         Route::get('listar-talla',[EsteticaController::class, 'listar_talla'])->name('listar_talla');

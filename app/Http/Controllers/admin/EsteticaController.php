@@ -22,18 +22,8 @@ class EsteticaController extends Controller
         if ($request->id_PaqueteEstetica=='Insertar') {
 
             $p_sestetica= PaquetesEstetica::create($request->all());
-            // $p_sestetica->id_Talla= $request->id_Talla;
-            // $p_sestetica->id_Peso= $request->id_Peso;
-            // $p_sestetica->id_Pelaje= $request->id_Pelaje;
-            // $p_sestetica->id_Capacidad= 1;
-            // $p_sestetica->Precio= $request->Precio;
+      
             $guardado = $p_sestetica->save();
-
-            // $servicios= new Servicios();
-            // $servicios->Servicio=$request->Servicio;
-            // $servicios->id_PaqueteEstetica=$p_sestetica->id_PaqueteEstetica;
-            // $guardado = $servicios->save();
-
 
             if ($guardado) {
                 return 'Guardado';
@@ -44,13 +34,14 @@ class EsteticaController extends Controller
             
         } else {
 
-            $paqueteGuarderia = PaquetesEstetica::find($request->id_PaqueteGuarderia);
-            $paqueteGuarderia->NombrePaquete = $request->NombrePaquete;
-            $paqueteGuarderia->CantidadDias = $request->CantidadDias;
-            $paqueteGuarderia->MesesVigencia = $request->MesesVigencia;
-            $paqueteGuarderia->id_Capacidad = $request->id_Capacidad;
-            $paqueteGuarderia->Precio = $request->Precio;
-            $updated = $paqueteGuarderia->save();
+            $p_sestetica = PaquetesEstetica::find($request->id_PaqueteEstetica);
+            $p_sestetica->Servicio = $request->Servicio;
+            $p_sestetica->id_Talla = $request->id_Talla;
+            $p_sestetica->id_Peso = $request->id_Peso;
+            $p_sestetica->id_Pelaje = $request->id_Pelaje;
+            $p_sestetica->id_Capacidad = $request->id_Capacidad;
+            $p_sestetica->Precio = $request->Precio;
+            $updated = $p_sestetica->save();
 
             if ($updated) {
                 return 'Actualizado';
@@ -113,7 +104,7 @@ class EsteticaController extends Controller
                         $ '.$precio_servicio.'
                     </td>
                     <td class="text-center">
-                        <button onclick="editar_servicio('.$listar_servicio->id_PaqueteEstetica.',`'.$listar_servicio->Servicio.'`,'.$listar_servicio->id_Talla.','.$listar_servicio->id_Peso.','.$listar_servicio->id_Pelaje.',1,'.$listar_servicio->Precio.')" class="btn btn-outline-warning btn-sm">
+                        <button onclick="editar_servicio('.$listar_servicio->id_PaqueteEstetica.',`'.$listar_servicio->Servicio.'`,'.$listar_servicio->id_Talla.','.$listar_servicio->id_Peso.','.$listar_servicio->id_Pelaje.','.$listar_servicio->id_Capacidad.','.$listar_servicio->Precio.')" class="btn btn-outline-warning btn-sm">
                             Editar
                         </button>
                         <button onclick="eliminar_servicio('.$listar_servicio->id_PaqueteEstetica.')" class="btn btn-outline-danger btn-sm">
@@ -176,6 +167,7 @@ class EsteticaController extends Controller
 
     public function editar_servicio(Request $request){
 
+        // return $request->all();
         $id_talla_ed=$request->id_Talla;
         $id_peso_ed=$request->id_Peso;
         $id_pelaje_ed=$request->id_Pelaje;
@@ -187,7 +179,7 @@ class EsteticaController extends Controller
         $pelajes=Pelaje::all();
         $capacidades=Capacidad::all();
 
-        // return $request->all();
+        // return $capacidades;
 
         $html_talla='';
         if (count($tallas)==0) {
@@ -309,6 +301,56 @@ class EsteticaController extends Controller
 
         return $output;
     }
+
+    public function lista_capacidad(){
+
+        $capacidades=Capacidad::all();
+
+        $output = '';
+        if (count($capacidades)==0) {
+            $output = '';
+        } else {
+            foreach ($capacidades as $capacidad) {
+                $output .= '
+                <tr>
+                    <td class="text-gray-800 text-hover-primary mb-1 fs-6">
+                        '.$capacidad->Turno.'
+                    </td>
+                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        '.$capacidad->Lunes.'
+                    </td>
+                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        '.$capacidad->Martes.'
+                    </td>
+                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        '.$capacidad->Miercoles.'
+                    </td>
+                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        '.$capacidad->Jueves.'
+                    </td>
+                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        '.$capacidad->Viernes.'
+                    </td>
+                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        '.$capacidad->Sabado.'
+                    </td>
+                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        '.$capacidad->Domingo.'
+                    </td>
+                    <td class="text-center">
+                        <button onclick="editar_capacidad('.$capacidad->id_Capacidad.',`'.$capacidad->Turno.'`,'.$capacidad->Lunes.','.$capacidad->Martes.','.$capacidad->Miercoles.','.$capacidad->Jueves.','.$capacidad->Viernes.','.$capacidad->Sabado.','.$capacidad->Domingo.')" class="btn btn-outline-warning btn-sm">
+                            Editar
+                        </button>
+                        <button onclick="eliminar_capacidad('.$capacidad->id_Capacidad.')" class="btn btn-outline-danger btn-sm">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>';
+            }
+        }
+        return $output;
+    }
+
 
     public function guardar_talla(Request $request){
 
