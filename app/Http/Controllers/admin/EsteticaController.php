@@ -31,7 +31,6 @@ class EsteticaController extends Controller
                 return 'ErrorGuardado';
             }
             
-            
         } else {
 
             $p_sestetica = PaquetesEstetica::find($request->id_PaqueteEstetica);

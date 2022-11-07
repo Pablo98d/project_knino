@@ -503,28 +503,42 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_4">
-                            <div class="table-responsive">
-                                <div class="card">
-                                    <table class="table align-middle gs-0 gy-4 my-0">
-                                        <thead>
-                                            <tr class="fs-7 fw-bold text-gray-500">
-                                                <th class=" d-block pt-3">Turno</th>
-                                                <th class=" pt-3">Lunes</th>
-                                                <th class=" pt-3">Martes</th>
-                                                <th class=" pt-3">Miercoles</th>
-                                                <th class=" pt-3">Jueves</th>
-                                                <th class=" pt-3">Viernes</th>
-                                                <th class=" pt-3">Sábado</th>
-                                                <th class=" pt-3">Domingo</th>
-                                                <th class="pe-0 text-center pt-3">Acción</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="capacidad_tbl">
-                                            
-                                        </tbody>
-                                    </table>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                        <div class="card-header">
+                                            <div class="card-title mt-2">
+                                                {{-- <h2>Tallas</h2>  --}}
+                                                {{-- <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">+</button> --}}
+                                                <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nueva capacidad" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_capacidad">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="table-responsive">
+                                                <table class="table align-middle gs-0 gy-4 my-0">
+                                                    <thead>
+                                                        <tr class="fs-7 fw-bold text-gray-500">
+                                                            <th class=" d-block pt-3">Turno</th>
+                                                            <th class=" pt-3">Lun</th>
+                                                            <th class=" pt-3">Mar</th>
+                                                            <th class=" pt-3">Mie</th>
+                                                            <th class=" pt-3">Jue</th>
+                                                            <th class=" pt-3">Vie</th>
+                                                            <th class=" pt-3">Sáb</th>
+                                                            <th class=" pt-3">Dom</th>
+                                                            <th class="pe-0 text-center pt-3">Acción</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="capacidad_tbl">
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
                         <!--end::Tap pane-->
                     </div>
@@ -665,6 +679,98 @@
             </div>
             
         </div>
+
+        {{-- MODAL CAPACIDAD --}}
+        <div class="modal fade" id="modal_capacidad" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered mw-650px">
+                <div class="modal-content">
+                    <form class="form" method="POST" action="{{url('admin/guardar-capacidad')}}"  id="guardar-capacidad" onsubmit='return validar()'>
+                        @csrf
+                    
+                        <input type="hidden" name="id_PaqueteEstetica" value="Insertar" id="id_PaqueteEstetica">
+                        <div class="modal-header" id="modal_capacidad_header">
+                            <h2 class="fw-bold" id="id_titulo_capacidad">Crear capacidad</h2>
+                            
+                            <div id="modal_capacidad_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                <button onclick="cerrar_modal_capacidad()" style="background: transparent;border:none" type="button">
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                        </svg>
+
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="modal-body  px-lg-17 mb-4" >
+                            <div class="scroll-y me-n7 pe-7" id="modal_capacidad_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_capacidad_header" data-kt-scroll-wrappers="#modal_capacidad_scroll" data-kt-scroll-offset="300px">
+                                <div class="fv-row mb-1">
+                                    <label class="required fs-6 fw-semibold mb-2">capacidad</label>
+                                    <input type="text" class="form-control form-control-solid" placeholder="capacidad" name="capacidad" id="capacidad" value="" />
+                                </div>
+                                <div class="fv-row mb-7">
+                                    <div class="row fv-row">
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Talla</label>
+                                            <select name="id_Talla" id="id_Talla" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Peso</label>
+                                            <select name="id_Peso" id="id_Peso" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Pelaje</label>
+                                            <select name="id_Pelaje" id="id_Pelaje" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
+                                            <input class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
+                                            {{-- <input type="hidden" class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" /> --}}
+                                        </div>
+                                        <div class="col-md-12" >
+                                            <div class="row" >
+                                                <div class="col-md-12 mb-2 mt-3" style="border-bottom: 1px solid rgb(171, 171, 171)">
+                                                    <center>
+                                                        <label class="required fs-6 fw-semibold form-label mb-2">Turno</label>
+                                                    </center>
+                                                </div>
+                                                <div class="col-4">
+                                                    <select name="id_Capacidad" id="id_Capacidad"  class="form-select form-select-solid" data-control="select2" onchange="listar_capacidad(this.value)" data-hide-search="true" >
+                                                        
+                                                    </select>
+                                                </div>
+                                                <div class="col-8" id="id_capacidad_tbl">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer flex-center">
+                            <button type="reset" onclick="cerrar_modal_capacidad()" class="btn btn-light me-3">Cancelar</button>
+                            <button type="submit" id="btn_capacidad"  class="btn btn-primary">
+                                <span class="indicator-label">Registrar capacidad</span>
+                                <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
         <!--end::Card-->
     </div>
     <form action="{{route('listar_servicios')}}" method="get"  id="listar-servicios">
@@ -752,33 +858,16 @@
             });
         }
 
-        function lista_capacidad(){
-            $datosForm=$('#lista-capacidad');
-
-            // var formData = new FormData();
-            // formData.append('id_Capacidad', id_Capacidad);
-            
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                // data: formData,
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                console.log(data)
-                $('#capacidad_tbl').empty();
-                $('#capacidad_tbl').append(data);
-                
-
-            }).fail(function () {
-            });
-        }
+        
 
 
 
-        // Función que registra y actualiza paquetes
-        $('#registro-servicios').submit(function(e){
+        // // Función que registra y actualiza paquetes
+        // $('#registro-servicios').submit(function(e){
+        // Función que registra y actualiza servicios
+        $('#guardar-servicio').submit(function(e){
             e.preventDefault();
+            
         
             $datosForm=$('#registro-servicios');
             $.ajax({
@@ -1010,6 +1099,66 @@
                 }
             })
         }
+
+
+
+
+        // CRUD CAPACIDAD
+        function lista_capacidad(){
+            $datosForm=$('#lista-capacidad');
+            
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+
+                console.log(data)
+                
+                $('#capacidad_tbl').empty();
+                $('#capacidad_tbl').append(data);
+
+
+            }).fail(function () {
+            });
+        }
+
+        // Función cerrar el modal capacidad
+        function cerrar_modal_capacidad(){
+            btn_guardar()
+            document.getElementById('guardar-capacidad').reset();
+
+            $('#modal_capacidad').modal('hide');
+        }
+
+        // Función abrir el modal capacidad
+        function abrir_modal_capacidad(){
+            $('#modal_capacidad').modal('show');
+        }
+
+        // Función cambiar el texto del boton capacidad
+        function btn_guardar_capacidad() {
+            var button = document.getElementById('btn_capacidad');
+            button.innerText = 'Registrar capacidad';
+
+            document.getElementById("id_titulo_capacidad").innerHTML = "Agregar nueva capacidad";
+            
+        }
+
+        // Función cambiar el texto del boton  capacidad
+        function btn_actualizar_capacidad() {
+            
+            var button = document.getElementById('btn_capacidad');
+            button.innerText = 'Actualizar capacidad';
+            document.getElementById("capacidad").innerHTML = "Actualizar datos del capacidad";
+        }
+
+
+
+
+
+
     </script>
 
     {{-- Aqui el script para tallas --}}
