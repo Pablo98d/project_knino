@@ -9,7 +9,7 @@ use App\Models\Servicios;
 class RegistroKninoController extends Controller
 {
     public function kninos(){
-        return view('admin.knino.knino');
+        return view('admin.knino.knino_prueba');
     }
 
     // public function guardar_servicio(Request $request){
