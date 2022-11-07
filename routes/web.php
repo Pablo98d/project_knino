@@ -51,6 +51,8 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('guardar-servicio',[EsteticaController::class, 'guardar_servicio'])->name('guardar_servicio');
     Route::post('eliminar-servicio',[EsteticaController::class, 'eliminar_servicio'])->name('eliminar_servicio');
     Route::post('listar-capacidad',[EsteticaController::class, 'listar_capacidad'])->name('listar_capacidad');
+
+    Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
     
     // CRUD CAPACIDAD
     Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
@@ -87,7 +89,9 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::get('peso',[AdminController::class, 'peso'])->name('peso');
 
     // Rutas para kninos
-    Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
+    Route::get('listar-raza',[RegistroKninoController::class, 'listar_raza'])->name('listar_raza');
+    Route::post('guardar-raza',[RegistroKninoController::class, 'guardar_raza'])->name('guardar_raza');
+    Route::post('eliminar-raza',[RegistroKninoController::class, 'eliminar_raza'])->name('eliminar_raza');
     
 });
 

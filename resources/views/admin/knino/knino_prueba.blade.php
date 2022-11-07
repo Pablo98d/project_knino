@@ -139,9 +139,9 @@
         <div class="card">
             <div class="card card-flush mb-xxl-10">
                 <div class="card-body">
-                    {{-- Opciones de la vista: Servicios y Peso --}}
+                    {{-- Opciones de la vista --}}
                     <ul class="nav nav-pills nav-pills-custom mb-3">
-                        {{-- Opcion de Servicios --}}
+                        {{-- Opcion de Registro --}}
                         <li class="nav-item mb-3 me-3 me-lg-6">
                             {{-- Invocacion de la vista en el href --}}
                             <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_1">
@@ -154,24 +154,62 @@
                                 <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
                             </a>
                         </li>
-                        {{-- Opcion de editar tablas --}}
+                        {{-- Opcion de Tallas --}}
+                        <li class="nav-item mb-3 me-3 me-lg-6">
+                            {{-- Invocacion de la vista en el href --}}
+                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_2">
+                                {{-- Logo del boton --}}
+                                <div class="nav-icon">
+                                    <img alt="" src="assets/media/svg/brand-logos/adidas.svg" class="" />
+                                </div>
+                                {{-- Letras del boton --}}
+                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Tallas</span>
+                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                            </a>
+                        </li>
+                        {{-- Opcion de Peso --}}
+                        <li class="nav-item mb-3 me-3 me-lg-6">
+                            {{-- Invocacion de la vista en el href --}}
+                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#">
+                                {{-- Logo del boton --}}
+                                <div class="nav-icon">
+                                    <img alt="" src="assets/media/svg/brand-logos/amazon.svg" class="" />
+                                </div>
+                                {{-- Letras del boton --}}
+                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Peso</span>
+                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                            </a>
+                        </li>
+                        {{-- Opcion de Pelaje --}}
+                        <li class="nav-item mb-3 me-3 me-lg-6">
+                            {{-- Invocacion de la vista en el href --}}
+                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#">
+                                {{-- Logo del boton --}}
+                                <div class="nav-icon">
+                                    <img alt="" src="assets/media/svg/brand-logos/atica.svg" class="" />
+                                </div>
+                                {{-- Letras del boton --}}
+                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Pelaje</span>
+                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                            </a>
+                        </li>
+                        {{-- Opcion de Raza --}}
                         <li class="nav-item mb-3 me-3 me-lg-6">
                             {{-- Invocacion de la vista en el href --}}
                             <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_3">
                                 {{-- Logo del boton --}}
                                 <div class="nav-icon">
-                                    <img alt="" src="assets/media/svg/brand-logos/bp-2.svg" class="" />
+                                    <img alt="" src="assets/media/svg/brand-logos/aon.svg" class="" />
                                 </div>
                                 {{-- Letras del boton --}}
-                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Datos</span>
+                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Raza</span>
                                 <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
                             </a>
                         </li>
                     </ul>
-                    <!--end::Nav-->
-                    <!--begin::Tab Content-->
+                    {{-- Cambio de vistas segun la opcion que el usuario haya seleccionado --}}
                     <div class="tab-content">
-                        <!--begin::Tap pane-->
+                        {{-- Vista de Registro --}}
                         <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1">
                             <!--begin::Table container-->
                             <div class="table-responsive">
@@ -229,117 +267,50 @@
                             </div>
                             <!--end::Table container-->
                         </div>
-                        <!--end::Tap pane-->
-                        <!--begin::Tap pane-->
+                        {{--Vista de Talla --}}
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_2">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                            <div class="card-body">
-                                                <form class="form" method="POST" action="{{url('admin/guardar-guarderia')}}"  id="registro-guarderia" onsubmit='return validar()'>
-                                                    @csrf
-                                                
-                                                    <input type="hidden" name="id_PaqueteGuarderia" value="Insertar" id="id_PaqueteGuarderia">
-                                                    <!--begin::Modal header-->
-                                                    {{-- <div class="modal-header" id="modal_servicio_header">
-                                                        <!--begin::Modal title-->
-                                                        <h2 class="fw-bold" id="id_titulo_paquete">Agregar nuevo paquete</h2>
-                                                        <!--end::Modal title-->
-                                                        <!--begin::Close-->
-                                                        
-                                                        <!--end::Close-->
-                                                    </div> --}}
-                                                    <!--end::Modal header-->
-                                                    <!--begin::Modal body-->
-                                                    <div class="modal-body ">
-                                                        <!--begin::Scroll-->
-                                                        <div class="scroll-y me-n7 pe-7" id="modal_servicio_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_servicio_header" data-kt-scroll-wrappers="#modal_servicio_scroll" data-kt-scroll-offset="300px">
-                                                            <!--begin::Input group-->
-                                                            <div class="fv-row mb-7">
-                                                                <!--begin::Label-->
-                                                                <label class="required fs-6 fw-semibold mb-2">Nombre</label>
-                                                                <!--end::Label-->
-                                                                <!--begin::Input-->
-                                                                <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
-                                                                <!--end::Input-->
-                                                            </div>
-                                                          
-                                                            
-                                                        </div>
-                                                        <!--end::Scroll-->
-                                                    </div>
-                                                    <!--end::Modal body-->
-                                                    <!--begin::Modal footer-->
-                                                    <div class="modal-footer flex-center">
-                                                        <!--begin::Button-->
-                                                        {{-- <button type="reset" onclick="cerrar_modal_add_user()" class="btn btn-light me-3">Cancelar</button> --}}
-                                                        <!--end::Button-->
-                                                        <!--begin::Button-->
-                                                        <button type="submit" id="btn_paquete"  class="btn btn-primary">
-                                                            <span class="indicator-label">Registrar paquete</span>
-                                                            <span class="indicator-progress">Please wait...
-                                                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                        </span>
-                                                        </button>
-                                                        <!--end::Button-->
-                                                    </div>
-                                                    <!--end::Modal footer-->
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--begin::Table container-->
-                            <!--end::Table container-->
-                        </div>
-                        <!--end::Tap pane-->
-                        <!--begin::Tap pane-->
-                        <div class="tab-pane fade" id="kt_stats_widget_1_tab_3">
                             <div class="row">
+                                {{-- Card Talla --}}
                                 <div class="col-md-4"> 
                                     <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                    <div class="card-header">
-                                        <div class="card-title mt-2">
-                                            <h2>Tallas</h2> 
-                                            <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="talla()">+</button>
+                                        {{-- Titulo de la Card --}}
+                                        <div class="card-header">
+                                            <div class="card-title mt-2">
+                                                <h2>Talla</h2> 
+                                                <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="talla()">+</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body pt-0">
-                                        <div class="table-responsive">
-                                            <!--begin::Table-->
-                                            <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                <!--begin::Table body-->
-                                                <tbody class="fw-semibold text-gray-600" id="listar_tallas">
-                                                    <tr>
-                                                        <td class="text-muted">
-                                                            001
-                                                        </td>
-                                                        <td class="fw-bold text-start">Mini</td>
-                                                    </tr>
-                                                </tbody>
-                                                <!--end::Table body-->
-                                            </table>
-                                            <!--end::Table-->
+                                        {{-- Datos de la card en forma de tabla --}}
+                                        <div class="card-body pt-0">
+                                            <div class="table-responsive">
+                                                <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
+                                                    <tbody class="fw-semibold text-gray-600" id="listar_tallas">
+                                                        <tr>
+                                                            <td class="text-muted">
+                                                                001
+                                                            </td>
+                                                            <td class="fw-bold text-start">Mini</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                {{-- Card Peso --}}
                                 <div class="col-md-4">
                                     <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                        {{-- Titulo de la Card --}}
                                         <div class="card-header">
                                             <div class="card-title mt-2">
                                                 <h2>Peso</h2> 
                                                 <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="peso()">+</button>
                                             </div>
                                         </div>
+                                        {{-- Datos de la card en forma de tabla --}}
                                         <div class="card-body pt-0">
                                             <div class="table-responsive">
-                                                <!--begin::Table-->
                                                 <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <!--begin::Table body-->
                                                     <tbody class="fw-semibold text-gray-600" id="listar_peso">
                                                         <tr>
                                                             <td class="text-muted">
@@ -348,26 +319,25 @@
                                                             <td class="fw-bold text-start">Mini</td>
                                                         </tr>
                                                     </tbody>
-                                                    <!--end::Table body-->
                                                 </table>
-                                                <!--end::Table-->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                {{-- Card Pelaje --}}
                                 <div class="col-md-4">
                                     <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                        {{-- Titulo de la Card --}}
                                         <div class="card-header">
                                             <div class="card-title mt-2">
-                                                <h2>pelaje</h2> 
+                                                <h2>Pelaje</h2> 
                                                 <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="pelaje()">+</button>
                                             </div>
                                         </div>
+                                        {{-- Datos de la card en forma de tabla --}}
                                         <div class="card-body pt-0">
                                             <div class="table-responsive">
-                                                <!--begin::Table-->
                                                 <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <!--begin::Table body-->
                                                     <tbody class="fw-semibold text-gray-600" id="listar_pelaje">
                                                         <tr>
                                                             <td class="text-muted">
@@ -376,15 +346,44 @@
                                                             <td class="fw-bold text-start">Mini</td>
                                                         </tr>
                                                     </tbody>
-                                                    <!--end::Table body-->
                                                 </table>
-                                                <!--end::Table-->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {{-- Vista de Raza--}}
+                        <div class="tab-pane fade" id="kt_stats_widget_1_tab_3">
+                            {{-- Card Raza --}}
+                            <div class="col-md-4"> 
+                                <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                    {{-- Titulo de la Card --}}
+                                    <div class="card-header">
+                                        <div class="card-title mt-2">
+                                            <h2>Raza</h2> 
+                                            <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="raza()">+</button>
+                                        </div>
+                                    </div>
+                                    {{-- Datos de la card en forma de tabla --}}
+                                    <div class="card-body pt-0">
+                                        <div class="table-responsive">
+                                            <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
+                                                <tbody class="fw-semibold text-gray-600" id="listar_razas">
+                                                    <tr>
+                                                        <td class="text-muted">
+                                                            001
+                                                        </td>
+                                                        <td class="fw-bold text-start">Mini</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Vista de --}}
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_4">
                             <div class="table-responsive">
                                 <div class="card">
@@ -569,10 +568,6 @@
         @csrf
     </form>
     
-
-    
-
-
     {{-- Formularios para talla --}}
         <form action="{{route('guardar_talla')}}" method="post"  id="guardar-talla">
             @csrf
@@ -595,7 +590,6 @@
             @csrf
         </form>
     
-
     {{-- Formularios para pelaje --}}
         <form action="{{route('guardar_pelaje')}}" method="post"  id="guardar-pelaje">
             @csrf
@@ -607,14 +601,21 @@
         <form action="{{route('eliminar_pelaje')}}" method="post"  id="eliminar-pelaje">
             @csrf
         </form>
-    
 
+    {{-- Formularios para raza --}}
+    <form action="{{route('guardar_raza')}}" method="post"  id="guardar-raza">
+        @csrf
+    </form>
+    <form action="{{route('listar_raza')}}" method="get"  id="listar-razas">
+        @csrf
+    </form>
+    <form action="{{route('eliminar_raza')}}" method="post"  id="eliminar-raza">
+        @csrf
+    </form>
 
-
-
-    <!--end::Container-->
 </div>
-<script src="assets/js/scripts.bundle.js"></script>
+
+    <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
@@ -895,9 +896,11 @@
         }
     </script>
 
-    {{-- Aqui el script para tallas --}}
+    {{-- Scrip de Talla --}}
     <script>
-        function talla(){
+        // Agregar talla
+        function talla()
+        {
             Swal.fire({
                 title: "CREAR TALLA",
                 text: "Nombre de talla:",
@@ -916,11 +919,9 @@
             }).then((result) => {
                 if (result.value) {
                     console.log("Result: " + result.value);
-
                     var formData = new FormData();
                     formData.append('id_Talla', 'Insertar');
                     formData.append('NombreTalla', result.value);
-
                     $datosForm=$('#guardar-talla');
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -939,7 +940,6 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_talla();
-
                         }else if(data=='Actualizado'){
                             Swal.fire({
                                 text:"¡Talla actualizada correctamente!",
@@ -949,14 +949,13 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                         }
-                    }).fail(function () {
-                    });
+                    }).fail(function () {});
                 }
             });
         }
-
-        function editar_talla(id_talla,nombre_talla){
-
+        // Editar talla
+        function editar_talla(id_talla, nombre_talla)
+        {
             Swal.fire({
                 title: "ACTUALIZAR TALLA",
                 text: "Escribe nuevo nombre de la talla: "+nombre_talla,
@@ -975,11 +974,9 @@
             }).then((result) => {
                 if (result.value) {
                     console.log("Result: " + result.value);
-
                     var formData = new FormData();
                     formData.append('id_Talla', id_talla);
                     formData.append('NombreTalla', result.value);
-
                     $datosForm=$('#guardar-talla');
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -999,15 +996,14 @@
                             })
                             listar_talla();
                         }
-                    }).fail(function () {
-                    });
+                    }).fail(function () {});
                 }
             });
-
         }
-
+        // Mostrar tallas
         listar_talla();
-        function listar_talla(){
+        function listar_talla()
+        {
             $datosForm=$('#listar-tallas');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -1017,11 +1013,11 @@
             }).done(function (data) {
                 $('#listar_tallas').empty();
                 $('#listar_tallas').append(data);
-            }).fail(function () {
-            });
+            }).fail(function () {});
         }
-
-        function eliminar_talla(id_talla,nombre_talla){
+        // Eliminar talla
+        function eliminar_talla(id_talla, nombre_talla)
+        {
             Swal.fire({
                 text:"¿Estás seguro(a) de eliminar la talla "+nombre_talla+"?",
                 icon:"warning",
@@ -1091,11 +1087,13 @@
             })
         }
     </script>
-    {{-- termina tallas --}}
+    {{-- Termina Talla --}}
 
-    {{-- Aqui el script para pesos --}}
+    {{-- Scrip de Peso --}}
     <script>
-        function peso(){
+        // Agregar peso
+        function peso()
+        {
             Swal.fire({
                 title: "CREAR PESO",
                 text: "Nombre del Peso:",
@@ -1114,11 +1112,9 @@
             }).then((result) => {
                 if (result.value) {
                     console.log("Result: " + result.value);
-
                     var formData = new FormData();
                     formData.append('id_Peso', 'Insertar');
                     formData.append('RangoPeso', result.value);
-
                     $datosForm=$('#guardar-peso');
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -1137,7 +1133,6 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_peso();
-
                         }else if(data=='Actualizado'){
                             Swal.fire({
                                 text:"Peso actualizada correctamente!",
@@ -1147,14 +1142,13 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                         }
-                    }).fail(function () {
-                    });
+                    }).fail(function () {});
                 }
             });
         }
-
-        function editar_peso(id_peso,nombre_peso){
-
+        // Editar peso
+        function editar_peso(id_peso,nombre_peso)
+        {
             Swal.fire({
                 title: "ACTUALIZAR PESO",
                 text: "Escribe nuevo nombre del peso: "+nombre_peso,
@@ -1173,11 +1167,9 @@
             }).then((result) => {
                 if (result.value) {
                     console.log("Result: " + result.value);
-
                     var formData = new FormData();
                     formData.append('id_Peso', id_peso);
                     formData.append('RangoPeso', result.value);
-
                     $datosForm=$('#guardar-peso');
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -1197,15 +1189,14 @@
                             })
                             listar_peso();
                         }
-                    }).fail(function () {
-                    });
+                    }).fail(function () {});
                 }
             });
-
         }
-
+        // Mostrar pesos
         listar_peso();
-        function listar_peso(){
+        function listar_peso()
+        {
             $datosForm=$('#listar-peso');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -1215,11 +1206,11 @@
             }).done(function (data) {
                 $('#listar_peso').empty();
                 $('#listar_peso').append(data);
-            }).fail(function () {
-            });
+            }).fail(function () {});
         }
-
-        function eliminar_peso(id_peso,nombre_peso){
+        // Eliminar peso
+        function eliminar_peso(id_peso,nombre_peso)
+        {
             Swal.fire({
                 text:"¿Estás seguro(a) de eliminar peso "+nombre_peso+"?",
                 icon:"warning",
@@ -1289,12 +1280,13 @@
             })
         }
     </script>
-    {{---termina pesos--}}
+    {{-- Termina Pesos --}}
 
-
-    {{-- Aqui el script para pelaje --}}
+    {{-- Script de Pelaje --}}
     <script>
-        function pelaje(){
+        // Agregar pelaje
+        function pelaje()
+        {
             Swal.fire({
                 title: "CREAR PELAJE",
                 text: "Nombre del pelaje:",
@@ -1313,11 +1305,9 @@
             }).then((result) => {
                 if (result.value) {
                     console.log("Result: " + result.value);
-
                     var formData = new FormData();
                     formData.append('id_Pelaje', 'Insertar');
                     formData.append('TipoPelaje', result.value);
-
                     $datosForm=$('#guardar-pelaje');
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -1336,7 +1326,6 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_pelaje();
-
                         }else if(data=='Actualizado'){
                             Swal.fire({
                                 text:"¡Pelaje actualizada correctamente!",
@@ -1346,14 +1335,13 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                         }
-                    }).fail(function () {
-                    });
+                    }).fail(function () {});
                 }
             });
         }
-
-        function editar_pelaje(id_pelaje,tipo_pelaje){
-
+        // Editar pelaje
+        function editar_pelaje(id_pelaje, tipo_pelaje)
+        {
             Swal.fire({
                 title: "ACTUALIZAR TPELAJE",
                 text: "Escribe nuevo nombre del pelaje: "+tipo_pelaje,
@@ -1372,11 +1360,9 @@
             }).then((result) => {
                 if (result.value) {
                     console.log("Result: " + result.value);
-
                     var formData = new FormData();
                     formData.append('id_Pelaje', id_pelaje);
                     formData.append('TipoPelaje', result.value);
-
                     $datosForm=$('#guardar-pelaje');
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -1396,15 +1382,14 @@
                             })
                             listar_pelaje();
                         }
-                    }).fail(function () {
-                    });
+                    }).fail(function () {});
                 }
             });
-
         }
-
+        // Mostrar pelajes
         listar_pelaje();
-        function listar_pelaje(){
+        function listar_pelaje()
+        {
             $datosForm=$('#listar-pelaje');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -1418,7 +1403,7 @@
             }).fail(function () {
             });
         }
-
+        // Eliminar pelaje
         function eliminar_pelaje(id_pelaje,tipo_pelaje){
             Swal.fire({
                 text:"¿Estás seguro(a) de eliminar el pelaje "+tipo_pelaje+"?",
@@ -1489,6 +1474,203 @@
             })
         }
     </script>
+    {{-- Termina Pelaje --}}
+
+    {{-- Script de Raza --}}
+    <script>
+        // Agregar raza
+        function raza()
+        {
+            Swal.fire({
+                title: "CREAR RAZA",
+                text: "Nombre de la raza:",
+                input: 'text',
+                showCancelButton: true,
+                cancelButtonText:"Cancelar",
+                confirmButtonText:"Guardar",
+                inputValidator: nombre => {
+                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
+                    if (!nombre) {
+                        return "Por favor escribe el nombre de la raza";
+                    } else {
+                        return undefined;
+                    }
+                }
+            }).then((result) => {
+                console.log('Entramos al then');
+                if (result.value) {
+                    console.log("Result: " + result.value);
+                    var formData = new FormData();
+                    formData.append('id_Raza', 'Insertar');
+                    formData.append('TipoRaza', result.value);
+                    console.log(formData.id);
+                    $datosForm=$('#guardar-raza');
+                    $.ajax({
+                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                        method: $datosForm.attr('method'),
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    }).done(function (data) {
+                        console.log(data)
+                        if(data=='Guardado'){
+                            Swal.fire({
+                                text:"¡Raza registrada correctamente!",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                            listar_raza();
+                        }else if(data=='Actualizado'){
+                            Swal.fire({
+                                text:"¡Talla actualizada correctamente!",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                        }
+                    }).fail(function () {});
+                }
+            });
+        }
+        // Ediatar raza
+        function editar_raza(id_Raza, TipoRaza)
+        {
+            Swal.fire({
+                title: "ACTUALIZAR RAZA",
+                text: "Escribe nuevo nombre de la raza: " + TipoRaza,
+                input: 'text',
+                showCancelButton: true,
+                cancelButtonText:"Cancelar",
+                confirmButtonText:"Guardar",
+                inputValidator: nombre => {
+                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
+                    if (!nombre) {
+                        return "Por favor escribe el nuevo nombre de la raza";
+                    } else {
+                        return undefined;
+                    }
+                }
+            }).then((result) => {
+                if (result.value) {
+                    console.log("Result: " + result.value);
+                    var formData = new FormData();
+                    formData.append('id_Raza', id_Raza);
+                    formData.append('TipoRaza', result.value);
+                    $datosForm=$('#guardar-raza');
+                    $.ajax({
+                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                        method: $datosForm.attr('method'),
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    }).done(function (data) {
+                        console.log(data)
+                        if(data=='Actualizado'){
+                            Swal.fire({
+                                text:"¡Raza actualizada correctamente!",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                            listar_raza();
+                        }
+                    }).fail(function () {});
+                }
+            });
+        }
+        // Mostrar razas
+        listar_raza();
+        function listar_raza()
+        {
+            $datosForm=$('#listar-razas');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                $('#listar_razas').empty();
+                $('#listar_razas').append(data);
+            }).fail(function () {
+            });
+        }
+        // Eliminar raza
+        function eliminar_raza(id_Raza, TipoRaza)
+        {
+            Swal.fire({
+                text:"¿Estás seguro(a) de eliminar la raza "+ TipoRaza + "?",
+                icon:"warning",
+                showCancelButton:!0,
+                buttonsStyling:!1,
+                confirmButtonText:"Si, eliminar!",
+                cancelButtonText:"No, cancelar",
+                customClass:{
+                    confirmButton:"btn fw-bold btn-danger",
+                    cancelButton:"btn fw-bold btn-active-light-primary"
+                }
+            }).then(resultado=>{
+                if (resultado.value) {
+                    $datosForm=$('#eliminar-raza');
+                    var formData = new FormData();
+                    formData.append('id_Raza', id_Raza);
+                    $.ajax({
+                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                        method: $datosForm.attr('method'),
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    }).done(function (data) {
+                        console.log(data)
+                        if(data == 'Eliminado'){
+                            Swal.fire({
+                                text:"Has borrado la raza " + TipoRaza + "!.",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                            listar_raza();
+                        } else {
+                            Swal.fire({
+                                text:"¡Raza " + TipoRaza + " no se pudo eliminar.",
+                                icon:"error",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{
+                                    confirmButton:"btn fw-bold btn-primary"
+                                }
+                            })
+                        }
+                    }).fail(function () {
+                        Swal.fire({
+                            text:"Raza " + TipoRaza + " no se pudo eliminar.",
+                            icon:"error",
+                            buttonsStyling:!1,
+                            confirmButtonText:"Ok, entendido!",
+                            customClass:{
+                                confirmButton:"btn fw-bold btn-primary"
+                            }
+                        })
+                    });
+                } else {
+                    Swal.fire({
+                        text:"Has cancelado la eliminación de la raza " + TipoRaza +".",
+                        icon:"error",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{
+                            confirmButton:"btn fw-bold btn-primary"
+                        }
+                    })
+                }
+            })
+        }
+    </script>
+    {{-- Termina Raza --}}
     
 @endsection
 
