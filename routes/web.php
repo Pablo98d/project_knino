@@ -54,6 +54,8 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     
     // CRUD CAPACIDAD
     Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
+    Route::post('guardar-capacidad',[EsteticaController::class, 'guardar_capacidad'])->name('guardar_capacidad');
+    Route::post('eliminar-capacidad',[EsteticaController::class, 'eliminar_capacidad'])->name('eliminar_capacidad');
     
     // Rutas para tallas
 

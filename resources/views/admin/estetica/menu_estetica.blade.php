@@ -124,7 +124,7 @@
                 <div class="card-body">
                     <ul class="nav nav-pills nav-pills-custom mb-3">
                         <li class="nav-item mb-3 me-3 me-lg-6">
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_1">
+                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-100px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_1">
                                 <div class="nav-icon">
                                     <img alt="" src="assets/media/svg/brand-logos/beats-electronics.svg" class="" />
                                 </div>
@@ -133,76 +133,49 @@
                             </a>
                         </li>
                         <li class="nav-item mb-3 me-3 me-lg-6">
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_3">
-                                <div class="nav-icon">
-                                    <img alt="" src="assets/media/svg/brand-logos/bp-2.svg" class="" />
-                                </div>
-                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Peso</span>
-                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-3 me-3 me-lg-6">
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_4">
+                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-100px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_4">
                                 <div class="nav-icon">
                                     <img alt="" src="assets/media/svg/brand-logos/slack-icon.svg" class="nav-icon" />
                                 </div>
-                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Pelaje</span>
+                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Capacidad</span>
                                 <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
                             </a>
                         </li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1">
-                            <div class="table-responsive">
-                                <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">Crear servicio</button>
-                                <table class="table align-middle gs-0 gy-4 my-0">
-                                    <thead>
-                                        <tr class="fs-7 fw-bold text-gray-500">
-                                            <th class=" min-w-70px pt-3">ID</th>
-                                            <th class="min-w-50px d-block pt-3">NOMBRE</th>
-                                            <th class="min-w-140px pt-3">TALLA</th>
-                                            <th class="pe-0 min-w-120px pt-3">PESO</th>
-                                            <th class="pe-0 min-w-120px pt-3">PELAJE</th>
-                                            <th class="pe-0 min-w-120px pt-3">PRECIO</th>
-                                            <th class="pe-0 text-center min-w-100px pt-3">ACCIONES</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="listar_servicios">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="kt_stats_widget_1_tab_3">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-12">
                                     <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                         <div class="card-header">
                                             <div class="card-title mt-2">
-                                                <h2>Tallas</h2> 
-                                                <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="talla()">+</button>
+                                                <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nueva capacidad" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_servicio">+</button>
                                             </div>
                                         </div>
                                         <div class="card-body pt-0">
                                             <div class="table-responsive">
-                                                <!--begin::Table-->
-                                                <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <!--begin::Table body-->
-                                                    <tbody class="fw-semibold text-gray-600" id="listar_tallas">
-                                                        <tr>
-                                                            <td class="text-muted">
-                                                                001
-                                                            </td>
-                                                            <td class="fw-bold text-start">Mini</td>
+                                                {{-- <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">Crear servicio</button> --}}
+                                                <table class="table align-middle gs-0 gy-4 my-0">
+                                                    <thead>
+                                                        <tr class="fs-7 fw-bold text-gray-500">
+                                                            <th class=" min-w-70px pt-3">ID</th>
+                                                            <th class="min-w-50px d-block pt-3">NOMBRE</th>
+                                                            <th class="min-w-140px pt-3">TALLA</th>
+                                                            <th class="pe-0 min-w-120px pt-3">PESO</th>
+                                                            <th class="pe-0 min-w-120px pt-3">PELAJE</th>
+                                                            <th class="pe-0 min-w-120px pt-3">PRECIO</th>
+                                                            <th class="pe-0 text-center min-w-100px pt-3">ACCIONES</th>
                                                         </tr>
+                                                    </thead>
+                                                    <tbody id="listar_servicios">
                                                     </tbody>
-                                                    <!--end::Table body-->
                                                 </table>
-                                                <!--end::Table-->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_4">
                             <div class="row">
@@ -210,8 +183,6 @@
                                     <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                         <div class="card-header">
                                             <div class="card-title mt-2">
-                                                {{-- <h2>Tallas</h2>  --}}
-                                                {{-- <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">+</button> --}}
                                                 <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nueva capacidad" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_capacidad">+</button>
                                             </div>
                                         </div>
@@ -307,7 +278,7 @@
                                                     </center>
                                                 </div>
                                                 <div class="col-4">
-                                                    <select name="id_Capacidad" id="id_Capacidad"  class="form-select form-select-solid" data-control="select2" onchange="listar_capacidad(this.value)" data-hide-search="true" >
+                                                    <select name="id_Capacidad" id="id_Capacidad_id"  class="form-select form-select-solid" data-control="select2" onchange="listar_capacidad(this.value)" data-hide-search="true" >
                                                         
                                                     </select>
                                                 </div>
@@ -340,10 +311,10 @@
         <div class="modal fade" id="modal_capacidad" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered mw-650px">
                 <div class="modal-content">
-                    <form class="form" method="POST" action="{{url('admin/guardar-capacidad')}}"  id="guardar-capacidad" onsubmit='return validar()'>
+                    <form class="form" method="POST" action="{{url('admin/guardar-capacidad')}}"  id="guardar-capacidad" onsubmit='return validar_capacidad()'>
                         @csrf
                     
-                        <input type="hidden" name="id_PaqueteEstetica" value="Insertar" id="id_PaqueteEstetica">
+                        <input type="hidden" name="id_Capacidad" value="Insertar" id="id_Capacidad">
                         <div class="modal-header" id="modal_capacidad_header">
                             <h2 class="fw-bold" id="id_titulo_capacidad">Crear capacidad</h2>
                             
@@ -362,51 +333,40 @@
                         <div class="modal-body  px-lg-17 mb-4" >
                             <div class="scroll-y me-n7 pe-7" id="modal_capacidad_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_capacidad_header" data-kt-scroll-wrappers="#modal_capacidad_scroll" data-kt-scroll-offset="300px">
                                 <div class="fv-row mb-1">
-                                    <label class="required fs-6 fw-semibold mb-2">capacidad</label>
-                                    <input type="text" class="form-control form-control-solid" placeholder="capacidad" name="capacidad" id="capacidad" value="" />
+                                    <label class="required fs-6 fw-semibold mb-2">Turno</label>
+                                    <input type="text" class="form-control form-control-solid" placeholder="Turno" name="Turno" id="Turno" value="" />
                                 </div>
                                 <div class="fv-row mb-7">
                                     <div class="row fv-row">
-                                        <div class="col-6 mt-3">
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Talla</label>
-                                            <select name="id_Talla" id="id_Talla" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
-                                                
-                                            </select>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Lunes</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="1" name="Lunes" id="Lunes" value="" />
                                         </div>
-                                        <div class="col-6 mt-3">
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Peso</label>
-                                            <select name="id_Peso" id="id_Peso" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
-                                                
-                                            </select>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Martes</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="0" name="Martes" id="Martes" value="" />
                                         </div>
-                                        <div class="col-6 mt-3">
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Pelaje</label>
-                                            <select name="id_Pelaje" id="id_Pelaje" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
-                                                
-                                            </select>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Miercoles</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="1" name="Miercoles" id="Miercoles" value="" />
                                         </div>
-                                        <div class="col-6 mt-3">
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
-                                            <input class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                            {{-- <input type="hidden" class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" /> --}}
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Jueves</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="1" name="Jueves" id="Jueves" value="" />
                                         </div>
-                                        <div class="col-md-12" >
-                                            <div class="row" >
-                                                <div class="col-md-12 mb-2 mt-3" style="border-bottom: 1px solid rgb(171, 171, 171)">
-                                                    <center>
-                                                        <label class="required fs-6 fw-semibold form-label mb-2">Turno</label>
-                                                    </center>
-                                                </div>
-                                                <div class="col-4">
-                                                    <select name="id_Capacidad" id="id_Capacidad"  class="form-select form-select-solid" data-control="select2" onchange="listar_capacidad(this.value)" data-hide-search="true" >
-                                                        
-                                                    </select>
-                                                </div>
-                                                <div class="col-8" id="id_capacidad_tbl">
-                                                    
-                                                </div>
-                                            </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Viernes</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="1" name="Viernes" id="Viernes" value="" />
                                         </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Sabado</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="0" name="Sabado" id="Sabado" value="" />
+                                        </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Domingo</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="2" name="Domingo" id="Domingo" value="" />
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 
@@ -429,49 +389,30 @@
         
         <!--end::Card-->
     </div>
-    <form action="{{route('listar_servicios')}}" method="get"  id="listar-servicios">
-        @csrf
-    </form>
-    <form action="{{route('eliminar_servicio')}}" method="post"  id="eliminar-servicio">
-        @csrf
-    </form>
-
-
-    <form action="{{route('listar_capacidad')}}" method="post"  id="listar-capacidad">
-        @csrf
-    </form>
-    <form action="{{route('editar_servicio')}}" method="post"  id="editar-servicio">
-        @csrf
-    </form>
-
-    <form action="{{route('lista_capacidad')}}" method="get"  id="lista-capacidad">
-        @csrf
-    </form>
-    
-
-    
-
-
-    {{-- Formularios para talla --}}
-        <form action="{{route('guardar_talla')}}" method="post"  id="guardar-talla">
+    {{-- Formularios para servicios --}}
+        <form action="{{route('listar_servicios')}}" method="get"  id="listar-servicios">
             @csrf
         </form>
-        <form action="{{route('listar_talla')}}" method="get"  id="listar-tallas">
+        <form action="{{route('eliminar_servicio')}}" method="post"  id="eliminar-servicio">
             @csrf
         </form>
-        <form action="{{route('eliminar_talla')}}" method="post"  id="eliminar-talla">
+        <form action="{{route('listar_capacidad')}}" method="post"  id="listar-capacidad">
             @csrf
         </form>
-    
-    {{-- Formularios para peso --}}
-
-    
-
-    {{-- Formularios para pelaje --}}
-
-    
+        <form action="{{route('editar_servicio')}}" method="post"  id="editar-servicio">
+            @csrf
+        </form>
+    {{-- End formulario servicios --}}
 
 
+    {{-- Formularios para capacidad --}}
+        <form action="{{route('lista_capacidad')}}" method="get"  id="lista-capacidad">
+            @csrf
+        </form>
+        <form action="{{route('eliminar_capacidad')}}" method="post"  id="eliminar-capacidad">
+            @csrf
+        </form>
+    {{-- End Formularios para capacidad --}}
 
 
     <!--end::Container-->
@@ -479,10 +420,10 @@
 <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    {{-- Funciones para servicios --}}
     <script>
-        // Función para consultar los paquetes
         listar_servicios();
-        lista_capacidad();
+        
         function listar_servicios(){
             $datosForm=$('#listar-servicios');
             $.ajax({
@@ -491,7 +432,7 @@
                 processData: false,
                 contentType: false
             }).done(function (data) {
-                console.log(data.servicios)
+                // console.log(data.servicios)
                 
                 $('#listar_servicios').empty();
                 $('#listar_servicios').append(data.servicios);
@@ -505,8 +446,8 @@
                 $('#id_Pelaje').empty();
                 $('#id_Pelaje').append(data.pelajes);
 
-                $('#id_Capacidad').empty();
-                $('#id_Capacidad').append(data.capacidad);
+                $('#id_Capacidad_id').empty();
+                $('#id_Capacidad_id').append(data.capacidad);
 
                 
 
@@ -528,7 +469,7 @@
                 processData: false,
                 contentType: false
             }).done(function (data) {
-                console.log(data)
+                // console.log(data)
                 $('#id_capacidad_tbl').empty();
                 $('#id_capacidad_tbl').append(data);
                 
@@ -536,10 +477,6 @@
             }).fail(function () {
             });
         }
-
-        
-
-
 
         // Función que registra y actualiza servicios
         $('#guardar-servicio').submit(function(e){
@@ -552,7 +489,7 @@
                 processData: false,
                 contentType: false
             }).done(function (data) {
-                console.log(data)
+                // console.log(data)
                 if(data=='Guardado'){
                     Swal.fire({
                         text:"¡Servicio registrado correctamente!",
@@ -765,254 +702,134 @@
                 }
             })
         }
-
-
-
-
-        // CRUD CAPACIDAD
-        function lista_capacidad(){
-            $datosForm=$('#lista-capacidad');
-            
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-
-                console.log(data)
-                
-                $('#capacidad_tbl').empty();
-                $('#capacidad_tbl').append(data);
-
-
-            }).fail(function () {
-            });
-        }
-
-        // Función cerrar el modal capacidad
-        function cerrar_modal_capacidad(){
-            btn_guardar()
-            document.getElementById('guardar-capacidad').reset();
-
-            $('#modal_capacidad').modal('hide');
-        }
-
-        // Función abrir el modal capacidad
-        function abrir_modal_capacidad(){
-            $('#modal_capacidad').modal('show');
-        }
-
-        // Función cambiar el texto del boton capacidad
-        function btn_guardar_capacidad() {
-            var button = document.getElementById('btn_capacidad');
-            button.innerText = 'Registrar capacidad';
-
-            document.getElementById("id_titulo_capacidad").innerHTML = "Agregar nueva capacidad";
-            
-        }
-
-        // Función cambiar el texto del boton  capacidad
-        function btn_actualizar_capacidad() {
-            
-            var button = document.getElementById('btn_capacidad');
-            button.innerText = 'Actualizar capacidad';
-            document.getElementById("capacidad").innerHTML = "Actualizar datos del capacidad";
-        }
-
-
-
-
-
-
     </script>
 
-    {{-- Aqui el script para tallas --}}
+    {{-- Funcones para capacidad --}}
     <script>
-        function talla(){
-            Swal.fire({
-                title: "CREAR TALLA",
-                text: "Nombre de talla:",
-                input: 'text',
-                showCancelButton: true,
-                cancelButtonText:"Cancelar",
-                confirmButtonText:"Guardar",
-                inputValidator: nombre => {
-                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
-                    if (!nombre) {
-                        return "Por favor escribe el nombre de la talla";
-                    } else {
-                        return undefined;
-                    }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    console.log("Result: " + result.value);
+            lista_capacidad();
+            function lista_capacidad(){
+                $datosForm=$('#lista-capacidad');
+                
+                $.ajax({
+                    url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                    method: $datosForm.attr('method'),
+                    processData: false,
+                    contentType: false
+                }).done(function (data) {
 
-                    var formData = new FormData();
-                    formData.append('id_Talla', 'Insertar');
-                    formData.append('NombreTalla', result.value);
+                    // console.log(data)
+                    
+                    $('#capacidad_tbl').empty();
+                    $('#capacidad_tbl').append(data);
 
-                    $datosForm=$('#guardar-talla');
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Guardado'){
-                            Swal.fire({
-                                text:"¡Talla registrado correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_talla();
 
-                        }else if(data=='Actualizado'){
-                            Swal.fire({
-                                text:"¡Talla actualizada correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                        }
-                    }).fail(function () {
-                    });
-                }
-            });
-        }
+                }).fail(function () {
+                });
+            }
 
-        function editar_talla(id_talla,nombre_talla){
+            // Función cerrar el modal capacidad
+            function cerrar_modal_capacidad(){
+                btn_guardar()
+                document.getElementById('guardar-capacidad').reset();
 
-            Swal.fire({
-                title: "ACTUALIZAR TALLA",
-                text: "Escribe nuevo nombre de la talla: "+nombre_talla,
-                input: 'text',
-                showCancelButton: true,
-                cancelButtonText:"Cancelar",
-                confirmButtonText:"Guardar",
-                inputValidator: nombre => {
-                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
-                    if (!nombre) {
-                        return "Por favor escribe el nuevo nombre de la talla";
-                    } else {
-                        return undefined;
-                    }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    console.log("Result: " + result.value);
+                $('#modal_capacidad').modal('hide');
+            }
 
-                    var formData = new FormData();
-                    formData.append('id_Talla', id_talla);
-                    formData.append('NombreTalla', result.value);
+            // Función abrir el modal capacidad
+            function abrir_modal_capacidad(){
+                $('#modal_capacidad').modal('show');
+            }
 
-                    $datosForm=$('#guardar-talla');
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Actualizado'){
-                            Swal.fire({
-                                text:"¡Talla actualizada correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_talla();
-                        }
-                    }).fail(function () {
-                    });
-                }
-            });
+            // Función cambiar el texto del boton capacidad
+            function btn_guardar_capacidad() {
+                var button = document.getElementById('btn_capacidad');
+                button.innerText = 'Registrar capacidad';
 
-        }
+                document.getElementById("id_titulo_capacidad").innerHTML = "Agregar nueva capacidad";
+                
+            }
 
-        listar_talla();
-        function listar_talla(){
-            $datosForm=$('#listar-tallas');
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                $('#listar_tallas').empty();
-                $('#listar_tallas').append(data);
-            }).fail(function () {
-            });
-        }
+            // Función cambiar el texto del boton  capacidad
+            function btn_actualizar_capacidad() {
+                
+                var button = document.getElementById('btn_capacidad');
+                button.innerText = 'Actualizar capacidad';
+                document.getElementById("id_titulo_capacidad").innerHTML = "Actualizar datos de capacidad";
+            }
 
-        function eliminar_talla(id_talla,nombre_talla){
-            Swal.fire({
-                text:"¿Estás seguro(a) de eliminar la talla "+nombre_talla+"?",
-                icon:"warning",
-                showCancelButton:!0,
-                buttonsStyling:!1,
-                confirmButtonText:"Si, eliminar!",
-                cancelButtonText:"No, cancelar",
-                customClass:{
-                    confirmButton:"btn fw-bold btn-danger",
-                    cancelButton:"btn fw-bold btn-active-light-primary"
-                }
-            }).then(resultado=>{
-                if (resultado.value) {
-                    $datosForm=$('#eliminar-talla');
-                    var formData = new FormData();
-                    formData.append('id_Talla', id_talla);
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Eliminado'){
-                            Swal.fire({
-                                text:"Has borrado la talla "+nombre_talla+"!.",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_talla();
-                        } else {
-                            Swal.fire({
-                                text:"¡Talla "+nombre_talla+" no se pudo eliminar.",
-                                icon:"error",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{
-                                    confirmButton:"btn fw-bold btn-primary"
-                                }
-                            })
-                        }
-                    }).fail(function () {
+            $('#guardar-capacidad').submit(function(e){
+                e.preventDefault();
+            
+                $datosForm=$('#guardar-capacidad');
+                $.ajax({
+                    url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                    method: $datosForm.attr('method'),
+                    processData: false,
+                    contentType: false
+                }).done(function (data) {
+                    // console.log(data)
+                    if(data=='Guardado'){
                         Swal.fire({
-                            text:"Talla "+nombre_talla+" no se pudo eliminar.",
-                            icon:"error",
+                            text:"¡Capacidad registrado correctamente!",
+                            icon:"success",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
-                            customClass:{
-                                confirmButton:"btn fw-bold btn-primary"
-                            }
+                            customClass:{confirmButton:"btn fw-bold btn-primary"}
                         })
-                    });
-                } else {
+                        document.getElementById('guardar-capacidad').reset();
+                        $('#modal_capacidad').modal('hide');
+                        lista_capacidad();
+
+                    }else if(data=='Actualizado'){
+                        Swal.fire({
+                            text:"¡Capacidad actualizado correctamente!",
+                            icon:"success",
+                            buttonsStyling:!1,
+                            confirmButtonText:"Ok, entendido!",
+                            customClass:{confirmButton:"btn fw-bold btn-primary"}
+                        })
+                        document.getElementById('guardar-capacidad').reset();
+                        $('#modal_capacidad').modal('hide');
+                        lista_capacidad();
+                    }
+                }).fail(function () {
+                });
+            
+            });
+
+            // Función para validar si los campos estan vacíos en capacidad
+            function validar_capacidad(){
+                var todo_correcto = true;
+                
+                
+                if(document.getElementById('Turno').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Lunes').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Martes').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Miercoles').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Jueves').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Viernes').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Sabado').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Domingo').value == ''){
+                    todo_correcto = false;
+                }
+                if(!todo_correcto){
                     Swal.fire({
-                        text:"Has cancelado la eliminación de la talla "+nombre_talla+".",
-                        icon:"error",
+                        text:"Algunos campos están vacíos, vuelva a revisarlos",
+                        icon:"warning",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",
                         customClass:{
@@ -1020,17 +837,96 @@
                         }
                     })
                 }
-            })
+            }
+
+            // Función eliminar capacidad 
+            function eliminar_capacidad(id_Capacidad){
+                Swal.fire({
+                    text:"¿Estás seguro(a) de eliminar la capacidad seleccionado con ID: "+id_Capacidad+"?",
+                    icon:"warning",
+                    showCancelButton:!0,
+                    buttonsStyling:!1,
+                    confirmButtonText:"Si, eliminar!",
+                    cancelButtonText:"No, cancelar",
+                    customClass:{
+                        confirmButton:"btn fw-bold btn-danger",
+                        cancelButton:"btn fw-bold btn-active-light-primary"
+                    }
+                }).then(resultado=>{
+                    if (resultado.value) {
+                        $datosForm=$('#eliminar-capacidad');
+                        var formData = new FormData();
+                        formData.append('id_Capacidad', id_Capacidad);
+                        $.ajax({
+                            url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                            method: $datosForm.attr('method'),
+                            data: formData,
+                            processData: false,
+                            contentType: false
+                        }).done(function (data) {
+                            console.log(data)
+                            if(data=='Eliminado'){
+                                Swal.fire({
+                                    text:"Has borrado la capacidad con ID: "+id_Capacidad+"!.",
+                                    icon:"success",
+                                    buttonsStyling:!1,
+                                    confirmButtonText:"Ok, entendido!",
+                                    customClass:{confirmButton:"btn fw-bold btn-primary"}
+                                })
+                                lista_capacidad();
+                            } else {
+                                Swal.fire({
+                                    text:"¡Capacidad con ID: "+id_Capacidad+" no se pudo eliminar.",
+                                    icon:"error",
+                                    buttonsStyling:!1,
+                                    confirmButtonText:"Ok, entendido!",
+                                    customClass:{
+                                        confirmButton:"btn fw-bold btn-primary"
+                                    }
+                                })
+                            }
+                        }).fail(function () {
+                            Swal.fire({
+                                text:"¡Capacidad con ID: "+id_Capacidad+" no se pudo eliminar.",
+                                icon:"error",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{
+                                    confirmButton:"btn fw-bold btn-primary"
+                                }
+                            })
+                        });
+                    } else {
+                        Swal.fire({
+                            text:"Has cancelado la eliminación de la capacidad con ID: "+id_Capacidad+".",
+                            icon:"error",
+                            buttonsStyling:!1,
+                            confirmButtonText:"Ok, entendido!",
+                            customClass:{
+                                confirmButton:"btn fw-bold btn-primary"
+                            }
+                        })
+                    }
+                })
+            }
+            // Función para abrir el modal y mostrar los datos en el formulario
+        function editar_capacidad(id_Capacidad,Turno,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo){
+            abrir_modal_capacidad()
+            btn_actualizar_capacidad()
+
+            console.log(id_Capacidad,Turno,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo);
+            document.getElementById("id_Capacidad").value = id_Capacidad;
+            document.getElementById("Turno").value = Turno;
+            document.getElementById("Lunes").value = Lunes;
+            document.getElementById("Martes").value = Martes;
+            document.getElementById("Miercoles").value = Miercoles;
+            document.getElementById("Jueves").value = Jueves;
+            document.getElementById("Viernes").value = Viernes;
+            document.getElementById("Sabado").value = Sabado;
+            document.getElementById("Domingo").value = Domingo;
+            
         }
     </script>
-
-    {{-- Aqui el script para pesos --}}
-
-
-
-
-    {{-- Aqui el script para pelaje --}}
-
     
 @endsection
 
