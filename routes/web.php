@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\GuarderiaController;
 use App\Http\Controllers\admin\EsteticaController;
 use App\Http\Controllers\admin\RegistroKninoController;
 use App\Http\Controllers\admin\RegistroHumanoController;
+use App\Http\Controllers\admin\FestejoController;
 
 
 /*
@@ -82,7 +83,14 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
 
     
   
-    Route::get('festejo',[AdminController::class, 'festejo'])->name('festejo');
+    Route::get('festejo',[FestejoController::class, 'festejo'])->name('festejo');
+    Route::get('listar-tipo-pastel',[FestejoController::class, 'lista_tipo_pastel'])->name('lista_tipo_pastel');
+    Route::post('eliminar-tipo-pastel',[FestejoController::class, 'eliminar_tipo_pastel'])->name('eliminar_tipo_pastel');
+    
+    
+
+
+
     Route::get('hoteles',[AdminController::class, 'hoteles'])->name('hoteles');
     Route::get('talla',[AdminController::class, 'talla'])->name('talla');
     Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');

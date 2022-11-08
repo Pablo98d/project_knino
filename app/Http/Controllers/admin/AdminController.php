@@ -21,9 +21,7 @@ class AdminController extends Controller
     public function guarderia(){
         return view('admin.guarderia.guarderia');
     }
-    public function festejo(){
-        return view('admin.festejos.festejos');
-    }
+    
     
     public function estetica(){
         return view('admin.estetica.estetica');
