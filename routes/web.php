@@ -84,6 +84,8 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
 
     // CRUD PARA REGISTRO DE KNINOS
     Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
+
+    Route::get('listar-kninos',[RegistroKninoController::class, 'listar_kninos'])->name('listar_kninos');
     // Rutas para tallas
     Route::get('listar-talla',[RegistroKninoController::class, 'listar_talla'])->name('listar_talla');
     Route::post('guardar-talla',[RegistroKninoController::class, 'guardar_talla'])->name('guardar_talla');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Pelaje;
 use App\Models\Peso;
 use App\Models\Razas;
+use App\Models\RegistroKnino;
 use App\Models\Tallas;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,38 @@ class RegistroKninoController extends Controller
         return view('admin.knino.knino_prueba');
     }
 
+    public function listar_kninos(Request $request)
+    {
+        $listar_kninos = RegistroKnino::all();
+        $output = '';
+        if (count($listar_kninos) == 0) {
+            $output = '';
+        } else {
+            foreach ($listar_kninos as $listar_kn) {
+                dd($listar_kn->talla->NombreTalla);
+                // $output .= '
+                // <tr>
+                //     <td>
+                //     '.$listar_kn->talla->NombreTalla.'
+                //     </td>
+                //     <td>
+                //         <a href="#" class="text-gray-600 text-hover-primary mb-1">
+                //         '.$listar_kn->NombreTalla.'
+                //         </a>
+                //     </td>
+                //     <td class="text-center">
+                //         <button onclick="editar_talla('.$listar_kn->id_Talla.',`'.$listar_kn->NombreTalla.'`)" class="btn btn-outline-warning btn-sm">
+                //             Editar
+                //         </button>
+                //         <button onclick="eliminar_talla('.$listar_kn->id_Talla.',`'.$listar_kn->NombreTalla.'`)" class="btn btn-outline-danger btn-sm">
+                //             Eliminar
+                //         </button>
+                //     </td>
+                // </tr>';
+            }
+        }
+        return $output;
+    }
     // Agrega o actualiza una talla
     public function guardar_talla(Request $request)
     {
