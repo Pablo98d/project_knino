@@ -20,21 +20,23 @@ class RegistroHumano extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'NombrePaquete',
-        'CantidadDias',
-        'MesesVigencia',
-        'id_Capacidad',
-        'Precio',
-        'NombrePaquete',
-        'CantidadDias',
-        'MesesVigencia',
-        'id_Capacidad',
-        'Precio',
-        'NombrePaquete',
-        'CantidadDias',
-        'MesesVigencia',
-        'id_Capacidad',
-        'Precio',
+        'NombreHumano',
+        'Apellidos',
+        'Contrasena',
+        'id_GeneroHumano',
+        'Calle',
+        'NumeroExterior',
+        'NumeroInterior',
+        'CodigoPostal',
+        'Colonia',
+        'id_Estado',
+        'Municipio',
+        'Celular',
+        'Email',
+        'InstagramUser',
+        'TikTokUser',
+        'NombreEmergencia',
+        'TelefonoEmergencia',
     ];
  
     /**
