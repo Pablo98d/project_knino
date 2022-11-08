@@ -6,11 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Pelaje;
 use App\Models\Peso;
 use App\Models\Razas;
-use Illuminate\Http\Request;
-use App\Models\Servicios;
 use App\Models\Tallas;
-
-use function PHPUnit\Framework\returnSelf;
+use Illuminate\Http\Request;
 
 class RegistroKninoController extends Controller
 {
@@ -201,7 +198,8 @@ class RegistroKninoController extends Controller
         return $output;
     }
     // Eliminar un pelaje
-    public function eliminar_pelaje(Request $request){
+    public function eliminar_pelaje(Request $request)
+    {
         $eliminar = Pelaje::destroy($request->id_Pelaje);
         if ($eliminar) {
             return 'Eliminado';

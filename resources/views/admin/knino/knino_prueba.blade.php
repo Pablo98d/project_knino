@@ -167,32 +167,6 @@
                                 <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
                             </a>
                         </li>
-                        {{-- Opcion de Peso --}}
-                        <li class="nav-item mb-3 me-3 me-lg-6">
-                            {{-- Invocacion de la vista en el href --}}
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#">
-                                {{-- Logo del boton --}}
-                                <div class="nav-icon">
-                                    <img alt="" src="assets/media/svg/brand-logos/amazon.svg" class="" />
-                                </div>
-                                {{-- Letras del boton --}}
-                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Peso</span>
-                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                            </a>
-                        </li>
-                        {{-- Opcion de Pelaje --}}
-                        <li class="nav-item mb-3 me-3 me-lg-6">
-                            {{-- Invocacion de la vista en el href --}}
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#">
-                                {{-- Logo del boton --}}
-                                <div class="nav-icon">
-                                    <img alt="" src="assets/media/svg/brand-logos/atica.svg" class="" />
-                                </div>
-                                {{-- Letras del boton --}}
-                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Pelaje</span>
-                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                            </a>
-                        </li>
                         {{-- Opcion de Raza --}}
                         <li class="nav-item mb-3 me-3 me-lg-6">
                             {{-- Invocacion de la vista en el href --}}
@@ -211,13 +185,9 @@
                     <div class="tab-content">
                         {{-- Vista de Registro --}}
                         <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1">
-                            <!--begin::Table container-->
                             <div class="table-responsive">
-                                <!--begin::Table-->
                                 <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">Crear servicio</button>
-                                {{-- <button class="btn btn-outline-primary btn-sm" style="float: right">Crear servicio</button> --}}
                                 <table class="table align-middle gs-0 gy-4 my-0">
-                                    <!--begin::Table head-->
                                     <thead>
                                         <tr class="fs-7 fw-bold text-gray-500">
                                             <th class=" min-w-70px pt-3">ID</th>
@@ -229,8 +199,6 @@
                                             <th class="pe-0 text-center min-w-100px pt-3">ACCIONES</th>
                                         </tr>
                                     </thead>
-                                    <!--end::Table head-->
-                                    <!--begin::Table body-->
                                     <tbody>
                                         <tr>
                                             <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
@@ -261,11 +229,8 @@
                                             </td>
                                         </tr>
                                     </tbody>
-                                    <!--end::Table body-->
                                 </table>
-                                <!--end::Table-->
                             </div>
-                            <!--end::Table container-->
                         </div>
                         {{--Vista de Talla --}}
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_2">
@@ -383,36 +348,8 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- Vista de --}}
-                        <div class="tab-pane fade" id="kt_stats_widget_1_tab_4">
-                            <div class="table-responsive">
-                                <div class="card">
-                                    <table class="table align-middle gs-0 gy-4 my-0">
-                                        <thead>
-                                            <tr class="fs-7 fw-bold text-gray-500">
-                                                <th class=" d-block pt-3">Turno</th>
-                                                <th class=" pt-3">Lunes</th>
-                                                <th class=" pt-3">Martes</th>
-                                                <th class=" pt-3">Miercoles</th>
-                                                <th class=" pt-3">Jueves</th>
-                                                <th class=" pt-3">Viernes</th>
-                                                <th class=" pt-3">Sábado</th>
-                                                <th class=" pt-3">Domingo</th>
-                                                <th class="pe-0 text-center pt-3">Acción</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="capacidad_tbl">
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end::Tap pane-->
                     </div>
-                    <!--end::Tab Content-->
                 </div>
-                <!--end: Card Body-->
             </div>
         </div>
         <div class="modal fade" id="modal_servicio" tabindex="-1" aria-hidden="true">
