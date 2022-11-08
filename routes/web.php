@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\GuarderiaController;
 use App\Http\Controllers\admin\EsteticaController;
 use App\Http\Controllers\admin\RegistroKninoController;
 use App\Http\Controllers\admin\RegistroHumanoController;
+use App\Http\Controllers\admin\FestejoController;
 
 
 /*
@@ -56,6 +57,8 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     
     // CRUD CAPACIDAD
     Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
+    Route::post('guardar-capacidad',[EsteticaController::class, 'guardar_capacidad'])->name('guardar_capacidad');
+    Route::post('eliminar-capacidad',[EsteticaController::class, 'eliminar_capacidad'])->name('eliminar_capacidad');
     
     //Rutas de registro Humanos
     Route::get('registro-humanos',[RegistroHumanoController::class, 'registrohumanos'])->name('registrohumanos');
@@ -64,7 +67,16 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('guardar-humano',[RegistroHumanoController::class, 'guardar_humano'])->name('guardar_humano');
     Route::post('eliminar-humano',[RegistroHumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
 
-    Route::get('festejo',[AdminController::class, 'festejo'])->name('festejo');
+    
+  
+    Route::get('festejo',[FestejoController::class, 'festejo'])->name('festejo');
+    Route::get('listar-tipo-pastel',[FestejoController::class, 'lista_tipo_pastel'])->name('lista_tipo_pastel');
+    Route::post('eliminar-tipo-pastel',[FestejoController::class, 'eliminar_tipo_pastel'])->name('eliminar_tipo_pastel');
+    
+    
+
+
+
     Route::get('hoteles',[AdminController::class, 'hoteles'])->name('hoteles');
     Route::get('talla',[AdminController::class, 'talla'])->name('talla');
     Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');

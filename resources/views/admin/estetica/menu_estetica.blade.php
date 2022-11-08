@@ -4,7 +4,7 @@
         <div class="header-container container-xxl">
             <div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-20 py-3 py-lg-0 me-3">
                 <h1 class="d-flex flex-column text-dark fw-bold my-1">
-                    <span class="text-white fs-1">Guardería</span>
+                    <span class="text-white fs-1">Paquetes estética</span>
                 </h1>
             </div>
             <div class="d-flex align-items-center flex-wrap">
@@ -118,440 +118,117 @@
 @section('contenido')
 
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-    <!--begin::Container-->
     <div class="container-xxl" id="kt_content_container">
         <div class="card">
             <div class="card card-flush mb-xxl-10">
-                <!--begin::Header-->
-                {{-- <div class="card-header pt-5"> --}}
-                    <!--begin::Title-->
-                    {{-- <h3 class="card-title align-items-start flex-column">
-                        <span class="card-label fw-bold text-dark">Menú</span>
-                        <span class="text-gray-400 pt-2 fw-semibold fs-6">75% activity growth</span>
-                    </h3> --}}
-                    <!--end::Title-->
-                    <!--begin::Toolbar-->
-                    {{-- <div class="card-toolbar">
-                        <!--begin::Menu-->
-                        <button class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen023.svg-->
-                            <span class="svg-icon svg-icon-1 svg-icon-gray-300 me-n1">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor" />
-                                    <rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
-                                    <rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
-                                    <rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </button>
-                        <!--begin::Menu 2-->
-                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu separator-->
-                            <div class="separator mb-3 opacity-75"></div>
-                            <!--end::Menu separator-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Ticket</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Customer</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-                                <!--begin::Menu item-->
-                                <a href="#" class="menu-link px-3">
-                                    <span class="menu-title">New Group</span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <!--end::Menu item-->
-                                <!--begin::Menu sub-->
-                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Admin Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Staff Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Member Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                </div>
-                                <!--end::Menu sub-->
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Contact</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu separator-->
-                            <div class="separator mt-3 opacity-75"></div>
-                            <!--end::Menu separator-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <div class="menu-content px-3 py-3">
-                                    <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
-                                </div>
-                            </div>
-                            <!--end::Menu item-->
-                        </div>
-                        <!--end::Menu 2-->
-                        <!--end::Menu-->
-                    </div> --}}
-                    <!--end::Toolbar-->
-                {{-- </div> --}}
-                <!--end::Header-->
-                <!--begin::Body-->
                 <div class="card-body">
-                    <!--begin::Nav-->
                     <ul class="nav nav-pills nav-pills-custom mb-3">
-                        <!--begin::Item-->
                         <li class="nav-item mb-3 me-3 me-lg-6">
-                            <!--begin::Link-->
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_1">
-                                <!--begin::Icon-->
+                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-100px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_1">
                                 <div class="nav-icon">
                                     <img alt="" src="assets/media/svg/brand-logos/beats-electronics.svg" class="" />
                                 </div>
-                                <!--end::Icon-->
-                                <!--begin::Subtitle-->
                                 <span class="nav-text text-gray-700 fw-bold fs-6 lh-1">Servicios</span>
-                                <!--end::Subtitle-->
-                                <!--begin::Bullet-->
                                 <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                                <!--end::Bullet-->
                             </a>
-                            <!--end::Link-->
                         </li>
-                        <!--end::Item-->
-                      
-                        <!--begin::Item-->
                         <li class="nav-item mb-3 me-3 me-lg-6">
-                            <!--begin::Link-->
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_3">
-                                <!--begin::Icon-->
+                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-100px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_4">
                                 <div class="nav-icon">
-                                    <img alt="" src="assets/media/svg/brand-logos/bp-2.svg" class="" />
+                                    <img alt="" src="assets/media/svg/brand-logos/slack-icon.svg" class="nav-icon" />
                                 </div>
-                                <!--end::Icon-->
-                                <!--begin::Subtitle-->
-                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Peso</span>
-                                <!--end::Subtitle-->
-                                <!--begin::Bullet-->
+                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Capacidad</span>
                                 <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                                <!--end::Bullet-->
                             </a>
-                            <!--end::Link-->
                         </li>
-                        <!--end::Item-->
-                     
-                        <!--begin::Item-->
-                        {{-- <li class="nav-item mb-3">
-                            <!--begin::Link-->
-                            <a class="nav-link d-flex flex-center overflow-hidden w-80px h-85px" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign" href="#">
-                                <!--begin::Icon-->
-                                <div class="nav-icon">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen035.svg-->
-                                    <span class="svg-icon svg-icon-2hx svg-icon-gray-400">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                            <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                            <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </div>
-                                <!--end::Icon-->
-                                <!--begin::Bullet-->
-                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                                <!--end::Bullet-->
-                            </a>
-                            <!--end::Link-->
-                        </li> --}}
-                        <!--end::Item-->
                     </ul>
-                    <!--end::Nav-->
-                    <!--begin::Tab Content-->
                     <div class="tab-content">
-                        <!--begin::Tap pane-->
                         <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1">
-                            <!--begin::Table container-->
-                            <div class="table-responsive">
-                                <!--begin::Table-->
-                                <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">Crear servicio</button>
-                                {{-- <button class="btn btn-outline-primary btn-sm" style="float: right">Crear servicio</button> --}}
-                                <table class="table align-middle gs-0 gy-4 my-0">
-                                    <!--begin::Table head-->
-                                    <thead>
-                                        <tr class="fs-7 fw-bold text-gray-500">
-                                            <th class=" min-w-70px pt-3">ID</th>
-                                            <th class="p-0 min-w-150px d-block pt-3">NOMBRE</th>
-                                            <th class="text-end min-w-140px pt-3">TALLA</th>
-                                            <th class="pe-0 text-end min-w-120px pt-3">PESO</th>
-                                            <th class="pe-0 text-end min-w-120px pt-3">PELAJE</th>
-                                            <th class="pe-0 text-end min-w-120px pt-3">PRECIO</th>
-                                            <th class="pe-0 text-center min-w-100px pt-3">ACCIONES</th>
-                                        </tr>
-                                    </thead>
-                                    <!--end::Table head-->
-                                    <!--begin::Table body-->
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
-                                                000001
-                                            </td>
-                                            <td>
-                                                <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Best Rated Headsets of 2022</a>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="badge badge-light-success fs-7 fw-bold">Sent</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="text-gray-800 fw-bold d-block fs-6">18%(6.4k)</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="text-gray-800 fw-bold d-block fs-6">18%(6.4k)</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <span class="text-gray-800 fw-bold d-block fs-6">18%(6.4k)</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <button class="btn btn-outline-warning btn-sm">
-                                                    Editar
-                                                </button>
-                                                <button class="btn btn-outline-danger btn-sm">
-                                                    Eliminar
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <!--end::Table body-->
-                                </table>
-                                <!--end::Table-->
-                            </div>
-                            <!--end::Table container-->
-                        </div>
-                        <!--end::Tap pane-->
-                        <!--begin::Tap pane-->
-                        <div class="tab-pane fade" id="kt_stats_widget_1_tab_2">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                            <div class="card-body">
-                                                <form class="form" method="POST" action="{{url('admin/guardar-guarderia')}}"  id="registro-guarderia" onsubmit='return validar()'>
-                                                    @csrf
-                                                
-                                                    <input type="hidden" name="id_PaqueteGuarderia" value="Insertar" id="id_PaqueteGuarderia">
-                                                    <!--begin::Modal header-->
-                                                    {{-- <div class="modal-header" id="modal_servicio_header">
-                                                        <!--begin::Modal title-->
-                                                        <h2 class="fw-bold" id="id_titulo_paquete">Agregar nuevo paquete</h2>
-                                                        <!--end::Modal title-->
-                                                        <!--begin::Close-->
-                                                        
-                                                        <!--end::Close-->
-                                                    </div> --}}
-                                                    <!--end::Modal header-->
-                                                    <!--begin::Modal body-->
-                                                    <div class="modal-body ">
-                                                        <!--begin::Scroll-->
-                                                        <div class="scroll-y me-n7 pe-7" id="modal_servicio_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_servicio_header" data-kt-scroll-wrappers="#modal_servicio_scroll" data-kt-scroll-offset="300px">
-                                                            <!--begin::Input group-->
-                                                            <div class="fv-row mb-7">
-                                                                <!--begin::Label-->
-                                                                <label class="required fs-6 fw-semibold mb-2">Nombre</label>
-                                                                <!--end::Label-->
-                                                                <!--begin::Input-->
-                                                                <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
-                                                                <!--end::Input-->
-                                                            </div>
-                                                          
-                                                            
-                                                        </div>
-                                                        <!--end::Scroll-->
-                                                    </div>
-                                                    <!--end::Modal body-->
-                                                    <!--begin::Modal footer-->
-                                                    <div class="modal-footer flex-center">
-                                                        <!--begin::Button-->
-                                                        {{-- <button type="reset" onclick="cerrar_modal_add_user()" class="btn btn-light me-3">Cancelar</button> --}}
-                                                        <!--end::Button-->
-                                                        <!--begin::Button-->
-                                                        <button type="submit" id="btn_paquete"  class="btn btn-primary">
-                                                            <span class="indicator-label">Registrar paquete</span>
-                                                            <span class="indicator-progress">Please wait...
-                                                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                        </span>
-                                                        </button>
-                                                        <!--end::Button-->
-                                                    </div>
-                                                    <!--end::Modal footer-->
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--begin::Table container-->
-                            <!--end::Table container-->
-                        </div>
-                        <!--end::Tap pane-->
-                        <!--begin::Tap pane-->
-                        <div class="tab-pane fade" id="kt_stats_widget_1_tab_3">
                             <div class="row">
-                                <div class="col-md-4"> 
-                                    <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                    <div class="card-header">
-                                        <div class="card-title mt-2">
-                                            <h2>Tallas</h2> 
-                                            <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="talla()">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="card-body pt-0">
-                                        <div class="table-responsive">
-                                            <!--begin::Table-->
-                                            <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                <!--begin::Table body-->
-                                                <tbody class="fw-semibold text-gray-600" id="listar_tallas">
-                                                    <tr>
-                                                        <td class="text-muted">
-                                                            001
-                                                        </td>
-                                                        <td class="fw-bold text-start">Mini</td>
-                                                    </tr>
-                                                </tbody>
-                                                <!--end::Table body-->
-                                            </table>
-                                            <!--end::Table-->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="col-md-4">
-                                    <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                <div class="col-md-12">
+                                    <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                         <div class="card-header">
                                             <div class="card-title mt-2">
-                                                <h2>Peso</h2> 
-                                                <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="peso()">+</button>
+                                                <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nueva capacidad" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_servicio">+</button>
                                             </div>
                                         </div>
                                         <div class="card-body pt-0">
                                             <div class="table-responsive">
-                                                <!--begin::Table-->
-                                                <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <!--begin::Table body-->
-                                                    <tbody class="fw-semibold text-gray-600" id="listar_peso">
-                                                        <tr>
-                                                            <td class="text-muted">
-                                                                001
-                                                            </td>
-                                                            <td class="fw-bold text-start">Mini</td>
+                                                {{-- <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">Crear servicio</button> --}}
+                                                <table class="table align-middle gs-0 gy-4 my-0">
+                                                    <thead>
+                                                        <tr class="fs-7 fw-bold text-gray-500">
+                                                            <th class=" min-w-70px pt-3">ID</th>
+                                                            <th class="min-w-50px d-block pt-3">NOMBRE</th>
+                                                            <th class="min-w-140px pt-3">TALLA</th>
+                                                            <th class="pe-0 min-w-120px pt-3">PESO</th>
+                                                            <th class="pe-0 min-w-120px pt-3">PELAJE</th>
+                                                            <th class="pe-0 min-w-120px pt-3">PRECIO</th>
+                                                            <th class="pe-0 text-center min-w-100px pt-3">ACCIONES</th>
                                                         </tr>
+                                                    </thead>
+                                                    <tbody id="listar_servicios">
                                                     </tbody>
-                                                    <!--end::Table body-->
                                                 </table>
-                                                <!--end::Table-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                        <div class="card-header">
-                                            <div class="card-title mt-2">
-                                                <h2>pelaje</h2> 
-                                                <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="pelaje()">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="card-body pt-0">
-                                            <div class="table-responsive">
-                                                <!--begin::Table-->
-                                                <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <!--begin::Table body-->
-                                                    <tbody class="fw-semibold text-gray-600" id="listar_pelaje">
-                                                        <tr>
-                                                            <td class="text-muted">
-                                                                001
-                                                            </td>
-                                                            <td class="fw-bold text-start">Mini</td>
-                                                        </tr>
-                                                    </tbody>
-                                                    <!--end::Table body-->
-                                                </table>
-                                                <!--end::Table-->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_4">
-                            <div class="table-responsive">
-                                <div class="card">
-                                    <table class="table align-middle gs-0 gy-4 my-0">
-                                        <thead>
-                                            <tr class="fs-7 fw-bold text-gray-500">
-                                                <th class=" d-block pt-3">Turno</th>
-                                                <th class=" pt-3">Lunes</th>
-                                                <th class=" pt-3">Martes</th>
-                                                <th class=" pt-3">Miercoles</th>
-                                                <th class=" pt-3">Jueves</th>
-                                                <th class=" pt-3">Viernes</th>
-                                                <th class=" pt-3">Sábado</th>
-                                                <th class=" pt-3">Domingo</th>
-                                                <th class="pe-0 text-center pt-3">Acción</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="capacidad_tbl">
-                                            
-                                        </tbody>
-                                    </table>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                        <div class="card-header">
+                                            <div class="card-title mt-2">
+                                                <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nueva capacidad" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_capacidad">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="table-responsive">
+                                                <table class="table align-middle gs-0 gy-4 my-0">
+                                                    <thead>
+                                                        <tr class="fs-7 fw-bold text-gray-500">
+                                                            <th class=" d-block pt-3">Turno</th>
+                                                            <th class=" pt-3">Lun</th>
+                                                            <th class=" pt-3">Mar</th>
+                                                            <th class=" pt-3">Mie</th>
+                                                            <th class=" pt-3">Jue</th>
+                                                            <th class=" pt-3">Vie</th>
+                                                            <th class=" pt-3">Sáb</th>
+                                                            <th class=" pt-3">Dom</th>
+                                                            <th class="pe-0 text-center pt-3">Acción</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="capacidad_tbl">
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
-                        <!--end::Tap pane-->
                     </div>
-                    <!--end::Tab Content-->
                 </div>
-                <!--end: Card Body-->
             </div>
         </div>
         <div class="modal fade" id="modal_servicio" tabindex="-1" aria-hidden="true">
-            <!--begin::Modal dialog-->
             <div class="modal-dialog modal-dialog-centered mw-650px">
-                <!--begin::Modal content-->
                 <div class="modal-content">
-                    <!--begin::Form-->
-                    <form class="form" method="POST" action="{{url('admin/guardar-guarderia')}}"  id="registro-guarderia" onsubmit='return validar()'>
+                    <form class="form" method="POST" action="{{url('admin/guardar-servicio')}}"  id="guardar-servicio" onsubmit='return validar()'>
                         @csrf
                     
-                        <input type="hidden" name="id_PaqueteGuarderia" value="Insertar" id="id_PaqueteGuarderia">
-                        <!--begin::Modal header-->
+                        <input type="hidden" name="id_PaqueteEstetica" value="Insertar" id="id_PaqueteEstetica">
                         <div class="modal-header" id="modal_servicio_header">
-                            <!--begin::Modal title-->
-                            <h2 class="fw-bold" id="id_titulo_paquete">Agregar nuevo paquete</h2>
-                            <!--end::Modal title-->
-                            <!--begin::Close-->
+                            <h2 class="fw-bold" id="id_titulo_servicio">Crear servicio</h2>
+                            
                             <div id="modal_servicio_close" class="btn btn-icon btn-sm btn-active-icon-primary">
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                                <button onclick="cerrar_modal_add_user()" style="background: transparent;border:none" type="button">
+                                <button onclick="cerrar_modal_servicio()" style="background: transparent;border:none" type="button">
                                     <span class="svg-icon svg-icon-1">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
@@ -560,184 +237,193 @@
 
                                     </span>
                                 </button>
-                                <!--end::Svg Icon-->
                             </div>
-                            <!--end::Close-->
                         </div>
-                        <!--end::Modal header-->
-                        <!--begin::Modal body-->
-                        <div class="modal-body py-10 px-lg-17">
-                            <!--begin::Scroll-->
+                        <div class="modal-body  px-lg-17 mb-4" >
                             <div class="scroll-y me-n7 pe-7" id="modal_servicio_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_servicio_header" data-kt-scroll-wrappers="#modal_servicio_scroll" data-kt-scroll-offset="300px">
-                                <!--begin::Input group-->
-                                <div class="fv-row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="required fs-6 fw-semibold mb-2">Nombre</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
-                                    <!--end::Input-->
+                                <div class="fv-row mb-1">
+                                    <label class="required fs-6 fw-semibold mb-2">Servicio</label>
+                                    <input type="text" class="form-control form-control-solid" placeholder="Servicio" name="Servicio" id="Servicio" value="" />
                                 </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
                                 <div class="fv-row mb-7">
-                                    @php
-                                        $count=101;
-                                    @endphp
                                     <div class="row fv-row">
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Cantidad de días</label>
-                                            <input class="form-control form-control-solid" placeholder="" name="CantidadDias" id="CantidadDias" value="" />
-                                            {{-- <select name="CantidadNoches" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Month">
-                                                @for ($i = 1; $i < $count; $i++)
-                                                    <option value="{{$i}}">{{$i}}</option>
-                                                @endfor
-                                            </select> --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Talla</label>
+                                            <select name="id_Talla" id="id_Talla" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                                
+                                            </select>
                                         </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Vigencia [meses]</label>
-                                            <input class="form-control form-control-solid" placeholder="" name="MesesVigencia" id="MesesVigencia" value="" />
-                                            {{-- <select name="MesesVigencia" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
-                                                @for ($i = 1; $i < $count; $i++)
-                                                    <option value="{{$i}}">{{$i}}</option>
-                                                @endfor
-                                            </select> --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Peso</label>
+                                            <select name="id_Peso" id="id_Peso" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                                
+                                            </select>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Pelaje</label>
+                                            <select name="id_Pelaje" id="id_Pelaje" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="col-6 mt-3">
                                             <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
                                             <input class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                            <input type="hidden" class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" />
+                                            {{-- <input type="hidden" class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" /> --}}
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-12 mt-4">
+                                        <div class="col-md-12" >
+                                            <div class="row" >
+                                                <div class="col-md-12 mb-2 mt-3" style="border-bottom: 1px solid rgb(171, 171, 171)">
                                                     <center>
-                                                        Seleccionar Disponiblidad de Turno
+                                                        <label class="required fs-6 fw-semibold form-label mb-2">Turno</label>
                                                     </center>
                                                 </div>
-                                                <div class="col-4 mt-3">
-                                                    <label style="cursor: pointer" class=" fs-6 fw-semibold form-label mb-2" for="Matutino">Matutino</label>
-                                                    <input type="radio" name="Precio" id="Matutino" value="" checked />
-                                                    
+                                                <div class="col-4">
+                                                    <select name="id_Capacidad" id="id_Capacidad_id"  class="form-select form-select-solid" data-control="select2" onchange="listar_capacidad(this.value)" data-hide-search="true" >
+                                                        
+                                                    </select>
                                                 </div>
-                                                <div class="col-4 mt-3">
-                                                    <label style="cursor: pointer" class=" fs-6 fw-semibold form-label mb-2" for="Vespertino">Vespertino</label>
-                                                    <input type="radio" name="Precio" id="Vespertino" value="" />
-                                                    
-                                                </div>
-                                                <div class="col-4 mt-3">
-                                                    <label style="cursor: pointer" class=" fs-6 fw-semibold form-label mb-2" for="Todo_dia">Todo el día</label>
-                                                    <input type="radio" name="Precio" id="Todo_dia" value="" />
+                                                <div class="col-8" id="id_capacidad_tbl">
                                                     
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--end::Col-->
                                     </div>
-                                    <!--end::Row-->
                                 </div>
                                 
                             </div>
-                            <!--end::Scroll-->
                         </div>
-                        <!--end::Modal body-->
-                        <!--begin::Modal footer-->
                         <div class="modal-footer flex-center">
-                            <!--begin::Button-->
-                            <button type="reset" onclick="cerrar_modal_add_user()" class="btn btn-light me-3">Cancelar</button>
-                            <!--end::Button-->
-                            <!--begin::Button-->
-                            <button type="submit" id="btn_paquete"  class="btn btn-primary">
-                                <span class="indicator-label">Registrar paquete</span>
+                            <button type="reset" onclick="cerrar_modal_servicio()" class="btn btn-light me-3">Cancelar</button>
+                            <button type="submit" id="btn_servicio"  class="btn btn-primary">
+                                <span class="indicator-label">Registrar servicio</span>
                                 <span class="indicator-progress">Please wait...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                             </span>
                             </button>
-                            <!--end::Button-->
                         </div>
-                        <!--end::Modal footer-->
                     </form>
-                    <!--end::Form-->
                 </div>
             </div>
             
         </div>
+
+        {{-- MODAL CAPACIDAD --}}
+        <div class="modal fade" id="modal_capacidad" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered mw-650px">
+                <div class="modal-content">
+                    <form class="form" method="POST" action="{{url('admin/guardar-capacidad')}}"  id="guardar-capacidad" onsubmit='return validar_capacidad()'>
+                        @csrf
+                    
+                        <input type="hidden" name="id_Capacidad" value="Insertar" id="id_Capacidad">
+                        <div class="modal-header" id="modal_capacidad_header">
+                            <h2 class="fw-bold" id="id_titulo_capacidad">Crear capacidad</h2>
+                            
+                            <div id="modal_capacidad_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                <button onclick="cerrar_modal_capacidad()" style="background: transparent;border:none" type="button">
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                        </svg>
+
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="modal-body  px-lg-17 mb-4" >
+                            <div class="scroll-y me-n7 pe-7" id="modal_capacidad_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_capacidad_header" data-kt-scroll-wrappers="#modal_capacidad_scroll" data-kt-scroll-offset="300px">
+                                <div class="fv-row mb-1">
+                                    <label class="required fs-6 fw-semibold mb-2">Turno</label>
+                                    <input type="text" class="form-control form-control-solid" placeholder="Turno" name="Turno" id="Turno" value="" />
+                                </div>
+                                <div class="fv-row mb-7">
+                                    <div class="row fv-row">
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Lunes</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="1" name="Lunes" id="Lunes" value="" />
+                                        </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Martes</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="0" name="Martes" id="Martes" value="" />
+                                        </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Miercoles</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="1" name="Miercoles" id="Miercoles" value="" />
+                                        </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Jueves</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="1" name="Jueves" id="Jueves" value="" />
+                                        </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Viernes</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="1" name="Viernes" id="Viernes" value="" />
+                                        </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Sabado</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="0" name="Sabado" id="Sabado" value="" />
+                                        </div>
+                                        <div class="col-sm-3 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Domingo</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="2" name="Domingo" id="Domingo" value="" />
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer flex-center">
+                            <button type="reset" onclick="cerrar_modal_capacidad()" class="btn btn-light me-3">Cancelar</button>
+                            <button type="submit" id="btn_capacidad"  class="btn btn-primary">
+                                <span class="indicator-label">Registrar capacidad</span>
+                                <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
         <!--end::Card-->
     </div>
-    <form action="{{route('listar_servicios')}}" method="get"  id="listar-servicios">
-        @csrf
-    </form>
-    <form action="{{route('eliminar_servicio')}}" method="post"  id="eliminar-servicio">
-        @csrf
-    </form>
-
-
-    <form action="{{route('listar_capacidad')}}" method="post"  id="listar-capacidad">
-        @csrf
-    </form>
-    <form action="{{route('editar_servicio')}}" method="post"  id="editar-servicio">
-        @csrf
-    </form>
-
-    <form action="{{route('lista_capacidad')}}" method="get"  id="lista-capacidad">
-        @csrf
-    </form>
-    
-
-    
-
-
-    {{-- Formularios para talla --}}
-        <form action="{{route('guardar_talla')}}" method="post"  id="guardar-talla">
+    {{-- Formularios para servicios --}}
+        <form action="{{route('listar_servicios')}}" method="get"  id="listar-servicios">
             @csrf
         </form>
-        <form action="{{route('listar_talla')}}" method="get"  id="listar-tallas">
+        <form action="{{route('eliminar_servicio')}}" method="post"  id="eliminar-servicio">
             @csrf
         </form>
-        <form action="{{route('eliminar_talla')}}" method="post"  id="eliminar-talla">
+        <form action="{{route('listar_capacidad')}}" method="post"  id="listar-capacidad">
             @csrf
         </form>
-    
-    {{-- Formularios para peso --}}
-        <form action="{{route('guardar_peso')}}" method="post"  id="guardar-peso">
+        <form action="{{route('editar_servicio')}}" method="post"  id="editar-servicio">
             @csrf
         </form>
-        <form action="{{route('listar_peso')}}" method="get"  id="listar-peso">
-            @csrf
-        </form>
-        <form action="{{route('eliminar_peso')}}" method="post"  id="eliminar-peso">
-            @csrf
-        </form>
-    
-
-    {{-- Formularios para pelaje --}}
-        <form action="{{route('guardar_pelaje')}}" method="post"  id="guardar-pelaje">
-            @csrf
-        </form>
-        <form action="{{route('listar_pelaje')}}" method="get"  id="listar-pelaje">
-            @csrf
-            
-        </form>
-        <form action="{{route('eliminar_pelaje')}}" method="post"  id="eliminar-pelaje">
-            @csrf
-        </form>
-    
+    {{-- End formulario servicios --}}
 
 
+    {{-- Formularios para capacidad --}}
+        <form action="{{route('lista_capacidad')}}" method="get"  id="lista-capacidad">
+            @csrf
+        </form>
+        <form action="{{route('eliminar_capacidad')}}" method="post"  id="eliminar-capacidad">
+            @csrf
+        </form>
+    {{-- End Formularios para capacidad --}}
 
 
     <!--end::Container-->
 </div>
 <script src="assets/js/scripts.bundle.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    {{-- Funciones para servicios --}}
     <script>
-        // Función para consultar los paquetes
         listar_servicios();
-        lista_capacidad();
+        
         function listar_servicios(){
             $datosForm=$('#listar-servicios');
             $.ajax({
@@ -746,48 +432,64 @@
                 processData: false,
                 contentType: false
             }).done(function (data) {
+                // console.log(data.servicios)
+                
                 $('#listar_servicios').empty();
-                $('#listar_servicios').append(data);
-            }).fail(function () {
-            });
-        }
+                $('#listar_servicios').append(data.servicios);
 
-        function lista_capacidad(){
-            $datosForm=$('#lista-capacidad');
+                $('#id_Talla').empty();
+                $('#id_Talla').append(data.tallas);
 
-            // var formData = new FormData();
-            // formData.append('id_Capacidad', id_Capacidad);
-            
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                // data: formData,
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                console.log(data)
-                $('#capacidad_tbl').empty();
-                $('#capacidad_tbl').append(data);
+                $('#id_Peso').empty();
+                $('#id_Peso').append(data.pesos);
+
+                $('#id_Pelaje').empty();
+                $('#id_Pelaje').append(data.pelajes);
+
+                $('#id_Capacidad_id').empty();
+                $('#id_Capacidad_id').append(data.capacidad);
+
                 
 
             }).fail(function () {
             });
         }
 
+        function listar_capacidad(id_Capacidad){
+            $datosForm=$('#listar-capacidad');
+            console.log('snansmnas',id_Capacidad)
 
+            var formData = new FormData();
+            formData.append('id_Capacidad', id_Capacidad);
+            
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                data: formData,
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                // console.log(data)
+                $('#id_capacidad_tbl').empty();
+                $('#id_capacidad_tbl').append(data);
+                
 
-        // Función que registra y actualiza paquetes
-        $('#registro-servicios').submit(function(e){
+            }).fail(function () {
+            });
+        }
+
+        // Función que registra y actualiza servicios
+        $('#guardar-servicio').submit(function(e){
             e.preventDefault();
         
-            $datosForm=$('#registro-servicios');
+            $datosForm=$('#guardar-servicio');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                 method: $datosForm.attr('method'),
                 processData: false,
                 contentType: false
             }).done(function (data) {
-                console.log(data)
+                // console.log(data)
                 if(data=='Guardado'){
                     Swal.fire({
                         text:"¡Servicio registrado correctamente!",
@@ -796,19 +498,19 @@
                         confirmButtonText:"Ok, entendido!",
                         customClass:{confirmButton:"btn fw-bold btn-primary"}
                     })
-                    document.getElementById('registro-servicios').reset();
+                    document.getElementById('guardar-servicio').reset();
                     $('#modal_servicio').modal('hide');
                     listar_servicios();
 
                 }else if(data=='Actualizado'){
                     Swal.fire({
-                        text:"¡Guardería actualizado correctamente!",
+                        text:"¡Servicio actualizado correctamente!",
                         icon:"success",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",
                         customClass:{confirmButton:"btn fw-bold btn-primary"}
                     })
-                    document.getElementById('registro-guarderia').reset();
+                    document.getElementById('guardar-servicio').reset();
                     $('#modal_servicio').modal('hide');
                     listar_servicios();
                 }
@@ -822,13 +524,16 @@
             var todo_correcto = true;
             
             
-            if(document.getElementById('CantidadDias').value == ''){
+            if(document.getElementById('Servicio').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('MesesVigencia').value == ''){
+            if(document.getElementById('id_Talla').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('NombrePaquete').value == ''){
+            if(document.getElementById('id_Peso').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('id_Pelaje').value == ''){
                 todo_correcto = false;
             }
             if(document.getElementById('Precio').value == ''){
@@ -859,16 +564,6 @@
             // document.getElementById("id_Peso").value = id_Peso;
             // document.getElementById("id_Pelaje").value = id_Pelaje;
             // document.getElementById("id_Capacidad").selected = id_Capacidad;
-        // function editar_guarderia(id_PaqueteGuarderia,NombrePaquete,CantidadDias,MesesVigencia,id_Capacidad,Precio){
-        //     abrir_modal_add_user()
-
-
-        //     console.log(id_PaqueteGuarderia,NombrePaquete,CantidadDias,MesesVigencia,id_Capacidad,Precio)
-        //     document.getElementById("id_PaqueteGuarderia").value = id_PaqueteGuarderia;
-        //     document.getElementById("NombrePaquete").value = NombrePaquete;
-        //     document.getElementById("CantidadDias").value = CantidadDias;
-        //     document.getElementById("MesesVigencia").value = MesesVigencia;
-        //     document.getElementById("id_Capacidad").value = id_Capacidad;
             document.getElementById("Precio").value = Precio;
             
 
@@ -909,10 +604,10 @@
 
         // Función cambiar el texto del boton 
         function btn_guardar() {
-            var button = document.getElementById('btn_paquete');
-            button.innerText = 'Registrar guardería';
+            var button = document.getElementById('btn_servicio');
+            button.innerText = 'Registrar servicio';
 
-            document.getElementById("id_titulo_paquete").innerHTML = "Agregar nuevo paquete";
+            document.getElementById("id_titulo_servicio").innerHTML = "Agregar nuevo servicio";
             
         }
 
@@ -922,13 +617,10 @@
             var button = document.getElementById('btn_servicio');
             button.innerText = 'Actualizar servicio';
             document.getElementById("id_titulo_servicio").innerHTML = "Actualizar datos del servicio";
-            // var button = document.getElementById('btn_paquete');
-            // button.innerText = 'Actualizar guardería';
-            // document.getElementById("id_titulo_paquete").innerHTML = "Actualizar datos del paquete";
         }
 
         // Función cerrar el modal
-        function cerrar_modal_add_user(){
+        function cerrar_modal_servicio(){
             btn_guardar()
             document.getElementById('guardar-servicio').reset();
 
@@ -936,14 +628,14 @@
         }
 
         // Función abrir el modal
-        function abrir_modal_add_user(){
+        function abrir_modal_servicio(){
             $('#modal_servicio').modal('show');
         }
 
         // Función eliminar el paquete 
-        function eliminar_guarderia(id_guarderia){
+        function eliminar_servicio(id_PaqueteEstetica){
             Swal.fire({
-                text:"¿Estás seguro(a) de eliminar la guardería seleccionado con ID: "+id_guarderia+"?",
+                text:"¿Estás seguro(a) de eliminar el servicio seleccionado con ID: "+id_PaqueteEstetica+"?",
                 icon:"warning",
                 showCancelButton:!0,
                 buttonsStyling:!1,
@@ -955,9 +647,9 @@
                 }
             }).then(resultado=>{
                 if (resultado.value) {
-                    $datosForm=$('#eliminar-guarderia');
+                    $datosForm=$('#eliminar-servicio');
                     var formData = new FormData();
-                    formData.append('id_PaqueteGuarderia', id_guarderia);
+                    formData.append('id_PaqueteEstetica', id_PaqueteEstetica);
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                         method: $datosForm.attr('method'),
@@ -968,7 +660,7 @@
                         console.log(data)
                         if(data=='Eliminado'){
                             Swal.fire({
-                                text:"Has borrado la guardería con ID: "+id_guarderia+"!.",
+                                text:"Has borrado el servicio con ID: "+id_PaqueteEstetica+"!.",
                                 icon:"success",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -977,7 +669,7 @@
                             listar_servicios();
                         } else {
                             Swal.fire({
-                                text:"¡Guardería con ID: "+id_guarderia+" no se pudo eliminar.",
+                                text:"¡Guardería con ID: "+id_PaqueteEstetica+" no se pudo eliminar.",
                                 icon:"error",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -988,7 +680,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"¡Guardería con ID: "+id_guarderia+" no se pudo eliminar.",
+                            text:"¡Servicio con ID: "+id_PaqueteEstetica+" no se pudo eliminar.",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -999,7 +691,7 @@
                     });
                 } else {
                     Swal.fire({
-                        text:"Has cancelado la eliminación de la guardería con ID: "+id_guarderia+".",
+                        text:"Has cancelado la eliminación del servicio con ID: "+id_PaqueteEstetica+".",
                         icon:"error",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",
@@ -1012,192 +704,132 @@
         }
     </script>
 
-    {{-- Aqui el script para tallas --}}
+    {{-- Funcones para capacidad --}}
     <script>
-        function talla(){
-            Swal.fire({
-                title: "CREAR TALLA",
-                text: "Nombre de talla:",
-                input: 'text',
-                showCancelButton: true,
-                cancelButtonText:"Cancelar",
-                confirmButtonText:"Guardar",
-                inputValidator: nombre => {
-                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
-                    if (!nombre) {
-                        return "Por favor escribe el nombre de la talla";
-                    } else {
-                        return undefined;
-                    }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    console.log("Result: " + result.value);
+            lista_capacidad();
+            function lista_capacidad(){
+                $datosForm=$('#lista-capacidad');
+                
+                $.ajax({
+                    url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                    method: $datosForm.attr('method'),
+                    processData: false,
+                    contentType: false
+                }).done(function (data) {
 
-                    var formData = new FormData();
-                    formData.append('id_Talla', 'Insertar');
-                    formData.append('NombreTalla', result.value);
+                    // console.log(data)
+                    
+                    $('#capacidad_tbl').empty();
+                    $('#capacidad_tbl').append(data);
 
-                    $datosForm=$('#guardar-talla');
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Guardado'){
-                            Swal.fire({
-                                text:"¡Talla registrado correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_talla();
 
-                        }else if(data=='Actualizado'){
-                            Swal.fire({
-                                text:"¡Talla actualizada correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                        }
-                    }).fail(function () {
-                    });
-                }
-            });
-        }
+                }).fail(function () {
+                });
+            }
 
-        function editar_talla(id_talla,nombre_talla){
+            // Función cerrar el modal capacidad
+            function cerrar_modal_capacidad(){
+                btn_guardar()
+                document.getElementById('guardar-capacidad').reset();
 
-            Swal.fire({
-                title: "ACTUALIZAR TALLA",
-                text: "Escribe nuevo nombre de la talla: "+nombre_talla,
-                input: 'text',
-                showCancelButton: true,
-                cancelButtonText:"Cancelar",
-                confirmButtonText:"Guardar",
-                inputValidator: nombre => {
-                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
-                    if (!nombre) {
-                        return "Por favor escribe el nuevo nombre de la talla";
-                    } else {
-                        return undefined;
-                    }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    console.log("Result: " + result.value);
+                $('#modal_capacidad').modal('hide');
+            }
 
-                    var formData = new FormData();
-                    formData.append('id_Talla', id_talla);
-                    formData.append('NombreTalla', result.value);
+            // Función abrir el modal capacidad
+            function abrir_modal_capacidad(){
+                $('#modal_capacidad').modal('show');
+            }
 
-                    $datosForm=$('#guardar-talla');
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Actualizado'){
-                            Swal.fire({
-                                text:"¡Talla actualizada correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_talla();
-                        }
-                    }).fail(function () {
-                    });
-                }
-            });
+            // Función cambiar el texto del boton capacidad
+            function btn_guardar_capacidad() {
+                var button = document.getElementById('btn_capacidad');
+                button.innerText = 'Registrar capacidad';
 
-        }
+                document.getElementById("id_titulo_capacidad").innerHTML = "Agregar nueva capacidad";
+                
+            }
 
-        listar_talla();
-        function listar_talla(){
-            $datosForm=$('#listar-tallas');
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                $('#listar_tallas').empty();
-                $('#listar_tallas').append(data);
-            }).fail(function () {
-            });
-        }
+            // Función cambiar el texto del boton  capacidad
+            function btn_actualizar_capacidad() {
+                
+                var button = document.getElementById('btn_capacidad');
+                button.innerText = 'Actualizar capacidad';
+                document.getElementById("id_titulo_capacidad").innerHTML = "Actualizar datos de capacidad";
+            }
 
-        function eliminar_talla(id_talla,nombre_talla){
-            Swal.fire({
-                text:"¿Estás seguro(a) de eliminar la talla "+nombre_talla+"?",
-                icon:"warning",
-                showCancelButton:!0,
-                buttonsStyling:!1,
-                confirmButtonText:"Si, eliminar!",
-                cancelButtonText:"No, cancelar",
-                customClass:{
-                    confirmButton:"btn fw-bold btn-danger",
-                    cancelButton:"btn fw-bold btn-active-light-primary"
-                }
-            }).then(resultado=>{
-                if (resultado.value) {
-                    $datosForm=$('#eliminar-talla');
-                    var formData = new FormData();
-                    formData.append('id_Talla', id_talla);
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Eliminado'){
-                            Swal.fire({
-                                text:"Has borrado la talla "+nombre_talla+"!.",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_talla();
-                        } else {
-                            Swal.fire({
-                                text:"¡Talla "+nombre_talla+" no se pudo eliminar.",
-                                icon:"error",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{
-                                    confirmButton:"btn fw-bold btn-primary"
-                                }
-                            })
-                        }
-                    }).fail(function () {
+            $('#guardar-capacidad').submit(function(e){
+                e.preventDefault();
+            
+                $datosForm=$('#guardar-capacidad');
+                $.ajax({
+                    url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                    method: $datosForm.attr('method'),
+                    processData: false,
+                    contentType: false
+                }).done(function (data) {
+                    // console.log(data)
+                    if(data=='Guardado'){
                         Swal.fire({
-                            text:"Talla "+nombre_talla+" no se pudo eliminar.",
-                            icon:"error",
+                            text:"¡Capacidad registrado correctamente!",
+                            icon:"success",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
-                            customClass:{
-                                confirmButton:"btn fw-bold btn-primary"
-                            }
+                            customClass:{confirmButton:"btn fw-bold btn-primary"}
                         })
-                    });
-                } else {
+                        document.getElementById('guardar-capacidad').reset();
+                        $('#modal_capacidad').modal('hide');
+                        lista_capacidad();
+
+                    }else if(data=='Actualizado'){
+                        Swal.fire({
+                            text:"¡Capacidad actualizado correctamente!",
+                            icon:"success",
+                            buttonsStyling:!1,
+                            confirmButtonText:"Ok, entendido!",
+                            customClass:{confirmButton:"btn fw-bold btn-primary"}
+                        })
+                        document.getElementById('guardar-capacidad').reset();
+                        $('#modal_capacidad').modal('hide');
+                        lista_capacidad();
+                    }
+                }).fail(function () {
+                });
+            
+            });
+
+            // Función para validar si los campos estan vacíos en capacidad
+            function validar_capacidad(){
+                var todo_correcto = true;
+                
+                
+                if(document.getElementById('Turno').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Lunes').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Martes').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Miercoles').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Jueves').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Viernes').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Sabado').value == ''){
+                    todo_correcto = false;
+                }
+                if(document.getElementById('Domingo').value == ''){
+                    todo_correcto = false;
+                }
+                if(!todo_correcto){
                     Swal.fire({
-                        text:"Has cancelado la eliminación de la talla "+nombre_talla+".",
-                        icon:"error",
+                        text:"Algunos campos están vacíos, vuelva a revisarlos",
+                        icon:"warning",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",
                         customClass:{
@@ -1205,174 +837,57 @@
                         }
                     })
                 }
-            })
-        }
-    </script>
-    {{-- termina tallas --}}
+            }
 
-    {{-- Aqui el script para pesos --}}
-    <script>
-        function peso(){
-            Swal.fire({
-                title: "CREAR PESO",
-                text: "Nombre del Peso:",
-                input: 'text',
-                showCancelButton: true,
-                cancelButtonText:"Cancelar",
-                confirmButtonText:"Guardar",
-                inputValidator: nombre => {
-                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
-                    if (!peso) {
-                        return "Por favor escribe el peso";
-                    } else {
-                        return undefined;
+            // Función eliminar capacidad 
+            function eliminar_capacidad(id_Capacidad){
+                Swal.fire({
+                    text:"¿Estás seguro(a) de eliminar la capacidad seleccionado con ID: "+id_Capacidad+"?",
+                    icon:"warning",
+                    showCancelButton:!0,
+                    buttonsStyling:!1,
+                    confirmButtonText:"Si, eliminar!",
+                    cancelButtonText:"No, cancelar",
+                    customClass:{
+                        confirmButton:"btn fw-bold btn-danger",
+                        cancelButton:"btn fw-bold btn-active-light-primary"
                     }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    console.log("Result: " + result.value);
-
-                    var formData = new FormData();
-                    formData.append('id_Peso', 'Insertar');
-                    formData.append('RangoPeso', result.value);
-
-                    $datosForm=$('#guardar-peso');
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Guardado'){
+                }).then(resultado=>{
+                    if (resultado.value) {
+                        $datosForm=$('#eliminar-capacidad');
+                        var formData = new FormData();
+                        formData.append('id_Capacidad', id_Capacidad);
+                        $.ajax({
+                            url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                            method: $datosForm.attr('method'),
+                            data: formData,
+                            processData: false,
+                            contentType: false
+                        }).done(function (data) {
+                            console.log(data)
+                            if(data=='Eliminado'){
+                                Swal.fire({
+                                    text:"Has borrado la capacidad con ID: "+id_Capacidad+"!.",
+                                    icon:"success",
+                                    buttonsStyling:!1,
+                                    confirmButtonText:"Ok, entendido!",
+                                    customClass:{confirmButton:"btn fw-bold btn-primary"}
+                                })
+                                lista_capacidad();
+                            } else {
+                                Swal.fire({
+                                    text:"¡Capacidad con ID: "+id_Capacidad+" no se pudo eliminar.",
+                                    icon:"error",
+                                    buttonsStyling:!1,
+                                    confirmButtonText:"Ok, entendido!",
+                                    customClass:{
+                                        confirmButton:"btn fw-bold btn-primary"
+                                    }
+                                })
+                            }
+                        }).fail(function () {
                             Swal.fire({
-                                text:"Peso registrado correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_peso();
-
-                        }else if(data=='Actualizado'){
-                            Swal.fire({
-                                text:"Peso actualizada correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                        }
-                    }).fail(function () {
-                    });
-                }
-            });
-        }
-
-        function editar_peso(id_peso,nombre_peso){
-
-            Swal.fire({
-                title: "ACTUALIZAR PESO",
-                text: "Escribe nuevo nombre del peso: "+nombre_peso,
-                input: 'text',
-                showCancelButton: true,
-                cancelButtonText:"Cancelar",
-                confirmButtonText:"Guardar",
-                inputValidator: nombre => {
-                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
-                    if (!nombre) {
-                        return "Por favor escribe el nuevo nombre del peso";
-                    } else {
-                        return undefined;
-                    }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    console.log("Result: " + result.value);
-
-                    var formData = new FormData();
-                    formData.append('id_Peso', id_peso);
-                    formData.append('RangoPeso', result.value);
-
-                    $datosForm=$('#guardar-peso');
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Actualizado'){
-                            Swal.fire({
-                                text:"Peso actualizada correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_peso();
-                        }
-                    }).fail(function () {
-                    });
-                }
-            });
-
-        }
-
-        listar_peso();
-        function listar_peso(){
-            $datosForm=$('#listar-peso');
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                $('#listar_peso').empty();
-                $('#listar_peso').append(data);
-            }).fail(function () {
-            });
-        }
-
-        function eliminar_peso(id_peso,nombre_peso){
-            Swal.fire({
-                text:"¿Estás seguro(a) de eliminar peso "+nombre_peso+"?",
-                icon:"warning",
-                showCancelButton:!0,
-                buttonsStyling:!1,
-                confirmButtonText:"Si, eliminar!",
-                cancelButtonText:"No, cancelar",
-                customClass:{
-                    confirmButton:"btn fw-bold btn-danger",
-                    cancelButton:"btn fw-bold btn-active-light-primary"
-                }
-            }).then(resultado=>{
-                if (resultado.value) {
-                    $datosForm=$('#eliminar-peso');
-                    var formData = new FormData();
-                    formData.append('id_Peso', id_peso);
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Eliminado'){
-                            Swal.fire({
-                                text:"Has borrado la peso "+nombre_peso+"!.",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_peso();
-                        } else {
-                            Swal.fire({
-                                text:"Peso "+nombre_peso+" no se pudo eliminar.",
+                                text:"¡Capacidad con ID: "+id_Capacidad+" no se pudo eliminar.",
                                 icon:"error",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -1380,10 +895,10 @@
                                     confirmButton:"btn fw-bold btn-primary"
                                 }
                             })
-                        }
-                    }).fail(function () {
+                        });
+                    } else {
                         Swal.fire({
-                            text:"Peso "+nombre_peso+" no se pudo eliminar.",
+                            text:"Has cancelado la eliminación de la capacidad con ID: "+id_Capacidad+".",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -1391,219 +906,25 @@
                                 confirmButton:"btn fw-bold btn-primary"
                             }
                         })
-                    });
-                } else {
-                    Swal.fire({
-                        text:"Has cancelado la eliminación del peso "+nombre_peso+".",
-                        icon:"error",
-                        buttonsStyling:!1,
-                        confirmButtonText:"Ok, entendido!",
-                        customClass:{
-                            confirmButton:"btn fw-bold btn-primary"
-                        }
-                    })
-                }
-            })
-        }
-    </script>
-    {{---termina pesos--}}
-
-
-    {{-- Aqui el script para pelaje --}}
-    <script>
-        function pelaje(){
-            Swal.fire({
-                title: "CREAR PELAJE",
-                text: "Nombre del pelaje:",
-                input: 'text',
-                showCancelButton: true,
-                cancelButtonText:"Cancelar",
-                confirmButtonText:"Guardar",
-                inputValidator: nombre => {
-                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
-                    if (!nombre) {
-                        return "Por favor escribe el nombre del pelaje";
-                    } else {
-                        return undefined;
                     }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    console.log("Result: " + result.value);
+                })
+            }
+            // Función para abrir el modal y mostrar los datos en el formulario
+        function editar_capacidad(id_Capacidad,Turno,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo){
+            abrir_modal_capacidad()
+            btn_actualizar_capacidad()
 
-                    var formData = new FormData();
-                    formData.append('id_Pelaje', 'Insertar');
-                    formData.append('TipoPelaje', result.value);
-
-                    $datosForm=$('#guardar-pelaje');
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Guardado'){
-                            Swal.fire({
-                                text:"¡Pelaje registrado correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_pelaje();
-
-                        }else if(data=='Actualizado'){
-                            Swal.fire({
-                                text:"¡Pelaje actualizada correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                        }
-                    }).fail(function () {
-                    });
-                }
-            });
-        }
-
-        function editar_pelaje(id_pelaje,tipo_pelaje){
-
-            Swal.fire({
-                title: "ACTUALIZAR TPELAJE",
-                text: "Escribe nuevo nombre del pelaje: "+tipo_pelaje,
-                input: 'text',
-                showCancelButton: true,
-                cancelButtonText:"Cancelar",
-                confirmButtonText:"Guardar",
-                inputValidator: nombre => {
-                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
-                    if (!nombre) {
-                        return "Por favor escribe el nuevo nombre del pelaje";
-                    } else {
-                        return undefined;
-                    }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    console.log("Result: " + result.value);
-
-                    var formData = new FormData();
-                    formData.append('id_Pelaje', id_pelaje);
-                    formData.append('TipoPelaje', result.value);
-
-                    $datosForm=$('#guardar-pelaje');
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Actualizado'){
-                            Swal.fire({
-                                text:"¡Pelaje actualizada correctamente!",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_pelaje();
-                        }
-                    }).fail(function () {
-                    });
-                }
-            });
-
-        }
-
-        listar_pelaje();
-        function listar_pelaje(){
-            $datosForm=$('#listar-pelaje');
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                console.log(data)
-                $('#listar_pelaje').empty();
-                $('#listar_pelaje').append(data);
-            }).fail(function () {
-            });
-        }
-
-        function eliminar_pelaje(id_pelaje,tipo_pelaje){
-            Swal.fire({
-                text:"¿Estás seguro(a) de eliminar el pelaje "+tipo_pelaje+"?",
-                icon:"warning",
-                showCancelButton:!0,
-                buttonsStyling:!1,
-                confirmButtonText:"Si, eliminar!",
-                cancelButtonText:"No, cancelar",
-                customClass:{
-                    confirmButton:"btn fw-bold btn-danger",
-                    cancelButton:"btn fw-bold btn-active-light-primary"
-                }
-            }).then(resultado=>{
-                if (resultado.value) {
-                    $datosForm=$('#eliminar-pelaje');
-                    var formData = new FormData();
-                    formData.append('id_Pelaje', id_pelaje);
-                    $.ajax({
-                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                        method: $datosForm.attr('method'),
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    }).done(function (data) {
-                        console.log(data)
-                        if(data=='Eliminado'){
-                            Swal.fire({
-                                text:"Has borrado el pelaje "+tipo_pelaje+"!.",
-                                icon:"success",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{confirmButton:"btn fw-bold btn-primary"}
-                            })
-                            listar_pelaje();
-                        } else {
-                            Swal.fire({
-                                text:"¡Pelaje "+nombre_pelaje+" no se pudo eliminar.",
-                                icon:"error",
-                                buttonsStyling:!1,
-                                confirmButtonText:"Ok, entendido!",
-                                customClass:{
-                                    confirmButton:"btn fw-bold btn-primary"
-                                }
-                            })
-                        }
-                    }).fail(function () {
-                        Swal.fire({
-                            text:"Pelaje "+nombre_pelaje+" no se pudo eliminar.",
-                            icon:"error",
-                            buttonsStyling:!1,
-                            confirmButtonText:"Ok, entendido!",
-                            customClass:{
-                                confirmButton:"btn fw-bold btn-primary"
-                            }
-                        })
-                    });
-                } else {
-                    Swal.fire({
-                        text:"Has cancelado la eliminación de la talla "+nombre_pelaje+".",
-                        icon:"error",
-                        buttonsStyling:!1,
-                        confirmButtonText:"Ok, entendido!",
-                        customClass:{
-                            confirmButton:"btn fw-bold btn-primary"
-                        }
-                    })
-                }
-            })
+            console.log(id_Capacidad,Turno,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo);
+            document.getElementById("id_Capacidad").value = id_Capacidad;
+            document.getElementById("Turno").value = Turno;
+            document.getElementById("Lunes").value = Lunes;
+            document.getElementById("Martes").value = Martes;
+            document.getElementById("Miercoles").value = Miercoles;
+            document.getElementById("Jueves").value = Jueves;
+            document.getElementById("Viernes").value = Viernes;
+            document.getElementById("Sabado").value = Sabado;
+            document.getElementById("Domingo").value = Domingo;
+            
         }
     </script>
     
