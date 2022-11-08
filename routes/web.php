@@ -52,27 +52,11 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('eliminar-servicio',[EsteticaController::class, 'eliminar_servicio'])->name('eliminar_servicio');
     Route::post('listar-capacidad',[EsteticaController::class, 'listar_capacidad'])->name('listar_capacidad');
 
-    Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
+    
     
     // CRUD CAPACIDAD
     Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
     
-    // Rutas para tallas
-
-    Route::get('listar-talla',[EsteticaController::class, 'listar_talla'])->name('listar_talla');
-    Route::post('guardar-talla',[EsteticaController::class, 'guardar_talla'])->name('guardar_talla');
-    Route::post('eliminar-talla',[EsteticaController::class, 'eliminar_talla'])->name('eliminar_talla');
-
-    // Rutas para Peso
-    Route::get('listar-peso',[EsteticaController::class, 'listar_peso'])->name('listar_peso');
-    Route::post('guardar-peso',[EsteticaController::class, 'guardar_peso'])->name('guardar_peso');
-    Route::post('eliminar-peso',[EsteticaController::class, 'eliminar_peso'])->name('eliminar_peso');
-    
-    // Rutas para Pelaje
-    Route::get('listar-pelaje',[EsteticaController::class, 'listar_pelaje'])->name('listar_pelaje');
-    Route::post('guardar-pelaje',[EsteticaController::class, 'guardar_pelaje'])->name('guardar_pelaje');
-    Route::post('eliminar-pelaje',[EsteticaController::class, 'eliminar_pelaje'])->name('eliminar_pelaje');
-
     //Rutas de registro Humanos
     Route::get('registro-humanos',[RegistroHumanoController::class, 'registrohumanos'])->name('registrohumanos');
 
@@ -80,14 +64,26 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('guardar-humano',[RegistroHumanoController::class, 'guardar_humano'])->name('guardar_humano');
     Route::post('eliminar-humano',[RegistroHumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
 
-    
-  
     Route::get('festejo',[AdminController::class, 'festejo'])->name('festejo');
     Route::get('hoteles',[AdminController::class, 'hoteles'])->name('hoteles');
     Route::get('talla',[AdminController::class, 'talla'])->name('talla');
     Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');
     Route::get('peso',[AdminController::class, 'peso'])->name('peso');
 
+    // CRUD PARA REGISTRO DE KNINOS
+    Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
+    // Rutas para tallas
+    Route::get('listar-talla',[RegistroKninoController::class, 'listar_talla'])->name('listar_talla');
+    Route::post('guardar-talla',[RegistroKninoController::class, 'guardar_talla'])->name('guardar_talla');
+    Route::post('eliminar-talla',[RegistroKninoController::class, 'eliminar_talla'])->name('eliminar_talla');
+    // Rutas para Peso
+    Route::get('listar-peso',[RegistroKninoController::class, 'listar_peso'])->name('listar_peso');
+    Route::post('guardar-peso',[RegistroKninoController::class, 'guardar_peso'])->name('guardar_peso');
+    Route::post('eliminar-peso',[RegistroKninoController::class, 'eliminar_peso'])->name('eliminar_peso');
+    // Rutas para Pelaje
+    Route::get('listar-pelaje',[RegistroKninoController::class, 'listar_pelaje'])->name('listar_pelaje');
+    Route::post('guardar-pelaje',[RegistroKninoController::class, 'guardar_pelaje'])->name('guardar_pelaje');
+    Route::post('eliminar-pelaje',[RegistroKninoController::class, 'eliminar_pelaje'])->name('eliminar_pelaje');
     // Rutas para kninos
     Route::get('listar-raza',[RegistroKninoController::class, 'listar_raza'])->name('listar_raza');
     Route::post('guardar-raza',[RegistroKninoController::class, 'guardar_raza'])->name('guardar_raza');
