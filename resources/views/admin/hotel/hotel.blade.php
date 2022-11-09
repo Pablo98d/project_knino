@@ -237,11 +237,7 @@
                 </div>
                 <!--end::Card header-->
                 <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <form action="{{route('listar_paquete')}}" method="get"  id="listar-paquete">
-                        @csrf
-                    </form>
-                    
+                <div class="card-body pt-0">                    
                     <!--begin::Table-->
                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
                         <!--begin::Table head-->
@@ -458,7 +454,9 @@
                 </div>
                 
             </div>
-
+            <form action="{{route('listar_paquete')}}" method="get"  id="listar-paquete">
+                @csrf
+            </form>
             
             <form action="{{route('eliminar_paquete')}}" method="post"  id="eliminar-paquete">
                 @csrf
@@ -487,6 +485,7 @@
                 $('#listar_paquetes').empty();
                 $('#listar_paquetes').append(data);
             }).fail(function () {
+                
             });
         }
 
@@ -539,12 +538,8 @@
             if(document.getElementById('CantidadNoches').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('MesesVigencia').value == ''){
-                todo_correcto = false;
-            }
-            if(document.getElementById('NombrePaquete').value == ''){
-                todo_correcto = false;
-            }
+          
+           
             if(document.getElementById('Precio').value == ''){
                 todo_correcto = false;
             }

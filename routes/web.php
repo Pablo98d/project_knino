@@ -78,7 +78,7 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function(){
     //Rutas de registro Humanos
     Route::get('registro-humanos',[RegistroHumanoController::class, 'registrohumanos'])->name('registrohumanos');
 
-    Route::get('listar-humano',[RegistroHumanoController::class, 'listar_humano'])->name('listar_humano');
+    Route::get('lista-humano',[RegistroHumanoController::class, 'listar_humano'])->name('listar_humano');
     Route::post('guardar-humano',[RegistroHumanoController::class, 'guardar_humano'])->name('guardar_humano');
     Route::post('eliminar-humano',[RegistroHumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
 

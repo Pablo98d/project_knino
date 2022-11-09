@@ -196,7 +196,7 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Buscar paquete" />
+                            <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Buscar humano" />
                         </div>
                         <!--end::Search-->
                     </div>
@@ -221,7 +221,7 @@
                             
                             <!--end::Export-->
                             <!--begin::Add customer-->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Crear paquete</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Crear humano</button>
                             <!--end::Add customer-->
                         </div>
                         <!--end::Toolbar-->
@@ -238,9 +238,7 @@
                 <!--end::Card header-->
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
-                    <form action="{{route('listar_humano')}}" method="get"  id="listar-humano">
-                        @csrf
-                    </form>
+                  
                     
                     <!--begin::Table-->
                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
@@ -266,9 +264,9 @@
                         </thead>
                         <!--end::Table head-->
                         <!--begin::Table body-->
-                        <tbody class="fw-semibold text-gray-600" id="listar_humano">
+                        <tbody class="fw-semibold text-gray-600" id="lista_humano">
                             
-                                {{-- @foreach ($lista_paquetes as $lista_paquete)
+                                {{-- @foreach ($lista_humano as $lista_humano)
                                     <tr>
                                         <!--begin::Checkbox-->
                                         <td>
@@ -279,30 +277,30 @@
                                         <!--end::Checkbox-->
                                         <!--begin::Name=-->
                                         <td>
-                                            {{$lista_paquete->id_PaqueteHotel}}
+                                            {{$lista_humano->id_NombreHumano}}
                                             
                                         </td>
                                         <!--end::Name=-->
                                         <!--begin::Email=-->
                                         <td>
                                             <a href="#" class="text-gray-600 text-hover-primary mb-1">
-                                                {{$lista_paquete->NombrePaquete}}
+                                                {{$lista_humano->NombreHumano}}
                                             </a>
                                         </td>
                                         <!--end::Email=-->
                                         <!--begin::Status=-->
                                         <td>
                                             <!--begin::Badges-->
-                                            {{$lista_paquete->CantidadNoches}}
+                                            {{$lista_humano->CantidadNoches}}
                                             
                                             <!--end::Badges-->
                                         </td>
                                         <!--end::Status=-->
                                         <!--begin::IP Address=-->
-                                        <td>{{$lista_paquete->MesesVigencia}}</td>
+                                        <td>{{$lista_humano->MesesVigencia}}</td>
                                         <!--end::IP Address=-->
                                         <!--begin::Date=-->
-                                        <td>$ {{number_format($lista_paquete->Precio,2)}}</td>
+                                        <td>$ {{number_format($lista_humano->Precio,2)}}</td>
                                         <!--end::Date=-->
                                         <!--begin::Action=-->
                                         <td class="text-end">
@@ -323,7 +321,7 @@
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
-                                                    <a href="#" onclick="eliminar({{$lista_paquete->id_PaqueteHotel}})" class="menu-link px-3">Eliminar</a>
+                                                    <a href="#" onclick="eliminar({{$lista_humano->id_NombreHumano}})" class="menu-link px-3">Eliminar</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                             </div>
@@ -387,7 +385,7 @@
                                         <label class="required fs-6 fw-semibold mb-2">Nombre</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="text" class="form-control form-control-solid" placeholder="Nombrev" name="NombreHumano" id="NombreHumano" value="" />
+                                        <input type="text" class="form-control form-control-solid" placeholder="Nombre" name="NombreHumano" id="NombreHumano" value="" />
                                         <!--end::Input-->
                                     </div>
                                     <!--end::Input group-->
@@ -420,7 +418,10 @@
                                             </div>
                                             <div class="col-4">
                                                 <label class="required fs-6 fw-semibold form-label mb-2">Genero del humano</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="id_GeneroHumano" id="id_GeneroHumano" value="" />
+                                                <select name="select">
+                                                    <option value="value1" selected>Seleccionar Genero</option>
+                                                    <option value="id_genero" id="id_Genero" name="id_GeneroHumano">Value 2</option>
+                                                  </select>
                                             </div>
                                             <!--end::Col-->
                                               <!--begin::Col-->
@@ -561,7 +562,7 @@
                                 <button type="reset" onclick="cerrar_modal_add_user()" class="btn btn-light me-3">Cancelar</button>
                                 <!--end::Button-->
                                 <!--begin::Button-->
-                                <button type="submit" id="btn_paquete"  class="btn btn-primary">
+                                <button type="submit" id="btn_humano"  class="btn btn-primary">
                                     <span class="indicator-label">Registrar humano</span>
                                     <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
@@ -576,17 +577,13 @@
                 </div>
                 
             </div>
-
-            
             <form action="{{route('eliminar_humano')}}" method="post"  id="eliminar-humano">
                 @csrf
             </form>
-            <form action="{{route('guardar_humano')}}" method="post"  id="Guardar-humano">
+            <form action="{{route('listar_humano')}}" method="get"  id="lista-humano">
                 @csrf
             </form>
-            <form action="{{route('actualizar_humano')}}" method="post"  id="actualizar-humano">
-                @csrf
-            </form>
+            
             <!--end::Modal - Customers - Add-->
         
             <!--end::Modals-->
@@ -598,23 +595,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        // Función para consultar los paquetes
-        listar_humano();
-        function listar_humano(){
-            $datosForm=$('#listar-humano');
+        // Función para consultar los Humanos
+        lista_humano();
+        function lista_humano(){
+            $datosForm=$('#lista-humano');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                 method: $datosForm.attr('method'),
                 processData: false,
                 contentType: false
             }).done(function (data) {
-                $('#listar_humano').empty();
-                $('#listar_humano').append(data);
+                console.log(data)
+                $('#lista_humano').empty();
+                $('#lista_humano').append(data);
             }).fail(function () {
             });
         }
 
-        // Función que registra y actualiza paquetes
+        // Función que registra y actualiza humanos
         $('#registro-humano').submit(function(e){
             e.preventDefault();
         
@@ -636,7 +634,7 @@
                     })
                     document.getElementById('registro-humano').reset();
                     $('#kt_modal_add_customer').modal('hide');
-                    listar_paquetes();
+                    lista_humano();
 
                 }else if(data=='Actualizado'){
                     Swal.fire({
@@ -648,7 +646,7 @@
                     })
                     document.getElementById('registro-humano').reset();
                     $('#kt_modal_add_customer').modal('hide');
-                    listar_humano();
+                    lista_humano();
                 }
             }).fail(function () {
             });
@@ -660,16 +658,55 @@
             var todo_correcto = true;
             
             
-            if(document.getElementById('CantidadNoches').value == ''){
+            if(document.getElementById('NombreHumano').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('MesesVigencia').value == ''){
+            if(document.getElementById('Apellidos').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('NombrePaquete').value == ''){
+            if(document.getElementById('Contrasena').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('Precio').value == ''){
+            if(document.getElementById('id_GeneroHumano').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('Calle').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('NumeroExterior').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('NumeroInterior').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('CodigoPostal').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('Colonia').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('id_Estado').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('Municipio').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('Celular').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('Email').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('InstagramUser').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('TikTokUser').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('NombreEmergencia').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('TelefonoEmergencia').value == ''){
                 todo_correcto = false;
             }
             if(!todo_correcto){
@@ -686,11 +723,11 @@
         }
 
         // Función para abrir el modal y mostrar los datos en el formulario
-        function editar_paquete(id_Humano,NombreHumano,Apellidos,Contrasena,id_GeneroHumano,Calle,NumeroExterior,NumeroInterior,CodigoPostal,Colonia,id_Estado,Municipio,Email,InstagramUser,TikTokUser,NombreEmergencia,NumeroEmergencia){
+        function editar_humanoe(id_Humano,NombreHumano,Apellidos,Contrasena,id_GeneroHumano,Calle,NumeroExterior,NumeroInterior,CodigoPostal,Colonia,id_Estado,Municipio,Email,InstagramUser,TikTokUser,NombreEmergencia,NumeroEmergencia){
             abrir_modal_add_user()
 
 
-            console.log(id_PaqueteHotel,NombrePaquete,Apellidos,MesesVigencia,id_Capacidad)
+            console.log(id_Humano,NombreHumano,Apellidos,Contrasena,id_GeneroHumano,Calle,NumeroExterior,NumeroInterior,CodigoPostal,Colonia,id_Estado,Municipio,Email,InstagramUser,TikTokUser,NombreEmergencia,NumeroEmergencia)
             document.getElementById("id_Humano").value = id_Humano;
             document.getElementById("NombreHumano").value = NombreHumano;
             document.getElementById("Apellidos").value = Apellidos;
@@ -714,14 +751,14 @@
 
         // Función cambiar el texto del boton 
         function btn_guardar() {
-            var button = document.getElementById('btn_paquete');
-            button.innerText = 'Registrar paquete';
+            var button = document.getElementById('btn_humano');
+            button.innerText = 'Registrar humano';
         }
 
         // Función cambiar el texto del boton 
         function btn_actualizar() {
-            var button = document.getElementById('btn_paquete');
-            button.innerText = 'Actualizar paquete';
+            var button = document.getElementById('btn_humano');
+            button.innerText = 'Actualizar humano';
         }
 
         // Función cerrar el modal
@@ -736,10 +773,10 @@
             $('#kt_modal_add_customer').modal('show');
         }
 
-        // Función eliminar el paquete 
+        // Función eliminar el humano 
         function eliminar(id_Humano){
             Swal.fire({
-                text:"¿Estás seguro(a) de eliminar el paquete seleccionado con ID: "+id_Humano+"?",
+                text:"¿Estás seguro(a) de eliminar el humano seleccionado con ID: "+id_Humano+"?",
                 icon:"warning",
                 showCancelButton:!0,
                 buttonsStyling:!1,
@@ -751,9 +788,9 @@
                 }
             }).then(resultado=>{
                 if (resultado.value) {
-                    $datosForm=$('#eliminar-paquete');
+                    $datosForm=$('#eliminar-humano');
                     var formData = new FormData();
-                    formData.append('id_PaqueteHotel', id_paquete);
+                    formData.append('id_Humano', id_Humano);
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                         method: $datosForm.attr('method'),
@@ -764,16 +801,16 @@
                         console.log(data)
                         if(data=='Eliminado'){
                             Swal.fire({
-                                text:"Has borrado el paquete con ID: "+id_paquete+"!.",
+                                text:"Has borrado el humano con ID: "+id_Humano+"!.",
                                 icon:"success",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
-                            listar_paquetes();
+                            lista_humano();
                         } else {
                             Swal.fire({
-                                text:"Paquete con ID: "+id_paquete+" no se pudo eliminar.",
+                                text:"humano con ID: "+id_Humano+" no se pudo eliminar.",
                                 icon:"error",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -784,7 +821,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"Paquete con ID: "+id_paquete+" no se pudo eliminar.",
+                            text:"humano con ID: "+id_Humano+" no se pudo eliminar.",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -795,7 +832,7 @@
                     });
                 } else {
                     Swal.fire({
-                        text:"Has cancelado la eliminación del Paquete con ID: "+1+".",
+                        text:"Has cancelado la eliminación del humano con ID: "+1+".",
                         icon:"error",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",

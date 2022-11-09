@@ -10,14 +10,12 @@ class RegistroHumanoController extends Controller
 {
     
     public function registrohumanos(){
-        // $lista_paquetes=PaquetesHotel::all();
-        // dd($lista_paquetes);
         return view('admin.humanos.registrohumanos');
     }
     public function guardar_humano(Request $request){
 
-        if ($request->id_PaqueteHotel=='Insertar') {
-            $guardado=PaquetesHotel::create($request->all());
+        if ($request->id_Humano=='Insertar') {
+            $guardado=RegistroHumano::create($request->all());
             if ($guardado) {
                 return 'Guardado';
             } else {
@@ -27,13 +25,25 @@ class RegistroHumanoController extends Controller
             
         } else {
 
-            $paqueteHotel = RegistroHumano::find($request->id_PaqueteHotel);
-            $paqueteHotel->NombrePaquete = $request->NombrePaquete;
-            $paqueteHotel->CantidadNoches = $request->CantidadNoches;
-            $paqueteHotel->MesesVigencia = $request->MesesVigencia;
-            $paqueteHotel->id_Capacidad = $request->id_Capacidad;
-            $paqueteHotel->Precio = $request->Precio;
-            $updated = $paqueteHotel->save();
+            $Humano = RegistroHumano::find($request->id_Humano);
+            $Humano->NombreHumano = $request->NombreHumano;
+            $Humano->Apellidos = $request->Apellidos;
+            $Humano->Contrasena = $request->Contrasena;
+            $Humano->id_GeneroHumano = $request->id_GeneroHumano;
+            $Humano->Calle = $request->Calle;
+            $Humano->NumeroExterior = $request->NumeroExterior;
+            $Humano->NumeroInterior = $request->NumeroInterior;
+            $Humano->CodigoPostal = $request->CodigoPostal;
+            $Humano->Colonia = $request->Colonia;
+            $Humano->id_Estado = $request->id_Estado;
+            $Humano->Municipio = $request->Municipio;
+            $Humano->Celular = $request->Celular;
+            $Humano->Email = $request->Email;
+            $Humano->InstagramUser = $request->InstagramUser;
+            $Humano->TikTokUser = $request->TikTokUser;
+            $Humano->NombreEmergencia = $request->NombreEmergencia;
+            $Humano->TelefonoEmergencia = $request->TelefonoEmergencia;
+            $updated = $Humano->save();
 
             if ($updated) {
                 return 'Actualizado';
@@ -49,7 +59,7 @@ class RegistroHumanoController extends Controller
     public function eliminar_humano(Request $request){
         // return $request->all();
 
-        $eliminar=PaquetesHotel::destroy($request->id_Humano);
+        $eliminar=RegistroHumano::destroy($request->id_Humano);
 
         if ($eliminar) {
             return 'Eliminado';
@@ -59,50 +69,56 @@ class RegistroHumanoController extends Controller
         
     }
 
-    public function listar_paquete(){
-        $lista_paquetes=PaquetesHotel::all();
-        // dd($lista_paquetes);
+    public function listar_humano(){
+        $lista_humanos=RegistroHumano::all();
+        // dd($lista_humanos);
         $output = '';
-        if (count($lista_paquetes)==0) {
+        if (count($lista_humanos)==0) {
             $output = '';
         } else {
-            foreach ($lista_paquetes as $lista_paquete) {
-                $precio_paquete=number_format($lista_paquete->Precio,2);
-                // dd($precio_paquete);
+            foreach ($lista_humanos as $lista_humano) {
                 $output .= '
                 <tr>
                     <td>
-                    '.$lista_humanos->id_PaqueteHotel.'
+                    '.$lista_humano->id_Humano.'
                     </td>
                     <td>
                         <a href="#" class="text-gray-600 text-hover-primary mb-1">
-                        '.$lista_humanos->NombrePaquete.'
+                        '.$lista_humano->NombreHumano.'
                         </a>
                     </td>
                     <td>
-                        '.$lista_humanos->CantidadNoches.'
+                        '.$lista_humano->Apellidos.'
                     </td>
                     <td>
-                        '.$lista_humanos->MesesVigencia.'
+                        '.$lista_humano->Genero.'
                     </td>
-                    <td>$ '.$precio_paquete.'
+                    <td> 
+                        '.$lista_humano->NumeroExterior.'
+                    </td>
+                    <td> 
+                        '.$lista_humano->NumeroInterior.'
+                    </td>
+                    <td> 
+                        '.$lista_humano->Email.'
+                    </td>
+                    <td> 
+                        '.$lista_humano->NombreEmergencia.'
+                    </td>
+                    <td> 
+                        '.$lista_humano->TelefonoEmergencia.'
                     </td>
                     <td class="text-center">
-                        <button onclick="editar_paquete('.$lista_paquete->id_PaqueteHotel.',`'.$lista_paquete->NombrePaquete.'`,'.$lista_paquete->CantidadNoches.','.$lista_paquete->MesesVigencia.',1,'.$lista_paquete->Precio.')" class="btn btn-outline-warning btn-sm">
+                        <button onclick="editar_humano('.$lista_humano->id_humano.',`'.$lista_humano->NombreHumano.'`,'.$lista_humano->Genero.','.$lista_humano->NumeroExterior.','.$lista_humano->NumeroInterior.','.$lista_humano->Email.','.$lista_humano->NombreEmergencia.'.'.$lista_humano->TelefonoEmergencia.')" class="btn btn-outline-warning btn-sm">
                             Editar
                         </button>
-                        <button onclick="eliminar('.$lista_paquete->id_PaqueteHotel.')" class="btn btn-outline-danger btn-sm">
+                        <button onclick="eliminar('.$lista_humano->id_Humano.')" class="btn btn-outline-danger btn-sm">
                             Eliminar
                         </button>
                     </td>
                 </tr>';
             }
         }
-
-        //     <div class="menu-item px-3">
-        //     <a href="../../demo9/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-        // </div>
-        // echo $output;
         return $output;
     }
 }
