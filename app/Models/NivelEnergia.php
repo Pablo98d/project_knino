@@ -13,10 +13,7 @@ class NivelEnergia extends Model
     protected $primaryKey = "id_Energia";
     public $timestamps = false;
 
-
     protected $fillable = [
         'Nivel',
     ];
-
-
 }

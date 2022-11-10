@@ -13,10 +13,7 @@ class Personalidad extends Model
     protected $primaryKey = "id_Personalidad";
     public $timestamps = false;
 
-
     protected $fillable = [
         'Personalidad',
     ];
-
-
 }

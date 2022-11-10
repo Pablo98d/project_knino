@@ -13,10 +13,7 @@ class Razas extends Model
     protected $primaryKey = "id_Raza";
     public $timestamps = false;
 
-
     protected $fillable = [
         'TipoRaza',
     ];
-
-
 }

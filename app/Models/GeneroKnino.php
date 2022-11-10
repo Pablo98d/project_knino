@@ -13,10 +13,7 @@ class GeneroKnino extends Model
     protected $primaryKey = "id_GeneroKnino";
     public $timestamps = false;
 
-
     protected $fillable = [
         'NombreGeneroKnino',
     ];
-
-
 }

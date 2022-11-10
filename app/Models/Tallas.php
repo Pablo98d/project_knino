@@ -13,10 +13,7 @@ class Tallas extends Model
     protected $primaryKey = "id_Talla";
     public $timestamps = false;
 
-
     protected $fillable = [
         'NombreTalla',
     ];
-
-
 }

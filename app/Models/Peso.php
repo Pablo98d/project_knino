@@ -13,10 +13,7 @@ class Peso extends Model
     protected $primaryKey = "id_Peso";
     public $timestamps = false;
 
- 
     protected $fillable = [
         'RangoPeso',
-
     ];
-
 }

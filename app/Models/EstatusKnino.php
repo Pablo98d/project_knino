@@ -13,10 +13,7 @@ class EstatusKnino extends Model
     protected $primaryKey = "id_EstatusKnino";
     public $timestamps = false;
 
-
     protected $fillable = [
         'EstatusKnino',
     ];
-
-
 }
