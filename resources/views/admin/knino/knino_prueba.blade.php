@@ -210,7 +210,7 @@
                         <div class="tab-pane fade" id="kt_stats_widget_1_tab_2">
                             <div class="row mb-7">
                                 {{-- Card Raza --}}
-                                <div class="col-md-6"> 
+                                <div class="col-md-4"> 
                                     <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                         {{-- Titulo de la Card --}}
                                         <div class="card-header">
@@ -237,7 +237,7 @@
                                     </div>
                                 </div>
                                 {{-- Card Peso --}}
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                         {{-- Titulo de la Card --}}
                                         <div class="card-header">
@@ -263,10 +263,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mb-7">
                                 {{-- Card Talla --}}
-                                <div class="col-md-6"> 
+                                <div class="col-md-4"> 
                                     <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                         {{-- Titulo de la Card --}}
                                         <div class="card-header">
@@ -292,8 +290,10 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row mb-7">
                                 {{-- Card Pelaje --}}
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                         {{-- Titulo de la Card --}}
                                         <div class="card-header">
@@ -986,6 +986,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_talla();
+                            listar_kninos();
                         }else if(data=='Actualizado'){
                             Swal.fire({
                                 text:"¡Talla actualizada correctamente!",
@@ -1041,6 +1042,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_talla();
+                            listar_kninos();
                         }
                     }).fail(function () {});
                 }
@@ -1097,6 +1099,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_talla();
+                            listar_kninos();
                         } else {
                             Swal.fire({
                                 text:"¡Talla "+nombre_talla+" no se pudo eliminar.",
@@ -1178,6 +1181,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_peso();
+                            listar_kninos();
                         }else if(data=='Actualizado'){
                             Swal.fire({
                                 text:"Peso actualizada correctamente!",
@@ -1233,6 +1237,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_peso();
+                            listar_kninos();
                         }
                     }).fail(function () {});
                 }
@@ -1289,6 +1294,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_peso();
+                            listar_kninos();
                         } else {
                             Swal.fire({
                                 text:"Peso "+nombre_peso+" no se pudo eliminar.",
@@ -1370,6 +1376,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_pelaje();
+                            listar_kninos();
                         }else if(data=='Actualizado'){
                             Swal.fire({
                                 text:"¡Pelaje actualizada correctamente!",
@@ -1425,6 +1432,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_pelaje();
+                            listar_kninos();
                         }
                     }).fail(function () {});
                 }
@@ -1482,6 +1490,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_pelaje();
+                            listar_kninos();
                         } else {
                             Swal.fire({
                                 text:"¡Pelaje "+nombre_pelaje+" no se pudo eliminar.",
@@ -1565,6 +1574,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_raza();
+                            listar_kninos();
                         }else if(data=='Actualizado'){
                             Swal.fire({
                                 text:"¡Talla actualizada correctamente!",
@@ -1620,6 +1630,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_raza();
+                            listar_kninos();
                         }
                     }).fail(function () {});
                 }
@@ -1677,6 +1688,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             listar_raza();
+                            listar_kninos();
                         } else {
                             Swal.fire({
                                 text:"¡Raza " + TipoRaza + " no se pudo eliminar.",
