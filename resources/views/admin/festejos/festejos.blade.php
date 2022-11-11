@@ -118,9 +118,9 @@
 @section('contenido')
 
 	<!--begin::Content-->
-    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    {{-- <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <!--begin::Container-->
-        {{-- <div class="container-xxl" id="kt_content_container">
+        <div class="container-xxl" id="kt_content_container">
             <!--begin::Navbar-->
             <div class="card mb-6">
                 <div class="card-body pt-9 pb-0">
@@ -375,9 +375,9 @@
             </div>
             <!--end::Navbar-->
             <!--end::Modals-->
-        </div> --}}
+        </div>
         <!--end::Container-->
-    </div>
+    </div> --}}
     {{-- <br><br> --}}
     <!--end::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -412,7 +412,7 @@
                                         <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                             <div class="card-header">
                                                 <div class="card-title mt-2">
-                                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nueva capacidad" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_servicio">+</button>
+                                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo paquete de festejo" style="position: absolute;right: 10px;"data-bs-toggle="modal"  data-bs-target="#modal_festejo">+</button>
                                                 </div>
                                             </div>
                                             <div class="card-body pt-0">
@@ -421,16 +421,19 @@
                                                     <table class="table align-middle gs-0 gy-4 my-0">
                                                         <thead>
                                                             <tr class="fs-7 fw-bold text-gray-500">
-                                                                <th class=" min-w-70px pt-3">ID</th>
-                                                                <th class="min-w-50px d-block pt-3">PASTEL</th>
-                                                                <th class="min-w-140px pt-3">TALLA</th>
-                                                                <th class="pe-0 min-w-120px pt-3">PESO</th>
-                                                                <th class="pe-0 min-w-120px pt-3">PELAJE</th>
-                                                                <th class="pe-0 min-w-120px pt-3">PRECIO</th>
+                                                                <th class=" min-w-70px pt-3">Nombre Paquete</th>
+                                                                <th class="min-w-50px d-block pt-3">Pastel</th>
+                                                                <th class="min-w-140px pt-3">Gorritos</th>
+                                                                <th class="pe-0 min-w-120px pt-3">Decoración</th>
+                                                                <th class="pe-0 min-w-120px pt-3">Bolos</th>
+                                                                <th class="pe-0 min-w-120px pt-3">Estancia Horas</th>
+                                                                <th class="pe-0 min-w-120px pt-3">Humanos</th>
+                                                                <th class="pe-0 min-w-120px pt-3">Kninos Invitados</th>
+                                                                <th class="pe-0 min-w-120px pt-3">Precio</th>
                                                                 <th class="pe-0 text-center min-w-100px pt-3">ACCIONES</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="listar_servicios">
+                                                        <tbody id="listar_festejos_tbl">
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -442,11 +445,11 @@
                             </div>
                             <div class="tab-pane fade" id="kt_stats_widget_1_tab_4">
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-5">
                                         <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                             <div class="card-header">
                                                 <div class="card-title mt-2">
-                                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo pastel" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_tipo_pastel">+</button>
+                                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo pastel" style="position: absolute;right: 10px;" onclick="pastel()">+</button>
                                                 </div>
                                             </div>
                                             <div class="card-body pt-0">
@@ -474,18 +477,18 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="modal_servicio" tabindex="-1" aria-hidden="true">
+            <div class="modal fade" id="modal_festejo" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                     <div class="modal-content">
-                        <form class="form" method="POST" action="{{url('admin/guardar-servicio')}}"  id="guardar-servicio" onsubmit='return validar()'>
+                        <form class="form" method="POST" action="{{route('guardar_festejo')}}"  id="guardar-festejo" onsubmit='return validar_festejo()'>
                             @csrf
                         
                             <input type="hidden" name="id_PaqueteEstetica" value="Insertar" id="id_PaqueteEstetica">
                             <div class="modal-header" id="modal_servicio_header">
-                                <h2 class="fw-bold" id="id_titulo_servicio">Crear servicio</h2>
+                                <h2 class="fw-bold" id="id_titulo_servicio">Crear nuevo paquete de festejo</h2>
                                 
                                 <div id="modal_servicio_close" class="btn btn-icon btn-sm btn-active-icon-primary">
-                                    <button onclick="cerrar_modal_tipo_pastel()" style="background: transparent;border:none" type="button">
+                                    <button onclick="cerrar_modal_festejo()" style="background: transparent;border:none" type="button">
                                         <span class="svg-icon svg-icon-1">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
@@ -497,35 +500,54 @@
                                 </div>
                             </div>
                             <div class="modal-body  px-lg-17 mb-4" >
-                                <div class="scroll-y me-n7 pe-7" id="modal_servicio_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_servicio_header" data-kt-scroll-wrappers="#modal_servicio_scroll" data-kt-scroll-offset="300px">
+                                <div class="scroll-y me-n7 pe-7" id="modal_festejo_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_servicio_header" data-kt-scroll-wrappers="#modal_servicio_scroll" data-kt-scroll-offset="300px">
                                     <div class="fv-row mb-1">
-                                        <label class="required fs-6 fw-semibold mb-2">Servicio</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Servicio" name="Servicio" id="Servicio" value="" />
+                                        <label class="required fs-6 fw-semibold mb-2">Nombre Paquete</label>
+                                        <input type="text" class="form-control form-control-solid" placeholder="Nombre Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
                                     </div>
                                     <div class="fv-row mb-7">
                                         <div class="row fv-row">
-                                            <div class="col-6 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Talla</label>
-                                                <select name="id_Talla" id="id_Talla" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                            <div class="col-md-12 mt-3">
+                                                <label class="required fs-6 fw-semibold form-label mb-2">Pastel</label>
+                                                <select name="id_TipoPastel" id="id_TipoPastel" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
                                                     
                                                 </select>
                                             </div>
-                                            <div class="col-6 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Peso</label>
-                                                <select name="id_Peso" id="id_Peso" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
-                                                    
-                                                </select>
+                                            <div class="col-md-3 mt-3">
+                                                <label class="required fs-6 fw-semibold form-label mb-2">Cant. Gorritos</label>
+                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
                                             </div>
+                                            <div class="col-md-3 mt-3">
+                                                <label class="required fs-6 fw-semibold form-label mb-2">Cant. Bolo</label>
+                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
+                                                
+                                            </div>
+                                            <div class="col-md-3 mt-3">
+                                                <label class="required fs-6 fw-semibold form-label mb-2">Estancia horas</label>
+                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
+                                                
+                                            </div>
+                                            <div class="col-md-3 mt-3">
+                                                <label class="required fs-6 fw-semibold form-label mb-2">Cant. Humanos</label>
+                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
+                                                
+                                            </div>
+                                            <div class="col-md-12 mt-3">
+                                                <label class="required fs-6 fw-semibold form-label mb-2">Decoración</label>
+                                                <input class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
+                                            </div>
+                                            
+                                            
+                                            
                                             <div class="col-6 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Pelaje</label>
-                                                <select name="id_Pelaje" id="id_Pelaje" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
-                                                    
-                                                </select>
+                                                <label class="required fs-6 fw-semibold form-label mb-2">Kninos Invitados</label>
+                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
+                                                
                                             </div>
                                             <div class="col-6 mt-3">
                                                 <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                                {{-- <input type="hidden" class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" /> --}}
+                                                <input type="number" placeholder="1.0" step="0.01" min="0" class="form-control form-control-solid" name="Precio" id="Precio" value="" />
+                                                
                                             </div>
                                             <div class="col-md-12" >
                                                 <div class="row" >
@@ -550,9 +572,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer flex-center">
-                                <button type="reset" onclick="cerrar_modal_servicio()" class="btn btn-light me-3">Cancelar</button>
-                                <button type="submit" id="btn_servicio"  class="btn btn-primary">
-                                    <span class="indicator-label">Registrar servicio</span>
+                                <button type="reset" onclick="cerrar_modal_festejo()" class="btn btn-light me-3">Cancelar</button>
+                                <button type="submit" id="btn_festejo"  class="btn btn-primary">
+                                    <span class="indicator-label">Registrar festejo</span>
                                     <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                 </span>
@@ -566,8 +588,8 @@
             
             <!--end::Card-->
         </div>
-        {{-- Formularios para servicios --}}
-            <form action="{{route('listar_servicios')}}" method="get"  id="listar-servicios">
+        {{-- Formularios para festejos --}}
+            <form action="{{route('listar_festejos')}}" method="get"  id="listar-festejos">
                 @csrf
             </form>
             <form action="{{route('eliminar_servicio')}}" method="post"  id="eliminar-servicio">
@@ -586,6 +608,10 @@
             <form action="{{route('lista_tipo_pastel')}}" method="get"  id="lista-tipo_pastel">
                 @csrf
             </form>
+            <form action="{{route('guardar_tipo_pastel')}}" method="post"  id="guardar-tipo_pastel">
+                @csrf
+            </form>
+            
             <form action="{{route('eliminar_tipo_pastel')}}" method="post"  id="eliminar-tipo_pastel">
                 @csrf
             </form>
@@ -599,190 +625,256 @@
     
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {{-- Funcones para capacidad --}}
+
+    {{-- Funciones para servicios --}}
     <script>
-            lista_tipo_pastel();
-            function lista_tipo_pastel(){
-                $datosForm=$('#lista-tipo_pastel');
+        listar_festejos();
+        function listar_festejos(){
+            $datosForm=$('#listar-festejos');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                // console.log(data.servicios)
                 
-                $.ajax({
-                    url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                    method: $datosForm.attr('method'),
-                    processData: false,
-                    contentType: false
-                }).done(function (data) {
+                $('#listar_festejos_tbl').empty();
+                $('#listar_festejos_tbl').append(data.festejos);
 
-                    // console.log(data)
-                    
-                    $('#tipo_pastel_tbl').empty();
-                    $('#tipo_pastel_tbl').append(data);
+                $('#id_TipoPastel').empty();
+                $('#id_TipoPastel').append(data.pasteles);
 
+                // $('#id_Peso').empty();
+                // $('#id_Peso').append(data.pesos);
 
-                }).fail(function () {
-                });
-            }
+                // $('#id_Pelaje').empty();
+                // $('#id_Pelaje').append(data.pelajes);
 
-            // Función cerrar el modal capacidad
-            function cerrar_modal_capacidad(){
-                btn_guardar()
-                document.getElementById('guardar-capacidad').reset();
+                // $('#id_Capacidad_id').empty();
+                // $('#id_Capacidad_id').append(data.capacidad);
 
-                $('#modal_capacidad').modal('hide');
-            }
-
-            // Función abrir el modal capacidad
-            function abrir_modal_capacidad(){
-                $('#modal_capacidad').modal('show');
-            }
-
-            // Función cambiar el texto del boton capacidad
-            function btn_guardar_capacidad() {
-                var button = document.getElementById('btn_capacidad');
-                button.innerText = 'Registrar capacidad';
-
-                document.getElementById("id_titulo_capacidad").innerHTML = "Agregar nueva capacidad";
                 
-            }
 
-            // Función cambiar el texto del boton  capacidad
-            function btn_actualizar_capacidad() {
-                
-                var button = document.getElementById('btn_capacidad');
-                button.innerText = 'Actualizar capacidad';
-                document.getElementById("id_titulo_capacidad").innerHTML = "Actualizar datos de capacidad";
-            }
-
-            $('#guardar-capacidad').submit(function(e){
-                e.preventDefault();
-            
-                $datosForm=$('#guardar-capacidad');
-                $.ajax({
-                    url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                    method: $datosForm.attr('method'),
-                    processData: false,
-                    contentType: false
-                }).done(function (data) {
-                    // console.log(data)
-                    if(data=='Guardado'){
-                        Swal.fire({
-                            text:"¡Capacidad registrado correctamente!",
-                            icon:"success",
-                            buttonsStyling:!1,
-                            confirmButtonText:"Ok, entendido!",
-                            customClass:{confirmButton:"btn fw-bold btn-primary"}
-                        })
-                        document.getElementById('guardar-capacidad').reset();
-                        $('#modal_capacidad').modal('hide');
-                        lista_capacidad();
-
-                    }else if(data=='Actualizado'){
-                        Swal.fire({
-                            text:"¡Capacidad actualizado correctamente!",
-                            icon:"success",
-                            buttonsStyling:!1,
-                            confirmButtonText:"Ok, entendido!",
-                            customClass:{confirmButton:"btn fw-bold btn-primary"}
-                        })
-                        document.getElementById('guardar-capacidad').reset();
-                        $('#modal_capacidad').modal('hide');
-                        lista_capacidad();
-                    }
-                }).fail(function () {
-                });
-            
+            }).fail(function () {
             });
+        }
 
-            // Función para validar si los campos estan vacíos en capacidad
-            function validar_capacidad(){
-                var todo_correcto = true;
+        function listar_capacidad(id_Capacidad){
+            $datosForm=$('#listar-capacidad');
+            // console.log('snansmnas',id_Capacidad)
+
+            var formData = new FormData();
+            formData.append('id_Capacidad', id_Capacidad);
+            
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                data: formData,
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                // console.log(data)
+                $('#id_capacidad_tbl').empty();
+                $('#id_capacidad_tbl').append(data);
                 
-                
-                if(document.getElementById('Turno').value == ''){
-                    todo_correcto = false;
-                }
-                if(document.getElementById('Lunes').value == ''){
-                    todo_correcto = false;
-                }
-                if(document.getElementById('Martes').value == ''){
-                    todo_correcto = false;
-                }
-                if(document.getElementById('Miercoles').value == ''){
-                    todo_correcto = false;
-                }
-                if(document.getElementById('Jueves').value == ''){
-                    todo_correcto = false;
-                }
-                if(document.getElementById('Viernes').value == ''){
-                    todo_correcto = false;
-                }
-                if(document.getElementById('Sabado').value == ''){
-                    todo_correcto = false;
-                }
-                if(document.getElementById('Domingo').value == ''){
-                    todo_correcto = false;
-                }
-                if(!todo_correcto){
+
+            }).fail(function () {
+            });
+        }
+
+        // Función que registra y actualiza servicios
+        $('#guardar-servicio').submit(function(e){
+            e.preventDefault();
+        
+            $datosForm=$('#guardar-festejo');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                // console.log(data)
+                if(data=='Guardado'){
                     Swal.fire({
-                        text:"Algunos campos están vacíos, vuelva a revisarlos",
-                        icon:"warning",
+                        text:"¡Servicio registrado correctamente!",
+                        icon:"success",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",
-                        customClass:{
-                            confirmButton:"btn fw-bold btn-primary"
-                        }
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
                     })
-                }
-            }
+                    document.getElementById('guardar-servicio').reset();
+                    $('#modal_servicio').modal('hide');
+                    listar_servicios();
 
-            // Función eliminar capacidad 
-            function eliminar_capacidad(id_Capacidad){
+                }else if(data=='Actualizado'){
+                    Swal.fire({
+                        text:"¡Servicio actualizado correctamente!",
+                        icon:"success",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
+                    })
+                    document.getElementById('guardar-servicio').reset();
+                    $('#modal_servicio').modal('hide');
+                    listar_servicios();
+                }
+            }).fail(function () {
+            });
+        
+        });
+
+        // Función para validar si los campos estan vacíos
+        function validar(){
+            var todo_correcto = true;
+            
+            
+            if(document.getElementById('Servicio').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('id_Talla').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('id_Peso').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('id_Pelaje').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('Precio').value == ''){
+                todo_correcto = false;
+            }
+            if(!todo_correcto){
                 Swal.fire({
-                    text:"¿Estás seguro(a) de eliminar la capacidad seleccionado con ID: "+id_Capacidad+"?",
+                    text:"Algunos campos están vacíos, vuelva a revisarlos",
                     icon:"warning",
-                    showCancelButton:!0,
                     buttonsStyling:!1,
-                    confirmButtonText:"Si, eliminar!",
-                    cancelButtonText:"No, cancelar",
+                    confirmButtonText:"Ok, entendido!",
                     customClass:{
-                        confirmButton:"btn fw-bold btn-danger",
-                        cancelButton:"btn fw-bold btn-active-light-primary"
+                        confirmButton:"btn fw-bold btn-primary"
                     }
-                }).then(resultado=>{
-                    if (resultado.value) {
-                        $datosForm=$('#eliminar-capacidad');
-                        var formData = new FormData();
-                        formData.append('id_Capacidad', id_Capacidad);
-                        $.ajax({
-                            url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                            method: $datosForm.attr('method'),
-                            data: formData,
-                            processData: false,
-                            contentType: false
-                        }).done(function (data) {
-                            console.log(data)
-                            if(data=='Eliminado'){
-                                Swal.fire({
-                                    text:"Has borrado la capacidad con ID: "+id_Capacidad+"!.",
-                                    icon:"success",
-                                    buttonsStyling:!1,
-                                    confirmButtonText:"Ok, entendido!",
-                                    customClass:{confirmButton:"btn fw-bold btn-primary"}
-                                })
-                                lista_capacidad();
-                            } else {
-                                Swal.fire({
-                                    text:"¡Capacidad con ID: "+id_Capacidad+" no se pudo eliminar.",
-                                    icon:"error",
-                                    buttonsStyling:!1,
-                                    confirmButtonText:"Ok, entendido!",
-                                    customClass:{
-                                        confirmButton:"btn fw-bold btn-primary"
-                                    }
-                                })
-                            }
-                        }).fail(function () {
+                })
+            }
+        }
+
+        // Función para abrir el modal y mostrar los datos en el formulario
+        function editar_servicio(id_PaqueteEstetica,Servicio,id_Talla,id_Peso,id_Pelaje,id_Capacidad,Precio){
+            abrir_modal_servicio()
+            btn_actualizar()
+
+            console.log(id_PaqueteEstetica,Servicio,id_Talla,id_Peso,id_Pelaje,id_Capacidad,Precio)
+            document.getElementById("id_PaqueteEstetica").value = id_PaqueteEstetica;
+            document.getElementById("Servicio").value = Servicio;
+            // document.getElementById("id_Talla").value = id_Talla;
+            // document.getElementById("id_Peso").value = id_Peso;
+            // document.getElementById("id_Pelaje").value = id_Pelaje;
+            // document.getElementById("id_Capacidad").selected = id_Capacidad;
+            document.getElementById("Precio").value = Precio;
+            
+
+
+            var formData = new FormData();
+            formData.append('id_Talla', id_Talla);
+            formData.append('id_Peso', id_Peso);
+            formData.append('id_Pelaje', id_Pelaje);
+            formData.append('id_Capacidad', id_Capacidad);
+
+            $datosForm=$('#editar-servicio');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                data: formData,
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                console.log(data)
+                $('#id_capacidad_tbl').empty();
+
+                $('#id_Talla').empty();
+                $('#id_Talla').append(data.tallas);
+
+                $('#id_Peso').empty();
+                $('#id_Peso').append(data.pesos);
+
+                $('#id_Pelaje').empty();
+                $('#id_Pelaje').append(data.pelajes);
+
+                $('#id_Capacidad').empty();
+                $('#id_Capacidad').append(data.capacidad);
+                
+            }).fail(function () {
+            });
+
+        }
+
+        // Función cambiar el texto del boton 
+        function btn_guardar() {
+            var button = document.getElementById('btn_servicio');
+            button.innerText = 'Registrar servicio';
+
+            document.getElementById("id_titulo_servicio").innerHTML = "Agregar nuevo servicio";
+            
+        }
+
+        // Función cambiar el texto del boton 
+        function btn_actualizar() {
+            
+            var button = document.getElementById('btn_servicio');
+            button.innerText = 'Actualizar servicio';
+            document.getElementById("id_titulo_servicio").innerHTML = "Actualizar datos del servicio";
+        }
+
+        // Función cerrar el modal
+        function cerrar_modal_servicio(){
+            btn_guardar()
+            document.getElementById('guardar-servicio').reset();
+
+            $('#modal_servicio').modal('hide');
+        }
+
+        // Función abrir el modal
+        function abrir_modal_servicio(){
+            $('#modal_servicio').modal('show');
+        }
+
+        // Función eliminar el paquete 
+        function eliminar_servicio(id_PaqueteEstetica){
+            Swal.fire({
+                text:"¿Estás seguro(a) de eliminar el servicio seleccionado con ID: "+id_PaqueteEstetica+"?",
+                icon:"warning",
+                showCancelButton:!0,
+                buttonsStyling:!1,
+                confirmButtonText:"Si, eliminar!",
+                cancelButtonText:"No, cancelar",
+                customClass:{
+                    confirmButton:"btn fw-bold btn-danger",
+                    cancelButton:"btn fw-bold btn-active-light-primary"
+                }
+            }).then(resultado=>{
+                if (resultado.value) {
+                    $datosForm=$('#eliminar-servicio');
+                    var formData = new FormData();
+                    formData.append('id_PaqueteEstetica', id_PaqueteEstetica);
+                    $.ajax({
+                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                        method: $datosForm.attr('method'),
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    }).done(function (data) {
+                        console.log(data)
+                        if(data=='Eliminado'){
                             Swal.fire({
-                                text:"¡Capacidad con ID: "+id_Capacidad+" no se pudo eliminar.",
+                                text:"Has borrado el servicio con ID: "+id_PaqueteEstetica+"!.",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                            listar_servicios();
+                        } else {
+                            Swal.fire({
+                                text:"¡Guardería con ID: "+id_PaqueteEstetica+" no se pudo eliminar.",
                                 icon:"error",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -790,10 +882,10 @@
                                     confirmButton:"btn fw-bold btn-primary"
                                 }
                             })
-                        });
-                    } else {
+                        }
+                    }).fail(function () {
                         Swal.fire({
-                            text:"Has cancelado la eliminación de la capacidad con ID: "+id_Capacidad+".",
+                            text:"¡Servicio con ID: "+id_PaqueteEstetica+" no se pudo eliminar.",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -801,27 +893,222 @@
                                 confirmButton:"btn fw-bold btn-primary"
                             }
                         })
-                    }
-                })
-            }
-            // Función para abrir el modal y mostrar los datos en el formulario
-        function editar_capacidad(id_Capacidad,Turno,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo){
-            abrir_modal_capacidad()
-            btn_actualizar_capacidad()
-
-            console.log(id_Capacidad,Turno,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo);
-            document.getElementById("id_Capacidad").value = id_Capacidad;
-            document.getElementById("Turno").value = Turno;
-            document.getElementById("Lunes").value = Lunes;
-            document.getElementById("Martes").value = Martes;
-            document.getElementById("Miercoles").value = Miercoles;
-            document.getElementById("Jueves").value = Jueves;
-            document.getElementById("Viernes").value = Viernes;
-            document.getElementById("Sabado").value = Sabado;
-            document.getElementById("Domingo").value = Domingo;
-            
+                    });
+                } else {
+                    Swal.fire({
+                        text:"Has cancelado la eliminación del servicio con ID: "+id_PaqueteEstetica+".",
+                        icon:"error",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{
+                            confirmButton:"btn fw-bold btn-primary"
+                        }
+                    })
+                }
+            })
         }
     </script>
 
-    
+
+    {{-- Funciones para pasteles --}}
+    <script>
+
+        lista_tipo_pastel();
+        function lista_tipo_pastel(){
+            $datosForm=$('#lista-tipo_pastel');
+            
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+
+                // console.log(data)
+                
+                $('#tipo_pastel_tbl').empty();
+                $('#tipo_pastel_tbl').append(data);
+
+
+            }).fail(function () {
+            });
+        }
+
+        // Agregar pastel
+        function pastel()
+        {
+            Swal.fire({
+                title: "CREAR PASTEL",
+                text: "Nombre del pastel:",
+                input: 'text',
+                showCancelButton: true,
+                cancelButtonText:"Cancelar",
+                confirmButtonText:"Guardar",
+                inputValidator: nombre => {
+                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
+                    if (!nombre) {
+                        return "Por favor escribe el nombre del pastel";
+                    } else {
+                        return undefined;
+                    }
+                }
+            }).then((result) => {
+                if (result.value) {
+                    console.log("Result: " + result.value);
+                    var formData = new FormData();
+                    formData.append('id_TipoPastel', 'Insertar');
+                    formData.append('NombrePastel', result.value);
+                    $datosForm=$('#guardar-tipo_pastel');
+                    $.ajax({
+                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                        method: $datosForm.attr('method'),
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    }).done(function (data) {
+                        console.log(data)
+                        if(data=='Guardado'){
+                            Swal.fire({
+                                text:"¡Pastel registrado correctamente!",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                            lista_tipo_pastel();
+                        }else if(data=='Actualizado'){
+                            Swal.fire({
+                                text:"¡Pastel actualizado correctamente!",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                        }
+                    }).fail(function () {});
+                }
+            });
+        }
+        // Editar talla
+        function editar_tipo_pastel(id_TipoPastel, NombrePastel)
+        {
+            Swal.fire({
+                title: "ACTUALIZAR PASTEL",
+                text: "Escribe nuevo nombre del pastel: "+NombrePastel,
+                input: 'text',
+                showCancelButton: true,
+                cancelButtonText:"Cancelar",
+                confirmButtonText:"Guardar",
+                inputValidator: nombre => {
+                    // Si el valor es válido, debes regresar undefined. Si no, una cadena
+                    if (!nombre) {
+                        return "Por favor escribe el nuevo nombre del pastel";
+                    } else {
+                        return undefined;
+                    }
+                }
+            }).then((result) => {
+                if (result.value) {
+                    console.log("Result: " + result.value);
+                    var formData = new FormData();
+                    formData.append('id_TipoPastel', id_TipoPastel);
+                    formData.append('NombrePastel', result.value);
+                    $datosForm=$('#guardar-tipo_pastel');
+                    $.ajax({
+                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                        method: $datosForm.attr('method'),
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    }).done(function (data) {
+                        console.log(data)
+                        if(data=='Actualizado'){
+                            Swal.fire({
+                                text:"¡Pastel actualizada correctamente!",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                            lista_tipo_pastel();
+                        }
+                    }).fail(function () {});
+                }
+            });
+        }
+        // Eliminar talla
+        function eliminar_tipo_pastel(id_TipoPastel, NombrePastel)
+        {
+            Swal.fire({
+                text:"¿Estás seguro(a) de eliminar el pastel "+NombrePastel+"?",
+                icon:"warning",
+                showCancelButton:!0,
+                buttonsStyling:!1,
+                confirmButtonText:"Si, eliminar!",
+                cancelButtonText:"No, cancelar",
+                customClass:{
+                    confirmButton:"btn fw-bold btn-danger",
+                    cancelButton:"btn fw-bold btn-active-light-primary"
+                }
+            }).then(resultado=>{
+                if (resultado.value) {
+                    $datosForm=$('#eliminar-tipo_pastel');
+                    var formData = new FormData();
+                    formData.append('id_TipoPastel', id_TipoPastel);
+                    $.ajax({
+                        url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                        method: $datosForm.attr('method'),
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    }).done(function (data) {
+                        console.log(data)
+                        if(data=='Eliminado'){
+                            Swal.fire({
+                                text:"Has borrado el pastel "+NombrePastel+"!.",
+                                icon:"success",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{confirmButton:"btn fw-bold btn-primary"}
+                            })
+                            lista_tipo_pastel();
+                        } else {
+                            Swal.fire({
+                                text:"¡Pastel "+NombrePastel+" no se pudo eliminar.",
+                                icon:"error",
+                                buttonsStyling:!1,
+                                confirmButtonText:"Ok, entendido!",
+                                customClass:{
+                                    confirmButton:"btn fw-bold btn-primary"
+                                }
+                            })
+                        }
+                    }).fail(function () {
+                        Swal.fire({
+                            text:"Pastel "+NombrePastel+" no se pudo eliminar.",
+                            icon:"error",
+                            buttonsStyling:!1,
+                            confirmButtonText:"Ok, entendido!",
+                            customClass:{
+                                confirmButton:"btn fw-bold btn-primary"
+                            }
+                        })
+                    });
+                } else {
+                    Swal.fire({
+                        text:"Has cancelado la eliminación del pastel "+NombrePastel+".",
+                        icon:"error",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{
+                            confirmButton:"btn fw-bold btn-primary"
+                        }
+                    })
+                }
+            })
+        }
+    </script>
+
+
+
 @endsection

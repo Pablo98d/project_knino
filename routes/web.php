@@ -70,6 +70,12 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     
   
     Route::get('festejo',[FestejoController::class, 'festejo'])->name('festejo');
+    Route::get('listar-festejos',[FestejoController::class, 'listar_festejos'])->name('listar_festejos');
+    Route::post('guardar-festejo',[FestejoController::class, 'guardar_festejo'])->name('guardar_festejo');
+    
+
+
+    Route::post('guardar-tipo-pastel',[FestejoController::class, 'guardar_tipo_pastel'])->name('guardar_tipo_pastel');
     Route::get('listar-tipo-pastel',[FestejoController::class, 'lista_tipo_pastel'])->name('lista_tipo_pastel');
     Route::post('eliminar-tipo-pastel',[FestejoController::class, 'eliminar_tipo_pastel'])->name('eliminar_tipo_pastel');
     
