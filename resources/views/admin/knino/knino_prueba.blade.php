@@ -421,13 +421,13 @@
                                     {{-- Select de Energia --}}
                                     <div class="col-6 mt-3">
                                         <label class="required fs-6 fw-semibold form-label mb-2">Energia</label>
-                                        <select name="id_Energia" id="id_Energia" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la talla">
+                                        <select name="id_Energia" id="id_Energia" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el nivel de energia">
                                         </select>
                                     </div>
                                     {{-- Select de Personalidad --}}
                                     <div class="col-6 mt-3">
                                         <label class="required fs-6 fw-semibold form-label mb-2">Personalidad</label>
-                                        <select name="id_Personalidad" id="id_Personalidad" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la talla">
+                                        <select name="id_Personalidad" id="id_Personalidad" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la personalidad">
                                         </select>
                                     </div>
                                     {{-- Input de Notas --}}
@@ -1113,7 +1113,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"Talla "+nombre_talla+" no se pudo eliminar.",
+                            text:"Talla "+nombre_talla+" no se pudo eliminar por que esta siendo utilizado",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -1308,7 +1308,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"Peso "+nombre_peso+" no se pudo eliminar.",
+                            text:"Peso "+nombre_peso+" no se pudo eliminar por que esta siendo utilizado",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -1456,7 +1456,8 @@
             });
         }
         // Eliminar pelaje
-        function eliminar_pelaje(id_pelaje,tipo_pelaje){
+        function eliminar_pelaje(id_pelaje,tipo_pelaje)
+        {
             Swal.fire({
                 text:"¿Estás seguro(a) de eliminar el pelaje "+tipo_pelaje+"?",
                 icon:"warning",
@@ -1504,7 +1505,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"Pelaje "+nombre_pelaje+" no se pudo eliminar.",
+                            text:"Pelaje "+nombre_pelaje+" no se pudo eliminar por que esta siendo utilizado",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -1702,7 +1703,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"Raza " + TipoRaza + " no se pudo eliminar.",
+                            text:"Raza " + TipoRaza + " no se pudo eliminar por que esta siendo utilizado",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
