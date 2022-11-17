@@ -116,276 +116,15 @@
     </div>
 @endsection
 @section('contenido')
-
-	<!--begin::Content-->
-    {{-- <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <!--begin::Container-->
-        <div class="container-xxl" id="kt_content_container">
-            <!--begin::Navbar-->
-            <div class="card mb-6">
-                <div class="card-body pt-9 pb-0">
-                    <!--begin::Details-->
-                    <div class="d-flex flex-wrap flex-sm-nowrap">
-                        <!--begin: Pic-->
-                        <div class="me-7 mb-4">
-                            <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                <img src="assets/media/avatars/10.jpg" alt="image" />
-                                <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
-                            </div>
-                        </div>
-                        <!--end::Pic-->
-                        <!--begin::Info-->
-                        <div class="flex-grow-1">
-                            <!--begin::Title-->
-                            <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                                <!--begin::User-->
-                                <div class="d-flex flex-column">
-                                    <!--begin::Name-->
-                                    <div class="d-flex align-items-center mb-2">
-                                        <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">Festejos</a>
-                                        <a href="#">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen026.svg-->
-                                            <span class="svg-icon svg-icon-1 svg-icon-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                                    <path d="M10.0813 3.7242C10.8849 2.16438 13.1151 2.16438 13.9187 3.7242V3.7242C14.4016 4.66147 15.4909 5.1127 16.4951 4.79139V4.79139C18.1663 4.25668 19.7433 5.83365 19.2086 7.50485V7.50485C18.8873 8.50905 19.3385 9.59842 20.2758 10.0813V10.0813C21.8356 10.8849 21.8356 13.1151 20.2758 13.9187V13.9187C19.3385 14.4016 18.8873 15.491 19.2086 16.4951V16.4951C19.7433 18.1663 18.1663 19.7433 16.4951 19.2086V19.2086C15.491 18.8873 14.4016 19.3385 13.9187 20.2758V20.2758C13.1151 21.8356 10.8849 21.8356 10.0813 20.2758V20.2758C9.59842 19.3385 8.50905 18.8873 7.50485 19.2086V19.2086C5.83365 19.7433 4.25668 18.1663 4.79139 16.4951V16.4951C5.1127 15.491 4.66147 14.4016 3.7242 13.9187V13.9187C2.16438 13.1151 2.16438 10.8849 3.7242 10.0813V10.0813C4.66147 9.59842 5.1127 8.50905 4.79139 7.50485V7.50485C4.25668 5.83365 5.83365 4.25668 7.50485 4.79139V4.79139C8.50905 5.1127 9.59842 4.66147 10.0813 3.7242V3.7242Z" fill="currentColor" />
-                                                    <path d="M14.8563 9.1903C15.0606 8.94984 15.3771 8.9385 15.6175 9.14289C15.858 9.34728 15.8229 9.66433 15.6185 9.9048L11.863 14.6558C11.6554 14.9001 11.2876 14.9258 11.048 14.7128L8.47656 12.4271C8.24068 12.2174 8.21944 11.8563 8.42911 11.6204C8.63877 11.3845 8.99996 11.3633 9.23583 11.5729L11.3706 13.4705L14.8563 9.1903Z" fill="white" />
-                                                </svg>
-                                            </span>
-                                            <!--end::Svg Icon-->
-                                        </a>
-                                    </div>
-                                    <!--end::Name-->
-                                    <!--begin::Info-->
-                                    <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
-                                        <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
-                                        <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg-->
-                                        <span class="svg-icon svg-icon-4 me-1">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path opacity="0.3" d="M16.5 9C16.5 13.125 13.125 16.5 9 16.5C4.875 16.5 1.5 13.125 1.5 9C1.5 4.875 4.875 1.5 9 1.5C13.125 1.5 16.5 4.875 16.5 9Z" fill="currentColor" />
-                                                <path d="M9 16.5C10.95 16.5 12.75 15.75 14.025 14.55C13.425 12.675 11.4 11.25 9 11.25C6.6 11.25 4.57499 12.675 3.97499 14.55C5.24999 15.75 7.05 16.5 9 16.5Z" fill="currentColor" />
-                                                <rect x="7" y="6" width="4" height="4" rx="2" fill="currentColor" />
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->hoy es el cumpleaños</a>
-                                        <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
-                                        <!--begin::Svg Icon | path: icons/duotune/general/gen018.svg-->
-                                        <span class="svg-icon svg-icon-4 me-1">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path opacity="0.3" d="M18.0624 15.3453L13.1624 20.7453C12.5624 21.4453 11.5624 21.4453 10.9624 20.7453L6.06242 15.3453C4.56242 13.6453 3.76242 11.4453 4.06242 8.94534C4.56242 5.34534 7.46242 2.44534 11.0624 2.04534C15.8624 1.54534 19.9624 5.24534 19.9624 9.94534C20.0624 12.0453 19.2624 13.9453 18.0624 15.3453Z" fill="currentColor" />
-                                                <path d="M12.0624 13.0453C13.7193 13.0453 15.0624 11.7022 15.0624 10.0453C15.0624 8.38849 13.7193 7.04535 12.0624 7.04535C10.4056 7.04535 9.06241 8.38849 9.06241 10.0453C9.06241 11.7022 10.4056 13.0453 12.0624 13.0453Z" fill="currentColor" />
-                                            </svg>
-                                        </span>
-                                        <span class="svg-icon svg-icon-4 me-1">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path opacity="0.3" d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z" fill="currentColor" />
-                                                <path d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z" fill="currentColor" />
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->Firulais</a>
-                                    </div>
-                                    <!--end::Info-->
-                                </div>
-                                <!--end::User-->
-                                <!--begin::Actions-->
-                                <div class="d-flex my-4">
-                                  
-                                    <div class="me-0">
-                                        <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                            <i class="bi bi-three-dots fs-3"></i>
-                                        </button>
-                                        <!--begin::Menu 3-->
-                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3" data-kt-menu="true">
-                                            <!--begin::Heading-->
-                                            <div class="menu-item px-3">
-                                                <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Payments</div>
-                                            </div>
-                                            <!--end::Heading-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Create Invoice</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link flex-stack px-3">Create Payment
-                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i></a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Generate Bill</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
-                                                <a href="#" class="menu-link px-3">
-                                                    <span class="menu-title">Subscription</span>
-                                                    <span class="menu-arrow"></span>
-                                                </a>
-                                                <!--begin::Menu sub-->
-                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="#" class="menu-link px-3">Plans</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="#" class="menu-link px-3">Billing</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="#" class="menu-link px-3">Statements</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu separator-->
-                                                    <div class="separator my-2"></div>
-                                                    <!--end::Menu separator-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <div class="menu-content px-3">
-                                                            <!--begin::Switch-->
-                                                            <label class="form-check form-switch form-check-custom form-check-solid">
-                                                                <!--begin::Input-->
-                                                                <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications" />
-                                                                <!--end::Input-->
-                                                                <!--end::Label-->
-                                                                <span class="form-check-label text-muted fs-6">Recuring</span>
-                                                                <!--end::Label-->
-                                                            </label>
-                                                            <!--end::Switch-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                </div>
-                                                <!--end::Menu sub-->
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3 my-1">
-                                                <a href="#" class="menu-link px-3">Settings</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu 3-->
-                                    </div>
-                                    <!--end::Menu-->
-                                </div>
-                                <!--end::Actions-->
-                            </div>
-                            <!--end::Title-->
-                            <!--begin::Stats-->
-                            <div class="d-flex flex-wrap flex-stack">
-                                <!--begin::Wrapper-->
-                                <div class="d-flex flex-column flex-grow-1 pe-8">
-                                    <!--begin::Stats-->
-                                    <div class="d-flex flex-wrap">
-                                        <!--begin::Stat-->
-                                        <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                            <!--begin::Number-->
-                                            <div class="d-flex align-items-center">
-                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
-                                                <span class="svg-icon svg-icon-3 svg-icon-success me-2">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor" />
-                                                        <path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor" />
-                                                    </svg>
-                                                </span>
-                                                <!--end::Svg Icon-->
-                                                <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="4500" data-kt-countup-prefix="$">0</div>
-                                            </div>
-                                            <!--end::Number-->
-                                            <!--begin::Label-->
-                                            <div class="fw-semibold fs-6 text-gray-400">año</div>
-                                            <!--end::Label-->
-                                        </div>
-                                        <!--end::Stat-->
-                                        <!--begin::Stat-->
-                                        <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                            <!--begin::Number-->
-                                            <div class="d-flex align-items-center">
-                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr065.svg-->
-                                                <span class="svg-icon svg-icon-3 svg-icon-danger me-2">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect opacity="0.5" x="11" y="18" width="13" height="2" rx="1" transform="rotate(-90 11 18)" fill="currentColor" />
-                                                        <path d="M11.4343 15.4343L7.25 11.25C6.83579 10.8358 6.16421 10.8358 5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75L11.2929 18.2929C11.6834 18.6834 12.3166 18.6834 12.7071 18.2929L18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25C17.8358 10.8358 17.1642 10.8358 16.75 11.25L12.5657 15.4343C12.2533 15.7467 11.7467 15.7467 11.4343 15.4343Z" fill="currentColor" />
-                                                    </svg>
-                                                </span>
-                                                <!--end::Svg Icon-->
-                                                <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="80">0</div>
-                                            </div>
-                                            <!--end::Number-->
-                                            <!--begin::Label-->
-                                            <div class="fw-semibold fs-6 text-gray-400">mes</div>
-                                            <!--end::Label-->
-                                        </div>
-                                        <!--end::Stat-->
-                                        <!--begin::Stat-->
-                                        <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                            <!--begin::Number-->
-                                            <div class="d-flex align-items-center">
-                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
-                                                <span class="svg-icon svg-icon-3 svg-icon-success me-2">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor" />
-                                                        <path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor" />
-                                                    </svg>
-                                                </span>
-                                                <!--end::Svg Icon-->
-                                                <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="60" data-kt-countup-prefix="%">0</div>
-                                            </div>
-                                            <!--end::Number-->
-                                            <!--begin::Label-->
-                                            <div class="fw-semibold fs-6 text-gray-400">dia</div>
-                                            <!--end::Label-->
-                                        </div>
-                                        <!--end::Stat-->
-                                    </div>
-                                    <!--end::Stats-->
-                                </div>
-                                <!--end::Wrapper-->
-                                <!--begin::Progress-->
-                                <div class="d-flex align-items-center w-200px w-sm-300px flex-column mt-3">
-                                    <div class="d-flex justify-content-between w-100 mt-auto mb-2">
-                                        <span class="fw-semibold fs-6 text-gray-400">Total a pagar</span>
-                                        <span class="fw-bold fs-6">50%</span>
-                                    </div>
-                                    <div class="h-5px mx-3 w-100 bg-light mb-3">
-                                        <div class="bg-success rounded h-5px" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <!--end::Progress-->
-                            </div>
-                            <!--end::Stats-->
-                        </div>
-                        <!--end::Info-->
-                    </div>
-                    <!--end::Details-->
-                    <!--begin::Navs-->
-                    <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
-                        <!--begin::Nav item-->
-                        <li class="nav-item mt-2">
-                            <a class="nav-link text-active-primary ms-0 me-10 py-5" href="../../demo9/dist/pages/user-profile/activity.html">Actividades</a>
-                        </li>
-                        <!--end::Nav item-->
-                    </ul>
-                    <!--begin::Navs-->
-                </div>
-            </div>
-            <!--end::Navbar-->
-            <!--end::Modals-->
-        </div>
-        <!--end::Container-->
-    </div> --}}
-    {{-- <br><br> --}}
-    <!--end::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="container-xxl" id="kt_content_container">
+            {{-- Contenedor de la vista --}}
             <div class="card">
                 <div class="card card-flush mb-xxl-10">
                     <div class="card-body">
+                        {{-- Opciones de la vista --}}
                         <ul class="nav nav-pills nav-pills-custom mb-3">
+                            {{-- Opcion Festejos --}}
                             <li class="nav-item mb-3 me-3 me-lg-6">
                                 <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-100px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_1">
                                     <div class="nav-icon">
@@ -395,8 +134,9 @@
                                     <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
                                 </a>
                             </li>
+                            {{-- Opcion Pasteles --}}
                             <li class="nav-item mb-3 me-3 me-lg-6">
-                                <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-100px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_4">
+                                <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-100px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_2">
                                     <div class="nav-icon">
                                         <img alt="" src="assets/media/svg/brand-logos/slack-icon.svg" class="nav-icon" />
                                     </div>
@@ -405,35 +145,37 @@
                                 </a>
                             </li>
                         </ul>
+                        {{-- Cambio de vistas segun la opcion que el usuario haya seleccionado --}}
                         <div class="tab-content">
+                            {{-- Vista de festejos --}}
                             <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                            {{-- Boton de agregar nuevo festejo --}}
                                             <div class="card-header">
                                                 <div class="card-title mt-2">
-                                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo paquete de festejo" style="position: absolute;right: 10px;"data-bs-toggle="modal"  data-bs-target="#modal_festejo">+</button>
+                                                    <h2>Festejos</h2>
+                                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo paquete de festejo" style="position: absolute;right: 10px;" onclick='abrir_modal_festejo()'>+</button>
                                                 </div>
                                             </div>
+                                            {{-- Datos de la tabla festejos --}}
                                             <div class="card-body pt-0">
                                                 <div class="table-responsive">
-                                                    {{-- <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">Crear servicio</button> --}}
                                                     <table class="table align-middle gs-0 gy-4 my-0">
                                                         <thead>
-                                                            <tr class="fs-7 fw-bold text-gray-500">
-                                                                <th class=" min-w-70px pt-3">Nombre Paquete</th>
-                                                                <th class="min-w-50px d-block pt-3">Pastel</th>
-                                                                <th class="min-w-140px pt-3">Gorritos</th>
-                                                                <th class="pe-0 min-w-120px pt-3">Decoración</th>
-                                                                <th class="pe-0 min-w-120px pt-3">Bolos</th>
-                                                                <th class="pe-0 min-w-120px pt-3">Estancia Horas</th>
-                                                                <th class="pe-0 min-w-120px pt-3">Humanos</th>
-                                                                <th class="pe-0 min-w-120px pt-3">Kninos Invitados</th>
-                                                                <th class="pe-0 min-w-120px pt-3">Precio</th>
-                                                                <th class="pe-0 text-center min-w-100px pt-3">ACCIONES</th>
+                                                            <tr class="fs-7 fw-bold text-gray-700">
+                                                                <th class="pe-0 pt-3">NOMBRE PAQUETE</th>
+                                                                <th class="pe-0 pt-3">PASTEL</th>
+                                                                <th class="pe-0 pt-3">DECORACION</th>
+                                                                <th class="pe-0 pt-3 text-center">ESTANCIA HORAS</th>
+                                                                <th class="pe-0 pt-3 text-center">HUMANOS</th>
+                                                                <th class="pe-0 pt-3 text-center">KNINOS</th>
+                                                                <th class="pe-0 pt-3 text-center">PRECIO</th>
+                                                                <th class="pe-0 pt-3 text-center">ACCIONES</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="listar_festejos_tbl">
+                                                        <tbody id="listar_festejos">
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -441,29 +183,31 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                             </div>
-                            <div class="tab-pane fade" id="kt_stats_widget_1_tab_4">
-                                <div class="row">
+                            {{-- Vista de Pasteles --}}
+                            <div class="tab-pane fade" id="kt_stats_widget_1_tab_2">
+                                <div class="row mb-7">
+                                    {{-- Card Pasteles --}}
                                     <div class="col-md-5">
                                         <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                            {{-- Titulo de la Card --}}
                                             <div class="card-header">
                                                 <div class="card-title mt-2">
+                                                    <h2>Pasteles</h2>
                                                     <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo pastel" style="position: absolute;right: 10px;" onclick="pastel()">+</button>
                                                 </div>
                                             </div>
+                                            {{-- Datos de la card en forma de tabla --}}
                                             <div class="card-body pt-0">
                                                 <div class="table-responsive">
-                                                    <table class="table align-middle gs-0 gy-4 my-0">
+                                                    <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
                                                         <thead>
                                                             <tr class="fs-7 fw-bold text-gray-500">
-                                                                <th class=" d-block pt-3">ID</th>
-                                                                <th class=" pt-3">PASTEL</th>
-                                                                <th class="pe-0 text-center pt-3">Acción</th>
+                                                                <th class=" pt-3">NOMBRE PASTEL</th>
+                                                                <th class="pe-0 text-center pt-3">ACCIONES</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="tipo_pastel_tbl">
-                                                            
+                                                        <tbody class="fw-semibold text-gray-600" id="tipo_pastel_tbl">
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -477,102 +221,112 @@
                     </div>
                 </div>
             </div>
+            {{-- Modal de añadir paquete festejo --}}
             <div class="modal fade" id="modal_festejo" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                     <div class="modal-content">
-                        <form class="form" method="POST" action="{{route('guardar_festejo')}}"  id="guardar-festejo" onsubmit='return validar_festejo()'>
+                        <form class="form" method="POST" action="{{route('guardar_festejo_s')}}" id="guardar-festejo" onsubmit='return validar()'>
                             @csrf
-                        
-                            <input type="hidden" name="id_PaqueteEstetica" value="Insertar" id="id_PaqueteEstetica">
-                            <div class="modal-header" id="modal_servicio_header">
-                                <h2 class="fw-bold" id="id_titulo_servicio">Crear nuevo paquete de festejo</h2>
-                                
-                                <div id="modal_servicio_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                            <input type="text" name="id_PaqueteFestejo" value="Insertar" id="id_PaqueteFestejo">
+                            {{-- Encabezado de la modal --}}
+                            <div class="modal-header" id="modal_festejo_header">
+                                {{-- Titulo de la modal --}}
+                                <h2 class="fw-bold" id="id_titulo_festejo">Crear nuevo paquete de festejo</h2>
+                                {{-- X para cerrar la modal --}}
+                                <div id="modal_festejo_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                    {{-- Boton para la X --}}
                                     <button onclick="cerrar_modal_festejo()" style="background: transparent;border:none" type="button">
+                                        {{-- Icono de X --}}
                                         <span class="svg-icon svg-icon-1">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
                                                 <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
                                             </svg>
-    
                                         </span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="modal-body  px-lg-17 mb-4" >
-                                <div class="scroll-y me-n7 pe-7" id="modal_festejo_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_servicio_header" data-kt-scroll-wrappers="#modal_servicio_scroll" data-kt-scroll-offset="300px">
-                                    <div class="fv-row mb-1">
-                                        <label class="required fs-6 fw-semibold mb-2">Nombre Paquete</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Nombre Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
-                                    </div>
-                                    <div class="fv-row mb-7">
-                                        <div class="row fv-row">
-                                            <div class="col-md-12 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Pastel</label>
-                                                <select name="id_TipoPastel" id="id_TipoPastel" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
-                                                    
-                                                </select>
-                                            </div>
-                                            <div class="col-md-3 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Cant. Gorritos</label>
-                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                            </div>
-                                            <div class="col-md-3 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Cant. Bolo</label>
-                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                                
-                                            </div>
-                                            <div class="col-md-3 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Estancia horas</label>
-                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                                
-                                            </div>
-                                            <div class="col-md-3 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Cant. Humanos</label>
-                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                                
-                                            </div>
-                                            <div class="col-md-12 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Decoración</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                            </div>
-                                            
-                                            
-                                            
-                                            <div class="col-6 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Kninos Invitados</label>
-                                                <input type="number" class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                                
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
-                                                <input type="number" placeholder="1.0" step="0.01" min="0" class="form-control form-control-solid" name="Precio" id="Precio" value="" />
-                                                
-                                            </div>
-                                            <div class="col-md-12" >
-                                                <div class="row" >
-                                                    <div class="col-md-12 mb-2 mt-3" style="border-bottom: 1px solid rgb(171, 171, 171)">
-                                                        <center>
-                                                            <label class="required fs-6 fw-semibold form-label mb-2">Turno</label>
-                                                        </center>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <select name="id_Capacidad" id="id_Capacidad_id"  class="form-select form-select-solid" data-control="select2" onchange="listar_capacidad(this.value)" data-hide-search="true" >
-                                                            
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-8" id="id_capacidad_tbl">
-                                                        
-                                                    </div>
+                            {{-- Elementos de la modal --}}
+                            <div class="modal-body px-lg-17 mb-4" >
+                                {{-- Funmcion para el scroll de la modal --}}
+                                <div class="scroll-y me-n7 pe-7" id="modal_festejo_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_festejo_header" data-kt-scroll-wrappers="#modal_festejo_scroll" data-kt-scroll-offset="300px">
+                                    {{-- Segmento para las listas de otras tablas --}}
+                                    <div class="row mb-7">
+                                        {{-- Input de Nombre Paquete Festejo --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold mb-2">Nombre del paquete festejo</label>
+                                            <input type="text" name="NombrePaquete" id="NombrePaquete" placeholder="Nombre del paquete festejo" class="form-control form-control-solid" value="" />
+                                        </div>
+                                        {{-- Select Nombre de Pastel --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Pastel</label>
+                                            <select name="id_TipoPastel" id="id_TipoPastel" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                            </select>
+                                        </div>
+                                        {{-- Input de Decoracion --}}
+                                        <div class="col-12 mt-3">
+                                            <label class="fs-6 fw-semibold form-label mb-2">Decoracion</label>
+                                            <input type="text" name="Decoracion" id="Decoracion" placeholder="Datos de la decoracion" class="form-control form-control-solid" value="" />
+                                        </div>
+                                        {{-- Input de Gorritos --}}
+                                        <div class="col-4 mt-3">
+                                            <label class="fs-6 fw-semibold form-label mb-2">Cant. Gorritos</label>
+                                            <input type="number" name="CantidadGorritos" id="CantidadGorritos" placeholder="Gorritos" class="form-control form-control-solid" value="" />
+                                        </div>
+                                        {{-- Input de Bolos --}}
+                                        <div class="col-4 mt-3">
+                                            <label class="fs-6 fw-semibold form-label mb-2">Cant. Bolos</label>
+                                            <input type="number" name="BoloCantidad" id="BoloCantidad" placeholder="Bolos" class="form-control form-control-solid" value="" />
+                                        </div>
+                                        {{-- Input de Kninos --}}
+                                        <div class="col-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Cant. Kninos</label>
+                                            <input type="number" name="KninosInvitados" id="KninosInvitados" placeholder="Kninos" class="form-control form-control-solid" value="" />
+                                        </div>
+                                        {{-- Input de Personas --}}
+                                        <div class="col-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Cant. Personas</label>
+                                            <input type="number" name="CantidadHumanos" id="CantidadHumanos" placeholder="Personas" class="form-control form-control-solid" value="" />
+                                        </div>
+                                        {{-- Input de Estancia --}}
+                                        <div class="col-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Estancia</label>
+                                            <input type="number" name="EstanciaHoras" id="EstanciaHoras" placeholder="Estancia" class="form-control form-control-solid" value="" step="any"/>
+                                        </div>
+                                        {{-- Input de Precio --}}
+                                        <div class="col-md-4 mt-3">
+                                            <label class="fs-6 fw-semibold mb-2">Precio $</label>
+                                            <input type="number" name="Precio" id="Precio" placeholder="Precio" class="form-control form-control-solid" value="" step="any"/>
+                                        </div>
+                                        {{-- Select Capacidad --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Turno</label>
+                                            <select name="id_Capacidad" id="id_Capacidad" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                            </select>
+                                        </div>
+                                        {{-- <div class="col-12 mt-3" >
+                                            <div class="row">
+                                                <div class="}col-md-12 mb-2 mt-3" style="border-bottom: 1px solid rgb(171, 171, 171)">
+                                                    <center>
+                                                        <label class="required fs-6 fw-semibold form-label mb-2">Turno</label>
+                                                    </center>
+                                                </div>
+                                                <div class="col-4">
+                                                    <select name="id_Capacidad" id="id_Capacidad"  class="form-select form-select-solid" data-control="select2" onchange="listar_capacidad(this.value)" data-hide-search="true" >
+                                                    </select>
+                                                </div>
+                                                <div class="col-8" id="id_capacidad_tbl">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
-                                    
                                 </div>
                             </div>
+                            {{-- Botones de la modal --}}
                             <div class="modal-footer flex-center">
+                                {{-- Boton de cancelar registro --}}
                                 <button type="reset" onclick="cerrar_modal_festejo()" class="btn btn-light me-3">Cancelar</button>
+                                {{-- Boton de registrar knino --}}
                                 <button type="submit" id="btn_festejo"  class="btn btn-primary">
                                     <span class="indicator-label">Registrar festejo</span>
                                     <span class="indicator-progress">Please wait...
@@ -585,51 +339,129 @@
                 </div>
                 
             </div>
-            
-            <!--end::Card-->
+            {{-- Modal de ver paquete festejo --}}
+            <div class="modal fade" id="modal_ver_festejo" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered mw-650px">
+                    <div class="modal-content">
+                        {{-- Encabezado de la modal --}}
+                        <div class="modal-header" id="modal_festejo_header">
+                            {{-- Titulo de la modal --}}
+                            <h2 class="fw-bold" id="id_titulo_ver_festejo"></h2>
+                            {{-- X para cerrar la modal --}}
+                            <div id="modal_festejo_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                {{-- Boton para la X --}}
+                                <button onclick="cerrar_modal_ver_festejo()" style="background: transparent;border:none" type="button">
+                                    {{-- Icono de X --}}
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        {{-- Elementos de la modal --}}
+                        <div class="modal-body px-lg-17 mb-4" >
+                            {{-- Funmcion para el scroll de la modal --}}
+                            <div class="scroll-y me-n7 pe-7" id="modal_knino_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_knino_header" data-kt-scroll-wrappers="#modal_knino_scroll" data-kt-scroll-offset="300px">
+                                {{-- Segmento para las listas de otras tablas --}}
+                                <div class="row mb-7">
+                                    {{-- Input de Nombre Paquete Festejo --}}
+                                    <div class="col-md-12 mt-3">
+                                        <label class="fs-6 fw-semibold mb-2">Nombre del paquete festejo</label>
+                                        <input readonly type="text" name="ver_NombrePaquete" id="ver_NombrePaquete" class="form-control form-control-solid" value="" />
+                                    </div>
+                                    {{-- Input Nombre de Pastel --}}
+                                    <div class="col-md-12 mt-3">
+                                        <label class="fs-6 fw-semibold mb-2">Pastel</label>
+                                        <input readonly type="text" name="ver_id_TipoPastel" id="ver_id_TipoPastel" class="form-control form-control-solid" value="" />
+                                    </div>
+                                    {{-- Input de Decoracion --}}
+                                    <div class="col-12 mt-3">
+                                        <label class="fs-6 fw-semibold form-label mb-2">Decoracion</label>
+                                        <input readonly type="text" name="ver_Decoracion" id="ver_Decoracion" placeholder="Sin decoraciones" class="form-control form-control-solid" value="" />
+                                    </div>
+                                    {{-- Input de Gorritos --}}
+                                    <div class="col-4 mt-3">
+                                        <label class="fs-6 fw-semibold form-label mb-2">Cant. Gorritos</label>
+                                        <input readonly type="text" name="ver_CantidadGorritos" id="ver_CantidadGorritos" placeholder="0" class="form-control form-control-solid" value="" />
+                                    </div>
+                                    {{-- Input de Bolos --}}
+                                    <div class="col-4 mt-3">
+                                        <label class="fs-6 fw-semibold form-label mb-2">Cant. Bolos</label>
+                                        <input readonly type="text" name="ver_BoloCantidad" id="ver_BoloCantidad" placeholder="0" class="form-control form-control-solid" value="" />
+                                    </div>
+                                    {{-- Input de Kninos --}}
+                                    <div class="col-4 mt-3">
+                                        <label class="fs-6 fw-semibold form-label mb-2">Cant. Kninos</label>
+                                        <input readonly type="text" name="ver_KninosInvitados" id="ver_KninosInvitados" class="form-control form-control-solid" value="" />
+                                    </div>
+                                    {{-- Input de Personas --}}
+                                    <div class="col-4 mt-3">
+                                        <label class="fs-6 fw-semibold form-label mb-2">Cant. Personas</label>
+                                        <input readonly type="text" name="ver_CantidadHumanos" id="ver_CantidadHumanos" class="form-control form-control-solid" value="" />
+                                    </div>
+                                    {{-- Input de Estancia --}}
+                                    <div class="col-4 mt-3">
+                                        <label class="fs-6 fw-semibold form-label mb-2">Estancia</label>
+                                        <input readonly type="text" name="ver_EstanciaHoras" id="ver_EstanciaHoras" class="form-control form-control-solid" value="" />
+                                    </div>
+                                    {{-- Input de Precio --}}
+                                    <div class="col-md-4 mt-3">
+                                        <label class="fs-6 fw-semibold mb-2">Precio $</label>
+                                        <input readonly type="number" name="ver_Precio" id="ver_Precio" placeholder="Preguntar" class="form-control form-control-solid" value="" step="any"/>
+                                    </div>
+                                    {{-- Input de Capacidad --}}
+                                    <div class="col-md-12 mt-3">
+                                        <label class="fs-6 fw-semibold mb-2">Capacidad</label>
+                                        <input readonly type="text" name="ver_id_Capacidad" id="ver_id_Capacidad" class="form-control form-control-solid" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Botones de la modal --}}
+                        <div class="modal-footer flex-center">
+                            {{-- Boton de cancelar registro --}}
+                            <button type="reset" onclick="cerrar_modal_ver_festejo()" class="btn btn-primary me-3">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        {{-- Formularios para festejos --}}
-            <form action="{{route('listar_festejos')}}" method="get"  id="listar-festejos">
+
+        {{-- Formulario para festejos --}}
+            <form action="{{route('listar_festejos')}}" method="get" id="listar-festejos">
                 @csrf
             </form>
-            <form action="{{route('eliminar_servicio')}}" method="post"  id="eliminar-servicio">
+            <form action="{{route('eliminar_festejo')}}" method="post" id="eliminar-festejo">
                 @csrf
             </form>
-            <form action="{{route('listar_capacidad')}}" method="post"  id="listar-capacidad">
+            <form action="{{route('editar_festejo')}}" method="post" id="editar-festejo">
                 @csrf
             </form>
-            <form action="{{route('editar_servicio')}}" method="post"  id="editar-servicio">
+
+        {{-- Formulario para pastel --}}
+            <form action="{{route('lista_tipo_pastel')}}" method="get" id="lista-tipo_pastel">
                 @csrf
             </form>
-        {{-- End formulario servicios --}}
-    
-    
-        {{-- Formularios para tipo_pastel --}}
-            <form action="{{route('lista_tipo_pastel')}}" method="get"  id="lista-tipo_pastel">
+            <form action="{{route('guardar_tipo_pastel')}}" method="post" id="guardar-tipo_pastel">
                 @csrf
             </form>
-            <form action="{{route('guardar_tipo_pastel')}}" method="post"  id="guardar-tipo_pastel">
+            <form action="{{route('eliminar_tipo_pastel')}}" method="post" id="eliminar-tipo_pastel">
                 @csrf
             </form>
-            
-            <form action="{{route('eliminar_tipo_pastel')}}" method="post"  id="eliminar-tipo_pastel">
-                @csrf
-            </form>
-        {{-- End Formularios para capacidad --}}
-    
-    
-        <!--end::Container-->
+
     </div>
 
-
-    
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     {{-- Funciones para servicios --}}
     <script>
+        // Mostrar paquetes festejos
         listar_festejos();
-        function listar_festejos(){
+        function listar_festejos()
+        {
             $datosForm=$('#listar-festejos');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -637,113 +469,46 @@
                 processData: false,
                 contentType: false
             }).done(function (data) {
-                // console.log(data.servicios)
-                
-                $('#listar_festejos_tbl').empty();
-                $('#listar_festejos_tbl').append(data.festejos);
-
+                $('#listar_festejos').empty();
+                $('#listar_festejos').append(data.festejos);
                 $('#id_TipoPastel').empty();
                 $('#id_TipoPastel').append(data.pasteles);
-
-                // $('#id_Peso').empty();
-                // $('#id_Peso').append(data.pesos);
-
-                // $('#id_Pelaje').empty();
-                // $('#id_Pelaje').append(data.pelajes);
-
-                // $('#id_Capacidad_id').empty();
-                // $('#id_Capacidad_id').append(data.capacidad);
-
-                
-
-            }).fail(function () {
-            });
+                $('#id_Capacidad').empty();
+                $('#id_Capacidad').append(data.capacidad);
+            }).fail(function () {});
         }
-
-        function listar_capacidad(id_Capacidad){
-            $datosForm=$('#listar-capacidad');
-            // console.log('snansmnas',id_Capacidad)
-
-            var formData = new FormData();
-            formData.append('id_Capacidad', id_Capacidad);
-            
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                data: formData,
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                // console.log(data)
-                $('#id_capacidad_tbl').empty();
-                $('#id_capacidad_tbl').append(data);
-                
-
-            }).fail(function () {
-            });
-        }
-
-        // Función que registra y actualiza servicios
-        $('#guardar-servicio').submit(function(e){
-            e.preventDefault();
-        
-            $datosForm=$('#guardar-festejo');
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                // console.log(data)
-                if(data=='Guardado'){
-                    Swal.fire({
-                        text:"¡Servicio registrado correctamente!",
-                        icon:"success",
-                        buttonsStyling:!1,
-                        confirmButtonText:"Ok, entendido!",
-                        customClass:{confirmButton:"btn fw-bold btn-primary"}
-                    })
-                    document.getElementById('guardar-servicio').reset();
-                    $('#modal_servicio').modal('hide');
-                    listar_servicios();
-
-                }else if(data=='Actualizado'){
-                    Swal.fire({
-                        text:"¡Servicio actualizado correctamente!",
-                        icon:"success",
-                        buttonsStyling:!1,
-                        confirmButtonText:"Ok, entendido!",
-                        customClass:{confirmButton:"btn fw-bold btn-primary"}
-                    })
-                    document.getElementById('guardar-servicio').reset();
-                    $('#modal_servicio').modal('hide');
-                    listar_servicios();
-                }
-            }).fail(function () {
-            });
-        
-        });
-
         // Función para validar si los campos estan vacíos
-        function validar(){
+        function validar()
+        {
             var todo_correcto = true;
-            
-            
-            if(document.getElementById('Servicio').value == ''){
+            if(document.getElementById('NombrePaquete').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('id_Talla').value == ''){
+            if(document.getElementById('id_TipoPastel').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('id_Peso').value == ''){
+            if(document.getElementById('KninosInvitados').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('id_Pelaje').value == ''){
+            if(document.getElementById('CantidadHumanos').value == ''){
                 todo_correcto = false;
+            }
+            if(document.getElementById('EstanciaHoras').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('id_Capacidad').value == ''){
+                todo_correcto = false;
+            }
+            if(document.getElementById('CantidadGorritos').value == ''){
+                document.getElementById('CantidadGorritos').value = 0;
+            }
+            if(document.getElementById('BoloCantidad').value == ''){
+                document.getElementById('BoloCantidad').value = 0;
             }
             if(document.getElementById('Precio').value == ''){
-                todo_correcto = false;
+                document.getElementById('Precio').value = 0.00;
             }
+            
             if(!todo_correcto){
                 Swal.fire({
                     text:"Algunos campos están vacíos, vuelva a revisarlos",
@@ -756,30 +521,92 @@
                 })
             }
         }
-
+        // Función abrir el modal
+        function abrir_modal_festejo()
+        {
+            btn_guardar();
+            document.getElementById('guardar-festejo').reset();
+            $('#modal_festejo').modal('show');
+        }
+        // Función cambiar el texto del boton 
+        function btn_guardar()
+        {
+            var button = document.getElementById('btn_festejo');
+            button.innerText = 'Registrar paquete festejo';
+            document.getElementById("id_titulo_festejo").innerHTML = "Agregar nuevo paquete festejo";
+        }
+        // Función cambiar el texto del boton 
+        function btn_actualizar()
+        {
+            var button = document.getElementById('btn_festejo');
+            button.innerText = 'Actualizar paquete festejo';
+            document.getElementById("id_titulo_festejo").innerHTML = "Actualizar datos del paquete festejo";
+        }
+        // Función cerrar el modal
+        function cerrar_modal_festejo()
+        {
+            btn_guardar()
+            document.getElementById('guardar-festejo').reset();
+            $('#modal_festejo').modal('hide');
+        }
+        // Función que registra y actualiza servicios
+        $('#guardar-festejo').submit(function(e)
+        {
+            e.preventDefault();
+            $datosForm=$('#guardar-festejo');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                console.log(data);
+                if(data == 'Guardado'){
+                    Swal.fire({
+                        text:"¡Paquete festejo registrado correctamente!",
+                        icon:"success",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
+                    })
+                    document.getElementById('guardar-festejo').reset();
+                    cerrar_modal_festejo();
+                    listar_festejos();
+                } else if(data == 'Actualizado'){
+                    Swal.fire({
+                        text:"¡Paquete festejo actualizado correctamente!",
+                        icon:"success",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
+                    })
+                    document.getElementById('guardar-festejo').reset();
+                    cerrar_modal_festejo();
+                    listar_festejos();
+                }
+            }).fail(function () {});
+        });
         // Función para abrir el modal y mostrar los datos en el formulario
-        function editar_servicio(id_PaqueteEstetica,Servicio,id_Talla,id_Peso,id_Pelaje,id_Capacidad,Precio){
-            abrir_modal_servicio()
+        function editar_festejo(id_PaqueteFestejo, NombrePaquete, TipoPastel, CantidadGorritos, Decoracion, BoloCantidad, EstanciaHoras, CantidadHumanos, KninosInvitados, Capacidad, Precio)
+        {
+            abrir_modal_festejo()
             btn_actualizar()
-
-            console.log(id_PaqueteEstetica,Servicio,id_Talla,id_Peso,id_Pelaje,id_Capacidad,Precio)
-            document.getElementById("id_PaqueteEstetica").value = id_PaqueteEstetica;
-            document.getElementById("Servicio").value = Servicio;
-            // document.getElementById("id_Talla").value = id_Talla;
-            // document.getElementById("id_Peso").value = id_Peso;
-            // document.getElementById("id_Pelaje").value = id_Pelaje;
-            // document.getElementById("id_Capacidad").selected = id_Capacidad;
+            console.log(id_PaqueteFestejo, NombrePaquete, TipoPastel, CantidadGorritos, Decoracion, BoloCantidad, EstanciaHoras, CantidadHumanos, KninosInvitados, Capacidad, Precio);
+            document.getElementById("id_PaqueteFestejo").value = id_PaqueteFestejo;
+            document.getElementById("NombrePaquete").value = NombrePaquete;
+            document.getElementById("Decoracion").value = Decoracion;
+            document.getElementById("CantidadGorritos").value = CantidadGorritos;
+            document.getElementById("BoloCantidad").value = BoloCantidad;
+            document.getElementById("KninosInvitados").value = KninosInvitados;
+            document.getElementById("CantidadHumanos").value = CantidadHumanos;
+            document.getElementById("EstanciaHoras").value = EstanciaHoras;
             document.getElementById("Precio").value = Precio;
             
-
-
             var formData = new FormData();
-            formData.append('id_Talla', id_Talla);
-            formData.append('id_Peso', id_Peso);
-            formData.append('id_Pelaje', id_Pelaje);
-            formData.append('id_Capacidad', id_Capacidad);
+            formData.append('id_TipoPastel', TipoPastel);
+            formData.append('id_Capacidad', Capacidad);
 
-            $datosForm=$('#editar-servicio');
+            $datosForm=$('#editar-festejo');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                 method: $datosForm.attr('method'),
@@ -787,60 +614,17 @@
                 processData: false,
                 contentType: false
             }).done(function (data) {
-                console.log(data)
-                $('#id_capacidad_tbl').empty();
-
-                $('#id_Talla').empty();
-                $('#id_Talla').append(data.tallas);
-
-                $('#id_Peso').empty();
-                $('#id_Peso').append(data.pesos);
-
-                $('#id_Pelaje').empty();
-                $('#id_Pelaje').append(data.pelajes);
-
+                $('#id_TipoPastel').empty();
+                $('#id_TipoPastel').append(data.pasteles);
                 $('#id_Capacidad').empty();
                 $('#id_Capacidad').append(data.capacidad);
-                
-            }).fail(function () {
-            });
-
+            }).fail(function () {});
         }
-
-        // Función cambiar el texto del boton 
-        function btn_guardar() {
-            var button = document.getElementById('btn_servicio');
-            button.innerText = 'Registrar servicio';
-
-            document.getElementById("id_titulo_servicio").innerHTML = "Agregar nuevo servicio";
-            
-        }
-
-        // Función cambiar el texto del boton 
-        function btn_actualizar() {
-            
-            var button = document.getElementById('btn_servicio');
-            button.innerText = 'Actualizar servicio';
-            document.getElementById("id_titulo_servicio").innerHTML = "Actualizar datos del servicio";
-        }
-
-        // Función cerrar el modal
-        function cerrar_modal_servicio(){
-            btn_guardar()
-            document.getElementById('guardar-servicio').reset();
-
-            $('#modal_servicio').modal('hide');
-        }
-
-        // Función abrir el modal
-        function abrir_modal_servicio(){
-            $('#modal_servicio').modal('show');
-        }
-
         // Función eliminar el paquete 
-        function eliminar_servicio(id_PaqueteEstetica){
+        function eliminar_festejo(id_PaqueteFestejo, NombrePaquete)
+        {
             Swal.fire({
-                text:"¿Estás seguro(a) de eliminar el servicio seleccionado con ID: "+id_PaqueteEstetica+"?",
+                text:"¿Estás seguro(a) de eliminar el paquete festejo: " + NombrePaquete + "?",
                 icon:"warning",
                 showCancelButton:!0,
                 buttonsStyling:!1,
@@ -852,9 +636,9 @@
                 }
             }).then(resultado=>{
                 if (resultado.value) {
-                    $datosForm=$('#eliminar-servicio');
+                    $datosForm=$('#eliminar-festejo');
                     var formData = new FormData();
-                    formData.append('id_PaqueteEstetica', id_PaqueteEstetica);
+                    formData.append('id_PaqueteFestejo', id_PaqueteFestejo);
                     $.ajax({
                         url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                         method: $datosForm.attr('method'),
@@ -863,18 +647,18 @@
                         contentType: false
                     }).done(function (data) {
                         console.log(data)
-                        if(data=='Eliminado'){
+                        if(data == 'Eliminado'){
                             Swal.fire({
-                                text:"Has borrado el servicio con ID: "+id_PaqueteEstetica+"!.",
+                                text:"Has eliminado el paquete festejo: " + NombrePaquete + "!.",
                                 icon:"success",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
-                            listar_servicios();
+                            listar_festejos();
                         } else {
                             Swal.fire({
-                                text:"¡Guardería con ID: "+id_PaqueteEstetica+" no se pudo eliminar.",
+                                text:"¡Paquete festejo: " + NombrePaquete + " no se pudo eliminar.",
                                 icon:"error",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -885,7 +669,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"¡Servicio con ID: "+id_PaqueteEstetica+" no se pudo eliminar.",
+                            text:"¡Paquete festejo: " + NombrePaquete + " no se pudo eliminar.",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -896,7 +680,7 @@
                     });
                 } else {
                     Swal.fire({
-                        text:"Has cancelado la eliminación del servicio con ID: "+id_PaqueteEstetica+".",
+                        text:"Has cancelado la eliminación del paquete festejo: " + NombrePaquete,
                         icon:"error",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",
@@ -907,33 +691,52 @@
                 }
             })
         }
+        // Función cerrar el modal ver knino
+        function cerrar_modal_ver_festejo()
+        {
+            document.getElementById('guardar-festejo').reset();
+            $('#modal_ver_festejo').modal('hide');
+        }
+        // Función que muestra un knino por id en una modal
+        function ver_festejo(NombrePaquete, TipoPastel, CantidadGorritos, Decoracion, BoloCantidad, EstanciaHoras, CantidadHumanos, KninosInvitados, Capacidad, Precio)
+        {
+            console.log(Capacidad);
+            // Abrir la modal
+            $('#modal_ver_festejo').modal('show');
+            // Cambiar el texto del encabezado
+            document.getElementById("id_titulo_ver_festejo").innerHTML = "Datos del paquete festejo: " + NombrePaquete;
+            // Datos a mostrar en los inputs
+            console.log(NombrePaquete, TipoPastel, CantidadGorritos, Decoracion, BoloCantidad, EstanciaHoras, CantidadHumanos, KninosInvitados, Capacidad, Precio);
+            document.getElementById("ver_NombrePaquete").value = NombrePaquete;
+            document.getElementById("ver_id_TipoPastel").value = TipoPastel;
+            document.getElementById("ver_Decoracion").value = Decoracion;
+            document.getElementById("ver_CantidadGorritos").value = CantidadGorritos;
+            document.getElementById("ver_BoloCantidad").value = BoloCantidad;
+            document.getElementById("ver_KninosInvitados").value = KninosInvitados;
+            document.getElementById("ver_CantidadHumanos").value = CantidadHumanos;
+            document.getElementById("ver_EstanciaHoras").value = EstanciaHoras;
+            document.getElementById("ver_Precio").value = Precio;
+            document.getElementById("ver_id_Capacidad").value = Capacidad;
+        }
     </script>
-
 
     {{-- Funciones para pasteles --}}
     <script>
-
         lista_tipo_pastel();
-        function lista_tipo_pastel(){
+        function lista_tipo_pastel()
+        {
             $datosForm=$('#lista-tipo_pastel');
-            
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                 method: $datosForm.attr('method'),
                 processData: false,
                 contentType: false
             }).done(function (data) {
-
                 // console.log(data)
-                
                 $('#tipo_pastel_tbl').empty();
                 $('#tipo_pastel_tbl').append(data);
-
-
-            }).fail(function () {
-            });
+            }).fail(function () {});
         }
-
         // Agregar pastel
         function pastel()
         {
@@ -976,6 +779,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             lista_tipo_pastel();
+                            listar_festejos();
                         }else if(data=='Actualizado'){
                             Swal.fire({
                                 text:"¡Pastel actualizado correctamente!",
@@ -1031,6 +835,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             lista_tipo_pastel();
+                            listar_festejos();
                         }
                     }).fail(function () {});
                 }
@@ -1072,6 +877,7 @@
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
                             lista_tipo_pastel();
+                            listar_festejos();
                         } else {
                             Swal.fire({
                                 text:"¡Pastel "+NombrePastel+" no se pudo eliminar.",
@@ -1108,7 +914,5 @@
             })
         }
     </script>
-
-
 
 @endsection

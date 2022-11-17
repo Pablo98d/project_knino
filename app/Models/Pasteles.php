@@ -13,9 +13,7 @@ class Pasteles extends Model
     protected $primaryKey = "id_TipoPastel";
     public $timestamps = false;
 
- 
     protected $fillable = [
         'NombrePastel',
     ];
-
 }

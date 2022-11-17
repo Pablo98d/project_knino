@@ -74,23 +74,23 @@ class RegistroKninoController extends Controller
                         </a>
                     </td>
                     <td class="text-center">
-                    <button onclick="ver_knino(
-                        `'.$listar_kn->NombreKnino.'`,
-                        `'.$listar_kn->registroHumano->NombreHumano.'`,
-                        `'.$listar_kn->registroHumano->Apellidos.'`,
-                        `'.$listar_kn->raza->TipoRaza.'`,
-                        `'.$listar_kn->generoKnino->NombreGeneroKnino.'`,
-                        `'.$listar_kn->estatusKnino->EstatusKnino.'`,
-                        `'.$listar_kn->peso->RangoPeso.'`,
-                        `'.$listar_kn->talla->NombreTalla.'`,
-                        `'.$listar_kn->pelaje->TipoPelaje.'`,
-                        '.$listar_kn->Esterilizacion.',
-                        '.$listar_kn->Edad.',
-                        `'.$listar_kn->Cumpleanos.'`,
-                        `'.$listar_kn->nivelEnergia->Nivel.'`,
-                        `'.$listar_kn->personalidad->Personalidad.'`,
-                        `'.$listar_kn->Notas.'`,
-                        '.$listar_kn->CartillaVacunacion.',)" class="btn btn-outline-primary btn-sm">
+                        <button onclick="ver_knino(
+                            `'.$listar_kn->NombreKnino.'`,
+                            `'.$listar_kn->registroHumano->NombreHumano.'`,
+                            `'.$listar_kn->registroHumano->Apellidos.'`,
+                            `'.$listar_kn->raza->TipoRaza.'`,
+                            `'.$listar_kn->generoKnino->NombreGeneroKnino.'`,
+                            `'.$listar_kn->estatusKnino->EstatusKnino.'`,
+                            `'.$listar_kn->peso->RangoPeso.'`,
+                            `'.$listar_kn->talla->NombreTalla.'`,
+                            `'.$listar_kn->pelaje->TipoPelaje.'`,
+                            '.$listar_kn->Esterilizacion.',
+                            '.$listar_kn->Edad.',
+                            `'.$listar_kn->Cumpleanos.'`,
+                            `'.$listar_kn->nivelEnergia->Nivel.'`,
+                            `'.$listar_kn->personalidad->Personalidad.'`,
+                            `'.$listar_kn->Notas.'`,
+                            '.$listar_kn->CartillaVacunacion.',)" class="btn btn-outline-primary btn-sm">
                             Ver
                         </button>
                         <button onclick="editar_knino(

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Capacidad;
 use Illuminate\Http\Request;
 use App\Models\PaquetesFestejo;
 use App\Models\Pasteles;
@@ -12,82 +13,107 @@ class FestejoController extends Controller
     public function festejo(){
         return view('admin.festejos.festejos');
     }
-
-    public function listar_festejos(){
-
-        $p_festejos=PaquetesFestejo::all();
-        $pasteles=Pasteles::all();
-        // dd($pasteles);        
-
+    // Listar en forma de tabla todos los paquetes festejo
+    public function listar_festejos()
+    {
+        $p_festejos = PaquetesFestejo::all();
+        $pasteles = Pasteles::all(); 
+        $capacidad = Capacidad::all();     
         $output = '';
+
+        // Llenado de la tabla con sus datos
         if (count($p_festejos)==0) {
             $output = '';
         } else {
             foreach ($p_festejos as $p_festejo) {
-                $precio_festejo=number_format($p_festejo->Precio,2);
-               
+                $precio_festejo = number_format($p_festejo->Precio, 2);
+                // $precio_s_formato = 0;
+                // if ($precio_festejo == "") {
+                //     $precio_s_formato = 0.00;
+                // }
                 $output .= '
                 <tr>
-                    <td class="text-gray-800 text-hover-primary mb-1 fs-6">
+                    <td class="text-gray-600 text-hover-primary mb-1">
                         '.$p_festejo->NombrePaquete.'
                     </td>
-                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                    <td class="text-gray-600 text-hover-primary mb-1">
                         '.$p_festejo->tipo_pastel->NombrePastel.'
                     </td>
-                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
-                        '.$p_festejo->CantidadGorritos.'
-                    </td>
-                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                    <td class="text-gray-600 text-hover-primary mb-1">
                         '.$p_festejo->Decoracion.'
                     </td>
-                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
-                        '.$p_festejo->BoloCantidad.'
-                    </td>
-                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                    <td class="text-gray-600 text-hover-primary mb-1 text-center">
                         '.$p_festejo->EstanciaHoras.'
                     </td>
-                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                    <td class="text-gray-600 text-hover-primary mb-1 text-center">
                         '.$p_festejo->CantidadHumanos.'
                     </td>
-                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                    <td class="text-gray-600 text-hover-primary mb-1 text-center">
                         '.$p_festejo->KninosInvitados.'
                     </td>
-                    <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                    <td class="text-gray-600 text-hover-primary mb-1 text-center">
                         $ '.$precio_festejo.'
                     </td>
                     <td class="text-center">
-                        <button onclick="editar_festejo('.$p_festejo->id_PaqueteFestejo.',`'.$p_festejo->NombrePaquete.'`,`'.$p_festejo->tipo_pastel->NombrePastel.'`,'.$p_festejo->CantidadGorritos.',`'.$p_festejo->Decoracion.'`,'.$p_festejo->BoloCantidad.','.$p_festejo->EstanciaHoras.','.$p_festejo->CantidadHumanos.','.$p_festejo->KninosInvitados.','.$p_festejo->Precio.')" class="btn btn-outline-warning btn-sm">
-                            Editar
-                        </button>
-                        <button onclick="eliminar_festejo('.$p_festejo->id_PaqueteFestejo.')" class="btn btn-outline-danger btn-sm">
-                            Eliminar
-                        </button>
+                    <button onclick="ver_festejo(
+                        `'.$p_festejo->NombrePaquete.'`,
+                        `'.$p_festejo->tipo_pastel->NombrePastel.'`,
+                        `'.$p_festejo->CantidadGorritos.'`,
+                        `'.$p_festejo->Decoracion.'`,
+                        `'.$p_festejo->BoloCantidad.'`,
+                        `'.$p_festejo->EstanciaHoras.'`,
+                        `'.$p_festejo->CantidadHumanos.'`,
+                        `'.$p_festejo->KninosInvitados.'`,
+                        `'.$p_festejo->capacidad->Turno.'`,
+                        `'.$p_festejo->Precio.'`)" class="btn btn-outline-primary btn-sm">
+                        Ver
+                    </button>
+                    <button onclick="editar_festejo(
+                        '.$p_festejo->id_PaqueteFestejo.',
+                        `'.$p_festejo->NombrePaquete.'`,
+                        '.$p_festejo->id_TipoPastel.',
+                        '.$p_festejo->CantidadGorritos.',
+                        `'.$p_festejo->Decoracion.'`,
+                        '.$p_festejo->BoloCantidad.',
+                        '.$p_festejo->EstanciaHoras.',
+                        '.$p_festejo->CantidadHumanos.',
+                        '.$p_festejo->KninosInvitados.',
+                        '.$p_festejo->id_Capacidad.',
+                        '.$p_festejo->Precio.')" class="btn btn-outline-warning btn-sm">
+                        Editar
+                    </button>
+                    <button onclick="eliminar_festejo('.$p_festejo->id_PaqueteFestejo.',`'.$p_festejo->NombrePaquete.'`)" class="btn btn-outline-danger btn-sm">
+                        Eliminar
+                    </button>
                     </td>
                 </tr>';
             }
         }
-
-
+        // Select Pasteles
         $html_pasteles='';
-        if (count($pasteles)==0) {
-            
+        if (count($pasteles) == 0) {   
         } else {
             foreach ($pasteles as $pastel) {
                 $html_pasteles.='<option value="'.$pastel->id_TipoPastel.'">'.$pastel->NombrePastel.'</option>';
             }
         }
+        // Select Capacidad
+        $html_capacidad='';
+        if (count($capacidad) == 0) {   
+        } else {
+            foreach ($capacidad as $cap) {
+                $html_capacidad.='<option value="'.$cap->id_Capacidad.'">'.$cap->Turno.'</option>';
+            }
+        }
 
-
-        $data['festejos']=$output; 
-        $data['pasteles']=$html_pasteles; 
-        $data['capacidad']=$html_capacidad;
+        $data['festejos'] = $output; 
+        $data['pasteles'] = $html_pasteles; 
+        $data['capacidad'] = $html_capacidad;
         
         return $data;
     }
-
-
     // Agrega o actualiza una festejo
-    public function guardar_festejo(Request $request)
+    public function guardar_festejo_s(Request $request)
     {
         if ($request->id_PaqueteFestejo == 'Insertar') {
             $guardado = PaquetesFestejo::create($request->all());
@@ -109,6 +135,7 @@ class FestejoController extends Controller
             $p_festejo->id_Capacidad = $request->id_Capacidad;
             $p_festejo->Precio = $request->Precio;
             $updated = $p_festejo->save();
+            // return $p_festejo;
             if ($updated) {
                 return 'Actualizado';
             } else {
@@ -117,15 +144,57 @@ class FestejoController extends Controller
         }
         return 'Warning';
     }
+    // Datos para los select de editar paquete festejo
+    public function editar_festejo(Request $request)
+    {
+        // Select pastel
+        $pasteles = Pasteles::all();
+        $id_TipoPastel_ed = $request->id_TipoPastel;
+        $html_pasteles = '';
+        if (count($pasteles) == 0) {
+        } else {
+            foreach ($pasteles as $pastel) {
+                if ($pastel->id_TipoPastel == $id_TipoPastel_ed) {
+                    $html_pasteles.='<option value="'.$pastel->id_TipoPastel.'" selected>'.$pastel->NombrePastel.'</option>';
+                } else {
+                    $html_pasteles.='<option value="'.$pastel->id_TipoPastel.'">'.$pastel->NombrePastel.'</option>';
+                }
+            }
+        }
+        // Select capacidad
+        $capacidades = Capacidad::all();
+        $id_Capacidad_ed = $request->id_Capacidad;
+        $html_capacidad = '';
+        if (count($capacidades) == 0) {
+        } else {
+            foreach ($capacidades as $capa) {
+                if ($capa->id_Capacidad == $id_Capacidad_ed) {
+                    $html_capacidad.='<option value="'.$capa->id_Capacidad.'" selected>'.$capa->Turno.'</option>';
+                } else {
+                    $html_capacidad.='<option value="'.$capa->id_Capacidad.'">'.$capa->Turno.'</option>';
+                }   
+            }
+        }
 
-    
+        $data['pasteles'] = $html_pasteles; 
+        $data['capacidad'] = $html_capacidad;
 
-
-
-    public function lista_tipo_pastel(){
-
+        return $data;
+    }
+    // Elimina un tipo de pastel
+    public function eliminar_festejo(Request $request)
+    {
+        $eliminar = PaquetesFestejo::destroy($request->id_PaqueteFestejo);
+        if ($eliminar) {
+            return 'Eliminado';
+        } else {
+            return 'Error';
+        }
+    }
+    // Listar en forma de tabla todos los pasteles
+    public function lista_tipo_pastel()
+    {
         $pasteles=Pasteles::all();
-
         $output = '';
         if (count($pasteles)==0) {
             $output = '';
@@ -133,9 +202,6 @@ class FestejoController extends Controller
             foreach ($pasteles as $pastel) {
                 $output .= '
                 <tr>
-                    <td class="text-gray-800 text-hover-primary mb-1 fs-6">
-                        '.$pastel->id_TipoPastel.'
-                    </td>
                     <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
                         '.$pastel->NombrePastel.'
                     </td>
@@ -152,8 +218,7 @@ class FestejoController extends Controller
         }
         return $output;
     }
-
-    // Agrega o actualiza tipo pastel
+    // Agrega o actualiza un tipo pastel
     public function guardar_tipo_pastel(Request $request)
     {
         if ($request->id_TipoPastel == 'Insertar') {
@@ -175,8 +240,7 @@ class FestejoController extends Controller
         }
         return 'Warning';
     }
-
-    // Elimina una tipo_pastel
+    // Elimina un tipo de pastel
     public function eliminar_tipo_pastel(Request $request)
     {
         $eliminar = Pasteles::destroy($request->id_TipoPastel);
@@ -186,5 +250,4 @@ class FestejoController extends Controller
             return 'Error';
         }
     }
-
 }

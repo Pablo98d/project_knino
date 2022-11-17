@@ -30,10 +30,10 @@ class PaquetesFestejo extends Model
     {
         return $this->belongsTo(Pasteles::class,'id_TipoPastel');
     }
-    // public function peso()
-    // {
-    //     return $this->belongsTo(Peso::class,'id_Peso');
-    // }
+    public function capacidad()
+    {
+        return $this->belongsTo(Capacidad::class,'id_Capacidad');
+    }
     // public function pelaje()
     // {
     //     return $this->belongsTo(Pelaje::class,'id_Pelaje');

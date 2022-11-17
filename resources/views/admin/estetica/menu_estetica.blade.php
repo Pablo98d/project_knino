@@ -149,7 +149,7 @@
                                     <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
                                         <div class="card-header">
                                             <div class="card-title mt-2">
-                                                <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nueva capacidad" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_servicio">+</button>
+                                                <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nueva capacidad" style="position: absolute;right: 10px;" onclick='abrir_modal_servicio()'>+</button>
                                             </div>
                                         </div>
                                         <div class="card-body pt-0">
@@ -499,7 +499,7 @@
                         customClass:{confirmButton:"btn fw-bold btn-primary"}
                     })
                     document.getElementById('guardar-servicio').reset();
-                    $('#modal_servicio').modal('hide');
+                    cerrar_modal_servicio();
                     listar_servicios();
 
                 }else if(data=='Actualizado'){
@@ -511,7 +511,7 @@
                         customClass:{confirmButton:"btn fw-bold btn-primary"}
                     })
                     document.getElementById('guardar-servicio').reset();
-                    $('#modal_servicio').modal('hide');
+                    cerrar_modal_servicio();
                     listar_servicios();
                 }
             }).fail(function () {
@@ -606,14 +606,11 @@
         function btn_guardar() {
             var button = document.getElementById('btn_servicio');
             button.innerText = 'Registrar servicio';
-
             document.getElementById("id_titulo_servicio").innerHTML = "Agregar nuevo servicio";
-            
         }
 
         // Función cambiar el texto del boton 
         function btn_actualizar() {
-            
             var button = document.getElementById('btn_servicio');
             button.innerText = 'Actualizar servicio';
             document.getElementById("id_titulo_servicio").innerHTML = "Actualizar datos del servicio";
@@ -623,12 +620,13 @@
         function cerrar_modal_servicio(){
             btn_guardar()
             document.getElementById('guardar-servicio').reset();
-
             $('#modal_servicio').modal('hide');
         }
 
         // Función abrir el modal
         function abrir_modal_servicio(){
+            btn_guardar();
+            document.getElementById('guardar-servicio').reset();
             $('#modal_servicio').modal('show');
         }
 

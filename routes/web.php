@@ -53,7 +53,7 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('eliminar-servicio',[EsteticaController::class, 'eliminar_servicio'])->name('eliminar_servicio');
     Route::post('listar-capacidad',[EsteticaController::class, 'listar_capacidad'])->name('listar_capacidad');
 
-    Route::post('guardar-knino',[RegistroKninoController::class, 'guardar_knino'])->name('guardar_knino');
+    
     
     // CRUD CAPACIDAD
     Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
@@ -68,33 +68,33 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('eliminar-humano',[RegistroHumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
 
     
-  
-    Route::get('festejo',[FestejoController::class, 'festejo'])->name('festejo');
-    Route::get('listar-festejos',[FestejoController::class, 'listar_festejos'])->name('listar_festejos');
-    Route::post('guardar-festejo',[FestejoController::class, 'guardar_festejo'])->name('guardar_festejo');
-    
-
-
-    Route::post('guardar-tipo-pastel',[FestejoController::class, 'guardar_tipo_pastel'])->name('guardar_tipo_pastel');
-    Route::get('listar-tipo-pastel',[FestejoController::class, 'lista_tipo_pastel'])->name('lista_tipo_pastel');
-    Route::post('eliminar-tipo-pastel',[FestejoController::class, 'eliminar_tipo_pastel'])->name('eliminar_tipo_pastel');
-    
-    
-
-
-
     Route::get('hoteles',[AdminController::class, 'hoteles'])->name('hoteles');
     Route::get('talla',[AdminController::class, 'talla'])->name('talla');
     Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');
     Route::get('peso',[AdminController::class, 'peso'])->name('peso');
 
+
+    // Vista principal de festejos
+    Route::get('festejo',[FestejoController::class, 'festejo'])->name('festejo');
+    // Rutas para festejos
+    Route::get('listar-festejos',[FestejoController::class, 'listar_festejos'])->name('listar_festejos');
+    Route::post('guardar-festejos',[FestejoController::class, 'guardar_festejo_s'])->name('guardar_festejo_s');
+    
+    Route::post('editar-festejo',[FestejoController::class, 'editar_festejo'])->name('editar_festejo');
+
+    Route::post('eliminar-festejo',[FestejoController::class, 'eliminar_festejo'])->name('eliminar_festejo');
+    // Rutas para pasteles
+    Route::get('listar-tipo-pastel',[FestejoController::class, 'lista_tipo_pastel'])->name('lista_tipo_pastel');
+    Route::post('guardar-tipo-pastel',[FestejoController::class, 'guardar_tipo_pastel'])->name('guardar_tipo_pastel');
+    Route::post('eliminar-tipo-pastel',[FestejoController::class, 'eliminar_tipo_pastel'])->name('eliminar_tipo_pastel');
+    
     // Vista principal de kninos
     Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
     // Rutas para kninos
     Route::get('listar-kninos',[RegistroKninoController::class, 'listar_kninos'])->name('listar_kninos');
-    // Route::post('guardar-knino',[RegistroKninoController::class, 'guardar_knino'])->name('guardar_knino');
-    Route::post('eliminar-knino',[RegistroKninoController::class, 'eliminar_knino'])->name('eliminar_knino');
+    Route::post('guardar-knino',[RegistroKninoController::class, 'guardar_knino'])->name('guardar_knino');
     Route::post('editar-knino',[RegistroKninoController::class, 'editar_knino'])->name('editar_knino');
+    Route::post('eliminar-knino',[RegistroKninoController::class, 'eliminar_knino'])->name('eliminar_knino');
     // Rutas para tallas
     Route::get('listar-talla',[RegistroKninoController::class, 'listar_talla'])->name('listar_talla');
     Route::post('guardar-talla',[RegistroKninoController::class, 'guardar_talla'])->name('guardar_talla');

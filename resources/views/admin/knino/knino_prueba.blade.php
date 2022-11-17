@@ -133,188 +133,189 @@
 @endsection
 @section('contenido')
 
-<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-    <div class="container-xxl" id="kt_content_container">
-        {{-- Contenedor de la vista --}}
-        <div class="card">
-            <div class="card card-flush mb-xxl-10">
-                <div class="card-body">
-                    {{-- Opciones de la vista --}}
-                    <ul class="nav nav-pills nav-pills-custom mb-3">
-                        {{-- Opcion de Registro --}}
-                        <li class="nav-item mb-3 me-3 me-lg-6">
-                            {{-- Invocacion de la vista en el href --}}
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_1">
-                                {{-- Logo del boton --}}
-                                <div class="nav-icon">
-                                    <img alt="" src="assets/media/svg/brand-logos/beats-electronics.svg" class="" />
-                                </div>
-                                {{-- Letras del boton --}}
-                                <span class="nav-text text-gray-700 fw-bold fs-6 lh-1">Registro</span>
-                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                            </a>
-                        </li>
-                        {{-- Opcion de Tallas --}}
-                        <li class="nav-item mb-3 me-3 me-lg-6">
-                            {{-- Invocacion de la vista en el href --}}
-                            <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_2">
-                                {{-- Logo del boton --}}
-                                <div class="nav-icon">
-                                    <img alt="" src="assets/media/svg/brand-logos/adidas.svg" class="" />
-                                </div>
-                                {{-- Letras del boton --}}
-                                <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Datos</span>
-                                <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
-                            </a>
-                        </li>
-                    </ul>
-                    {{-- Cambio de vistas segun la opcion que el usuario haya seleccionado --}}
-                    <div class="tab-content">
-                        {{-- Vista de Registro --}}
-                        <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1"> 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                        {{-- Boton de agregar nuevo knino --}}
-                                        <div class="card-header">
-                                            <div class="card-title mt-2">
-                                                <h2>Kninos</h2>
-                                                <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo knino" style="position: absolute;right: 10px;" data-bs-toggle="modal"  data-bs-target="#modal_knino">+</button>
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <div class="container-xxl" id="kt_content_container">
+            {{-- Contenedor de la vista --}}
+            <div class="card">
+                <div class="card card-flush mb-xxl-10">
+                    <div class="card-body">
+                        {{-- Opciones de la vista --}}
+                        <ul class="nav nav-pills nav-pills-custom mb-3">
+                            {{-- Opcion de Registro --}}
+                            <li class="nav-item mb-3 me-3 me-lg-6">
+                                {{-- Invocacion de la vista en el href --}}
+                                <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden active w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_1">
+                                    {{-- Logo del boton --}}
+                                    <div class="nav-icon">
+                                        <img alt="" src="assets/media/svg/brand-logos/beats-electronics.svg" class="" />
+                                    </div>
+                                    {{-- Letras del boton --}}
+                                    <span class="nav-text text-gray-700 fw-bold fs-6 lh-1">Registro</span>
+                                    <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                                </a>
+                            </li>
+                            {{-- Opcion de Tallas --}}
+                            <li class="nav-item mb-3 me-3 me-lg-6">
+                                {{-- Invocacion de la vista en el href --}}
+                                <a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_2">
+                                    {{-- Logo del boton --}}
+                                    <div class="nav-icon">
+                                        <img alt="" src="assets/media/svg/brand-logos/adidas.svg" class="" />
+                                    </div>
+                                    {{-- Letras del boton --}}
+                                    <span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Datos</span>
+                                    <span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- Cambio de vistas segun la opcion que el usuario haya seleccionado --}}
+                        <div class="tab-content">
+                            {{-- Vista de Registro --}}
+                            <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1"> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card " style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                            {{-- Boton de agregar nuevo knino --}}
+                                            <div class="card-header">
+                                                <div class="card-title mt-2">
+                                                    <h2>Kninos</h2>
+                                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo knino" style="position: absolute;right: 10px;" onclick='abrir_modal_knino()'>+</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                        {{-- Datos de la tabla knino --}}
-                                        <div class="card-body pt-0">
-                                            <div class="table-responsive">
-                                                <table class="table align-middle gs-0 gy-4 my-0">
-                                                    <thead>
-                                                        <tr class="fs-7 fw-bold text-gray-500">
-                                                            <th class="pe-0 pt-3">NOMBRE KNINO</th>
-                                                            <th class="pe-0 pt-3">NOMBRE PERSONA</th>
-                                                            <th class="pt-3">RAZA</th>
-                                                            <th class="pe-0 pt-3">GENERO</th>
-                                                            <th class="pe-0 pt-3">ESTATUS</th>
-                                                            <th class="pe-0 pt-3">CUMPLEAÑOS</th>
-                                                            <th class="pe-0 text-center pt-3">ACCIONES</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="listar_kninos">
-                                                    </tbody>
-                                                </table>
+                                            {{-- Datos de la tabla knino --}}
+                                            <div class="card-body pt-0">
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle gs-0 gy-4 my-0">
+                                                        <thead>
+                                                            <tr class="fs-7 fw-bold text-gray-500">
+                                                                <th class="pe-0 pt-3">NOMBRE KNINO</th>
+                                                                <th class="pe-0 pt-3">NOMBRE PERSONA</th>
+                                                                <th class="pe-0 pt-3">RAZA</th>
+                                                                <th class="pe-0 pt-3">GENERO</th>
+                                                                <th class="pe-0 pt-3">ESTATUS</th>
+                                                                <th class="pe-0 pt-3">CUMPLEAÑOS</th>
+                                                                <th class="pe-0 text-center pt-3">ACCIONES</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="listar_kninos">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        {{--Vista de Datos --}}
-                        <div class="tab-pane fade" id="kt_stats_widget_1_tab_2">
-                            <div class="row mb-7">
-                                {{-- Card Raza --}}
-                                <div class="col-md-4"> 
-                                    <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                        {{-- Titulo de la Card --}}
-                                        <div class="card-header">
-                                            <div class="card-title mt-2">
-                                                <h2>Razas Kninos</h2> 
-                                                <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="raza()">+</button>
+                            {{--Vista de Datos --}}
+                            <div class="tab-pane fade" id="kt_stats_widget_1_tab_2">
+                                <div class="row mb-7">
+                                    {{-- Card Raza --}}
+                                    <div class="col-md-4"> 
+                                        <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                            {{-- Titulo de la Card --}}
+                                            <div class="card-header">
+                                                <div class="card-title mt-2">
+                                                    <h2>Razas Kninos</h2> 
+                                                    <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="raza()">+</button>
+                                                </div>
+                                            </div>
+                                            {{-- Datos de la card en forma de tabla --}}
+                                            <div class="card-body pt-0">
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
+                                                        <thead>
+                                                            <tr class="fs-7 fw-bold text-gray-500">
+                                                                <th class="pe-0 pt-3">NOMBRE RAZA</th>
+                                                                <th class="pe-0 text-center pt-3">ACCIONES</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="fw-semibold text-gray-600" id="listar_razas">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
-                                        {{-- Datos de la card en forma de tabla --}}
-                                        <div class="card-body pt-0">
-                                            <div class="table-responsive">
-                                                <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <thead>
-                                                        <tr class="fs-7 fw-bold text-gray-500">
-                                                            <th class="pe-0 pt-3">NOMBRE RAZA</th>
-                                                            <th class="pe-0 text-center pt-3">ACCIONES</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="fw-semibold text-gray-600" id="listar_razas">
-                                                    </tbody>
-                                                </table>
+                                    </div>
+                                    {{-- Card Peso --}}
+                                    <div class="col-md-4">
+                                        <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                            {{-- Titulo de la Card --}}
+                                            <div class="card-header">
+                                                <div class="card-title mt-2">
+                                                    <h2>Pesos Kninos</h2> 
+                                                    <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="peso()">+</button>
+                                                </div>
+                                            </div>
+                                            {{-- Datos de la card en forma de tabla --}}
+                                            <div class="card-body pt-0">
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
+                                                        <thead>
+                                                            <tr class="fs-7 fw-bold text-gray-500">
+                                                                <th class="pe-0 pt-3">PESO</th>
+                                                                <th class="pe-0 text-center pt-3">ACCIONES</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="fw-semibold text-gray-600" id="listar_peso">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- Card Talla --}}
+                                    <div class="col-md-4"> 
+                                        <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                            {{-- Titulo de la Card --}}
+                                            <div class="card-header">
+                                                <div class="card-title mt-2">
+                                                    <h2>Tallas Kninos</h2> 
+                                                    <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="talla()">+</button>
+                                                </div>
+                                            </div>
+                                            {{-- Datos de la card en forma de tabla --}}
+                                            <div class="card-body pt-0">
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
+                                                        <thead>
+                                                            <tr class="fs-7 fw-bold text-gray-500">
+                                                                <th class="pe-0 pt-3">TALLA</th>
+                                                                <th class="pe-0 text-center pt-3">ACCIONES</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="fw-semibold text-gray-600" id="listar_tallas">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- Card Peso --}}
-                                <div class="col-md-4">
-                                    <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                        {{-- Titulo de la Card --}}
-                                        <div class="card-header">
-                                            <div class="card-title mt-2">
-                                                <h2>Pesos Kninos</h2> 
-                                                <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="peso()">+</button>
+                                <div class="row mb-7">
+                                    {{-- Card Pelaje --}}
+                                    <div class="col-md-4">
+                                        <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                            {{-- Titulo de la Card --}}
+                                            <div class="card-header">
+                                                <div class="card-title mt-2">
+                                                    <h2>Pelajes Kninos</h2> 
+                                                    <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="pelaje()">+</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                        {{-- Datos de la card en forma de tabla --}}
-                                        <div class="card-body pt-0">
-                                            <div class="table-responsive">
-                                                <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <thead>
-                                                        <tr class="fs-7 fw-bold text-gray-500">
-                                                            <th class="pe-0 pt-3">PESO</th>
-                                                            <th class="pe-0 text-center pt-3">ACCIONES</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="fw-semibold text-gray-600" id="listar_peso">
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- Card Talla --}}
-                                <div class="col-md-4"> 
-                                    <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                        {{-- Titulo de la Card --}}
-                                        <div class="card-header">
-                                            <div class="card-title mt-2">
-                                                <h2>Tallas Kninos</h2> 
-                                                <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="talla()">+</button>
-                                            </div>
-                                        </div>
-                                        {{-- Datos de la card en forma de tabla --}}
-                                        <div class="card-body pt-0">
-                                            <div class="table-responsive">
-                                                <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <thead>
-                                                        <tr class="fs-7 fw-bold text-gray-500">
-                                                            <th class="pe-0 pt-3">TALLA</th>
-                                                            <th class="pe-0 text-center pt-3">ACCIONES</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="fw-semibold text-gray-600" id="listar_tallas">
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mb-7">
-                                {{-- Card Pelaje --}}
-                                <div class="col-md-4">
-                                    <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
-                                        {{-- Titulo de la Card --}}
-                                        <div class="card-header">
-                                            <div class="card-title mt-2">
-                                                <h2>Pelajes Kninos</h2> 
-                                                <button type="button" class="btn btn-success btn-sm ml-2" style="position: absolute;right: 10px;" onclick="pelaje()">+</button>
-                                            </div>
-                                        </div>
-                                        {{-- Datos de la card en forma de tabla --}}
-                                        <div class="card-body pt-0">
-                                            <div class="table-responsive">
-                                                <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
-                                                    <thead>
-                                                        <tr class="fs-7 fw-bold text-gray-500">
-                                                            <th class="pe-0 pt-3">PELAJE</th>
-                                                            <th class="pe-0 text-center pt-3">ACCIONES</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="fw-semibold text-gray-600" id="listar_pelaje">
-                                                    </tbody>
-                                                </table>
+                                            {{-- Datos de la card en forma de tabla --}}
+                                            <div class="card-body pt-0">
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5 min-w-300px">
+                                                        <thead>
+                                                            <tr class="fs-7 fw-bold text-gray-500">
+                                                                <th class="pe-0 pt-3">PELAJE</th>
+                                                                <th class="pe-0 text-center pt-3">ACCIONES</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="fw-semibold text-gray-600" id="listar_pelaje">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -324,148 +325,144 @@
                     </div>
                 </div>
             </div>
-        </div>
-        {{-- Modal de añadir Knino --}}
-        <div class="modal fade" id="modal_knino" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered mw-650px">
-                <div class="modal-content">
-                    <form class="form" method="POST" action="{{url('admin/guardar-knino')}}"  id="guardar-knino" onsubmit='return validar()'>
-                        @csrf
-                        <input type="hidden" name="id_Knino" value="Insertar" id="id_Knino">
-                        {{-- Encabezado de la modal --}}
-                        <div class="modal-header" id="modal_knino_header">
-                            {{-- Titulo de la modal --}}
-                            <h2 class="fw-bold" id="id_titulo_knino">Agregar nuevo knino</h2>
-                            {{-- X para cerrar la modal --}}
-                            <div id="modal_knino_close" class="btn btn-icon btn-sm btn-active-icon-primary">
-                                {{-- Boton para la X --}}
-                                <button onclick="cerrar_modal_knino()" style="background: transparent;border:none" type="button">
-                                    {{-- Icono de X --}}
-                                    <span class="svg-icon svg-icon-1">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-                                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-                                        </svg>
-                                    </span>
-                                </button>
+            {{-- Modal de añadir Knino --}}
+            <div class="modal fade" id="modal_knino" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered mw-650px">
+                    <div class="modal-content">
+                        <form class="form" method="POST" action="{{url('admin/guardar-knino')}}"  id="guardar-knino" onsubmit='return validar()'>
+                            @csrf
+                            <input type="hidden" name="id_Knino" value="Insertar" id="id_Knino">
+                            {{-- Encabezado de la modal --}}
+                            <div class="modal-header" id="modal_knino_header">
+                                {{-- Titulo de la modal --}}
+                                <h2 class="fw-bold" id="id_titulo_knino">Agregar nuevo knino</h2>
+                                {{-- X para cerrar la modal --}}
+                                <div id="modal_knino_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                    {{-- Boton para la X --}}
+                                    <button onclick="cerrar_modal_knino()" style="background: transparent;border:none" type="button">
+                                        {{-- Icono de X --}}
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        {{-- Elementos de la modal --}}
-                        <div class="modal-body  px-lg-17 mb-4" >
-                            {{-- Funmcion para el scroll de la modal --}}
-                            <div class="scroll-y me-n7 pe-7" id="modal_knino_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_knino_header" data-kt-scroll-wrappers="#modal_knino_scroll" data-kt-scroll-offset="300px">
-                                {{-- Segmento para las listas de otras tablas --}}
-                                <div class="row mb-7">
-                                    {{-- Input de Nombre Knino --}}
-                                    <div class="col-md-12 mt-3">
-                                        <label class="required fs-6 fw-semibold mb-2">Nombre del knino</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Nombre del knino" name="NombreKnino" id="Knino" value="" />
-                                    </div>
-                                    {{-- Select Nombre de dueño --}}
-                                    <div class="col-md-12 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Nombre del dueño</label>
-                                        <select name="id_Humano" id="id_Humano" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Nombre del dueño">
-                                        </select>
-                                    </div>
-                                    {{-- Select de Raza --}}
-                                    <div class="col-6 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Raza</label>
-                                        <select name="id_Raza" id="id_Raza" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la raza">
-                                        </select>
-                                    </div>
-                                    {{-- Select de Genero --}}
-                                    <div class="col-6 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Genero</label>
-                                        <select name="id_GeneroKnino" id="id_GeneroKnino" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el genero">
-                                        </select>
-                                    </div>
-                                    {{-- Select de Estatus --}}
-                                    <div class="col-6 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Estatus</label>
-                                        <select name="id_EstatusKnino" id="id_EstatusKnino" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el estatus">
-                                        </select>
-                                    </div>
-                                    {{-- Select de Peso --}}
-                                    <div class="col-6 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Peso</label>
-                                        <select name="id_Peso" id="id_Peso" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el peso">
-                                        </select>
-                                    </div>
-                                    {{-- Select de Talla --}}
-                                    <div class="col-6 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Talla</label>
-                                        <select name="id_Talla" id="id_Talla" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la talla">
-                                        </select>
-                                    </div>
-                                    {{-- Select de Pelaje --}}
-                                    <div class="col-6 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Pelaje</label>
-                                        <select name="id_Pelaje" id="id_Pelaje" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el pelaje">
-                                        </select>
-                                    </div>
-                                    {{-- Input de Esterilizacion --}}
-                                    <div class="col-md-12 mt-3">
-                                        <label class="required fs-6 fw-semibold mb-2">Esterilizacion</label>
-                                        <input type="number" class="form-control form-control-solid" placeholder="Esterilizacion del knino" name="Esterilizacion" id="Esterilizacion" value="" />
-                                    </div>
-                                    {{-- Input de Edad --}}
-                                    <div class="col-md-12 mt-3">
-                                        <label class="required fs-6 fw-semibold mb-2">Edad</label>
-                                        <input type="number" class="form-control form-control-solid" placeholder="Edad del knino" name="Edad" id="Edad" value="" />
-                                    </div>
-                                    {{-- Input de Cumpleaños --}}
-                                    <div class="col-md-12 mt-3">
-                                        <label class="fs-6 fw-semibold mb-2">Cumpleaños</label>
-                                        <input type="date" class="form-control form-control-solid" placeholder="Digite la fecha de cumpleaños" name="Cumpleanos" id="Cumpleanos" value="" />
-                                    </div>
-                                    {{-- Select de Energia --}}
-                                    <div class="col-6 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Energia</label>
-                                        <select name="id_Energia" id="id_Energia" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el nivel de energia">
-                                        </select>
-                                    </div>
-                                    {{-- Select de Personalidad --}}
-                                    <div class="col-6 mt-3">
-                                        <label class="required fs-6 fw-semibold form-label mb-2">Personalidad</label>
-                                        <select name="id_Personalidad" id="id_Personalidad" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la personalidad">
-                                        </select>
-                                    </div>
-                                    {{-- Input de Notas --}}
-                                    <div class="col-md-12 mt-3">
-                                        <label class="fs-6 fw-semibold mb-2">Notas</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Ingrese una nota" name="Notas" id="Nota" value="" />
-                                    </div>
-                                    {{-- Input de Cartilla --}}
-                                    <div class="col-md-12 mt-3">
-                                        <label class="required fs-6 fw-semibold mb-2">Cartilla de vacunación</label>
-                                        <input type="number" class="form-control form-control-solid" placeholder="Cartilla de vacunacion" name="CartillaVacunacion" id="Cartilla" value="" />
+                            {{-- Elementos de la modal --}}
+                            <div class="modal-body  px-lg-17 mb-4" >
+                                {{-- Funmcion para el scroll de la modal --}}
+                                <div class="scroll-y me-n7 pe-7" id="modal_knino_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_knino_header" data-kt-scroll-wrappers="#modal_knino_scroll" data-kt-scroll-offset="300px">
+                                    {{-- Segmento para las listas de otras tablas --}}
+                                    <div class="row mb-7">
+                                        {{-- Input de Nombre Knino --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold mb-2">Nombre del knino</label>
+                                            <input type="text" class="form-control form-control-solid" placeholder="Nombre del knino" name="NombreKnino" id="Knino" value="" />
+                                        </div>
+                                        {{-- Select Nombre de dueño --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Nombre del dueño</label>
+                                            <select name="id_Humano" id="id_Humano" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Nombre del dueño">
+                                            </select>
+                                        </div>
+                                        {{-- Select de Raza --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Raza</label>
+                                            <select name="id_Raza" id="id_Raza" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la raza">
+                                            </select>
+                                        </div>
+                                        {{-- Select de Genero --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Genero</label>
+                                            <select name="id_GeneroKnino" id="id_GeneroKnino" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el genero">
+                                            </select>
+                                        </div>
+                                        {{-- Select de Estatus --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Estatus</label>
+                                            <select name="id_EstatusKnino" id="id_EstatusKnino" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el estatus">
+                                            </select>
+                                        </div>
+                                        {{-- Select de Peso --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Peso</label>
+                                            <select name="id_Peso" id="id_Peso" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el peso">
+                                            </select>
+                                        </div>
+                                        {{-- Select de Talla --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Talla</label>
+                                            <select name="id_Talla" id="id_Talla" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la talla">
+                                            </select>
+                                        </div>
+                                        {{-- Select de Pelaje --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Pelaje</label>
+                                            <select name="id_Pelaje" id="id_Pelaje" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el pelaje">
+                                            </select>
+                                        </div>
+                                        {{-- Input de Esterilizacion --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold mb-2">Esterilizacion</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="Esterilizacion del knino" name="Esterilizacion" id="Esterilizacion" value="" />
+                                        </div>
+                                        {{-- Input de Edad --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold mb-2">Edad</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="Edad del knino" name="Edad" id="Edad" value="" />
+                                        </div>
+                                        {{-- Input de Cumpleaños --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="fs-6 fw-semibold mb-2">Cumpleaños</label>
+                                            <input type="date" class="form-control form-control-solid" placeholder="Digite la fecha de cumpleaños" name="Cumpleanos" id="Cumpleanos" value="" />
+                                        </div>
+                                        {{-- Select de Energia --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Energia</label>
+                                            <select name="id_Energia" id="id_Energia" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione el nivel de energia">
+                                            </select>
+                                        </div>
+                                        {{-- Select de Personalidad --}}
+                                        <div class="col-6 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Personalidad</label>
+                                            <select name="id_Personalidad" id="id_Personalidad" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Seleccione la personalidad">
+                                            </select>
+                                        </div>
+                                        {{-- Input de Notas --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="fs-6 fw-semibold mb-2">Notas</label>
+                                            <input type="text" class="form-control form-control-solid" placeholder="Ingrese una nota" name="Notas" id="Nota" value="" />
+                                        </div>
+                                        {{-- Input de Cartilla --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold mb-2">Cartilla de vacunación</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="Cartilla de vacunacion" name="CartillaVacunacion" id="Cartilla" value="" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        {{-- Botones de la modal --}}
-                        <div class="modal-footer flex-center">
-                            {{-- Boton de cancelar registro --}}
-                            <button type="reset" onclick="cerrar_modal_knino()" class="btn btn-light me-3">Cancelar</button>
-                            {{-- Boton de registrar knino --}}
-                            <button type="submit" id="btn_knino"  class="btn btn-primary">
-                                <span class="indicator-label">Registrar knino</span>
-                                <span class="indicator-progress">Please wait...
-                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                            </span>
-                            </button>
-                        </div>
-                    </form>
+                            {{-- Botones de la modal --}}
+                            <div class="modal-footer flex-center">
+                                {{-- Boton de cancelar registro --}}
+                                <button type="reset" onclick="cerrar_modal_knino()" class="btn btn-light me-3">Cancelar</button>
+                                {{-- Boton de registrar knino --}}
+                                <button type="submit" id="btn_knino"  class="btn btn-primary">
+                                    <span class="indicator-label">Registrar knino</span>
+                                    <span class="indicator-progress">Please wait...
+                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        {{-- Modal de ver knino --}}
-        <div class="modal fade" id="modal_ver_knino" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered mw-650px">
-                <div class="modal-content">
-                    {{-- <form class="form" method="POST" action="{{url('admin/guardar-knino')}}"  id="guardar-knino" onsubmit='return validar()'> --}}
-                        {{-- @csrf --}}
-                        {{-- <input type="hidden" name="id_Knino" value="Insertar" id="id_Knino"> --}}
+            {{-- Modal de ver knino --}}
+            <div class="modal fade" id="modal_ver_knino" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered mw-650px">
+                    <div class="modal-content">
                         {{-- Encabezado de la modal --}}
                         <div class="modal-header" id="modal_knino_header">
                             {{-- Titulo de la modal --}}
@@ -573,69 +570,68 @@
                             {{-- Boton de cancelar registro --}}
                             <button type="reset" onclick="cerrar_modal_ver_knino()" class="btn btn-primary me-3">Cerrar</button>
                         </div>
-                    {{-- </form> --}}
+                    </div>
                 </div>
             </div>
         </div>
+
+        {{-- Formulario para kninos --}}
+            <form action="{{route('listar_kninos')}}" method="get" id="listar-kninos">
+                @csrf
+            </form>
+            <form action="{{route('eliminar_knino')}}" method="post" id="eliminar-knino">
+                @csrf
+            </form>
+            <form action="{{route('editar_knino')}}" method="post" id="editar-knino">
+                @csrf
+            </form>
+
+        {{-- Formularios para talla --}}
+            <form action="{{route('guardar_talla')}}" method="post"  id="guardar-talla">
+                @csrf
+            </form>
+            <form action="{{route('listar_talla')}}" method="get"  id="listar-tallas">
+                @csrf
+            </form>
+            <form action="{{route('eliminar_talla')}}" method="post"  id="eliminar-talla">
+                @csrf
+            </form>
+        
+        {{-- Formularios para peso --}}
+            <form action="{{route('guardar_peso')}}" method="post"  id="guardar-peso">
+                @csrf
+            </form>
+            <form action="{{route('listar_peso')}}" method="get"  id="listar-peso">
+                @csrf
+            </form>
+            <form action="{{route('eliminar_peso')}}" method="post"  id="eliminar-peso">
+                @csrf
+            </form>
+        
+        {{-- Formularios para pelaje --}}
+            <form action="{{route('guardar_pelaje')}}" method="post"  id="guardar-pelaje">
+                @csrf
+            </form>
+            <form action="{{route('listar_pelaje')}}" method="get"  id="listar-pelaje">
+                @csrf
+                
+            </form>
+            <form action="{{route('eliminar_pelaje')}}" method="post"  id="eliminar-pelaje">
+                @csrf
+            </form>
+
+        {{-- Formularios para raza --}}
+            <form action="{{route('guardar_raza')}}" method="post"  id="guardar-raza">
+                @csrf
+            </form>
+            <form action="{{route('listar_raza')}}" method="get"  id="listar-razas">
+                @csrf
+            </form>
+            <form action="{{route('eliminar_raza')}}" method="post"  id="eliminar-raza">
+                @csrf
+            </form>
+
     </div>
-
-    {{-- Formulario para kninos --}}
-        <form action="{{route('listar_kninos')}}" method="get"  id="listar-kninos">
-            @csrf
-        </form>
-        <form action="{{route('eliminar_knino')}}" method="post"  id="eliminar-knino">
-            @csrf
-        </form>
-        <form action="{{route('editar_knino')}}" method="post"  id="editar-knino">
-            @csrf
-        </form>
-
-    {{-- Formularios para talla --}}
-        <form action="{{route('guardar_talla')}}" method="post"  id="guardar-talla">
-            @csrf
-        </form>
-        <form action="{{route('listar_talla')}}" method="get"  id="listar-tallas">
-            @csrf
-        </form>
-        <form action="{{route('eliminar_talla')}}" method="post"  id="eliminar-talla">
-            @csrf
-        </form>
-    
-    {{-- Formularios para peso --}}
-        <form action="{{route('guardar_peso')}}" method="post"  id="guardar-peso">
-            @csrf
-        </form>
-        <form action="{{route('listar_peso')}}" method="get"  id="listar-peso">
-            @csrf
-        </form>
-        <form action="{{route('eliminar_peso')}}" method="post"  id="eliminar-peso">
-            @csrf
-        </form>
-    
-    {{-- Formularios para pelaje --}}
-        <form action="{{route('guardar_pelaje')}}" method="post"  id="guardar-pelaje">
-            @csrf
-        </form>
-        <form action="{{route('listar_pelaje')}}" method="get"  id="listar-pelaje">
-            @csrf
-            
-        </form>
-        <form action="{{route('eliminar_pelaje')}}" method="post"  id="eliminar-pelaje">
-            @csrf
-        </form>
-
-    {{-- Formularios para raza --}}
-        <form action="{{route('guardar_raza')}}" method="post"  id="guardar-raza">
-            @csrf
-        </form>
-        <form action="{{route('listar_raza')}}" method="get"  id="listar-razas">
-            @csrf
-        </form>
-        <form action="{{route('eliminar_raza')}}" method="post"  id="eliminar-raza">
-            @csrf
-        </form>
-
-</div>
 
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -732,10 +728,13 @@
         }
         // Función abrir el modal
         function abrir_modal_knino(){
+            btn_guardar();
+            document.getElementById('guardar-knino').reset();
             $('#modal_knino').modal('show');
         }
         // Función cambiar el texto del boton 
-        function btn_guardar() {
+        function btn_guardar()
+        {
             var button = document.getElementById('btn_knino');
             button.innerText = 'Registrar knino';
             document.getElementById("id_titulo_knino").innerHTML = "Agregar nuevo knino";
@@ -747,7 +746,8 @@
             document.getElementById("id_titulo_knino").innerHTML = "Actualizar datos del knino";
         }
         // Función cerrar el modal
-        function cerrar_modal_knino(){
+        function cerrar_modal_knino()
+        {
             btn_guardar()
             document.getElementById('guardar-knino').reset();
             $('#modal_knino').modal('hide');
@@ -773,7 +773,7 @@
                         customClass:{confirmButton:"btn fw-bold btn-primary"}
                     })
                     document.getElementById('guardar-knino').reset();
-                    $('#modal_knino').modal('hide');
+                    cerrar_modal_knino();
                     listar_kninos();
                 } else if(data == 'Actualizado'){
                     Swal.fire({
@@ -784,40 +784,11 @@
                         customClass:{confirmButton:"btn fw-bold btn-primary"}
                     })
                     document.getElementById('guardar-knino').reset();
-                    $('#modal_knino').modal('hide');
+                    cerrar_modal_knino();
                     listar_kninos();
                 }
             }).fail(function () {});
         });
-        // Función cerrar el modal ver knino
-        function cerrar_modal_ver_knino(){
-            document.getElementById('guardar-knino').reset();
-            $('#modal_ver_knino').modal('hide');
-        }
-        // Función que muestra un knino por id en una modal
-        function ver_knino(NombreKnino, Humano, Apellidos, Raza, GeneroKnino, EstatusKnino, Peso, Talla, Pelaje, Esterilizacion, Edad, Cumpleanos, Energia, Personalidad, Notas, CartillaVacunacion)
-        {
-            // Abrir la modal
-            $('#modal_ver_knino').modal('show');
-            // Cambiar el texto del encabezado
-            document.getElementById("id_titulo_ver_knino").innerHTML = "Datos del knino: " + NombreKnino;
-            // Datos a mostrar en los inputs
-            document.getElementById("ver_Knino").value = NombreKnino;
-            document.getElementById("ver_id_Humano").value = Humano + ' ' + Apellidos;
-            document.getElementById("ver_id_Raza").value = Raza;
-            document.getElementById("ver_id_GeneroKnino").value = GeneroKnino;
-            document.getElementById("ver_id_EstatusKnino").value = EstatusKnino;
-            document.getElementById("ver_id_Peso").value = Peso;
-            document.getElementById("ver_id_Talla").value = Talla;
-            document.getElementById("ver_id_Pelaje").value = Pelaje;
-            document.getElementById("ver_Esterilizacion").value = Esterilizacion;
-            document.getElementById("ver_Edad").value = Edad;
-            document.getElementById("ver_Cumpleanos").value = Cumpleanos;
-            document.getElementById("ver_id_Energia").value = Energia;
-            document.getElementById("ver_id_Personalidad").value = Personalidad;
-            document.getElementById("ver_Nota").value = Notas;
-            document.getElementById("ver_Cartilla").value = CartillaVacunacion;
-        }
         // Función para abrir el modal y mostrar los datos en el formulario
         function editar_knino(id_Knino, NombreKnino, id_Humano, id_Raza, id_GeneroKnino, id_EstatusKnino, id_Peso, id_Talla, id_Pelaje, Esterilizacion, Edad, Cumpleanos, id_Energia, id_Personalidad, Notas, CartillaVacunacion)
         {
@@ -871,7 +842,8 @@
             }).fail(function () {});
         }
         // Función eliminar el paquete 
-        function eliminar_knino(id_Knino, NombreKnino){
+        function eliminar_knino(id_Knino, NombreKnino)
+        {
             Swal.fire({
                 text:"¿Estás seguro(a) de eliminar al knino: " + NombreKnino + "?",
                 icon:"warning",
@@ -939,6 +911,36 @@
                     })
                 }
             })
+        }
+        // Función cerrar el modal ver knino
+        function cerrar_modal_ver_knino()
+        {
+            document.getElementById('guardar-knino').reset();
+            $('#modal_ver_knino').modal('hide');
+        }
+        // Función que muestra un knino por id en una modal
+        function ver_knino(NombreKnino, Humano, Apellidos, Raza, GeneroKnino, EstatusKnino, Peso, Talla, Pelaje, Esterilizacion, Edad, Cumpleanos, Energia, Personalidad, Notas, CartillaVacunacion)
+        {
+            // Abrir la modal
+            $('#modal_ver_knino').modal('show');
+            // Cambiar el texto del encabezado
+            document.getElementById("id_titulo_ver_knino").innerHTML = "Datos del knino: " + NombreKnino;
+            // Datos a mostrar en los inputs
+            document.getElementById("ver_Knino").value = NombreKnino;
+            document.getElementById("ver_id_Humano").value = Humano + ' ' + Apellidos;
+            document.getElementById("ver_id_Raza").value = Raza;
+            document.getElementById("ver_id_GeneroKnino").value = GeneroKnino;
+            document.getElementById("ver_id_EstatusKnino").value = EstatusKnino;
+            document.getElementById("ver_id_Peso").value = Peso;
+            document.getElementById("ver_id_Talla").value = Talla;
+            document.getElementById("ver_id_Pelaje").value = Pelaje;
+            document.getElementById("ver_Esterilizacion").value = Esterilizacion;
+            document.getElementById("ver_Edad").value = Edad;
+            document.getElementById("ver_Cumpleanos").value = Cumpleanos;
+            document.getElementById("ver_id_Energia").value = Energia;
+            document.getElementById("ver_id_Personalidad").value = Personalidad;
+            document.getElementById("ver_Nota").value = Notas;
+            document.getElementById("ver_Cartilla").value = CartillaVacunacion;
         }
     </script>
 
@@ -1728,10 +1730,3 @@
     </script>
     
 @endsection
-
-
-
-
-
-
-
