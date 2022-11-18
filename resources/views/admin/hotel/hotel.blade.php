@@ -134,15 +134,15 @@
                     </div> --}}
                     <div class="card-toolbar">
                         <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                            <div class="w-150px me-3">
+                            {{-- <div class="w-150px me-3">
                                 <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estatus" data-kt-ecommerce-order-filter="status">
                                     <option></option>
                                     <option value="all">All</option>
                                     <option value="active">Active</option>
                                     <option value="locked">Locked</option>
                                 </select>
-                            </div>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Crear paquete</button>
+                            </div> --}}
+                            <button type="button" class="btn btn-primary" style="float: right" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Crear paquete</button>
                         </div>
                         <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
                             <div class="fw-bold me-5">
