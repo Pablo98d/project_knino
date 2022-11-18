@@ -4,7 +4,7 @@
         <div class="header-container container-xxl">
             <div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-20 py-3 py-lg-0 me-3">
                 <h1 class="d-flex flex-column text-dark fw-bold my-1">
-                    <span class="text-white fs-1">Guardería</span>
+                    <span class="text-white fs-1">Paquetes guardería</span>
                 </h1>
             </div>
             <div class="d-flex align-items-center flex-wrap">

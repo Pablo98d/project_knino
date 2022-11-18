@@ -351,7 +351,7 @@
                                 </div>
                             </div>
                             {{-- Elementos de la modal --}}
-                            <div class="modal-body  px-lg-17 mb-4" >
+                            <div class="modal-body px-lg-17 mb-4" >
                                 {{-- Funmcion para el scroll de la modal --}}
                                 <div class="scroll-y me-n7 pe-7" id="modal_knino_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_knino_header" data-kt-scroll-wrappers="#modal_knino_scroll" data-kt-scroll-offset="300px">
                                     {{-- Segmento para las listas de otras tablas --}}

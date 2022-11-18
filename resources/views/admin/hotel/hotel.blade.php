@@ -4,7 +4,7 @@
         <div class="header-container container-xxl">
             <div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-20 py-3 py-lg-0 me-3">
                 <h1 class="d-flex flex-column text-dark fw-bold my-1">
-                    <span class="text-white fs-1">Hotel</span>
+                    <span class="text-white fs-1">Paquetes hotel</span>
                 </h1>
             </div>
             <div class="d-flex align-items-center flex-wrap">
@@ -119,156 +119,54 @@
 
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="container-xxl" id="kt_content_container">
+            {{-- Contenedor de la vista --}}
             <div class="card">
-                <div class="card-header border-0 pt-6">
-                    {{-- <div class="card-title">
-                        <div class="d-flex align-items-center position-relative my-1">
-                            <span class="svg-icon svg-icon-1 position-absolute ms-6">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
-                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
-                                </svg>
-                            </span>
-                            <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Buscar paquete" />
-                        </div>
-                    </div> --}}
-                    <div class="card-toolbar">
-                        <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                            <div class="w-150px me-3">
-                                <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estatus" data-kt-ecommerce-order-filter="status">
-                                    <option></option>
-                                    <option value="all">All</option>
-                                    <option value="active">Active</option>
-                                    <option value="locked">Locked</option>
-                                </select>
+                <div class="card card-flush mb-xxl-10">
+                    <div class="card-body pt-0">
+                        <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1">
+                            {{-- Boton de agregar nuevo paquete hotel --}}
+                            <div class="card-header">
+                                <div class="card-title mt-2">
+                                    <h2>Datos de los paquetes hoteles</h2>
+                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo paquete hotal" style="position: absolute;right: 10px;" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">+</button>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Crear paquete</button>
-                        </div>
-                        <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
-                            <div class="fw-bold me-5">
-                            <span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected</div>
-                            <button type="button" class="btn btn-danger" data-kt-customer-table-select="delete_selected">Delete Selected</button>
+                            {{-- Datos de la tabla paquete hotel --}}
+                            <div class="card-body pt-0">
+                                <div class="table-responsive">
+                                    <form action="{{route('listar_paquete')}}" method="get"  id="listar-paquete">
+                                            @csrf
+                                        </form>
+                                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+                                            <thead>
+                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                    <th class="pe-0 pt-3">Nombre del paquete</th>
+                                                    <th class="pe-0 pt-3">Cantidad de noches</th>
+                                                    <th class="pe-0 pt-3">Vigencia Meses</th>
+                                                    <th class="pe-0 pt-3">Precio MXN</th>
+                                                    <th class="pe-0 text-center pt-3">Acciones</th>
+                                                </tr>
+                                            </thead>
+                                        <tbody class="fw-semibold text-gray-600" id="listar_paquetes">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-body pt-0">
-                    <form action="{{route('listar_paquete')}}" method="get"  id="listar-paquete">
-                        @csrf
-                    </form>
-                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-                        <thead>
-                            <!--begin::Table row-->
-                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                {{-- <th class="w-10px pe-2">
-                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                        <input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_customers_table .form-check-input" value="1" />
-                                    </div>
-                                </th> --}}
-                                <th class="min-w-100px">ID <br>--</th>
-                                <th class="text-star pe-3 min-w-100px">Nombre del <br> Paquete</th>
-                                <th class="text-star pe-3 min-w-50px">Cantidad  <br> de Noches</th>
-                                <th class=" pe-3 min-w-50px">Vigencia <br> [Meses]</th>
-                                <th class=" pe-3 min-w-80px">Precio <br> [MXN]</th>
-                                <th class="text-center pe-0 min-w-25px">Acciones</th>
-
-                                {{-- <th class="min-w-125px">Customer Name</th>
-                                <th class="min-w-125px">Email</th>
-                                <th class="min-w-125px">Status</th>
-                                <th class="min-w-125px">IP Address</th>
-                                <th class="min-w-125px">Created Date</th>
-                                <th class="text-end min-w-70px">Actions</th> --}}
-                            </tr>
-                        </thead>
-                        <tbody class="fw-semibold text-gray-600" id="listar_paquetes">
-                            
-                                {{-- @foreach ($lista_paquetes as $lista_paquete)
-                                    <tr>
-                                        <!--begin::Checkbox-->
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                        <!--end::Checkbox-->
-                                        <!--begin::Name=-->
-                                        <td>
-                                            {{$lista_paquete->id_PaqueteHotel}}
-                                            
-                                        </td>
-                                        <!--end::Name=-->
-                                        <!--begin::Email=-->
-                                        <td>
-                                            <a href="#" class="text-gray-600 text-hover-primary mb-1">
-                                                {{$lista_paquete->NombrePaquete}}
-                                            </a>
-                                        </td>
-                                        <!--end::Email=-->
-                                        <!--begin::Status=-->
-                                        <td>
-                                            <!--begin::Badges-->
-                                            {{$lista_paquete->CantidadNoches}}
-                                            
-                                            <!--end::Badges-->
-                                        </td>
-                                        <!--end::Status=-->
-                                        <!--begin::IP Address=-->
-                                        <td>{{$lista_paquete->MesesVigencia}}</td>
-                                        <!--end::IP Address=-->
-                                        <!--begin::Date=-->
-                                        <td>$ {{number_format($lista_paquete->Precio,2)}}</td>
-                                        <!--end::Date=-->
-                                        <!--begin::Action=-->
-                                        <td class="text-end">
-                                            <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                            <span class="svg-icon svg-icon-5 m-0">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor" />
-                                                </svg>
-                                            </span>
-                                            <!--end::Svg Icon--></a>
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo9/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" onclick="eliminar({{$lista_paquete->id_PaqueteHotel}})" class="menu-link px-3">Eliminar</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                            </div>
-                                            <!--end::Menu-->
-                                        </td>
-                                        <!--end::Action=-->
-                                    </tr>
-                                @endforeach --}}
-                            
-                        
-                        </tbody>
-                    </table>
-                </div>
             </div>
+            {{-- Modal de añadir paquete hotel --}}
             <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
-                <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
-                    <!--begin::Modal content-->
                     <div class="modal-content">
-                        <!--begin::Form-->
                         <form class="form" method="POST" action="{{url('admin/guardar-paquete')}}"  id="registro-paquete" onsubmit='return validar()'>
                             @csrf
                         
                             <input type="hidden" name="id_PaqueteHotel" value="Insertar" id="id_PaqueteHotel">
-                            <!--begin::Modal header-->
                             <div class="modal-header" id="kt_modal_add_customer_header">
-                                <!--begin::Modal title-->
                                 <h2 class="fw-bold">Agregar nuevo paquete</h2>
-                                <!--end::Modal title-->
-                                <!--begin::Close-->
                                 <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
-                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
                                     <button onclick="cerrar_modal_add_user()" style="background: transparent;border:none" type="button">
                                         <span class="svg-icon svg-icon-1">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -278,83 +176,44 @@
 
                                         </span>
                                     </button>
-                                    <!--end::Svg Icon-->
                                 </div>
-                                <!--end::Close-->
                             </div>
-                            <!--end::Modal header-->
-                            <!--begin::Modal body-->
-                            <div class="modal-body py-10 px-lg-17">
-                                <!--begin::Scroll-->
+                            {{-- Elementos de la modal --}}
+                            <div class="modal-body px-lg-17 mb-4">
+                                {{-- Funmcion para el scroll de la modal --}}
                                 <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
-                                    <!--begin::Input group-->
-                                    <div class="fv-row mb-7">
-                                        <!--begin::Label-->
-                                        <label class="required fs-6 fw-semibold mb-2">Nombre</label>
-                                        <!--end::Label-->
-                                        <!--begin::Input-->
-                                        <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
-                                        <!--end::Input-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Input group-->
-                                    <div class="fv-row mb-7">
-                                        @php
-                                            $count=101;
-                                        @endphp
-                                        <div class="row fv-row">
-                                            <!--begin::Col-->
-                                            <div class="col-4">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Cantidad de noches</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="CantidadNoches" id="CantidadNoches" value="" />
-                                                {{-- <select name="CantidadNoches" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Month">
-                                                    @for ($i = 1; $i < $count; $i++)
-                                                        <option value="{{$i}}">{{$i}}</option>
-                                                    @endfor
-                                                </select> --}}
-                                            </div>
-                                            <!--end::Col-->
-                                            <!--begin::Col-->
-                                            <div class="col-4">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Vigencia [meses]</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="MesesVigencia" id="MesesVigencia" value="" />
-                                                {{-- <select name="MesesVigencia" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
-                                                    @for ($i = 1; $i < $count; $i++)
-                                                        <option value="{{$i}}">{{$i}}</option>
-                                                    @endfor
-                                                </select> --}}
-                                            </div>
-                                            <div class="col-4">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                                <input class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" />
-                                            </div>
-                                            <!--end::Col-->
+                                    {{-- Segmento para las listas de otras tablas --}}
+                                    <div class="row mb-7">
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold mb-2">Nombre</label>
+                                            <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
                                         </div>
-                                        <!--end::Row-->
+                                        <div class="col-md-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Cantidad de noches</label>
+                                            <input type="number" name="CantidadNoches" id="CantidadNoches" placeholder="" class="form-control form-control-solid" value="" />
+                                        </div>
+                                        <div class="col-md-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Vigencia meses</label>
+                                            <input type="number" name="MesesVigencia" id="MesesVigencia" placeholder="" class="form-control form-control-solid" value="" />
+                                        </div>
+                                        <div class="col-md-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
+                                            <input type="number" name="Precio" id="Precio" placeholder="" class="form-control form-control-solid" value="" step="any"/>
+                                            <input type="hidden" class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" />
+                                        </div>
                                     </div>
-                                    
                                 </div>
-                                <!--end::Scroll-->
                             </div>
-                            <!--end::Modal body-->
-                            <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
-                                <!--begin::Button-->
                                 <button type="reset" onclick="cerrar_modal_add_user()" class="btn btn-light me-3">Cancelar</button>
-                                <!--end::Button-->
-                                <!--begin::Button-->
                                 <button type="submit" id="btn_paquete"  class="btn btn-primary">
                                     <span class="indicator-label">Registrar paquete</span>
                                     <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                 </span>
                                 </button>
-                                <!--end::Button-->
                             </div>
-                            <!--end::Modal footer-->
                         </form>
-                        <!--end::Form-->
                     </div>
                 </div>
                 
@@ -431,15 +290,13 @@
         // Función para validar si los campos estan vacíos
         function validar(){
             var todo_correcto = true;
-            
-            
+            if(document.getElementById('NombrePaquete').value == ''){
+                todo_correcto = false;
+            }
             if(document.getElementById('CantidadNoches').value == ''){
                 todo_correcto = false;
             }
             if(document.getElementById('MesesVigencia').value == ''){
-                todo_correcto = false;
-            }
-            if(document.getElementById('NombrePaquete').value == ''){
                 todo_correcto = false;
             }
             if(document.getElementById('Precio').value == ''){

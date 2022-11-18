@@ -72,9 +72,6 @@ class HotelController extends Controller
                 $output .= '
                 <tr>
                     <td>
-                    '.$lista_paquete->id_PaqueteHotel.'
-                    </td>
-                    <td>
                         <a href="#" class="text-gray-600 text-hover-primary mb-1">
                         '.$lista_paquete->NombrePaquete.'
                         </a>
