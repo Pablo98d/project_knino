@@ -34,32 +34,14 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     
     Route::get('/dashboard',[AdminController::class, 'index'])->name('index');
     
-    Route::get('hotel',[HotelController::class, 'hotel'])->name('hotel');
-    Route::get('listar-paquete',[HotelController::class, 'listar_paquete'])->name('listar_paquete');
-    Route::post('guardar-paquete',[HotelController::class, 'guardar_paquete'])->name('guardar_paquete');
-    Route::post('eliminar-paquete',[HotelController::class, 'eliminar_paquete'])->name('eliminar_paquete');
-
-    Route::get('guarderia',[GuarderiaController::class, 'guarderia'])->name('guarderia');
-    Route::get('listar-guarderia',[GuarderiaController::class, 'listar_guarderia'])->name('listar_guarderia');
-    Route::post('guardar-guarderia',[GuarderiaController::class, 'guardar_guarderia'])->name('guardar_guarderia');
-    Route::post('eliminar-guarderia',[GuarderiaController::class, 'eliminar_guarderia'])->name('eliminar_guarderia');
-
+    // Ruta para estetica sin uso
     Route::get('estetica',[AdminController::class, 'estetica'])->name('estetica');
-    Route::get('estetica-menu',[EsteticaController::class, 'estetica_menu'])->name('estetica_menu');
-    
-    Route::get('listar-servicios',[EsteticaController::class, 'listar_servicios'])->name('listar_servicios');
-    Route::post('editar-servicio',[EsteticaController::class, 'editar_servicio'])->name('editar_servicio');
-    Route::post('guardar-servicio',[EsteticaController::class, 'guardar_servicio'])->name('guardar_servicio');
-    Route::post('eliminar-servicio',[EsteticaController::class, 'eliminar_servicio'])->name('eliminar_servicio');
-    Route::post('listar-capacidad',[EsteticaController::class, 'listar_capacidad'])->name('listar_capacidad');
 
-    
-    
-    // CRUD CAPACIDAD
-    Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
-    Route::post('guardar-capacidad',[EsteticaController::class, 'guardar_capacidad'])->name('guardar_capacidad');
-    Route::post('eliminar-capacidad',[EsteticaController::class, 'eliminar_capacidad'])->name('eliminar_capacidad');
-    
+    Route::get('hoteles',[AdminController::class, 'hoteles'])->name('hoteles'); 
+    Route::get('talla',[AdminController::class, 'talla'])->name('talla');
+    Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');
+    Route::get('peso',[AdminController::class, 'peso'])->name('peso');
+
     //Rutas de registro Humanos
     Route::get('registro-humanos',[RegistroHumanoController::class, 'registrohumanos'])->name('registrohumanos');
 
@@ -67,28 +49,54 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('guardar-humano',[RegistroHumanoController::class, 'guardar_humano'])->name('guardar_humano');
     Route::post('eliminar-humano',[RegistroHumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
 
+
+
     
-    Route::get('hoteles',[AdminController::class, 'hoteles'])->name('hoteles');
-    Route::get('talla',[AdminController::class, 'talla'])->name('talla');
-    Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');
-    Route::get('peso',[AdminController::class, 'peso'])->name('peso');
+    // VISTA PRINCIPAL PARA HOTEL
+    Route::get('hotel',[HotelController::class, 'hotel'])->name('hotel');
+
+    Route::get('listar-paquete',[HotelController::class, 'listar_paquete'])->name('listar_paquete');
+    Route::post('guardar-paquete',[HotelController::class, 'guardar_paquete'])->name('guardar_paquete');
+    Route::post('eliminar-paquete',[HotelController::class, 'eliminar_paquete'])->name('eliminar_paquete');
 
 
-    // Vista principal de festejos
+    // VISTA PRINCIPAL PARA GUARDERIA
+    Route::get('guarderia',[GuarderiaController::class, 'guarderia'])->name('guarderia');
+
+    Route::get('listar-guarderia',[GuarderiaController::class, 'listar_guarderia'])->name('listar_guarderia');
+    Route::post('guardar-guarderia',[GuarderiaController::class, 'guardar_guarderia'])->name('guardar_guarderia');
+    Route::post('eliminar-guarderia',[GuarderiaController::class, 'eliminar_guarderia'])->name('eliminar_guarderia');
+
+
+
+    // VISTA PRINCIPAL PARA ESTETICA
+    Route::get('estetica-menu',[EsteticaController::class, 'estetica_menu'])->name('estetica_menu');
+    // Rutas para estetica
+    Route::get('listar-servicios',[EsteticaController::class, 'listar_servicios'])->name('listar_servicios');
+    Route::post('guardar-servicio',[EsteticaController::class, 'guardar_servicio'])->name('guardar_servicio');
+    Route::post('editar-servicio',[EsteticaController::class, 'editar_servicio'])->name('editar_servicio');
+    Route::post('eliminar-servicio',[EsteticaController::class, 'eliminar_servicio'])->name('eliminar_servicio');
+    Route::post('listar-capacidad',[EsteticaController::class, 'listar_capacidad'])->name('listar_capacidad');
+    // Rutas para capacidad
+    Route::get('lista-capacidad',[EsteticaController::class, 'lista_capacidad'])->name('lista_capacidad');
+    Route::post('guardar-capacidad',[EsteticaController::class, 'guardar_capacidad'])->name('guardar_capacidad');
+    Route::post('eliminar-capacidad',[EsteticaController::class, 'eliminar_capacidad'])->name('eliminar_capacidad');
+
+
+    // VISTA PRINCIPAL PARA FESTEJO
     Route::get('festejo',[FestejoController::class, 'festejo'])->name('festejo');
     // Rutas para festejos
     Route::get('listar-festejos',[FestejoController::class, 'listar_festejos'])->name('listar_festejos');
     Route::post('guardar-festejos',[FestejoController::class, 'guardar_festejo_s'])->name('guardar_festejo_s');
-    
     Route::post('editar-festejo',[FestejoController::class, 'editar_festejo'])->name('editar_festejo');
-
     Route::post('eliminar-festejo',[FestejoController::class, 'eliminar_festejo'])->name('eliminar_festejo');
     // Rutas para pasteles
     Route::get('listar-tipo-pastel',[FestejoController::class, 'lista_tipo_pastel'])->name('lista_tipo_pastel');
     Route::post('guardar-tipo-pastel',[FestejoController::class, 'guardar_tipo_pastel'])->name('guardar_tipo_pastel');
     Route::post('eliminar-tipo-pastel',[FestejoController::class, 'eliminar_tipo_pastel'])->name('eliminar_tipo_pastel');
     
-    // Vista principal de kninos
+
+    // VISTA PRINCIPAL PARA KNINOS
     Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
     // Rutas para kninos
     Route::get('listar-kninos',[RegistroKninoController::class, 'listar_kninos'])->name('listar_kninos');

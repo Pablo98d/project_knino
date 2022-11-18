@@ -5,124 +5,77 @@
             <div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-20 py-3 py-lg-0 me-3">
                 <h1 class="d-flex flex-column text-dark fw-bold my-1">
                     <span class="text-white fs-1">Hotel</span>
-                    {{-- <small class="text-white fs-3">Hotel</small> --}}
                 </h1>
             </div>
             <div class="d-flex align-items-center flex-wrap">
-                <!--begin::Search-->
                 <div class="header-search py-3 py-lg-0 me-3">
-                    <!--begin::Search-->
                     <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-250px" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-search-responsive="false" data-kt-menu-trigger="auto" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
-                        <!--begin::Form-->
                         <form data-kt-search-element="form" class="w-100 position-relative" autocomplete="off">
-                            <!--begin::Hidden input(Added to disable form autocomplete)-->
                             <input type="hidden" />
-                            <!--end::Hidden input-->
-                            <!--begin::Icon-->
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen004.svg-->
                             <span class="svg-icon svg-icon-2 search-icon position-absolute top-50 translate-middle-y ms-4">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M21.7 18.9L18.6 15.8C17.9 16.9 16.9 17.9 15.8 18.6L18.9 21.7C19.3 22.1 19.9 22.1 20.3 21.7L21.7 20.3C22.1 19.9 22.1 19.3 21.7 18.9Z" fill="currentColor" />
                                     <path opacity="0.3" d="M11 20C6 20 2 16 2 11C2 6 6 2 11 2C16 2 20 6 20 11C20 16 16 20 11 20ZM11 4C7.1 4 4 7.1 4 11C4 14.9 7.1 18 11 18C14.9 18 18 14.9 18 11C18 7.1 14.9 4 11 4ZM8 11C8 9.3 9.3 8 11 8C11.6 8 12 7.6 12 7C12 6.4 11.6 6 11 6C8.2 6 6 8.2 6 11C6 11.6 6.4 12 7 12C7.6 12 8 11.6 8 11Z" fill="currentColor" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
-                            <!--end::Icon-->
-                            <!--begin::Input-->
                             <input type="text" class="form-control custom-form-control ps-13" name="search" value="" placeholder="Buscar K-ninn" data-kt-search-element="input" />
-                            <!--end::Input-->
-                            <!--begin::Spinner-->
                             <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5" data-kt-search-element="spinner">
                                 <span class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
                             </span>
-                            <!--end::Spinner-->
-                            <!--begin::Reset-->
                             <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-4" data-kt-search-element="clear">
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
                                 <span class="svg-icon svg-icon-2 svg-icon-lg-1 me-0">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
                                         <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
                                     </svg>
                                 </span>
-                                <!--end::Svg Icon-->
                             </span>
-                            <!--end::Reset-->
                         </form>
-                        <!--end::Form-->
-                        
                     </div>
-                    <!--end::Search-->
                 </div>
-                <!--end::Search-->
-                <!--begin::Action-->
                 <div class="d-flex align-items-center py-3 py-lg-0">
-                
-                    <!--begin::Item-->
                     <div class="me-3">
                         <a href="#" class="btn btn-icon btn-custom btn-active-color-primary" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                            <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
                             <span class="svg-icon svg-icon-1 svg-icon-white">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.28548 15.0861C7.34369 13.1814 9.35142 12 11.5304 12H12.4696C14.6486 12 16.6563 13.1814 17.7145 15.0861L19.3493 18.0287C20.0899 19.3618 19.1259 21 17.601 21H6.39903C4.87406 21 3.91012 19.3618 4.65071 18.0287L6.28548 15.0861Z" fill="currentColor" />
                                     <rect opacity="0.3" x="8" y="3" width="8" height="8" rx="4" fill="currentColor" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
                         </a>
-                        <!--begin::User account menu-->
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
-                            <!--begin::Menu item-->
                             <div class="menu-item px-3">
                                 <div class="menu-content d-flex align-items-center px-3">
-                                    <!--begin::Avatar-->
                                     <div class="symbol symbol-50px me-5">
                                         <img alt="Logo" src="{{asset('assets/media/avatars/300-1.jpg')}}" />
                                     </div>
-                                    <!--end::Avatar-->
-                                    <!--begin::Username-->
                                     <div class="d-flex flex-column">
                                         <div class="fw-bold d-flex align-items-center fs-5">{{Auth::user()->NombreUsuario}}</div>
                                         <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">Administrador</a>
                                     </div>
-                                    <!--end::Username-->
                                 </div>
                             </div>
-                            <!--begin::Menu item-->
                             <div class="menu-item px-5">
                                 <a href="../../demo9/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Cerrar sesión</a>
                             </div>
-                            <!--end::Menu item-->
                         </div>
-                        <!--end::User account menu-->
                     </div>
-                    <!--end::Item-->
-                    <!--begin::Theme mode-->
                     <div class="d-flex align-items-center me-3">
-                        <!--begin::Menu toggle-->
                         <a href="#" class="btn btn-icon btn-custom btn-active-color-primary" data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen060.svg-->
                             <span class="svg-icon theme-light-show svg-icon-2">
                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55.499 55.499" style="enable-background:new 0 0 55.499 55.499;" xml:space="preserve">
                                     <path  d="M55.499,30.012c0-4.468-3.623-8.091-8.092-8.091c-2.996,0-5.606,1.633-7.006,4.055l-17.01-11.42 c0.31-0.859,0.49-1.783,0.49-2.752c0-4.469-3.623-8.092-8.092-8.092s-8.094,3.623-8.094,8.092c0,2.324,0.984,4.41,2.553,5.887 c-0.689-0.189-1.408-0.299-2.156-0.299C3.623,17.392,0,21.015,0,25.484c0,4.471,3.623,8.092,8.092,8.092c2.992,0,5.6-1.625,7-4.041 L32.069,41.05c-0.287,0.83-0.449,1.717-0.449,2.645c0,4.473,3.623,8.092,8.092,8.092c4.47,0,8.093-3.619,8.093-8.092 c0-2.322-0.983-4.41-2.552-5.885c0.687,0.188,1.406,0.299,2.154,0.299C51.876,38.107,55.499,34.484,55.499,30.012z" fill="currentColor"/>
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen061.svg-->
                             <span class="svg-icon theme-dark-show svg-icon-2">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55.499 55.499" style="enable-background:new 0 0 55.499 55.499;" xml:space="preserve">
                             </svg>
                             </span>
-                            <!--end::Svg Icon-->
                         </a>
-                        <!--begin::Menu toggle-->
-                        <!--begin::Menu-->
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-color fw-semibold py-4 fs-base w-175px" data-kt-menu="true" data-kt-element="theme-mode-menu">
-                            <!--begin::Menu item-->
                             <div class="menu-item px-3 my-0">
                                 <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="light">
                                     <span class="menu-icon" data-kt-element="icon">
-                                        <!--begin::Svg Icon | path: icons/duotune/general/gen060.svg-->
                                         <span class="svg-icon svg-icon-3">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M11.9905 5.62598C10.7293 5.62574 9.49646 5.9995 8.44775 6.69997C7.39903 7.40045 6.58159 8.39619 6.09881 9.56126C5.61603 10.7263 5.48958 12.0084 5.73547 13.2453C5.98135 14.4823 6.58852 15.6185 7.48019 16.5104C8.37186 17.4022 9.50798 18.0096 10.7449 18.2557C11.9818 18.5019 13.2639 18.3757 14.429 17.8931C15.5942 17.4106 16.5901 16.5933 17.2908 15.5448C17.9915 14.4962 18.3655 13.2634 18.3655 12.0023C18.3637 10.3119 17.6916 8.69129 16.4964 7.49593C15.3013 6.30056 13.6808 5.62806 11.9905 5.62598Z" fill="currentColor" />
@@ -136,17 +89,13 @@
                                                 <path d="M5.09541 6.69715C5.19979 6.8017 5.32374 6.88466 5.4602 6.94128C5.59665 6.9979 5.74292 7.02708 5.89065 7.02714C6.03839 7.0272 6.18469 6.99815 6.32119 6.94164C6.45769 6.88514 6.58171 6.80228 6.68618 6.69782C6.79064 6.59336 6.87349 6.46933 6.93 6.33283C6.9865 6.19633 7.01556 6.05003 7.01549 5.9023C7.01543 5.75457 6.98625 5.60829 6.92963 5.47184C6.87301 5.33539 6.79005 5.21143 6.6855 5.10706L5.6247 4.04626C5.5204 3.94137 5.39643 3.8581 5.25989 3.80121C5.12335 3.74432 4.97692 3.71493 4.82901 3.71472C4.68109 3.71452 4.53458 3.7435 4.39789 3.80001C4.26119 3.85652 4.13699 3.93945 4.03239 4.04404C3.9278 4.14864 3.84487 4.27284 3.78836 4.40954C3.73185 4.54624 3.70287 4.69274 3.70308 4.84066C3.70329 4.98858 3.73268 5.135 3.78957 5.27154C3.84646 5.40808 3.92974 5.53205 4.03462 5.63635L5.09541 6.69715Z" fill="currentColor" />
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->
                                     </span>
                                     <span class="menu-title">Dia</span>
                                 </a>
                             </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
                             <div class="menu-item px-3 my-0">
                                 <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark">
                                     <span class="menu-icon" data-kt-element="icon">
-                                        <!--begin::Svg Icon | path: icons/duotune/general/gen061.svg-->
                                         <span class="svg-icon svg-icon-3">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M19.0647 5.43757C19.3421 5.43757 19.567 5.21271 19.567 4.93534C19.567 4.65796 19.3421 4.43311 19.0647 4.43311C18.7874 4.43311 18.5625 4.65796 18.5625 4.93534C18.5625 5.21271 18.7874 5.43757 19.0647 5.43757Z" fill="currentColor" />
@@ -155,96 +104,58 @@
                                                 <path d="M13.0379 7.47998C13.8688 7.47998 14.5446 8.15585 14.5446 8.98668C14.5446 9.26428 14.7693 9.48891 15.0469 9.48891C15.3245 9.48891 15.5491 9.26428 15.5491 8.98668C15.5491 8.15585 16.225 7.47998 17.0558 7.47998C17.3334 7.47998 17.558 7.25535 17.558 6.97775C17.558 6.70015 17.3334 6.47552 17.0558 6.47552C16.225 6.47552 15.5491 5.76616 15.5491 4.93534C15.5491 4.65774 15.3245 4.43311 15.0469 4.43311C14.7693 4.43311 14.5446 4.65774 14.5446 4.93534C14.5446 5.76616 13.8688 6.47552 13.0379 6.47552C12.7603 6.47552 12.5357 6.70015 12.5357 6.97775C12.5357 7.25535 12.7603 7.47998 13.0379 7.47998Z" fill="currentColor" />
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->
                                     </span>
                                     <span class="menu-title">Noche</span>
                                 </a>
                             </div>
-                            <!--end::Menu item-->
                         </div>
-                        <!--end::Menu-->
                     </div>
-                    <!--end::Theme mode-->
-                    <!--begin::Item-->
-                    {{-- <a href="{{url('index1')}}" class="btn btn-primary" >Reservar </a> --}}
-                    <!--end::Item-->
                 </div>
-                <!--end::Action-->
             </div>
-            <!--end::Wrapper-->
         </div>
     </div>
 @endsection
 @section('contenido')
 
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <!--begin::Container-->
         <div class="container-xxl" id="kt_content_container">
-            <!--begin::Card-->
             <div class="card">
-                <!--begin::Card header-->
                 <div class="card-header border-0 pt-6">
-                    <!--begin::Card title-->
-                    <div class="card-title">
-                        <!--begin::Search-->
+                    {{-- <div class="card-title">
                         <div class="d-flex align-items-center position-relative my-1">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
                             <span class="svg-icon svg-icon-1 position-absolute ms-6">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
                             <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Buscar paquete" />
                         </div>
-                        <!--end::Search-->
-                    </div>
-                    <!--begin::Card title-->
-                    <!--begin::Card toolbar-->
+                    </div> --}}
                     <div class="card-toolbar">
-                        <!--begin::Toolbar-->
                         <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                            <!--begin::Filter-->
                             <div class="w-150px me-3">
-                                <!--begin::Select2-->
                                 <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estatus" data-kt-ecommerce-order-filter="status">
                                     <option></option>
                                     <option value="all">All</option>
                                     <option value="active">Active</option>
                                     <option value="locked">Locked</option>
                                 </select>
-                                <!--end::Select2-->
                             </div>
-                            <!--end::Filter-->
-                            <!--begin::Export-->
-                            
-                            <!--end::Export-->
-                            <!--begin::Add customer-->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Crear paquete</button>
-                            <!--end::Add customer-->
                         </div>
-                        <!--end::Toolbar-->
-                        <!--begin::Group actions-->
                         <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
                             <div class="fw-bold me-5">
                             <span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected</div>
                             <button type="button" class="btn btn-danger" data-kt-customer-table-select="delete_selected">Delete Selected</button>
                         </div>
-                        <!--end::Group actions-->
                     </div>
-                    <!--end::Card toolbar-->
                 </div>
-                <!--end::Card header-->
-                <!--begin::Card body-->
                 <div class="card-body pt-0">
                     <form action="{{route('listar_paquete')}}" method="get"  id="listar-paquete">
                         @csrf
                     </form>
-                    
-                    <!--begin::Table-->
                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-                        <!--begin::Table head-->
                         <thead>
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
@@ -267,10 +178,7 @@
                                 <th class="min-w-125px">Created Date</th>
                                 <th class="text-end min-w-70px">Actions</th> --}}
                             </tr>
-                            <!--end::Table row-->
                         </thead>
-                        <!--end::Table head-->
-                        <!--begin::Table body-->
                         <tbody class="fw-semibold text-gray-600" id="listar_paquetes">
                             
                                 {{-- @foreach ($lista_paquetes as $lista_paquete)
@@ -340,16 +248,9 @@
                             
                         
                         </tbody>
-                        <!--end::Table body-->
                     </table>
-                    <!--end::Table-->
                 </div>
-                {{-- <button onclick="eliminar_2()">Eliminar</button> --}}
-                <!--end::Card body-->
             </div>
-            <!--end::Card-->
-            <!--begin::Modals-->
-            <!--begin::Modal - Customers - Add-->
             <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
@@ -463,11 +364,7 @@
             <form action="{{route('eliminar_paquete')}}" method="post"  id="eliminar-paquete">
                 @csrf
             </form>
-            <!--end::Modal - Customers - Add-->
-        
-            <!--end::Modals-->
         </div>
-        <!--end::Container-->
     </div>
 
     <script src="assets/js/scripts.bundle.js"></script>
@@ -671,8 +568,6 @@
                 }
             })
         }
-
-
     </script>
 
 @endsection
