@@ -227,7 +227,7 @@
                     <div class="modal-content">
                         <form class="form" method="POST" action="{{route('guardar_festejo_s')}}" id="guardar-festejo" onsubmit='return validar()'>
                             @csrf
-                            <input type="text" name="id_PaqueteFestejo" value="Insertar" id="id_PaqueteFestejo">
+                            <input type="hidden" name="id_PaqueteFestejo" value="Insertar" id="id_PaqueteFestejo">
                             {{-- Encabezado de la modal --}}
                             <div class="modal-header" id="modal_festejo_header">
                                 {{-- Titulo de la modal --}}
