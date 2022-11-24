@@ -8,7 +8,8 @@ use App\Http\Controllers\admin\EsteticaController;
 use App\Http\Controllers\admin\RegistroKninoController;
 use App\Http\Controllers\admin\RegistroHumanoController;
 use App\Http\Controllers\admin\FestejoController;
-
+use App\Http\Controllers\admin\HumanoController;
+use App\Http\Controllers\admin\KninoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +43,11 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');
     Route::get('peso',[AdminController::class, 'peso'])->name('peso');
 
-    //Rutas de registro Humanos
-    Route::get('registro-humanos',[RegistroHumanoController::class, 'registrohumanos'])->name('registrohumanos');
 
+    
+    //VISTA PRINCIPAL PARA HUMANOS
+    Route::get('humanos',[HumanoController::class, 'humanos'])->name('humanos');
+    // Rutas para humanos
     Route::get('listar-humano',[RegistroHumanoController::class, 'listar_humano'])->name('listar_humano');
     Route::post('guardar-humano',[RegistroHumanoController::class, 'guardar_humano'])->name('guardar_humano');
     Route::post('eliminar-humano',[RegistroHumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
@@ -98,28 +101,28 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     
 
     // VISTA PRINCIPAL PARA KNINOS
-    Route::get('kninos',[RegistroKninoController::class, 'kninos'])->name('kninos');
+    Route::get('kninos',[KninoController::class, 'kninos'])->name('kninos');
     // Rutas para kninos
-    Route::get('listar-kninos',[RegistroKninoController::class, 'listar_kninos'])->name('listar_kninos');
-    Route::post('guardar-knino',[RegistroKninoController::class, 'guardar_knino'])->name('guardar_knino');
-    Route::post('editar-knino',[RegistroKninoController::class, 'editar_knino'])->name('editar_knino');
-    Route::post('eliminar-knino',[RegistroKninoController::class, 'eliminar_knino'])->name('eliminar_knino');
+    Route::get('listar-kninos',[KninoController::class, 'listar_kninos'])->name('listar_kninos');
+    Route::post('guardar-knino',[KninoController::class, 'guardar_knino'])->name('guardar_knino');
+    Route::post('editar-knino',[KninoController::class, 'editar_knino'])->name('editar_knino');
+    Route::post('eliminar-knino',[KninoController::class, 'eliminar_knino'])->name('eliminar_knino');
     // Rutas para tallas
-    Route::get('listar-talla',[RegistroKninoController::class, 'listar_talla'])->name('listar_talla');
-    Route::post('guardar-talla',[RegistroKninoController::class, 'guardar_talla'])->name('guardar_talla');
-    Route::post('eliminar-talla',[RegistroKninoController::class, 'eliminar_talla'])->name('eliminar_talla');
+    Route::get('listar-talla',[KninoController::class, 'listar_talla'])->name('listar_talla');
+    Route::post('guardar-talla',[KninoController::class, 'guardar_talla'])->name('guardar_talla');
+    Route::post('eliminar-talla',[KninoController::class, 'eliminar_talla'])->name('eliminar_talla');
     // Rutas para Peso
-    Route::get('listar-peso',[RegistroKninoController::class, 'listar_peso'])->name('listar_peso');
-    Route::post('guardar-peso',[RegistroKninoController::class, 'guardar_peso'])->name('guardar_peso');
-    Route::post('eliminar-peso',[RegistroKninoController::class, 'eliminar_peso'])->name('eliminar_peso');
+    Route::get('listar-peso',[KninoController::class, 'listar_peso'])->name('listar_peso');
+    Route::post('guardar-peso',[KninoController::class, 'guardar_peso'])->name('guardar_peso');
+    Route::post('eliminar-peso',[KninoController::class, 'eliminar_peso'])->name('eliminar_peso');
     // Rutas para Pelaje
-    Route::get('listar-pelaje',[RegistroKninoController::class, 'listar_pelaje'])->name('listar_pelaje');
-    Route::post('guardar-pelaje',[RegistroKninoController::class, 'guardar_pelaje'])->name('guardar_pelaje');
-    Route::post('eliminar-pelaje',[RegistroKninoController::class, 'eliminar_pelaje'])->name('eliminar_pelaje');
+    Route::get('listar-pelaje',[KninoController::class, 'listar_pelaje'])->name('listar_pelaje');
+    Route::post('guardar-pelaje',[KninoController::class, 'guardar_pelaje'])->name('guardar_pelaje');
+    Route::post('eliminar-pelaje',[KninoController::class, 'eliminar_pelaje'])->name('eliminar_pelaje');
     // Rutas para kninos
-    Route::get('listar-raza',[RegistroKninoController::class, 'listar_raza'])->name('listar_raza');
-    Route::post('guardar-raza',[RegistroKninoController::class, 'guardar_raza'])->name('guardar_raza');
-    Route::post('eliminar-raza',[RegistroKninoController::class, 'eliminar_raza'])->name('eliminar_raza');
+    Route::get('listar-raza',[KninoController::class, 'listar_raza'])->name('listar_raza');
+    Route::post('guardar-raza',[KninoController::class, 'guardar_raza'])->name('guardar_raza');
+    Route::post('eliminar-raza',[KninoController::class, 'eliminar_raza'])->name('eliminar_raza');
     
 });
 

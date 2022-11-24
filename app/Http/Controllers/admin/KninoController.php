@@ -15,7 +15,7 @@ use App\Models\RegistroKnino;
 use App\Models\Tallas;
 use Illuminate\Http\Request;
 
-class RegistroKninoController extends Controller
+class KninoController extends Controller
 {
     public function kninos(){
         return view('admin.knino.knino_prueba');
