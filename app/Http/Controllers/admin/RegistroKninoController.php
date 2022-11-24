@@ -43,35 +43,25 @@ class RegistroKninoController extends Controller
                 // dd($listar_kn->Notas);
                 $output .= '
                 <tr>
-                    <td title="Id Knino: '.$listar_kn->id_Knino.'">
-                        <a href="#" class="text-gray-600 text-hover-primary mb-1">
+                    <td title="Knino: '.$listar_kn->id_Knino.'">
+                        <a href="#" class="fs-7 fw-bold text-gray-600 text-hover-primary mb-1 fs-6">
                         '.$listar_kn->NombreKnino.'
                         </a>
                     </td>
                     <td>
-                        <a href="#" class="text-gray-600 text-hover-primary mb-1">
                         '.$listar_kn->registroHumano->NombreHumano.'
-                        </a>
                     </td>
                     <td>
-                        <a href="#" class="text-gray-600 text-hover-primary mb-1">
                         '.$listar_kn->raza->TipoRaza.'
-                        </a>
                     </td>
                     <td>
-                        <a href="#" class="text-gray-600 text-hover-primary mb-1">
                         '.$listar_kn->generoKnino->NombreGeneroKnino.'
-                        </a>
                     </td>
                     <td>
-                        <a href="#" class="text-gray-600 text-hover-primary mb-1">
                         '.$listar_kn->estatusKnino->EstatusKnino.'
-                        </a>
                     </td>
                     <td>
-                        <a href="#" class="text-gray-600 text-hover-primary mb-1">
                         '.$listar_kn->Cumpleanos.'
-                        </a>
                     </td>
                     <td class="text-center">
                         <button onclick="ver_knino(
@@ -90,7 +80,7 @@ class RegistroKninoController extends Controller
                             `'.$listar_kn->nivelEnergia->Nivel.'`,
                             `'.$listar_kn->personalidad->Personalidad.'`,
                             `'.$listar_kn->Notas.'`,
-                            '.$listar_kn->CartillaVacunacion.',)" class="btn btn-outline-primary btn-sm">
+                            `'.$listar_kn->CartillaVacunacion.'`,)" class="btn btn-outline-primary btn-sm">
                             Ver
                         </button>
                         <button onclick="editar_knino(
@@ -109,7 +99,7 @@ class RegistroKninoController extends Controller
                             '.$listar_kn->id_Energia.',
                             '.$listar_kn->id_Personalidad.',
                             `'.$listar_kn->Notas.'`,
-                            '.$listar_kn->CartillaVacunacion.')" class="btn btn-outline-warning btn-sm">
+                            `'.$listar_kn->CartillaVacunacion.'`)" class="btn btn-outline-warning btn-sm">
                             Editar
                         </button>
                         <button onclick="eliminar_knino('.$listar_kn->id_Knino.',`'.$listar_kn->NombreKnino.'`)" class="btn btn-outline-danger btn-sm">

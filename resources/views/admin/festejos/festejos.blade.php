@@ -164,18 +164,18 @@
                                                 <div class="table-responsive">
                                                     <table class="table align-middle gs-0 gy-4 my-0">
                                                         <thead>
-                                                            <tr class="fs-7 fw-bold text-gray-700">
+                                                            <tr class="fs-7 fw-bold text-gray-800 text-uppercase">
                                                                 <th class="pe-0 pt-3">NOMBRE PAQUETE</th>
                                                                 <th class="pe-0 pt-3">PASTEL</th>
                                                                 <th class="pe-0 pt-3">DECORACION</th>
-                                                                <th class="pe-0 pt-3 text-center">ESTANCIA HORAS</th>
-                                                                <th class="pe-0 pt-3 text-center">HUMANOS</th>
-                                                                <th class="pe-0 pt-3 text-center">KNINOS</th>
-                                                                <th class="pe-0 pt-3 text-center">PRECIO</th>
+                                                                <th class="pe-0 pt-3">ESTANCIA HORAS</th>
+                                                                <th class="pe-0 pt-3">HUMANOS</th>
+                                                                <th class="pe-0 pt-3">KNINOS</th>
+                                                                <th class="pe-0 pt-3">PRECIO</th>
                                                                 <th class="pe-0 pt-3 text-center">ACCIONES</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="listar_festejos">
+                                                        <tbody class="fs-7 fw-bold text-gray-600" id="listar_festejos">
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -326,9 +326,9 @@
                             <div class="modal-footer flex-center">
                                 {{-- Boton de cancelar registro --}}
                                 <button type="reset" onclick="cerrar_modal_festejo()" class="btn btn-light me-3">Cancelar</button>
-                                {{-- Boton de registrar knino --}}
+                                {{-- Boton de registrar paquete festejo --}}
                                 <button type="submit" id="btn_festejo"  class="btn btn-primary">
-                                    <span class="indicator-label">Registrar festejo</span>
+                                    <span class="indicator-label">Registrar paquete festejo</span>
                                     <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                 </span>
@@ -547,6 +547,7 @@
         {
             btn_guardar()
             document.getElementById('guardar-festejo').reset();
+            document.getElementById("id_PaqueteFestejo").value = 'Insertar';
             $('#modal_festejo').modal('hide');
         }
         // Función que registra y actualiza servicios
@@ -589,9 +590,8 @@
         // Función para abrir el modal y mostrar los datos en el formulario
         function editar_festejo(id_PaqueteFestejo, NombrePaquete, TipoPastel, CantidadGorritos, Decoracion, BoloCantidad, EstanciaHoras, CantidadHumanos, KninosInvitados, Capacidad, Precio)
         {
-            abrir_modal_festejo()
-            btn_actualizar()
-            console.log(id_PaqueteFestejo, NombrePaquete, TipoPastel, CantidadGorritos, Decoracion, BoloCantidad, EstanciaHoras, CantidadHumanos, KninosInvitados, Capacidad, Precio);
+            abrir_modal_festejo();
+            btn_actualizar();
             document.getElementById("id_PaqueteFestejo").value = id_PaqueteFestejo;
             document.getElementById("NombrePaquete").value = NombrePaquete;
             document.getElementById("Decoracion").value = Decoracion;
@@ -649,7 +649,7 @@
                         console.log(data)
                         if(data == 'Eliminado'){
                             Swal.fire({
-                                text:"Has eliminado el paquete festejo: " + NombrePaquete + "!.",
+                                text:"¡Has eliminado el paquete festejo: " + NombrePaquete + "!",
                                 icon:"success",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",

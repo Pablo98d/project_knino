@@ -157,17 +157,16 @@
                                                 {{-- <button type="button" class="btn btn-primary btn-sm mt-2 mb-2" data-bs-toggle="modal"  data-bs-target="#modal_servicio">Crear servicio</button> --}}
                                                 <table class="table align-middle gs-0 gy-4 my-0">
                                                     <thead>
-                                                        <tr class="fs-7 fw-bold text-gray-500">
-                                                            <th class=" min-w-70px pt-3">ID</th>
-                                                            <th class="min-w-50px d-block pt-3">NOMBRE</th>
-                                                            <th class="min-w-140px pt-3">TALLA</th>
-                                                            <th class="pe-0 min-w-120px pt-3">PESO</th>
-                                                            <th class="pe-0 min-w-120px pt-3">PELAJE</th>
-                                                            <th class="pe-0 min-w-120px pt-3">PRECIO</th>
-                                                            <th class="pe-0 text-center min-w-100px pt-3">ACCIONES</th>
+                                                        <tr class="fs-7 fw-bold text-gray-800 text-uppercase">
+                                                            <th class="pe-0 pt-3">NOMBRE</th>
+                                                            <th class="pe-0 pt-3">TALLA</th>
+                                                            <th class="pe-0 pt-3">PESO</th>
+                                                            <th class="pe-0 pt-3">PELAJE</th>
+                                                            <th class="pe-0 pt-3">PRECIO</th>
+                                                            <th class="pe-0 pt-3 text-center">ACCIONES</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody id="listar_servicios">
+                                                    <tbody class="fs-7 fw-bold text-gray-600" id="listar_servicios">
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -490,7 +489,7 @@
                 contentType: false
             }).done(function (data) {
                 // console.log(data)
-                if(data=='Guardado'){
+                if(data == 'Guardado'){
                     Swal.fire({
                         text:"¡Servicio registrado correctamente!",
                         icon:"success",
@@ -502,7 +501,7 @@
                     cerrar_modal_servicio();
                     listar_servicios();
 
-                }else if(data=='Actualizado'){
+                }else if(data == 'Actualizado'){
                     Swal.fire({
                         text:"¡Servicio actualizado correctamente!",
                         icon:"success",
@@ -620,6 +619,7 @@
         function cerrar_modal_servicio(){
             btn_guardar()
             document.getElementById('guardar-servicio').reset();
+            document.getElementById("id_PaqueteEstetica").value = 'Insertar';
             $('#modal_servicio').modal('hide');
         }
 
@@ -631,9 +631,9 @@
         }
 
         // Función eliminar el paquete 
-        function eliminar_servicio(id_PaqueteEstetica){
+        function eliminar_servicio(id_PaqueteEstetica, NombrePaquete){
             Swal.fire({
-                text:"¿Estás seguro(a) de eliminar el servicio seleccionado con ID: "+id_PaqueteEstetica+"?",
+                text:"¿Estás seguro(a) de eliminar el paquete estetica: " + NombrePaquete + "?",
                 icon:"warning",
                 showCancelButton:!0,
                 buttonsStyling:!1,
@@ -658,7 +658,7 @@
                         console.log(data)
                         if(data=='Eliminado'){
                             Swal.fire({
-                                text:"Has borrado el servicio con ID: "+id_PaqueteEstetica+"!.",
+                                text:"¡Has eliminado el paquete estetica: " + NombrePaquete + "!",
                                 icon:"success",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -667,7 +667,7 @@
                             listar_servicios();
                         } else {
                             Swal.fire({
-                                text:"¡Guardería con ID: "+id_PaqueteEstetica+" no se pudo eliminar.",
+                                text:"¡Paquete estetica: " + NombrePaquete + " no se pudo eliminar.",
                                 icon:"error",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -678,7 +678,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"¡Servicio con ID: "+id_PaqueteEstetica+" no se pudo eliminar.",
+                            text:"¡Paquete estetica: " + NombrePaquete + " no se pudo eliminar.",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -689,7 +689,7 @@
                     });
                 } else {
                     Swal.fire({
-                        text:"Has cancelado la eliminación del servicio con ID: "+id_PaqueteEstetica+".",
+                        text:"Has cancelado la eliminación del paquete estetica: " + NombrePaquete,
                         icon:"error",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",

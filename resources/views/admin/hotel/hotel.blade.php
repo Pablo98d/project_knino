@@ -122,34 +122,35 @@
             {{-- Contenedor de la vista --}}
             <div class="card">
                 <div class="card card-flush mb-xxl-10">
-                    <div class="card-body pt-0">
-                        <div class="tab-pane fade show active" id="kt_stats_widget_1_tab_1">
-                            {{-- Boton de agregar nuevo paquete hotel --}}
-                            <div class="card-header">
-                                <div class="card-title mt-2">
-                                    <h2>Datos de los paquetes hoteles</h2>
-                                    <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo paquete hotal" style="position: absolute;right: 10px;" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">+</button>
-                                </div>
-                            </div>
-                            {{-- Datos de la tabla paquete hotel --}}
-                            <div class="card-body pt-0">
-                                <div class="table-responsive">
-                                    <form action="{{route('listar_paquete')}}" method="get"  id="listar-paquete">
-                                            @csrf
-                                        </form>
-                                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-                                            <thead>
-                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                    <th class="pe-0 pt-3">Nombre del paquete</th>
-                                                    <th class="pe-0 pt-3">Cantidad de noches</th>
-                                                    <th class="pe-0 pt-3">Vigencia Meses</th>
-                                                    <th class="pe-0 pt-3">Precio MXN</th>
-                                                    <th class="pe-0 text-center pt-3">Acciones</th>
-                                                </tr>
-                                            </thead>
-                                        <tbody class="fw-semibold text-gray-600" id="listar_paquetes">
-                                        </tbody>
-                                    </table>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                    {{-- Boton de agregar nuevo paquete hotel --}}
+                                    <div class="card-header">
+                                        <div class="card-title mt-2">
+                                            <h2>Datos de los paquetes hoteles</h2>
+                                            <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo paquete de festejo" style="position: absolute;right: 10px;" onclick='abrir_modal_hotel()'>+</button>
+                                        </div>
+                                    </div>
+                                    {{-- Datos de la tabla hotel --}}
+                                    <div class="card-body pt-0">
+                                        <div class="table-responsive">
+                                            <table class="table align-middle gs-0 gy-4 my-0">
+                                                <thead>
+                                                    <tr class="fs-7 fw-bold text-gray-800 text-uppercase">
+                                                        <th class="pe-0 pt-3">Nombre del paquete</th>
+                                                        <th class="pe-0 pt-3">Cantidad de noches</th>
+                                                        <th class="pe-0 pt-3">Vigencia Meses</th>
+                                                        <th class="pe-0 pt-3">Precio MXN</th>
+                                                        <th class="pe-0 pt-3 text-center">Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="fs-7 fw-bold text-gray-600" id="listar_hoteles">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -157,17 +158,21 @@
                 </div>
             </div>
             {{-- Modal de añadir paquete hotel --}}
-            <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+            <div class="modal fade" id="modal_hotel" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                     <div class="modal-content">
-                        <form class="form" method="POST" action="{{url('admin/guardar-paquete')}}"  id="registro-paquete" onsubmit='return validar()'>
+                        <form class="form" method="POST" action="{{url('admin/guardar-paquete')}}" id="registro-paquete" onsubmit='return validar()'>
                             @csrf
-                        
                             <input type="hidden" name="id_PaqueteHotel" value="Insertar" id="id_PaqueteHotel">
-                            <div class="modal-header" id="kt_modal_add_customer_header">
-                                <h2 class="fw-bold">Agregar nuevo paquete</h2>
-                                <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
-                                    <button onclick="cerrar_modal_add_user()" style="background: transparent;border:none" type="button">
+                            {{-- Encabezado de la modal --}}
+                            <div class="modal-header" id="modal_hotel_header">
+                                {{-- Titulo de la modal --}}
+                                <h2 class="fw-bold" id="id_titulo_hotel">Agregar nuevo paquete hotel</h2>
+                                {{-- X para cerrar la modal --}}
+                                <div id="modal_hotel_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                    {{-- Boton para la X --}}
+                                    <button onclick="cerrar_modal_hotel()" style="background: transparent;border:none" type="button">
+                                        {{-- Icono de X --}}
                                         <span class="svg-icon svg-icon-1">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
@@ -181,33 +186,45 @@
                             {{-- Elementos de la modal --}}
                             <div class="modal-body px-lg-17 mb-4">
                                 {{-- Funmcion para el scroll de la modal --}}
-                                <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
+                                <div class="scroll-y me-n7 pe-7" id="modal_hotel_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_hotel_header" data-kt-scroll-wrappers="#modal_hotel_scroll" data-kt-scroll-offset="300px">
                                     {{-- Segmento para las listas de otras tablas --}}
                                     <div class="row mb-7">
+                                        {{-- Input de Nombre Paquete Hotel --}}
                                         <div class="col-md-12 mt-3">
                                             <label class="required fs-6 fw-semibold mb-2">Nombre</label>
-                                            <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
+                                            <input type="text" class="form-control form-control-solid" placeholder="Nombre paquete hotel" name="NombrePaquete" id="NombrePaquete" value="" />
                                         </div>
+                                        {{-- Input Cantidad de Noches --}}
                                         <div class="col-md-4 mt-3">
                                             <label class="required fs-6 fw-semibold form-label mb-2">Cantidad de noches</label>
-                                            <input type="number" name="CantidadNoches" id="CantidadNoches" placeholder="" class="form-control form-control-solid" value="" />
+                                            <input type="number" name="CantidadNoches" id="CantidadNoches" placeholder="Cant. de Noches" class="form-control form-control-solid" value="" />
                                         </div>
+                                        {{-- Input Vigencia de Meses --}}
                                         <div class="col-md-4 mt-3">
                                             <label class="required fs-6 fw-semibold form-label mb-2">Vigencia meses</label>
-                                            <input type="number" name="MesesVigencia" id="MesesVigencia" placeholder="" class="form-control form-control-solid" value="" />
+                                            <input type="number" name="MesesVigencia" id="MesesVigencia" placeholder="Vigencia Meses" class="form-control form-control-solid" value="" />
                                         </div>
+                                        {{-- Input de Precio --}}
                                         <div class="col-md-4 mt-3">
                                             <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
-                                            <input type="number" name="Precio" id="Precio" placeholder="" class="form-control form-control-solid" value="" step="any"/>
-                                            <input type="hidden" class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" />
+                                            <input type="number" name="Precio" id="Precio" placeholder="Precio" class="form-control form-control-solid" value="" step="any"/>
+                                        </div>
+                                        {{-- Select Capacidad --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Turno</label>
+                                            <select name="id_Capacidad" id="id_Capacidad" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {{-- Botones de la modal --}}
                             <div class="modal-footer flex-center">
-                                <button type="reset" onclick="cerrar_modal_add_user()" class="btn btn-light me-3">Cancelar</button>
+                                {{-- Boton de cancelar registro --}}
+                                <button type="reset" onclick="cerrar_modal_hotel()" class="btn btn-light me-3">Cancelar</button>
+                                {{-- Boton de registrar paquete hotel --}}
                                 <button type="submit" id="btn_paquete"  class="btn btn-primary">
-                                    <span class="indicator-label">Registrar paquete</span>
+                                    <span class="indicator-label">Registrar paquete hotel</span>
                                     <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                 </span>
@@ -216,79 +233,45 @@
                         </form>
                     </div>
                 </div>
-                
             </div>
-
-            
-            <form action="{{route('eliminar_paquete')}}" method="post"  id="eliminar-paquete">
-                @csrf
-            </form>
+            {{-- Formulario para hoteles --}}
+                <form action="{{route('listar_hotel')}}" method="get"  id="listar-hotel">
+                    @csrf
+                </form>
+                <form action="{{route('editar_hotel')}}" method="post" id="editar-hotel">
+                    @csrf
+                </form>
+                <form action="{{route('eliminar_paquete')}}" method="post"  id="eliminar-paquete">
+                    @csrf
+                </form>
         </div>
     </div>
 
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    {{-- Funciones para hoteles --}}
     <script>
-        // Función para consultar los paquetes
-        listar_paquetes();
-        function listar_paquetes(){
-            $datosForm=$('#listar-paquete');
+        // Mostrar paquetes hotel
+        listar_hoteles();
+        function listar_hoteles()
+        {
+            $datosForm=$('#listar-hotel');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                 method: $datosForm.attr('method'),
                 processData: false,
                 contentType: false
             }).done(function (data) {
-                $('#listar_paquetes').empty();
-                $('#listar_paquetes').append(data);
-            }).fail(function () {
-            });
+                $('#listar_hoteles').empty();
+                $('#listar_hoteles').append(data.paqueteHotel);
+                $('#id_Capacidad').empty();
+                $('#id_Capacidad').append(data.capacidad);
+            }).fail(function () {});
         }
-
-        // Función que registra y actualiza paquetes
-        $('#registro-paquete').submit(function(e){
-            e.preventDefault();
-        
-            $datosForm=$('#registro-paquete');
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                console.log(data)
-                if(data=='Guardado'){
-                    Swal.fire({
-                        text:"¡Paquete registrado correctamente!",
-                        icon:"success",
-                        buttonsStyling:!1,
-                        confirmButtonText:"Ok, entendido!",
-                        customClass:{confirmButton:"btn fw-bold btn-primary"}
-                    })
-                    document.getElementById('registro-paquete').reset();
-                    $('#kt_modal_add_customer').modal('hide');
-                    listar_paquetes();
-
-                }else if(data=='Actualizado'){
-                    Swal.fire({
-                        text:"¡Paquete actualizado correctamente!",
-                        icon:"success",
-                        buttonsStyling:!1,
-                        confirmButtonText:"Ok, entendido!",
-                        customClass:{confirmButton:"btn fw-bold btn-primary"}
-                    })
-                    document.getElementById('registro-paquete').reset();
-                    $('#kt_modal_add_customer').modal('hide');
-                    listar_paquetes();
-                }
-            }).fail(function () {
-            });
-        
-        });
-
         // Función para validar si los campos estan vacíos
-        function validar(){
+        function validar()
+        {
             var todo_correcto = true;
             if(document.getElementById('NombrePaquete').value == ''){
                 todo_correcto = false;
@@ -314,51 +297,103 @@
                 })
             }
         }
-
+        // Función abrir el modal
+        function abrir_modal_hotel()
+        {
+            btn_guardar();
+            document.getElementById('registro-paquete').reset();
+            $('#modal_hotel').modal('show');
+        }
+        // Función cambiar el texto del boton 
+        function btn_guardar()
+        {
+            var button = document.getElementById('btn_paquete');
+            button.innerText = 'Registrar paquete hotel';
+            document.getElementById("id_titulo_hotel").innerHTML = "Agregar nuevo paquete hotel"
+        }
+        // Función cambiar el texto del boton 
+        function btn_actualizar()
+        {
+            var button = document.getElementById('btn_paquete');
+            button.innerText = 'Actualizar paquete hotel';
+            document.getElementById("id_titulo_hotel").innerHTML = "Actualizar datos del paquete hotel"
+        }
+        // Función cerrar el modal
+        function cerrar_modal_hotel()
+        {
+            btn_guardar()
+            document.getElementById('registro-paquete').reset();
+            document.getElementById("id_PaqueteHotel").value = 'Insertar';
+            $('#modal_hotel').modal('hide');
+        }
+        // Función que registra y actualiza paquetes
+        $('#registro-paquete').submit(function(e)
+        {
+            e.preventDefault();
+            $datosForm=$('#registro-paquete');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                console.log(data)
+                if(data == 'Guardado'){
+                    Swal.fire({
+                        text:"¡Paquete hotel registrado correctamente!",
+                        icon:"success",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
+                    })
+                    document.getElementById('registro-paquete').reset();
+                    cerrar_modal_hotel();
+                    listar_hoteles();
+                } else if(data == 'Actualizado'){
+                    Swal.fire({
+                        text:"¡Paquete hotel actualizado correctamente!",
+                        icon:"success",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
+                    })
+                    // document.getElementById('registro-paquete').reset();
+                    cerrar_modal_hotel();
+                    listar_hoteles();
+                }
+            }).fail(function () {});
+        });
         // Función para abrir el modal y mostrar los datos en el formulario
-        function editar_paquete(id_PaqueteHotel,NombrePaquete,CantidadNoches,MesesVigencia,id_Capacidad,Precio){
-            abrir_modal_add_user()
-
-
-            console.log(id_PaqueteHotel,NombrePaquete,CantidadNoches,MesesVigencia,id_Capacidad,Precio)
+        function editar_paquete(id_PaqueteHotel, NombrePaquete, CantidadNoches, MesesVigencia, Capacidad, Precio)
+        {
+            abrir_modal_hotel();
+            btn_actualizar();
             document.getElementById("id_PaqueteHotel").value = id_PaqueteHotel;
             document.getElementById("NombrePaquete").value = NombrePaquete;
             document.getElementById("CantidadNoches").value = CantidadNoches;
             document.getElementById("MesesVigencia").value = MesesVigencia;
-            document.getElementById("id_Capacidad").value = id_Capacidad;
             document.getElementById("Precio").value = Precio;
-            btn_actualizar()
+            
+            var formData = new FormData();
+            formData.append('id_Capacidad', Capacidad);
 
+            $datosForm=$('#editar-hotel');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                data: formData,
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                $('#id_Capacidad').empty();
+                $('#id_Capacidad').append(data.capacidad);
+            }).fail(function () {});
         }
-
-        // Función cambiar el texto del boton 
-        function btn_guardar() {
-            var button = document.getElementById('btn_paquete');
-            button.innerText = 'Registrar paquete';
-        }
-
-        // Función cambiar el texto del boton 
-        function btn_actualizar() {
-            var button = document.getElementById('btn_paquete');
-            button.innerText = 'Actualizar paquete';
-        }
-
-        // Función cerrar el modal
-        function cerrar_modal_add_user(){
-            btn_guardar()
-            document.getElementById('registro-paquete').reset();
-            $('#kt_modal_add_customer').modal('hide');
-        }
-
-        // Función abrir el modal
-        function abrir_modal_add_user(){
-            $('#kt_modal_add_customer').modal('show');
-        }
-
         // Función eliminar el paquete 
-        function eliminar(id_paquete){
+        function eliminar_paquete_hotel(id_paquete, NombrePaquete)
+        {
             Swal.fire({
-                text:"¿Estás seguro(a) de eliminar el paquete seleccionado con ID: "+id_paquete+"?",
+                text:"¿Estás seguro(a) de eliminar el paquete hotel: " + NombrePaquete + "?",
                 icon:"warning",
                 showCancelButton:!0,
                 buttonsStyling:!1,
@@ -383,16 +418,16 @@
                         console.log(data)
                         if(data=='Eliminado'){
                             Swal.fire({
-                                text:"Has borrado el paquete con ID: "+id_paquete+"!.",
+                                text:"¡Has eliminado el paquete hotel: " + NombrePaquete + "!",
                                 icon:"success",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
                                 customClass:{confirmButton:"btn fw-bold btn-primary"}
                             })
-                            listar_paquetes();
+                            listar_hoteles();
                         } else {
                             Swal.fire({
-                                text:"Paquete con ID: "+id_paquete+" no se pudo eliminar.",
+                                text:"Paquete hotel: " + NombrePaquete + " no se pudo eliminar.",
                                 icon:"error",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -403,7 +438,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"Paquete con ID: "+id_paquete+" no se pudo eliminar.",
+                            text:"Paquete hotel: " + NombrePaquete + " no se pudo eliminar.",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -414,7 +449,7 @@
                     });
                 } else {
                     Swal.fire({
-                        text:"Has cancelado la eliminación del Paquete con ID: "+1+".",
+                        text:"Has cancelado la eliminación del paquete hotel: " + NombrePaquete,
                         icon:"error",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",

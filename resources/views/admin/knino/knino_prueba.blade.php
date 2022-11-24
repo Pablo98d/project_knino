@@ -187,17 +187,17 @@
                                                 <div class="table-responsive">
                                                     <table class="table align-middle gs-0 gy-4 my-0">
                                                         <thead>
-                                                            <tr class="fs-7 fw-bold text-gray-500">
-                                                                <th class="pe-0 pt-3">NOMBRE KNINO</th>
+                                                            <tr class="fs-7 fw-bold text-gray-800 text-uppercase">
+                                                                <th class="pe-0 pt-3">Nombre Knino</th>
                                                                 <th class="pe-0 pt-3">NOMBRE PERSONA</th>
                                                                 <th class="pe-0 pt-3">RAZA</th>
                                                                 <th class="pe-0 pt-3">GENERO</th>
                                                                 <th class="pe-0 pt-3">ESTATUS</th>
                                                                 <th class="pe-0 pt-3">CUMPLEAÑOS</th>
-                                                                <th class="pe-0 text-center pt-3">ACCIONES</th>
+                                                                <th class="pe-0 pt-3 text-center">ACCIONES</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="listar_kninos">
+                                                        <tbody class="fs-7 fw-bold text-gray-600" id="listar_kninos">
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -438,7 +438,7 @@
                                         {{-- Input de Cartilla --}}
                                         <div class="col-md-12 mt-3">
                                             <label class="required fs-6 fw-semibold mb-2">Cartilla de vacunación</label>
-                                            <input type="number" class="form-control form-control-solid" placeholder="Cartilla de vacunacion" name="CartillaVacunacion" id="Cartilla" value="" />
+                                            <input type="text" class="form-control form-control-solid" placeholder="Cartilla de vacunacion" name="CartillaVacunacion" id="Cartilla" value="" />
                                         </div>
                                     </div>
                                 </div>
@@ -560,7 +560,7 @@
                                     {{-- Input de Cartilla --}}
                                     <div class="col-md-12 mt-3">
                                         <label class="fs-6 fw-semibold mb-2">Cartilla de vacunación</label>
-                                        <input readonly type="number" name="ver_Cartilla" id="ver_Cartilla" class="form-control form-control-solid" value="" />
+                                        <input readonly type="text" name="ver_Cartilla" id="ver_Cartilla" class="form-control form-control-solid" value="" />
                                     </div>
                                 </div>
                             </div>
@@ -750,6 +750,7 @@
         {
             btn_guardar()
             document.getElementById('guardar-knino').reset();
+            document.getElementById("id_Knino").value = 'Insertar';
             $('#modal_knino').modal('hide');
         }
         // Función que registra y actualiza servicios
@@ -870,7 +871,7 @@
                         console.log(data)
                         if(data == 'Eliminado'){
                             Swal.fire({
-                                text:"Has eliminado al knino: " + NombreKnino + "!.",
+                                text:"¡Has eliminado al knino: " + NombreKnino + "!",
                                 icon:"success",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -901,7 +902,7 @@
                     });
                 } else {
                     Swal.fire({
-                        text:"Has cancelado la eliminación del knino: " + NombreKnino + ".",
+                        text:"Has cancelado la eliminación del knino: " + NombreKnino,
                         icon:"error",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",

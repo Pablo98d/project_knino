@@ -54,19 +54,20 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     
     // VISTA PRINCIPAL PARA HOTEL
     Route::get('hotel',[HotelController::class, 'hotel'])->name('hotel');
-
-    Route::get('listar-paquete',[HotelController::class, 'listar_paquete'])->name('listar_paquete');
+    // Rutas para hotel
+    Route::get('listar-paquete',[HotelController::class, 'listar_hotel'])->name('listar_hotel');
     Route::post('guardar-paquete',[HotelController::class, 'guardar_paquete'])->name('guardar_paquete');
+    Route::post('editar-hotel',[HotelController::class, 'editar_hotel'])->name('editar_hotel');
     Route::post('eliminar-paquete',[HotelController::class, 'eliminar_paquete'])->name('eliminar_paquete');
 
 
     // VISTA PRINCIPAL PARA GUARDERIA
     Route::get('guarderia',[GuarderiaController::class, 'guarderia'])->name('guarderia');
-
+    // Rutas para guarderia
     Route::get('listar-guarderia',[GuarderiaController::class, 'listar_guarderia'])->name('listar_guarderia');
     Route::post('guardar-guarderia',[GuarderiaController::class, 'guardar_guarderia'])->name('guardar_guarderia');
+    Route::post('editar-guarderia',[GuarderiaController::class, 'editar_guarderia'])->name('editar_guarderia');
     Route::post('eliminar-guarderia',[GuarderiaController::class, 'eliminar_guarderia'])->name('eliminar_guarderia');
-
 
 
     // VISTA PRINCIPAL PARA ESTETICA

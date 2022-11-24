@@ -79,34 +79,31 @@ class EsteticaController extends Controller
                 $output = '';
             } else {
                 foreach ($listar_servicios as $listar_servicio) {
-                    $precio_servicio=number_format($listar_servicio->Precio,2);
-                    // dd($listar_servicio->pelaje->TipoPelaje);
-                    
+                    $precio_servicio = number_format($listar_servicio->Precio,2);
                     $output .= '
                     <tr>
-                        <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
-                            '.$listar_servicio->id_PaqueteEstetica.'
+                        <td title="Paquete Estetica: '.$listar_servicio->id_PaqueteEstetica.'">
+                            <a href="#" class="fs-7 fw-bold text-gray-600 text-hover-primary mb-1 fs-6">
+                                '.$listar_servicio->Servicio.'
+                            </a>
                         </td>
-                        <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
-                            '.$listar_servicio->Servicio.'
-                        </td>
-                        <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        <td>
                             '.$listar_servicio->talla->NombreTalla.'
                         </td>
-                        <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        <td>
                             '.$listar_servicio->peso->RangoPeso.'
                         </td>
-                        <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        <td>
                             '.$listar_servicio->pelaje->TipoPelaje.'
                         </td>
-                        <td class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
+                        <td>
                             $ '.$precio_servicio.'
                         </td>
                         <td class="text-center">
                             <button onclick="editar_servicio('.$listar_servicio->id_PaqueteEstetica.',`'.$listar_servicio->Servicio.'`,'.$listar_servicio->id_Talla.','.$listar_servicio->id_Peso.','.$listar_servicio->id_Pelaje.','.$listar_servicio->id_Capacidad.','.$listar_servicio->Precio.')" class="btn btn-outline-warning btn-sm">
                                 Editar
                             </button>
-                            <button onclick="eliminar_servicio('.$listar_servicio->id_PaqueteEstetica.')" class="btn btn-outline-danger btn-sm">
+                            <button onclick="eliminar_servicio('.$listar_servicio->id_PaqueteEstetica.',`'.$listar_servicio->Servicio.'`)" class="btn btn-outline-danger btn-sm">
                                 Eliminar
                             </button>
                         </td>

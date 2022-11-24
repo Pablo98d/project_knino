@@ -18,7 +18,7 @@ class FestejoController extends Controller
     {
         $p_festejos = PaquetesFestejo::all();
         $pasteles = Pasteles::all(); 
-        $capacidad = Capacidad::all();     
+        $capacidad = Capacidad::all();   
         $output = '';
 
         // Llenado de la tabla con sus datos
@@ -27,64 +27,62 @@ class FestejoController extends Controller
         } else {
             foreach ($p_festejos as $p_festejo) {
                 $precio_festejo = number_format($p_festejo->Precio, 2);
-                // $precio_s_formato = 0;
-                // if ($precio_festejo == "") {
-                //     $precio_s_formato = 0.00;
-                // }
                 $output .= '
                 <tr>
-                    <td class="text-gray-600 text-hover-primary mb-1">
-                        '.$p_festejo->NombrePaquete.'
+                    <td title="Paquete Festejo: '.$p_festejo->id_PaqueteFestejo.'">
+                        <a href="#" class="fs-7 fw-bold text-gray-600 text-hover-primary mb-1 fs-6">
+                        '.$p_festejo->NombrePaquete.'    
+                        </a>
                     </td>
-                    <td class="text-gray-600 text-hover-primary mb-1">
+                    <td>
                         '.$p_festejo->tipo_pastel->NombrePastel.'
                     </td>
-                    <td class="text-gray-600 text-hover-primary mb-1">
+                    <td>
                         '.$p_festejo->Decoracion.'
                     </td>
-                    <td class="text-gray-600 text-hover-primary mb-1 text-center">
+                    <td>
                         '.$p_festejo->EstanciaHoras.'
                     </td>
-                    <td class="text-gray-600 text-hover-primary mb-1 text-center">
+                    <td>
                         '.$p_festejo->CantidadHumanos.'
                     </td>
-                    <td class="text-gray-600 text-hover-primary mb-1 text-center">
+                    <td>
                         '.$p_festejo->KninosInvitados.'
                     </td>
-                    <td class="text-gray-600 text-hover-primary mb-1 text-center">
+                    <td>
                         $ '.$precio_festejo.'
                     </td>
                     <td class="text-center">
-                    <button onclick="ver_festejo(
-                        `'.$p_festejo->NombrePaquete.'`,
-                        `'.$p_festejo->tipo_pastel->NombrePastel.'`,
-                        `'.$p_festejo->CantidadGorritos.'`,
-                        `'.$p_festejo->Decoracion.'`,
-                        `'.$p_festejo->BoloCantidad.'`,
-                        `'.$p_festejo->EstanciaHoras.'`,
-                        `'.$p_festejo->CantidadHumanos.'`,
-                        `'.$p_festejo->KninosInvitados.'`,
-                        `'.$p_festejo->capacidad->Turno.'`,
-                        `'.$p_festejo->Precio.'`)" class="btn btn-outline-primary btn-sm">
-                        Ver
-                    </button>
-                    <button onclick="editar_festejo(
-                        '.$p_festejo->id_PaqueteFestejo.',
-                        `'.$p_festejo->NombrePaquete.'`,
-                        '.$p_festejo->id_TipoPastel.',
-                        '.$p_festejo->CantidadGorritos.',
-                        `'.$p_festejo->Decoracion.'`,
-                        '.$p_festejo->BoloCantidad.',
-                        '.$p_festejo->EstanciaHoras.',
-                        '.$p_festejo->CantidadHumanos.',
-                        '.$p_festejo->KninosInvitados.',
-                        '.$p_festejo->id_Capacidad.',
-                        '.$p_festejo->Precio.')" class="btn btn-outline-warning btn-sm">
-                        Editar
-                    </button>
-                    <button onclick="eliminar_festejo('.$p_festejo->id_PaqueteFestejo.',`'.$p_festejo->NombrePaquete.'`)" class="btn btn-outline-danger btn-sm">
-                        Eliminar
-                    </button>
+                        <button onclick="ver_festejo(
+                            `'.$p_festejo->NombrePaquete.'`,
+                            `'.$p_festejo->tipo_pastel->NombrePastel.'`,
+                            `'.$p_festejo->CantidadGorritos.'`,
+                            `'.$p_festejo->Decoracion.'`,
+                            `'.$p_festejo->BoloCantidad.'`,
+                            `'.$p_festejo->EstanciaHoras.'`,
+                            `'.$p_festejo->CantidadHumanos.'`,
+                            `'.$p_festejo->KninosInvitados.'`,
+                            `'.$p_festejo->capacidad->Turno.'`,
+                            `'.$p_festejo->Precio.'`)" class="btn btn-outline-primary btn-sm">
+                            Ver
+                        </button>
+                        <button onclick="editar_festejo(
+                            '.$p_festejo->id_PaqueteFestejo.',
+                            `'.$p_festejo->NombrePaquete.'`,
+                            '.$p_festejo->id_TipoPastel.',
+                            '.$p_festejo->CantidadGorritos.',
+                            `'.$p_festejo->Decoracion.'`,
+                            '.$p_festejo->BoloCantidad.',
+                            '.$p_festejo->EstanciaHoras.',
+                            '.$p_festejo->CantidadHumanos.',
+                            '.$p_festejo->KninosInvitados.',
+                            '.$p_festejo->id_Capacidad.',
+                            '.$p_festejo->Precio.')" class="btn btn-outline-warning btn-sm">
+                            Editar
+                        </button>
+                        <button onclick="eliminar_festejo('.$p_festejo->id_PaqueteFestejo.',`'.$p_festejo->NombrePaquete.'`)" class="btn btn-outline-danger btn-sm">
+                            Eliminar
+                        </button>
                     </td>
                 </tr>';
             }
@@ -181,7 +179,7 @@ class FestejoController extends Controller
 
         return $data;
     }
-    // Elimina un tipo de pastel
+    // Elimina un paquete festejo
     public function eliminar_festejo(Request $request)
     {
         $eliminar = PaquetesFestejo::destroy($request->id_PaqueteFestejo);

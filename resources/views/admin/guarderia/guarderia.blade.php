@@ -118,248 +118,144 @@
 @section('contenido')
 
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <!--begin::Container-->
         <div class="container-xxl" id="kt_content_container">
-            <!--begin::Card-->
+            {{-- Contenedor de la vista --}}
             <div class="card">
-                <!--begin::Card header-->
-                <div class="card-header border-0 pt-6">
-                    <!--begin::Card title-->
-                    <div class="card-title">
-                        <!--begin::Search-->
-                        <div class="d-flex align-items-center position-relative my-1">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
-                            <span class="svg-icon svg-icon-1 position-absolute ms-6">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
-                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                            <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Buscar paquete" />
-                        </div>
-                        <!--end::Search-->
-                    </div>
-                    <!--begin::Card title-->
-                    <!--begin::Card toolbar-->
-                    <div class="card-toolbar">
-                        <!--begin::Toolbar-->
-                        <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                            <!--begin::Filter-->
-                            <div class="w-150px me-3">
-                                <!--begin::Select2-->
-                                <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estatus" data-kt-ecommerce-order-filter="status">
-                                    <option></option>
-                                    <option value="all">All</option>
-                                    <option value="active">Active</option>
-                                    <option value="locked">Locked</option>
-                                </select>
-                                <!--end::Select2-->
+                <div class="card card-flush mb-xxl-10">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card" style="box-shadow: 2px 3px 5px 4px rgba(80, 80, 80, 0.2);">
+                                    {{-- Boton de agregar nuevo paquete guarderia --}}
+                                    <div class="card-header">
+                                        <div class="card-title mt-2">
+                                            <h2>Datos de los paquetes guardería</h2>
+                                            <button type="button" class="btn btn-success btn-sm ml-2" title="Agregar nuevo paquete de festejo" style="position: absolute;right: 10px;" onclick='abrir_modal_guarderia()'>+</button>
+                                        </div>
+                                    </div>
+                                    {{-- Datos de la tabla paquete guarderia --}}
+                                    <div class="card-body pt-0">
+                                        <div class="table-responsive">
+                                            <table class="table align-middle gs-0 gy-4 my-0" id="kt_customers_table">
+                                                <thead>
+                                                    <tr class="fs-7 fw-bold text-gray-800 text-uppercase">
+                                                        <th class="pe-0 pt-3">Nombre del Paquete</th>
+                                                        <th class="pe-0 pt-3">Cantidad de Días</th>
+                                                        <th class="pe-0 pt-3">Vigencia Meses</th>
+                                                        <th class="pe-0 pt-3">Precio MXN</th>
+                                                        <th class="pe-0 pt-3 text-center">Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="fs-7 fw-bold text-gray-600" id="listar_guarderia">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <!--end::Filter-->
-                            <!--begin::Export-->
-                            
-                            <!--end::Export-->
-                            <!--begin::Add customer-->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Crear paquete</button>
-                            <!--end::Add customer-->
                         </div>
-                        <!--end::Toolbar-->
-                        <!--begin::Group actions-->
-                        <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
-                            <div class="fw-bold me-5">
-                            <span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected</div>
-                            <button type="button" class="btn btn-danger" data-kt-customer-table-select="delete_selected">Delete Selected</button>
-                        </div>
-                        <!--end::Group actions-->
                     </div>
-                    <!--end::Card toolbar-->
-                </div>
-                <!--end::Card header-->
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <form action="{{route('listar_guarderia')}}" method="get"  id="listar-guarderia">
-                        @csrf
-                    </form>
-                    
-                    <!--begin::Table-->
-                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-                        <!--begin::Table head-->
-                        <thead>
-                            <!--begin::Table row-->
-                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                               
-                                <th class="min-w-100px">ID <br>--</th>
-                                <th class="text-star pe-3 min-w-100px">Nombre del <br> Paquete</th>
-                                <th class="text-star pe-3 min-w-50px">Cantidad  <br> de Días</th>
-                                <th class=" pe-3 min-w-50px">Vigencia <br> [Meses]</th>
-                                <th class=" pe-3 min-w-80px">Precio <br> [MXN]</th>
-                                <th class=" pe-3 min-w-80px">Turno <br></th>
-                                <th class="text-center pe-0 min-w-25px">Acciones</th>
-                            </tr>
-                            <!--end::Table row-->
-                        </thead>
-                        <!--end::Table head-->
-                        <!--begin::Table body-->
-                        <tbody class="fw-semibold text-gray-600" id="listar_guarderia">
-                        
-                        </tbody>
-                        <!--end::Table body-->
-                    </table>
-                    <!--end::Table-->
-                </div>
+                </div>                
             </div>
-            <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
-                <!--begin::Modal dialog-->
+            {{-- Modal de añadir paquete guarderia --}}
+            <div class="modal fade" id="modal_guarderia" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered mw-650px">
-                    <!--begin::Modal content-->
                     <div class="modal-content">
-                        <!--begin::Form-->
-                        <form class="form" method="POST" action="{{url('admin/guardar-guarderia')}}"  id="registro-guarderia" onsubmit='return validar()'>
+                        <form class="form" method="POST" action="{{url('admin/guardar-guarderia')}}" id="registro-guarderia" onsubmit='return validar()'>
                             @csrf
-                        
                             <input type="hidden" name="id_PaqueteGuarderia" value="Insertar" id="id_PaqueteGuarderia">
-                            <!--begin::Modal header-->
-                            <div class="modal-header" id="kt_modal_add_customer_header">
-                                <!--begin::Modal title-->
-                                <h2 class="fw-bold" id="id_titulo_paquete">Agregar nuevo paquete</h2>
-                                <!--end::Modal title-->
-                                <!--begin::Close-->
-                                <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
-                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                                    <button onclick="cerrar_modal_add_user()" style="background: transparent;border:none" type="button">
+                            {{-- Encabezado de la modal --}}
+                            <div class="modal-header" id="modal_guarderia_header">
+                                {{-- Titulo de la modal --}}
+                                <h2 class="fw-bold" id="id_titulo_paquete">Agregar nuevo paquete guardería</h2>
+                                {{-- X para cerrar la modal --}}
+                                <div id="modal_guarderia_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                                    {{-- Boton para la X --}}
+                                    <button onclick="cerrar_modal_guarderia()" style="background: transparent;border:none" type="button">
+                                        {{-- Icono de X --}}
                                         <span class="svg-icon svg-icon-1">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
                                                 <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
                                             </svg>
-
                                         </span>
                                     </button>
-                                    <!--end::Svg Icon-->
                                 </div>
-                                <!--end::Close-->
                             </div>
-                            <!--end::Modal header-->
-                            <!--begin::Modal body-->
-                            <div class="modal-body py-10 px-lg-17">
-                                <!--begin::Scroll-->
-                                <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
-                                    <!--begin::Input group-->
-                                    <div class="fv-row mb-7">
-                                        <!--begin::Label-->
-                                        <label class="required fs-6 fw-semibold mb-2">Nombre</label>
-                                        <!--end::Label-->
-                                        <!--begin::Input-->
-                                        <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
-                                        <!--end::Input-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Input group-->
-                                    <div class="fv-row mb-7">
-                                        @php
-                                            $count=101;
-                                        @endphp
-                                        <div class="row fv-row">
-                                            <!--begin::Col-->
-                                            <div class="col-4">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Cantidad de días</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="CantidadDias" id="CantidadDias" value="" />
-                                                {{-- <select name="CantidadNoches" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Month">
-                                                    @for ($i = 1; $i < $count; $i++)
-                                                        <option value="{{$i}}">{{$i}}</option>
-                                                    @endfor
-                                                </select> --}}
-                                            </div>
-                                            <!--end::Col-->
-                                            <!--begin::Col-->
-                                            <div class="col-4">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Vigencia [meses]</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="MesesVigencia" id="MesesVigencia" value="" />
-                                                {{-- <select name="MesesVigencia" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
-                                                    @for ($i = 1; $i < $count; $i++)
-                                                        <option value="{{$i}}">{{$i}}</option>
-                                                    @endfor
-                                                </select> --}}
-                                            </div>
-                                            <div class="col-4">
-                                                <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
-                                                <input class="form-control form-control-solid" placeholder="" name="Precio" id="Precio" value="" />
-                                                <input type="hidden" class="form-control form-control-solid" placeholder="" name="id_Capacidad" id="id_Capacidad" value="1" />
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="row">
-                                                    <div class="col-12 mt-4">
-                                                        <center>
-                                                            Seleccionar Disponiblidad de Turno
-                                                        </center>
-                                                    </div>
-                                                    <div class="col-4 mt-3">
-                                                        <label style="cursor: pointer" class=" fs-6 fw-semibold form-label mb-2" for="Matutino">Matutino</label>
-                                                        <input type="radio" name="Precio" id="Matutino" value="" checked />
-                                                        
-                                                    </div>
-                                                    <div class="col-4 mt-3">
-                                                        <label style="cursor: pointer" class=" fs-6 fw-semibold form-label mb-2" for="Vespertino">Vespertino</label>
-                                                        <input type="radio" name="Precio" id="Vespertino" value="" />
-                                                        
-                                                    </div>
-                                                    <div class="col-4 mt-3">
-                                                        <label style="cursor: pointer" class=" fs-6 fw-semibold form-label mb-2" for="Todo_dia">Todo el día</label>
-                                                        <input type="radio" name="Precio" id="Todo_dia" value="" />
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Col-->
+                            {{-- Elementos de la modal --}}
+                            <div class="modal-body px-lg-17 mb-4">
+                                {{-- Funmcion para el scroll de la modal --}}
+                                <div class="scroll-y me-n7 pe-7" id="modal_guarderia_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#modal_guarderia_header" data-kt-scroll-wrappers="#modal_guarderia_scroll" data-kt-scroll-offset="300px">
+                                    {{-- Segmento para las listas de otras tablas --}}
+                                    <div class="row mb-7">
+                                        {{-- Input de Nombre Paquete Guarderia --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold mb-2">Nombre</label>
+                                            <input type="text" class="form-control form-control-solid" placeholder="Paquete" name="NombrePaquete" id="NombrePaquete" value="" />
                                         </div>
-                                        <!--end::Row-->
+                                        {{-- Input de Cantidad de Dias --}}
+                                        <div class="col-md-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Cantidad de días</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="Cant. de Días" name="CantidadDias" id="CantidadDias" value="" />
+                                        </div>
+                                        {{-- Input de Vigencia Meses --}}
+                                        <div class="col-md-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Vigencia meses</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="Vigencia Meses" name="MesesVigencia" id="MesesVigencia" value="" />
+                                        </div>
+                                        {{-- Input de Precio --}}
+                                        <div class="col-md-4 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Precio</label>
+                                            <input type="number" class="form-control form-control-solid" placeholder="Precio" name="Precio" id="Precio" value="" step="any"/>
+                                        </div>
+                                        {{-- Select Capacidad --}}
+                                        <div class="col-md-12 mt-3">
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Turno</label>
+                                            <select name="id_Capacidad" id="id_Capacidad" class="form-select form-select-solid" data-control="select2" data-hide-search="true" >
+                                            </select>
+                                        </div>
                                     </div>
-                                    
                                 </div>
-                                <!--end::Scroll-->
                             </div>
-                            <!--end::Modal body-->
-                            <!--begin::Modal footer-->
+                            {{-- Botones de la modal --}}
                             <div class="modal-footer flex-center">
-                                <!--begin::Button-->
-                                <button type="reset" onclick="cerrar_modal_add_user()" class="btn btn-light me-3">Cancelar</button>
-                                <!--end::Button-->
-                                <!--begin::Button-->
+                                {{-- Boton de cancelar registro --}}
+                                <button type="reset" onclick="cerrar_modal_guarderia()" class="btn btn-light me-3">Cancelar</button>
+                                {{-- Boton de registrar paquete guarderia --}}
                                 <button type="submit" id="btn_paquete"  class="btn btn-primary">
-                                    <span class="indicator-label">Registrar paquete</span>
+                                    <span class="indicator-label">Registrar paquete guardería</span>
                                     <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                 </span>
                                 </button>
-                                <!--end::Button-->
                             </div>
-                            <!--end::Modal footer-->
                         </form>
-                        <!--end::Form-->
                     </div>
                 </div>
                 
             </div>
-
-            
-            <form action="{{route('eliminar_guarderia')}}" method="post"  id="eliminar-guarderia">
-                @csrf
-            </form>
-            <!--end::Modal - Customers - Add-->
-        
-            <!--end::Modals-->
+            {{-- Formulario para guarderia --}}
+                <form action="{{route('listar_guarderia')}}" method="get"  id="listar-guarderia">
+                    @csrf
+                </form>
+                <form action="{{route('editar_guarderia')}}" method="post" id="editar-guarderia">
+                    @csrf
+                </form>
+                <form action="{{route('eliminar_guarderia')}}" method="post"  id="eliminar-guarderia">
+                    @csrf
+                </form>
         </div>
-        <!--end::Container-->
     </div>
 
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    {{-- Funciones para guarderia --}}
     <script>
-        // Función para consultar los paquetes
+        // Mostrar paquetes guarderia
         listar_guarderia();
-        function listar_guarderia(){
+        function listar_guarderia()
+        {
             $datosForm=$('#listar-guarderia');
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
@@ -368,57 +264,15 @@
                 contentType: false
             }).done(function (data) {
                 $('#listar_guarderia').empty();
-                $('#listar_guarderia').append(data);
-            }).fail(function () {
-            });
+                $('#listar_guarderia').append(data.paqueteGuarderia);
+                $('#id_Capacidad').empty();
+                $('#id_Capacidad').append(data.capacidad);
+            }).fail(function () {});
         }
-
-        // Función que registra y actualiza paquetes
-        $('#registro-guarderia').submit(function(e){
-            e.preventDefault();
-        
-            $datosForm=$('#registro-guarderia');
-            $.ajax({
-                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
-                method: $datosForm.attr('method'),
-                processData: false,
-                contentType: false
-            }).done(function (data) {
-                console.log(data)
-                if(data=='Guardado'){
-                    Swal.fire({
-                        text:"¡Guardería registrado correctamente!",
-                        icon:"success",
-                        buttonsStyling:!1,
-                        confirmButtonText:"Ok, entendido!",
-                        customClass:{confirmButton:"btn fw-bold btn-primary"}
-                    })
-                    document.getElementById('registro-guarderia').reset();
-                    $('#kt_modal_add_customer').modal('hide');
-                    listar_guarderia();
-
-                }else if(data=='Actualizado'){
-                    Swal.fire({
-                        text:"¡Guardería actualizado correctamente!",
-                        icon:"success",
-                        buttonsStyling:!1,
-                        confirmButtonText:"Ok, entendido!",
-                        customClass:{confirmButton:"btn fw-bold btn-primary"}
-                    })
-                    document.getElementById('registro-guarderia').reset();
-                    $('#kt_modal_add_customer').modal('hide');
-                    listar_guarderia();
-                }
-            }).fail(function () {
-            });
-        
-        });
-
         // Función para validar si los campos estan vacíos
-        function validar(){
+        function validar()
+        {
             var todo_correcto = true;
-            
-            
             if(document.getElementById('CantidadDias').value == ''){
                 todo_correcto = false;
             }
@@ -443,55 +297,106 @@
                 })
             }
         }
+        // Función abrir el modal
+        function abrir_modal_guarderia()
+        {
+            btn_guardar();
+            document.getElementById('registro-guarderia').reset();
+            $('#modal_guarderia').modal('show');
+        }
+        // Función cambiar el texto del boton 
+        function btn_guardar()
+        {
+            var button = document.getElementById('btn_paquete');
+            button.innerText = 'Registrar paquete guardería';
+            document.getElementById("id_titulo_paquete").innerHTML = "Agregar nuevo paquete guardería";
+        }
+        // Función cambiar el texto del boton 
+        function btn_actualizar()
+        {
+            var button = document.getElementById('btn_paquete');
+            button.innerText = 'Actualizar paquete guardería';
+            document.getElementById("id_titulo_paquete").innerHTML = "Actualizar datos del paquete guardería";
+        }
+        // Función cerrar el modal
+        function cerrar_modal_guarderia()
+        {
+            btn_guardar();
+            document.getElementById('registro-guarderia').reset();
+            document.getElementById("id_PaqueteGuarderia").value = 'Insertar';
+            $('#modal_guarderia').modal('hide');
+        }
+        // Función que registra y actualiza paquetes
+        $('#registro-guarderia').submit(function(e){
+            e.preventDefault();
+            $datosForm=$('#registro-guarderia');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                console.log(data)
+                if(data == 'Guardado'){
+                    Swal.fire({
+                        text:"¡Guardería registrado correctamente!",
+                        icon:"success",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
+                    })
+                    document.getElementById('registro-guarderia').reset();
+                    cerrar_modal_guarderia();
+                    listar_guarderia();
 
+                }else if(data == 'Actualizado'){
+                    Swal.fire({
+                        text:"¡Guardería actualizado correctamente!",
+                        icon:"success",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
+                    })
+                    document.getElementById('registro-guarderia').reset();
+                    cerrar_modal_guarderia();
+                    listar_guarderia();
+                }
+            }).fail(function () {
+            });
+        
+        });
         // Función para abrir el modal y mostrar los datos en el formulario
-        function editar_guarderia(id_PaqueteGuarderia,NombrePaquete,CantidadDias,MesesVigencia,id_Capacidad,Precio){
-            abrir_modal_add_user()
-
-
-            console.log(id_PaqueteGuarderia,NombrePaquete,CantidadDias,MesesVigencia,id_Capacidad,Precio)
+        function editar_guarderia(id_PaqueteGuarderia, NombrePaquete, CantidadDias, MesesVigencia, Capacidad, Precio)
+        {
+            abrir_modal_guarderia();
+            btn_actualizar();
+            // console.log(id_PaqueteGuarderia,NombrePaquete,CantidadDias,MesesVigencia,id_Capacidad,Precio)
             document.getElementById("id_PaqueteGuarderia").value = id_PaqueteGuarderia;
             document.getElementById("NombrePaquete").value = NombrePaquete;
             document.getElementById("CantidadDias").value = CantidadDias;
             document.getElementById("MesesVigencia").value = MesesVigencia;
-            document.getElementById("id_Capacidad").value = id_Capacidad;
+            // document.getElementById("id_Capacidad").value = id_Capacidad;
             document.getElementById("Precio").value = Precio;
-            btn_actualizar()
 
+            var formData = new FormData();
+            formData.append('id_Capacidad', Capacidad);
+
+            $datosForm=$('#editar-guarderia');
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                data: formData,
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                $('#id_Capacidad').empty();
+                $('#id_Capacidad').append(data.capacidad);
+            }).fail(function () {});
         }
-
-        // Función cambiar el texto del boton 
-        function btn_guardar() {
-            var button = document.getElementById('btn_paquete');
-            button.innerText = 'Registrar guardería';
-
-            document.getElementById("id_titulo_paquete").innerHTML = "Agregar nuevo paquete";
-            
-        }
-
-        // Función cambiar el texto del boton 
-        function btn_actualizar() {
-            var button = document.getElementById('btn_paquete');
-            button.innerText = 'Actualizar guardería';
-            document.getElementById("id_titulo_paquete").innerHTML = "Actualizar datos del paquete";
-        }
-
-        // Función cerrar el modal
-        function cerrar_modal_add_user(){
-            btn_guardar()
-            document.getElementById('registro-guarderia').reset();
-            $('#kt_modal_add_customer').modal('hide');
-        }
-
-        // Función abrir el modal
-        function abrir_modal_add_user(){
-            $('#kt_modal_add_customer').modal('show');
-        }
-
         // Función eliminar el paquete 
-        function eliminar_guarderia(id_guarderia){
+        function eliminar_guarderia(id_guarderia, NombrePaquete){
             Swal.fire({
-                text:"¿Estás seguro(a) de eliminar la guardería seleccionado con ID: "+id_guarderia+"?",
+                text:"¿Estás seguro(a) de eliminar el paquete guardería: " + NombrePaquete + "?",
                 icon:"warning",
                 showCancelButton:!0,
                 buttonsStyling:!1,
@@ -516,7 +421,7 @@
                         console.log(data)
                         if(data=='Eliminado'){
                             Swal.fire({
-                                text:"Has borrado la guardería con ID: "+id_guarderia+"!.",
+                                text:"Has eliminado el paquete guardería: " + NombrePaquete + "!",
                                 icon:"success",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -525,7 +430,7 @@
                             listar_guarderia();
                         } else {
                             Swal.fire({
-                                text:"¡Guardería con ID: "+id_guarderia+" no se pudo eliminar.",
+                                text:"¡Paquete guardería: " + NombrePaquete + " no se pudo eliminar.",
                                 icon:"error",
                                 buttonsStyling:!1,
                                 confirmButtonText:"Ok, entendido!",
@@ -536,7 +441,7 @@
                         }
                     }).fail(function () {
                         Swal.fire({
-                            text:"¡Guardería con ID: "+id_guarderia+" no se pudo eliminar.",
+                            text:"¡Paquete guardería: " + NombrePaquete + " no se pudo eliminar.",
                             icon:"error",
                             buttonsStyling:!1,
                             confirmButtonText:"Ok, entendido!",
@@ -547,7 +452,7 @@
                     });
                 } else {
                     Swal.fire({
-                        text:"Has cancelado la eliminación de la guardería con ID: "+id_guarderia+".",
+                        text:"Has cancelado la eliminación del paquete guardería: " + NombrePaquete,
                         icon:"error",
                         buttonsStyling:!1,
                         confirmButtonText:"Ok, entendido!",
@@ -558,8 +463,6 @@
                 }
             })
         }
-
-
     </script>
 
 @endsection
