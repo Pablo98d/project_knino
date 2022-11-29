@@ -15,9 +15,6 @@ class RegistroHumanos extends Model
 
 
     protected $fillable = [
-        'NombreHumano',
-        'Apellidos',
-        'Contrasena',
         'id_GeneroHumano',
         'Calle',
         'NumeroExterior',
@@ -27,12 +24,19 @@ class RegistroHumanos extends Model
         'id_Estado',
         'Municipio',
         'Celular',
-        'Email',
         'InstagramUser',
         'TikTokUser',
         'NombreEmergencia',
         'TelefonoEmergencia',
     ];
 
+    public function generoHumano()
+    {
+        return $this->belongsTo(GeneroHumano::class, 'id_GeneroHumano');
+    }
 
+    public function nombreEstado()
+    {
+        return $this->belongsTo(Estado::class, 'id_Estado');
+    }
 }

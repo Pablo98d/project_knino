@@ -41,6 +41,7 @@ class KninoController extends Controller
         } else {
             foreach ($listar_kninos as $listar_kn) {
                 // dd($listar_kn->Notas);
+                $humano = $listar_kn->registroHumano->id_Humano;
                 $output .= '
                 <tr>
                     <td title="Knino: '.$listar_kn->id_Knino.'">
@@ -49,7 +50,7 @@ class KninoController extends Controller
                         </a>
                     </td>
                     <td>
-                        '.$listar_kn->registroHumano->NombreHumano.'
+                        '.$listar_kn->registroHumano->id_Humano.'
                     </td>
                     <td>
                         '.$listar_kn->raza->TipoRaza.'

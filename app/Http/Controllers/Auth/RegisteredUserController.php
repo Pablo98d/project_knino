@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\RegistroHumanos;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -48,18 +49,42 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:usuarios'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+        // Registro de RegistroHumanos con campos vacios
+        $humano = RegistroHumanos::create([
+            'id_GeneroHumano' => 3,
+            'Calle' => '',
+            'NumeroExterior' => 0,
+            // 'NumeroInterior' => '',
+            'CodigoPostal' => 0,
+            'Colonia' => '',
+            'id_Estado' => 1,
+            'Municipio' => '',
+            'Celular' => '',
+            // 'InstagramUser' => '',
+            // 'TikTokUser' => '',
+            'NombreEmergencia' => '',
+            'TelefonoEmergencia' => '',
+        ]);
+        // Tenemos que hacer una consulta a toda la tabla de RegistroHumanos para que podamos extraer el
+        // ultimo id que se registro con el código de arriba y poder relacionar al usuario con esa tabla
+        $listar_humanos = RegistroHumanos::all();
+        $length = count($listar_humanos);
+        // Extraemos el ultimo id
+        $id_relacionar = $listar_humanos[$length - 1]->id_Humano;
         
-        $fecha=Carbon::now();
+        $fecha = Carbon::now();
         // dd($request->email);
         $user = User::create([
             'NombreUsuario' => $request->NombreUsuario,
             'ApellidosUsuario' => $request->ApellidosUsuario,
             'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'id_Humano' => $id_relacionar,
             'id_EstatusUsuario' => 1,
             'id_TipoUsuario' => 2,
             'FechaRegistro' => $fecha,
             'UltimaConexion' => $fecha,
-            'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));

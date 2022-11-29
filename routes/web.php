@@ -48,13 +48,12 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     //VISTA PRINCIPAL PARA HUMANOS
     Route::get('humanos',[HumanoController::class, 'humanos'])->name('humanos');
     // Rutas para humanos
-    Route::get('listar-humano',[RegistroHumanoController::class, 'listar_humano'])->name('listar_humano');
-    Route::post('guardar-humano',[RegistroHumanoController::class, 'guardar_humano'])->name('guardar_humano');
-    Route::post('eliminar-humano',[RegistroHumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
+    Route::get('listar-humano',[HumanoController::class, 'listar_humano'])->name('listar_humano');
+    Route::post('editar-humano',[HumanoController::class, 'editar_humano'])->name('editar_humano');
+    Route::post('guardar-humano',[HumanoController::class, 'guardar_humano'])->name('guardar_humano');
+    Route::post('eliminar-humano',[HumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
 
 
-
-    
     // VISTA PRINCIPAL PARA HOTEL
     Route::get('hotel',[HotelController::class, 'hotel'])->name('hotel');
     // Rutas para hotel
