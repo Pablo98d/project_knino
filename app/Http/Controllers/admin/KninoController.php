@@ -10,9 +10,9 @@ use App\Models\Pelaje;
 use App\Models\Personalidad;
 use App\Models\Peso;
 use App\Models\Razas;
-use App\Models\RegistroHumanos;
 use App\Models\RegistroKnino;
 use App\Models\Tallas;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class KninoController extends Controller
@@ -24,7 +24,7 @@ class KninoController extends Controller
     public function listar_kninos(Request $request)
     {
         $listar_kninos = RegistroKnino::all();
-        $personas = RegistroHumanos::all();
+        $personas = User::all();
         $razas = Razas::all();
         $generos = GeneroKnino::all();
         $estatus = EstatusKnino::all();
@@ -41,7 +41,6 @@ class KninoController extends Controller
         } else {
             foreach ($listar_kninos as $listar_kn) {
                 // dd($listar_kn->Notas);
-                $humano = $listar_kn->registroHumano->id_Humano;
                 $output .= '
                 <tr>
                     <td title="Knino: '.$listar_kn->id_Knino.'">
@@ -50,7 +49,7 @@ class KninoController extends Controller
                         </a>
                     </td>
                     <td>
-                        '.$listar_kn->registroHumano->id_Humano.'
+                        '.$listar_kn->humano->NombreUsuario.' '.$listar_kn->humano->ApellidosUsuario.'
                     </td>
                     <td>
                         '.$listar_kn->raza->TipoRaza.'
@@ -67,8 +66,8 @@ class KninoController extends Controller
                     <td class="text-center">
                         <button onclick="ver_knino(
                             `'.$listar_kn->NombreKnino.'`,
-                            `'.$listar_kn->registroHumano->NombreHumano.'`,
-                            `'.$listar_kn->registroHumano->Apellidos.'`,
+                            `'.$listar_kn->humano->NombreUsuario.'`,
+                            `'.$listar_kn->humano->ApellidosUsuario.'`,
                             `'.$listar_kn->raza->TipoRaza.'`,
                             `'.$listar_kn->generoKnino->NombreGeneroKnino.'`,
                             `'.$listar_kn->estatusKnino->EstatusKnino.'`,
@@ -115,7 +114,7 @@ class KninoController extends Controller
         if (count($personas) == 0) {
         } else {
             foreach ($personas as $persona) {
-                $html_persona.='<option value="'.$persona->id_Humano.'">'.$persona->NombreHumano.' '.$persona->Apellidos.'</option>';
+                $html_persona.='<option value="'.$persona->id_Usuario.'">'.$persona->NombreUsuario.' '.$persona->ApellidosUsuario.'</option>';
             }
         }
         // Select razas
@@ -238,16 +237,16 @@ class KninoController extends Controller
     public function editar_knino(Request $request)
     {
         // Select personas
-        $personas = RegistroHumanos::all();
+        $personas = User::all();
         $id_persona_ed = $request->id_Humano;
         $html_persona = '';
         if (count($personas) == 0) {
         } else {
             foreach ($personas as $persona) {
-                if ($persona->id_Humano == $id_persona_ed) {
-                    $html_persona.='<option value="'.$persona->id_Humano.'" selected>'.$persona->NombreHumano.' '.$persona->Apellidos.'</option>';
+                if ($persona->id_Usuario == $id_persona_ed) {
+                    $html_persona.='<option value="'.$persona->id_Usuario.'" selected>'.$persona->NombreUsuario.' '.$persona->ApellidosUsuario.'</option>';
                 } else {
-                    $html_persona.='<option value="'.$persona->id_Humano.'">'.$persona->NombreHumano.' '.$persona->Apellidos.'</option>';
+                    $html_persona.='<option value="'.$persona->id_Usuario.'">'.$persona->NombreUsuario.' '.$persona->ApellidosUsuario.'</option>';
                 }
             }
         }

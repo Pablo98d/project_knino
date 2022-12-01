@@ -55,9 +55,9 @@ class RegistroKnino extends Model
         // 'email_verified_at' => 'datetime',
     ];
 
-    public function registroHumano()
+    public function humano()
     {
-        return $this->belongsTo(RegistroHumanos::class,'id_Humano');
+        return $this->belongsTo(User::class,'id_Humano');
     }
 
     public function raza()

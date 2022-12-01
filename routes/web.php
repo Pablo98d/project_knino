@@ -44,7 +44,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::get('peso',[AdminController::class, 'peso'])->name('peso');
 
 
-    
     //VISTA PRINCIPAL PARA HUMANOS
     Route::get('humanos',[HumanoController::class, 'humanos'])->name('humanos');
     // Rutas para humanos
