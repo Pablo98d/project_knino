@@ -5,8 +5,6 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\HotelController;
 use App\Http\Controllers\admin\GuarderiaController;
 use App\Http\Controllers\admin\EsteticaController;
-use App\Http\Controllers\admin\RegistroKninoController;
-use App\Http\Controllers\admin\RegistroHumanoController;
 use App\Http\Controllers\admin\FestejoController;
 use App\Http\Controllers\admin\HumanoController;
 use App\Http\Controllers\admin\KninoController;
