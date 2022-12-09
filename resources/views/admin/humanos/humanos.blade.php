@@ -638,6 +638,7 @@
                 $('#id_GeneroHumano').append(data.genero);
                 $('#id_Estado').empty();
                 $('#id_Estado').append(data.estado);
+                $('#Municipio').empty();
             }).fail(function () {});
         }
         // Función eliminar el paquete 

@@ -140,7 +140,7 @@ class HumanoController extends Controller
                     'Colonia' => ['required', 'max:50'],
                     'NumeroExterior' => ['required'],
                     'CodigoPostal' => ['required'],
-                    'Municipio' => ['required', 'max:50'],
+                    'Municipio' => ['required', 'max:80'],
                     'email' => ['required', 'string', 'email', 'max:50', 'unique:usuarios'],
                     'Celular' => ['required', 'max:10'],
                     'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -179,7 +179,7 @@ class HumanoController extends Controller
                     'Colonia' => ['required', 'max:50'],
                     'NumeroExterior' => ['required'],
                     'CodigoPostal' => ['required'],
-                    'Municipio' => ['required', 'max:50'],
+                    'Municipio' => ['required', 'max:80'],
                     // 'email' => ['required', 'max:50'],
                     'Celular' => ['required', 'max:10'],
                     'NombreEmergencia' => ['required', 'max:40'],
@@ -281,17 +281,15 @@ class HumanoController extends Controller
     // Listar municipios
     public function listar_municipios(Request $request)
     {
-        
         $existe = Municipio::where('id_Estado', $request->id_Estado)->get();
-        // if (count($existe) != 0) {
-            $html_municipio='';
-            if (count($existe) == 0) {
-            } else {
-                foreach ($existe as $muni) {
-                    $html_municipio.='<option value="'.$muni->id_Municipio.'">'.$muni->NombreMunicipio.'</option>';
-                }
+
+        $html_municipio='';
+        if (count($existe) == 0) {
+        } else {
+            foreach ($existe as $muni) {
+                $html_municipio.='<option value="'.$muni->NombreMunicipio.'">'.$muni->NombreMunicipio.'</option>';
             }
-        // }
+        }
 
         $data = $html_municipio;
         
