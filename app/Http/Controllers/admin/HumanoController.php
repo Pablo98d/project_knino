@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Estado;
 use App\Models\GeneroHumano;
+use App\Models\Municipio;
 use App\Models\RegistroHumanos;
 use App\Models\RegistroKnino;
 
@@ -276,5 +277,24 @@ class HumanoController extends Controller
             return $e;
             // return 'Error';
         }
+    }
+    // Listar municipios
+    public function listar_municipios(Request $request)
+    {
+        
+        $existe = Municipio::where('id_Estado', $request->id_Estado)->get();
+        // if (count($existe) != 0) {
+            $html_municipio='';
+            if (count($existe) == 0) {
+            } else {
+                foreach ($existe as $muni) {
+                    $html_municipio.='<option value="'.$muni->id_Municipio.'">'.$muni->NombreMunicipio.'</option>';
+                }
+            }
+        // }
+
+        $data = $html_municipio;
+        
+        return $data;
     }
 }

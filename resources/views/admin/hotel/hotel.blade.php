@@ -235,13 +235,13 @@
                 </div>
             </div>
             {{-- Formulario para hoteles --}}
-                <form action="{{route('listar_hotel')}}" method="get"  id="listar-hotel">
+                <form action="{{route('listar_hotel')}}" method="get" id="listar-hotel">
                     @csrf
                 </form>
                 <form action="{{route('editar_hotel')}}" method="post" id="editar-hotel">
                     @csrf
                 </form>
-                <form action="{{route('eliminar_paquete')}}" method="post"  id="eliminar-paquete">
+                <form action="{{route('eliminar_paquete')}}" method="post" id="eliminar-paquete">
                     @csrf
                 </form>
         </div>

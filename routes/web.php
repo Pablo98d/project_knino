@@ -46,6 +46,7 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::get('humanos',[HumanoController::class, 'humanos'])->name('humanos');
     // Rutas para humanos
     Route::get('listar-humano',[HumanoController::class, 'listar_humano'])->name('listar_humano');
+    Route::post('listar-municipios',[HumanoController::class, 'listar_municipios'])->name('listar_municipios');
     Route::post('editar-humano',[HumanoController::class, 'editar_humano'])->name('editar_humano');
     Route::post('guardar-humano',[HumanoController::class, 'guardar_humano'])->name('guardar_humano');
     Route::post('eliminar-humano',[HumanoController::class, 'eliminar_humano'])->name('eliminar_humano');

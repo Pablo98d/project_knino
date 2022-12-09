@@ -235,13 +235,16 @@
                                         {{-- Input de Estado --}}
                                         <div class="col-md-4 mt-3">
                                             <label class="required fs-6 fw-semibold form-label mb-2">Estado</label>
-                                            <select name="id_Estado" id="id_Estado" class="form-select form-select-solid" data-control="select2" data-hide-search="true">
+                                            {{-- <select name="id_Estado" id="id_Estado" class="form-select form-select-solid" data-control="select2" data-hide-search="true"> --}}
+                                            <select name="id_Estado" id="id_Estado" class="form-select form-select-solid" data-control="select2" onchange="listar_municipios(this.value)" data-hide-search="true">
                                             </select>
                                         </div>
                                         {{-- Input de Municipio --}}
                                         <div class="col-md-4 mt-3">
                                             <label class="required fs-6 fw-semibold form-label mb-2">Municipio</label>
-                                            <input type="text" name="Municipio" id="Municipio" placeholder="Municipio" class="form-control form-control-solid" value=""/>
+                                            {{-- <input type="text" name="Municipio" id="Municipio" placeholder="Municipio" class="form-control form-control-solid" value=""/> --}}
+                                            <select name="Municipio" id="Municipio" class="form-select form-select-solid" data-control="select2" data-hide-search="true">
+                                            </select>
                                         </div>
                                         {{-- Input de Correo --}}
                                         <div class="col-md-8 mt-3">
@@ -465,7 +468,10 @@
                 <form action="{{route('editar_humano')}}" method="post" id="editar-humano">
                     @csrf
                 </form>
-                <form action="{{route('eliminar_humano')}}" method="post"  id="eliminar-humano">
+                <form action="{{route('eliminar_humano')}}" method="post" id="eliminar-humano">
+                    @csrf
+                </form>
+                <form action="{{route('listar_municipios')}}" method="post" id="listar-municipios">
                     @csrf
                 </form>
         </div>
@@ -493,6 +499,25 @@
                 $('#id_GeneroHumano').append(data.genero);
                 $('#id_Estado').empty();
                 $('#id_Estado').append(data.estado);
+            }).fail(function () {});
+        }
+        // Mostrar municipios
+        function listar_municipios(id_Estado)
+        {
+            $datosForm=$('#listar-municipios');
+            // console.log('id_Estado: ',id_Estado)
+            var formData = new FormData();
+            formData.append('id_Estado', id_Estado);
+            $.ajax({
+                url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
+                method: $datosForm.attr('method'),
+                data: formData,
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                // console.log(data)
+                $('#Municipio').empty();
+                $('#Municipio').append(data);
             }).fail(function () {});
         }
         // Función abrir el modal
