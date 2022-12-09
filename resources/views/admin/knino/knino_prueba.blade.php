@@ -329,7 +329,7 @@
             <div class="modal fade" id="modal_knino" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                     <div class="modal-content">
-                        <form class="form" method="POST" action="{{url('admin/guardar-knino')}}"  id="guardar-knino" onsubmit='return validar()'>
+                        <form class="form" method="POST" action="{{url('admin/guardar-knino')}}" id="guardar-knino" onsubmit='return validar()' enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="id_Knino" value="Insertar" id="id_Knino">
                             {{-- Encabezado de la modal --}}
@@ -438,7 +438,13 @@
                                         {{-- Input de Cartilla --}}
                                         <div class="col-md-12 mt-3">
                                             <label class="required fs-6 fw-semibold mb-2">Cartilla de vacunación</label>
-                                            <input type="text" class="form-control form-control-solid" placeholder="Cartilla de vacunacion" name="CartillaVacunacion" id="Cartilla" value="" />
+                                            {{-- <input type="text" class="form-control form-control-solid" placeholder="Cartilla de vacunacion" name="CartillaVacunacion" id="Cartilla" value="" /> --}}
+                                            <p>
+                                                <small>
+                                                    El tamaño de los archivos debe ser menor a 20 MB
+                                                </small>
+                                            </p>
+                                            <input type="file" id='CartillaVacunacion' name="CartillaVacunacion" class="form-control form-control-solid" onchange="return validateSize()">
                                         </div>
                                     </div>
                                 </div>
@@ -560,7 +566,8 @@
                                     {{-- Input de Cartilla --}}
                                     <div class="col-md-12 mt-3">
                                         <label class="fs-6 fw-semibold mb-2">Cartilla de vacunación</label>
-                                        <input readonly type="text" name="ver_Cartilla" id="ver_Cartilla" class="form-control form-control-solid" value="" />
+                                        {{-- <input readonly type="text" name="ver_Cartilla" id="ver_Cartilla" class="form-control form-control-solid" value="" /> --}}
+                                        <img src="" id="ver_Cartilla" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -711,9 +718,9 @@
             if(document.getElementById('id_Personalidad').value == ''){
                 todo_correcto = false;
             }
-            if(document.getElementById('Cartilla').value == ''){
-                todo_correcto = false;
-            }
+            // if(document.getElementById('Cartilla').value == ''){
+            //     todo_correcto = false;
+            // }
             if(!todo_correcto){
                 Swal.fire({
                     text:"Algunos campos están vacíos, vuelva a revisarlos",
@@ -761,6 +768,7 @@
             $.ajax({
                 url: $datosForm.attr('action') + '?' + $datosForm.serialize(),
                 method: $datosForm.attr('method'),
+                data: new FormData(this),
                 processData: false,
                 contentType: false
             }).done(function (data) {
@@ -787,6 +795,14 @@
                     document.getElementById('guardar-knino').reset();
                     cerrar_modal_knino();
                     listar_kninos();
+                } else if (data == 'WarningNoImagen') {
+                    Swal.fire({
+                        text:"¡Selecciona una iamgen para la cartilla de vacunación!",
+                        icon:"warning",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{confirmButton:"btn fw-bold btn-primary"}
+                    })
                 }
             }).fail(function () {});
         });
@@ -941,7 +957,59 @@
             document.getElementById("ver_id_Energia").value = Energia;
             document.getElementById("ver_id_Personalidad").value = Personalidad;
             document.getElementById("ver_Nota").value = Notas;
-            document.getElementById("ver_Cartilla").value = CartillaVacunacion;
+            document.getElementById("ver_Cartilla").src = CartillaVacunacion;
+        }
+        // Función para validar el tamaño de los archivops seleccionados
+        function validateSize()
+        {
+            // This is VERY unlikely, browser support is near-universal
+            if (!window.FileReader) { 
+                console.log("The file API isn't supported on this browser yet.");
+                return false;
+            }
+
+            var input = document.getElementById('CartillaVacunacion');
+            // This is VERY unlikely, browser support is near-universal
+            if (!input.files) {
+                console.error("This browser doesn't seem to support the `files` property of file inputs.");
+                return false;
+            } else if (!input.files[0]) {
+                //addPara("Please select a file before clicking 'Load'");
+                // alert("Debe seleccionar al menos un archivo");
+                Swal.fire({
+                    text: "Debe de seleccionar al menos un archivo",
+                    icon: "warning",
+                    buttonsStyling:!1,
+                    confirmButtonText:"Ok, entendido!",
+                    customClass:{
+                        confirmButton:"btn fw-bold btn-primary"
+                    }
+                })
+                return false;
+            } else {
+                var file = input.files[0];
+                let finalSize = 0;
+                // addPara("File " + file.name + " is " + file.size + " bytes in size");
+                //alert("File " + file.name + " is " + file.size + " bytes in size");
+                for(let i = 0; i < input.files.length; i ++){
+                    finalSize = file.size + finalSize;
+                }
+
+                if(finalSize >= 20971520){
+                    // alert('El tamaño total de los archivos supera los 20MB');
+                    Swal.fire({
+                        text: "El tamaño total de los archivos supera los 20 MB permitidos",
+                        icon: "warning",
+                        buttonsStyling:!1,
+                        confirmButtonText:"Ok, entendido!",
+                        customClass:{
+                            confirmButton:"btn fw-bold btn-primary"
+                        }
+                    })
+                    input.value='';
+                    return false;
+                }
+            }
         }
     </script>
 

@@ -198,14 +198,40 @@ class KninoController extends Controller
     // Agrega o actualiza un knino
     public function guardar_knino(Request $request)
     {
-        // return $request->all();
         if ($request->id_Knino == 'Insertar') {
-            $knino = RegistroKnino::create($request->all());
-            $guardado = $knino->save();
-            if ($guardado) {
-                return 'Guardado';
+            if ($request->hasFile('CartillaVacunacion')) {
+                $file = $request->file('CartillaVacunacion');
+                $name = time().'_'.$file->getClientOriginalName();
+                $file->move(public_path().'/cartillas_knino/', $name);
+
+                // $request->file
+                $knino = new RegistroKnino();
+                $knino->NombreKnino = $request->NombreKnino;
+                $knino->id_Humano = $request->id_Humano;
+                $knino->id_Raza = $request->id_Raza;
+                $knino->id_GeneroKnino = $request->id_GeneroKnino;
+                $knino->id_EstatusKnino = $request->id_EstatusKnino;
+                $knino->id_Peso = $request->id_Peso;
+                $knino->id_Talla = $request->id_Talla;
+                $knino->id_Pelaje = $request->id_Pelaje;
+                $knino->Esterilizacion = $request->Esterilizacion;
+                $knino->Edad = $request->Edad;
+                $knino->Cumpleanos = $request->Cumpleanos;
+                $knino->id_Energia = $request->id_Energia;
+                $knino->id_Personalidad = $request->id_Personalidad;
+                $knino->Notas = $request->Notas;
+                $knino->CartillaVacunacion = 'cartillas_knino/'.$name;
+                $guardado = $knino->save();
+
+                // $knino = RegistroKnino::create($request->all());
+                // $guardado = $knino->save();
+                if ($guardado) {
+                    return 'Guardado';
+                } else {
+                    return 'ErrorGuardado';
+                }
             } else {
-                return 'ErrorGuardado';
+                return 'WarningNoImagen';
             }
         } else {
             $knino = RegistroKnino::find($request->id_Knino);
