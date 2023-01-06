@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Closure;
 use Illuminate\Http\Request;
 
-class UserAdminMiddleware
+class UserClienteMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,10 +18,10 @@ class UserAdminMiddleware
     public function handle(Request $request, Closure $next)
     {
 
-        if (Auth::user()->isAdmin()) {
+        if (Auth::user()->isClient()) {
             return $next($request);
-        } elseif (Auth::user()->isClient()) {
-            return redirect('/home');
+        } elseif (Auth::user()->isAdmin()) {
+            return redirect('/admin/dashboard');
         } else {
             return redirect('/');
         }

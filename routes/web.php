@@ -8,6 +8,18 @@ use App\Http\Controllers\admin\EsteticaController;
 use App\Http\Controllers\admin\FestejoController;
 use App\Http\Controllers\admin\HumanoController;
 use App\Http\Controllers\admin\KninoController;
+use App\Http\Controllers\cliente\ClientExperienciasController;
+use App\Http\Controllers\cliente\ClientInstalacionesController;
+use App\Http\Controllers\cliente\ClientNosotrosController;
+use App\Http\Controllers\cliente\ClientPreguntasController;
+use App\Http\Controllers\cliente\ClientUbicacionController;
+use App\Http\Controllers\cliente\HomeController;
+use App\Http\Controllers\front\ExperienciasController;
+use App\Http\Controllers\front\FrontController;
+use App\Http\Controllers\front\InstalacionesController;
+use App\Http\Controllers\front\NosotrosController;
+use App\Http\Controllers\front\PreguntasController;
+use App\Http\Controllers\front\UbicacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +32,45 @@ use App\Http\Controllers\admin\KninoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Rutas que veran todos los usuarios sin estar registrados
+Route::get('/',[FrontController::class, 'index'])->name('front_inicio');
+// RUTAS DE EXPERIENCIAS
+Route::get('experiencia-guarderia',[ExperienciasController::class, 'guarderia'])->name('exp_guarderia');
+Route::get('experiencia-hotel',[ExperienciasController::class, 'hotel'])->name('exp_hotel');
+Route::get('experiencia-estetica',[ExperienciasController::class, 'estetica'])->name('exp_estetica');
+Route::get('experiencia-festejo',[ExperienciasController::class, 'festejo'])->name('exp_festejo');
+// RUTA DE INSTALACIONES
+Route::get('instalaciones',[InstalacionesController::class, 'instalaciones'])->name('instalaciones');
+// RUTA DE NOSOTROS
+Route::get('historia',[NosotrosController::class, 'historia'])->name('historia');
+Route::get('equipo',[NosotrosController::class, 'equipo'])->name('equipo');
+// RUTA DE PREGUNTAS FRECUENTES
+Route::get('preguntas-frecuentes',[PreguntasController::class, 'preguntas'])->name('preguntas');
+// RUTA DE UBICACION
+Route::get('ubicacion',[UbicacionController::class, 'ubicacion'])->name('ubicacion');
+
+// Rutas para los usuarios que esten registrados con el rol de clientes
+Route::group(['middleware'=> ['auth','client']], function() {
+    Route::get('/home',[HomeController::class, 'index'])->name('inicio');
+    // RUTAS DE EXPERIENCIAS
+    Route::get('cliente-experiencia-guarderia',[ClientExperienciasController::class, 'guarderia'])->name('cliente_exp_guarderia');
+    Route::get('cliente-experiencia-hotel',[ClientExperienciasController::class, 'hotel'])->name('cliente_exp_hotel');
+    Route::get('cliente-experiencia-estetica',[ClientExperienciasController::class, 'estetica'])->name('cliente_exp_estetica');
+    Route::get('cliente-experiencia-festejo',[ClientExperienciasController::class, 'festejo'])->name('cliente_exp_festejo');
+    // RUTA DE INSTALACIONES
+    Route::get('cliente-instalaciones',[ClientInstalacionesController::class, 'instalaciones'])->name('cliente_instalaciones');
+    // RUTA DE NOSOTROS
+    Route::get('cliente-historia',[ClientNosotrosController::class, 'historia'])->name('cliente_historia');
+    Route::get('cliente-equipo',[ClientNosotrosController::class, 'equipo'])->name('cliente_equipo');
+    // RUTA DE PREGUNTAS FRECUENTES
+    Route::get('cliente-preguntas-frecuentes',[ClientPreguntasController::class, 'preguntas'])->name('cliente_preguntas');
+    // RUTA DE UBICACION
+    Route::get('cliente-ubicacion',[ClientUbicacionController::class, 'ubicacion'])->name('cliente_ubicacion');
+    // RUTA DE CUENTA
+    Route::get('cliente-cuenta',[HomeController::class, 'cuenta'])->name('cuenta');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-
+// Rutas para los usuarios que esten registrados con el rol de adminitradores
 Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     
     Route::get('/dashboard',[AdminController::class, 'index'])->name('index');
@@ -41,7 +83,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::get('pelaje',[AdminController::class, 'pelaje'])->name('pelaje');
     Route::get('peso',[AdminController::class, 'peso'])->name('peso');
 
-
     //VISTA PRINCIPAL PARA HUMANOS
     Route::get('humanos',[HumanoController::class, 'humanos'])->name('humanos');
     // Rutas para humanos
@@ -51,7 +92,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('guardar-humano',[HumanoController::class, 'guardar_humano'])->name('guardar_humano');
     Route::post('eliminar-humano',[HumanoController::class, 'eliminar_humano'])->name('eliminar_humano');
 
-
     // VISTA PRINCIPAL PARA HOTEL
     Route::get('hotel',[HotelController::class, 'hotel'])->name('hotel');
     // Rutas para hotel
@@ -60,7 +100,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('editar-hotel',[HotelController::class, 'editar_hotel'])->name('editar_hotel');
     Route::post('eliminar-paquete',[HotelController::class, 'eliminar_paquete'])->name('eliminar_paquete');
 
-
     // VISTA PRINCIPAL PARA GUARDERIA
     Route::get('guarderia',[GuarderiaController::class, 'guarderia'])->name('guarderia');
     // Rutas para guarderia
@@ -68,7 +107,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('guardar-guarderia',[GuarderiaController::class, 'guardar_guarderia'])->name('guardar_guarderia');
     Route::post('editar-guarderia',[GuarderiaController::class, 'editar_guarderia'])->name('editar_guarderia');
     Route::post('eliminar-guarderia',[GuarderiaController::class, 'eliminar_guarderia'])->name('eliminar_guarderia');
-
 
     // VISTA PRINCIPAL PARA ESTETICA
     Route::get('estetica-menu',[EsteticaController::class, 'estetica_menu'])->name('estetica_menu');
@@ -83,7 +121,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('guardar-capacidad',[EsteticaController::class, 'guardar_capacidad'])->name('guardar_capacidad');
     Route::post('eliminar-capacidad',[EsteticaController::class, 'eliminar_capacidad'])->name('eliminar_capacidad');
 
-
     // VISTA PRINCIPAL PARA FESTEJO
     Route::get('festejo',[FestejoController::class, 'festejo'])->name('festejo');
     // Rutas para festejos
@@ -96,7 +133,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::post('guardar-tipo-pastel',[FestejoController::class, 'guardar_tipo_pastel'])->name('guardar_tipo_pastel');
     Route::post('eliminar-tipo-pastel',[FestejoController::class, 'eliminar_tipo_pastel'])->name('eliminar_tipo_pastel');
     
-
     // VISTA PRINCIPAL PARA KNINOS
     Route::get('kninos',[KninoController::class, 'kninos'])->name('kninos');
     // Rutas para kninos
@@ -120,7 +156,6 @@ Route::group(['prefix'=>'admin','middleware'=> ['auth','admin']], function() {
     Route::get('listar-raza',[KninoController::class, 'listar_raza'])->name('listar_raza');
     Route::post('guardar-raza',[KninoController::class, 'guardar_raza'])->name('guardar_raza');
     Route::post('eliminar-raza',[KninoController::class, 'eliminar_raza'])->name('eliminar_raza');
-    
 });
 
 // Route::get('/dashboard',[AdminController::class, 'index'])->name('index');

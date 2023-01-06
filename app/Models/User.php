@@ -56,7 +56,11 @@ class User extends Authenticatable
     ];
 
     public function isAdmin(){
-        return $this->id_TipoUsuario==1;
+        return $this->id_TipoUsuario == 1;
+    }
+
+    public function isClient(){
+        return $this->id_TipoUsuario == 2;
     }
 
     public function humano()
