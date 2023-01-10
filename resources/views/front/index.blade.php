@@ -1,4 +1,4 @@
-@extends('FRONT.master.master')
+@extends('front.master.master')
 @section('contenido')
 <style>
 	.inicio {

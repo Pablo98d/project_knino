@@ -1,4 +1,4 @@
-@extends('FRONT.master.master')
+@extends('front.master.master')
 
 @section('header')
 	<div class="text-center p-4">
